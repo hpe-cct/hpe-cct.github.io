@@ -1,0 +1,551 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>function - toolkit.neuralnetwork.function</title>
+          <meta name="description" content="function - toolkit.neuralnetwork.function" />
+          <meta name="keywords" content="function toolkit.neuralnetwork.function" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'toolkit.neuralnetwork.function.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="toolkit">toolkit</a>.<a href="../package.html" class="extype" name="toolkit.neuralnetwork">neuralnetwork</a></p>
+        <h1>function</h1><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">function</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="toolkit.neuralnetwork.function.AplusBXtoN" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AplusBXtoNextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="AplusBXtoN:AplusBXtoN"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="AplusBXtoN.html"><span class="name">AplusBXtoN</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="a">a: <span class="extype" name="scala.Float">Float</span></span>, <span name="b">b: <span class="extype" name="scala.Float">Float</span></span>, <span name="n">n: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@AplusBXtoNextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Function that takes an input X and outputs (A + B*X)^N.  Cog has two pow() function signatures corresponding
+to both integer and non-integer powers.  The integer case for N is detected here
+and special-cased (instead of having a separate node for this).</p><div class="fullcomment"><div class="comment cmt"><p>Function that takes an input X and outputs (A + B*X)^N.  Cog has two pow() function signatures corresponding
+to both integer and non-integer powers.  The integer case for N is detected here
+and special-cased (instead of having a separate node for this).</p><p>If N is other than a positive integer, be aware that you may need to ensure that the A + B*X term
+is always positive to avoid NaNs from killing the model state.
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>the input signal</p></dd><dt class="param">a</dt><dd class="cmt"><p>a constant offset added to the input</p></dd><dt class="param">b</dt><dd class="cmt"><p>a constant multiplier that scales the input</p></dd><dt class="param">n</dt><dd class="cmt"><p>the power to raise the input to</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.BasicOps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BasicOpsextendsAnyRef"></a>
+      <a id="BasicOps:BasicOps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BasicOps.html"><span class="name">BasicOps</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@BasicOpsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.function.Bias" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BiasextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="Bias:Bias"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Bias.html"><span class="name">Bias</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="weights">weights: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="sharedBias">sharedBias: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@BiasextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A bias transformation that adds bias weights to the input signal
+</p><div class="fullcomment"><div class="comment cmt"><p>A bias transformation that adds bias weights to the input signal
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>The input signal</p></dd><dt class="param">weights</dt><dd class="cmt"><p>The bias weights</p></dd><dt class="param">sharedBias</dt><dd class="cmt"><p>Flag for sharing bias across the input field. Sharing bias causes the
+                  bias to be applied uniformly across the field points of the input and
+                  requires that <code>weights</code> has a 0D field shape. Unshared bias applies a different
+                  bias to each field point and requires <code>weights</code> to have the same field shape as <code>input</code>.</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.CrossEntropy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CrossEntropyextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="CrossEntropy:CrossEntropy"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CrossEntropy.html"><span class="name">CrossEntropy</span></a><span class="params">(<span name="left">left: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="right">right: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@CrossEntropyextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The cross-entropy loss function applied to the softmax of the input relative to
+the reference signal.</p><div class="fullcomment"><div class="comment cmt"><p>The cross-entropy loss function applied to the softmax of the input relative to
+the reference signal. This loss function is commonly used for training a classification
+network.
+</p></div><dl class="paramcmts block"><dt class="param">left</dt><dd class="cmt"><p>The input signal, typically a classification output</p></dd><dt class="param">right</dt><dd class="cmt"><p>The reference signal, typically a one hot code representing a class label</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.CrossEntropySoftmax" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CrossEntropySoftmaxextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="CrossEntropySoftmax:CrossEntropySoftmax"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CrossEntropySoftmax.html"><span class="name">CrossEntropySoftmax</span></a><span class="params">(<span name="inference">inference: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="labels">labels: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@CrossEntropySoftmaxextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.function.CrossEntropySoftmaxes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CrossEntropySoftmaxesextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="CrossEntropySoftmaxes:CrossEntropySoftmaxes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="CrossEntropySoftmaxes.html"><span class="name">CrossEntropySoftmaxes</span></a><span class="params">(<span name="left">left: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="right">right: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="refInputIsPDF">refInputIsPDF: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="safeMode">safeMode: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@CrossEntropySoftmaxesextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The cross-entropy loss function applied to the softmax of the input relative to
+the reference signal.</p><div class="fullcomment"><div class="comment cmt"><p>The cross-entropy loss function applied to the softmax of the input relative to
+the reference signal. This loss function is commonly used for training a classification
+network.  Unlike the similarly-named &quot;CrossEntropySoftMax&quot;, this class computes
+a cross-entropy softmax individually for each image representation of the batch.  As
+such, its output is not a single scalar, but instead a vector of length <code>batchSize</code>.
+This allows the class to be tested by the existing test infrastructure.
+</p></div><dl class="paramcmts block"><dt class="param">left</dt><dd class="cmt"><p>The input signal, typically a classification output</p></dd><dt class="param">right</dt><dd class="cmt"><p>The reference signal, typically a one hot code representing a class label</p></dd><dt class="param">refInputIsPDF</dt><dd class="cmt"><p>The <code>right</code> reference input for each element of the batch sums to 1.</p></dd><dt class="param">safeMode</dt><dd class="cmt"><p>Protect against generating NaNs for large inputs (&gt;100).</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.Downsample" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DownsampleextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="Downsample:Downsample"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Downsample.html"><span class="name">Downsample</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="factor">factor: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">2</span></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@DownsampleextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The downsample operator which samples every <code>factor</code> input element to produce a reduced size output.</p><div class="fullcomment"><div class="comment cmt"><p>The downsample operator which samples every <code>factor</code> input element to produce a reduced size output.
+The outputSize = ceil(inputSize / factor).</p><p>Decided not to expose the &quot;phase&quot; parameter that exists with Cog's core downsample/upsample operators.
+There are some subtleties present in the Cog API, namely phase &lt;= inSize-1 % factor.  Put a different way,
+the Cog core's downsample() will result in a field of size ceil(inSize/factor).  The specification of a
+non-zero phase should not disturb that. (inSize, factor, phase) = (5, 3, 2) is such a problem case where
+one might assume an output of size 1, but Cog will generate a size of 2.
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>input signal</p></dd><dt class="param">factor</dt><dd class="cmt"><p>the factor by which the output is reduced</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.FullyConnected" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FullyConnectedextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="FullyConnected:FullyConnected"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="FullyConnected.html"><span class="name">FullyConnected</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="weights">weights: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@FullyConnectedextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.function.MaxPooling" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MaxPoolingextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="MaxPooling:MaxPooling"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MaxPooling.html"><span class="name">MaxPooling</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="poolSize">poolSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">2</span></span>, <span name="stride">stride: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">2</span></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@MaxPoolingextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The max pooling function with a <code>poolSize</code> x <code>poolSize</code> input field stepped by <code>stride</code>.</p><div class="fullcomment"><div class="comment cmt"><p>The max pooling function with a <code>poolSize</code> x <code>poolSize</code> input field stepped by <code>stride</code>. The input
+must be two dimensional.</p><p>The ability to accomodate overlapping pools (where poolSize != stride) adds considerable complexity.  In
+particular, the jacobianAdjoint must be prepared to sum multiple gradients (dY's) because of the potential
+spraying of values in the forward direction.  Thus, there are two different implementation strategies taken
+for the two cases:</p><p>Overlapped pools:
+The jacobianAdjoint GPUOperator allocates one thread per element of the larger 'dX' field that it
+generates to more naturally handle the summing that might occur into each such element.
+For performance, the jacobianAdjoint GPUOperator assumes and reads in a gradient-sized &quot;index field&quot;
+that contains the field offset of the input that is the maximum of the pool.
+The forward operator leverages the existence of the &quot;index field&quot; to generate its output as well.</p><p>Non-overlapping pools:
+The jacobianAdjoint GPUOperator allocates one thread per element of the gradient 'dY' field and has
+that thread write the dY value to the appropriate 'dX' field element (no summing required).
+Since no &quot;index field&quot; is needed to help speed the jacobianAdjoint, the forward operator examines
+its input tile and outputs the maximum in a straightforward manner.</p><p>The current approach might run faster by using local memory, but at the risk of not being able to accommodate
+large strides..
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>input signal</p></dd><dt class="param">poolSize</dt><dd class="cmt"><p>the edge size of the square pooling window, defaults to 2</p></dd><dt class="param">stride</dt><dd class="cmt"><p>the amount by which the pooling window is stepped (in both x and y), defaults to 2</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.ReLU" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReLUextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="ReLU:ReLU"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReLU.html"><span class="name">ReLU</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@ReLUextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.function.RightCrop" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RightCropextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="RightCrop:RightCrop"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RightCrop.html"><span class="name">RightCrop</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="cropSizes">cropSizes: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>]</span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@RightCropextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Crop an N-dimensional input from the &quot;right&quot; (the highest-indexed data in each dimension).</p><div class="fullcomment"><div class="comment cmt"><p>Crop an N-dimensional input from the &quot;right&quot; (the highest-indexed data in each dimension).
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>the input signal</p></dd><dt class="param">cropSizes</dt><dd class="cmt"><p>the amount of padding to remove for all dimensions</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.RightPad" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RightPadextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="RightPad:RightPad"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RightPad.html"><span class="name">RightPad</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="sizes">sizes: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>]</span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@RightPadextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Pad an N-dimensional input with zeros on the &quot;right&quot; (after the data in each dimension)
+</p><div class="fullcomment"><div class="comment cmt"><p>Pad an N-dimensional input with zeros on the &quot;right&quot; (after the data in each dimension)
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>the input signal</p></dd><dt class="param">sizes</dt><dd class="cmt"><p>the amount of padding to add for all dimensions</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.Softmax" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SoftmaxextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="Softmax:Softmax"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Softmax.html"><span class="name">Softmax</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="safeMode">safeMode: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@SoftmaxextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The softmax (multinomial logistic regression).</p><div class="fullcomment"><div class="comment cmt"><p>The softmax (multinomial logistic regression).  Converts the input to a form that could be
+considered a discrete probability distribution- i.e. all positive values that sum to 1.
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>The input signal, typically a classification output.</p></dd><dt class="param">safeMode</dt><dd class="cmt"><p>Protect against generating NaNs for large inputs (&gt;100).</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.SpatialConvolution" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SpatialConvolutionextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="SpatialConvolution:SpatialConvolution"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SpatialConvolution.html"><span class="name">SpatialConvolution</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="weights">weights: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="border">border: <a href="../../../libcog/package.html#BorderPolicy=cogx.platform.types.BorderPolicy" class="extmbr" name="libcog.BorderPolicy">libcog.BorderPolicy</a> = <span class="symbol"><span class="name"><a href="../../../libcog/package.html">BorderValid</a></span></span></span>, <span name="stride">stride: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">1</span></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@SpatialConvolutionextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A convolutional transformation that applies a filter bank to a signal in the space domain.</p><div class="fullcomment"><div class="comment cmt"><p>A convolutional transformation that applies a filter bank to a signal in the space domain.
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>The signal node</p></dd><dt class="param">weights</dt><dd class="cmt"><p>The filter bank input, typically a TrainableState field</p></dd><dt class="param">stride</dt><dd class="cmt"><p>The factor by which the output with be downsampled after the BorderValid convolution</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.StackFeatures" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="StackFeaturesextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="StackFeatures:StackFeatures"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="StackFeatures.html"><span class="name">StackFeatures</span></a><span class="params">(<span name="left">left: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="right">right: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@StackFeaturesextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Binary compute node that stacks fields in the feature vector domain.</p><div class="fullcomment"><div class="comment cmt"><p>Binary compute node that stacks fields in the feature vector domain. Both inputs
+must have the same field shape.
+</p></div><dl class="paramcmts block"><dt class="param">left</dt><dd class="cmt"><p>first input signal</p></dd><dt class="param">right</dt><dd class="cmt"><p>second input signal, stacked on the first in the vector domain</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.Subspace" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SubspaceextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="Subspace:Subspace"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Subspace.html"><span class="name">Subspace</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="ranges">ranges: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Range">Range</span>]</span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@SubspaceextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Pull a contiguous region out of a field.</p><div class="fullcomment"><div class="comment cmt"><p>Pull a contiguous region out of a field.
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>the input signal</p></dd><dt class="param">ranges</dt><dd class="cmt"><p>the ranges of interest of the input field, e.g. Seq(rowRanges, columnRanges)</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.SumOfSquares" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SumOfSquaresextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="SumOfSquares:SumOfSquares"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SumOfSquares.html"><span class="name">SumOfSquares</span></a><span class="params">(<span name="left">left: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="right">right: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@SumOfSquaresextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.function.Tanh" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TanhextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="Tanh:Tanh"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Tanh.html"><span class="name">Tanh</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="a">a: <span class="extype" name="scala.Float">Float</span> = <span class="symbol">1.7159f</span></span>, <span name="b">b: <span class="extype" name="scala.Float">Float</span> = <span class="symbol">0.6667f</span></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@TanhextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The function a*tanh(b*x) applied at each point
+</p><div class="fullcomment"><div class="comment cmt"><p>The function a*tanh(b*x) applied at each point
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>the input signal</p></dd><dt class="param">a</dt><dd class="cmt"><p>scale parameter</p></dd><dt class="param">b</dt><dd class="cmt"><p>gain parameter</p></dd></dl></div>
+    </li><li name="toolkit.neuralnetwork.function.TrainableState" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TrainableStateextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="TrainableState:TrainableState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TrainableState.html"><span class="name">TrainableState</span></a><span class="params">(<span name="fieldShape">fieldShape: <a href="../../../libcog/package.html#Shape=cogx.cogmath.geometry.Shape" class="extmbr" name="libcog.Shape">libcog.Shape</a></span>, <span name="tensorShape">tensorShape: <a href="../../../libcog/package.html#Shape=cogx.cogmath.geometry.Shape" class="extmbr" name="libcog.Shape">libcog.Shape</a></span>, <span name="initPolicy">initPolicy: <a href="../policy/WeightInitPolicy.html" class="extype" name="toolkit.neuralnetwork.policy.WeightInitPolicy">WeightInitPolicy</a></span>, <span name="learningRule">learningRule: <a href="../policy/LearningRule.html" class="extype" name="toolkit.neuralnetwork.policy.LearningRule">LearningRule</a></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@TrainableStateextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.function.ZeroPad" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ZeroPadextendsDifferentiableFieldwithProductwithSerializable"></a>
+      <a id="ZeroPad:ZeroPad"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ZeroPad.html"><span class="name">ZeroPad</span></a><span class="params">(<span name="input">input: <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a></span>, <span name="size">size: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="../DifferentiableField.html" class="extype" name="toolkit.neuralnetwork.DifferentiableField">DifferentiableField</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@ZeroPadextendsDifferentiableFieldwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Pad an input with zeros.</p><div class="fullcomment"><div class="comment cmt"><p>Pad an input with zeros.
+</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>the input signal</p></dd><dt class="param">size</dt><dd class="cmt"><p>pad size, in field points</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="toolkit.neuralnetwork.function.Convolution" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Convolution"></a>
+      <a id="Convolution:Convolution"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Convolution$.html"><span class="name">Convolution</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@Convolution" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Helper function object for creating a convolutional <code>Compute</code> <code>Node</code> along with its associated <code>State</code>
+</p>
+    </li><li name="toolkit.neuralnetwork.function.Dropout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Dropout"></a>
+      <a id="Dropout:Dropout"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Dropout$.html"><span class="name">Dropout</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@Dropout" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.function.FrequencyConvolution" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FrequencyConvolution"></a>
+      <a id="FrequencyConvolution:FrequencyConvolution"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FrequencyConvolution$.html"><span class="name">FrequencyConvolution</span></a><span class="result"> extends <a href="../../../libcog/package.html#Logarithm=cogx.cogmath.algebra.real.Logarithm" class="extmbr" name="libcog.Logarithm">libcog.Logarithm</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.function.package@FrequencyConvolution" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
