@@ -1,0 +1,160 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>whitening - toolkit.filtering.whitening</title>
+          <meta name="description" content="whitening - toolkit.filtering.whitening" />
+          <meta name="keywords" content="whitening toolkit.filtering.whitening" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'toolkit.filtering.whitening.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="toolkit">toolkit</a>.<a href="../package.html" class="extype" name="toolkit.filtering">filtering</a></p>
+        <h1>whitening</h1><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.whitening.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">whitening</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="toolkit.filtering.whitening.NormalizeEnergy" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NormalizeEnergy"></a>
+      <a id="NormalizeEnergy:NormalizeEnergy"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="NormalizeEnergy$.html"><span class="name">NormalizeEnergy</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.whitening.package@NormalizeEnergy" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Normalize the &quot;energy&quot; in a scalar field (which is assumed to be an image).</p>
+    </li><li name="toolkit.filtering.whitening.WhitenNaturalImage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="WhitenNaturalImage"></a>
+      <a id="WhitenNaturalImage:WhitenNaturalImage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WhitenNaturalImage$.html"><span class="name">WhitenNaturalImage</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.whitening.package@WhitenNaturalImage" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Whiten a natural image.</p><div class="fullcomment"><div class="comment cmt"><p>Whiten a natural image.</p><p>Natural images have a power spectrum well approximated by 1 / f**2. This
+function flattens that spectrum to facilitate further processing. The
+algorithm is from Bruno Olshausen:</p><p>http://redwood.berkeley.edu/bruno/npb261b/lab2/lab2.html
+</p></div></div>
+    </li><li name="toolkit.filtering.whitening.WhiteningFilter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="WhiteningFilter"></a>
+      <a id="WhiteningFilter:WhiteningFilter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WhiteningFilter$.html"><span class="name">WhiteningFilter</span></a><span class="result"> extends <a href="../MatlabFunctions.html" class="extype" name="toolkit.filtering.MatlabFunctions">MatlabFunctions</a> with <a href="../../../libcog/package.html#Logarithm=cogx.cogmath.algebra.real.Logarithm" class="extmbr" name="libcog.Logarithm">libcog.Logarithm</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.whitening.package@WhiteningFilter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A whitening filter for natural images that flattens the spectrum (on
+average).</p><div class="fullcomment"><div class="comment cmt"><p>A whitening filter for natural images that flattens the spectrum (on
+average).</p><p>This uses the fact that natural images have an amplitude spectrum of 1/f,
+so this is essentially a filter with the inverse spectrum. The algorithm
+is from Bruno Olshausen:</p><p>http://redwood.berkeley.edu/bruno/npb261b/lab2/lab2.html
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
