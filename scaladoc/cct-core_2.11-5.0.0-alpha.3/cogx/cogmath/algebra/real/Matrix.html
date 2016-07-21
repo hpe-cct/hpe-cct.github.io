@@ -1,0 +1,2221 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Matrix - cogx.cogmath.algebra.real.Matrix</title>
+          <meta name="description" content="Matrix - cogx.cogmath.algebra.real.Matrix" />
+          <meta name="keywords" content="Matrix cogx.cogmath.algebra.real.Matrix" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogx.cogmath.algebra.real.Matrix';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="Matrix$.html" title="See companion object"><img alt="Class/Object" src="../../../../lib/class_to_object_big.png" /></a>
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogx">cogx</a>.<a href="../../package.html" class="extype" name="cogx.cogmath">cogmath</a>.<a href="../package.html" class="extype" name="cogx.cogmath.algebra">algebra</a>.<a href="package.html" class="extype" name="cogx.cogmath.algebra.real">real</a></p>
+        <h1><a href="Matrix$.html" title="See companion object">Matrix</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="Matrix$.html" title="See companion object">object Matrix</a>
+            | <a href="package.html" class="extype" name="cogx.cogmath.algebra.real">package real</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Matrix</span><span class="result"> extends <a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A matrix.</p><p>In the following descriptions, &quot;v&quot; represents a vector, &quot;s&quot; a scalar, &quot;m&quot;
+a matrix, &quot;b&quot; a boolean, &quot;i&quot; and integer, &quot;d&quot; a double, &quot;r&quot; a range of
+integers (e.g. &quot;1 to 5&quot; or &quot;3 until 9&quot;).</p><p>The update operations, such as &quot;+=&quot;, update the elements of the matrix in
+place.</p><pre>Constructors:
+  Matrix(i, i)
+  Matrix(i, i, <span class="std">Array</span>[d])
+  copy
+
+Dimensions:
+  rows               <span class="kw">=&gt;</span> i        (number of rows in matrix)
+  columns            <span class="kw">=&gt;</span> i        (number of columns in matrix)
+  size               <span class="kw">=&gt;</span> i        (total # elements in matrix)
+
+Linear element access:
+  apply(i)           <span class="kw">=&gt;</span> s        (access element linearly)
+  update(i, s)                   (write element i <span class="kw">with</span> value s)
+
+<span class="num">2</span>D element access:
+  apply(i, i)        <span class="kw">=&gt;</span> s        (access element by <span class="num">2</span>D coordinates)
+  update(i, i, s)                (write element (i, i) <span class="kw">with</span> value s)
+
+Submatrix multi-element reads:
+  row(i)             <span class="kw">=&gt;</span> m        (extract a copy of a row)
+  column(i)          <span class="kw">=&gt;</span> m        (extract a copy of a column)
+  submatrix(r, r)    <span class="kw">=&gt;</span> m        (extract a subregion of a matrix)
+  reshape(i, i)      <span class="kw">=&gt;</span> m        (reshape the matrix)
+
+Matrix operations:
+  map(f: d <span class="kw">=&gt;</span> d)     <span class="kw">=&gt;</span> m        (map a Matrix by applying f to each element)
+  mapSelf(f: d <span class="kw">=&gt;</span> d)			    (use f to map each element in place)
+  reduce((d, d)<span class="kw">=&gt;</span> d) <span class="kw">=&gt;</span> d        (reduce a Matrix to a scalar)
+  randomize                      (initialize to random values in [<span class="num">0</span>, <span class="num">1</span>))
+
+Matrix / Scalar operations:
+  m + s   <span class="kw">=&gt;</span> m          (add scalar to each element to produce a <span class="kw">new</span> matrix)
+  m += s                (add scalar to all elements of matrix in-place)
+  m - s   <span class="kw">=&gt;</span> m
+  m -= s
+  m * s   <span class="kw">=&gt;</span> m
+  m *= s
+  m / s   <span class="kw">=&gt;</span> m
+  m /= s
+  -m      <span class="kw">=&gt;</span> m          (map each element to <span class="kw">new</span> matrix my multiplying by -<span class="num">1</span>)
+  m := s                (assign scalar to all elements of the matrix)
+
+Matrix / Matrix operations:
+  m + m          <span class="kw">=&gt;</span> m
+  m += m
+  m - m          <span class="kw">=&gt;</span> m
+  m -= m
+  m :* m         <span class="kw">=&gt;</span> m   (element-wise multiplication)
+  m :*= m               (element-wise multiplication in-place)
+  m :/ m         <span class="kw">=&gt;</span> m   (element-wise right division)
+  m :/= n               (element-wise right division in-place)
+  m :\ m         <span class="kw">=&gt;</span> m   (element-wise left division)
+  m :\= m               (element-wise left division in-place)
+  m1 === m2		<span class="kw">=&gt;</span> b   (m1 and m2 have same shape, identical elements)
+  m1 !=== m2     <span class="kw">=&gt;</span> b
+  m1 ~== m2
+  m1 !~== m2
+  m1 := m2			   (assign elements of m2 to m1)
+
+Matrix multiplication:
+  m * m          <span class="kw">=&gt;</span> m   (matrix multiplication)
+
+Matrix decompositions:
+  cholesky       <span class="kw">=&gt;</span> m         (Cholesky decomposition)
+  eigen          <span class="kw">=&gt;</span> (m, m)    (eigenvector matrix, diag eigenvalue matrix)
+  lu             <span class="kw">=&gt;</span> (m, m)    (L matrix, U matrix)
+  qr             <span class="kw">=&gt;</span> (m, m)    (Q matrix, R matrix)
+  svd            <span class="kw">=&gt;</span> (m, m, m) (U matrix, S matrix, V matrix)
+
+Miscellaneous cogx.utilities:
+  abs            <span class="kw">=&gt;</span> m   (absolute value of each element)
+  sgn            <span class="kw">=&gt;</span> m   (sign of each element: -<span class="num">1</span>, <span class="num">0</span>, <span class="num">1</span>)
+  rectify        <span class="kw">=&gt;</span> m   (clip negative elements to <span class="num">0</span>)
+  normalizeRows         (normalize rows using L2 norm)
+  normalizeColumns      (normalize columns using L2 norm)
+  print                 (print a matrix <span class="kw">for</span> debugging)</pre></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a>, <span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogx.cogmath.algebra.real.Matrix"><span>Matrix</span></li><li class="in" name="cogx.cogmath.algebra.real.Tensor"><span>Tensor</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="cogx.cogmath.algebra.real.Matrix#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(tensor:cogx.cogmath.algebra.real.Tensor):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="&lt;init&gt;:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Matrix</span><span class="params">(<span name="tensor">tensor: <a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@&lt;init&gt;(tensor:cogx.cogmath.algebra.real.Tensor):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a Matrix from a 2-D tensor.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(rows:Int,columns:Int):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="&lt;init&gt;:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Matrix</span><span class="params">(<span name="rows">rows: <span class="extype" name="scala.Int">Int</span></span>, <span name="columns">columns: <span class="extype" name="scala.Int">Int</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@&lt;init&gt;(rows:Int,columns:Int):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructor that allocates memory for Matrix (most common).</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(rows:Int,columns:Int,data:Array[Float]):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="&lt;init&gt;:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Matrix</span><span class="params">(<span name="rows">rows: <span class="extype" name="scala.Int">Int</span></span>, <span name="columns">columns: <span class="extype" name="scala.Int">Int</span></span>, <span name="data">data: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@&lt;init&gt;(rows:Int,columns:Int,data:Array[Float]):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">rows</dt><dd class="cmt"><p>The number of rows in the matrix.</p></dd><dt class="param">columns</dt><dd class="cmt"><p>The number of columns in the matrix.</p></dd><dt class="param">data</dt><dd class="cmt"><p>Storage for matrix elements; length must be equal to
+       rows * columns.</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#!===" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="!===(that:cogx.cogmath.algebra.real.Matrix):Boolean"></a>
+      <a id="!===(Matrix):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq$eq$eq" class="name">!===</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@!===(that:cogx.cogmath.algebra.real.Matrix):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#!~==" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="!~==(that:cogx.cogmath.algebra.real.Matrix):Boolean"></a>
+      <a id="!~==(Matrix):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$tilde$eq$eq" class="name">!~==</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@!~==(that:cogx.cogmath.algebra.real.Matrix):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@##():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#*" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="*(that:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="*(Vector):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $times" class="name">*</span><span class="params">(<span name="that">that: <a href="Vector.html" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <a href="Vector.html" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@*(that:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Matrix multiplication.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#*" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="*(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="*(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $times" class="name">*</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@*(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#*" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="*(scalar:Float):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="*(Float):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $times" class="name">*</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@*(scalar:Float):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#*=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="*=(scalar:Float):Unit"></a>
+      <a id="*=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $times$eq" class="name">*=</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@*=(scalar:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#+" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="+(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="+(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="name">+</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@+(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#+" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="+(scalar:Float):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="+(Float):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="name">+</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@+(scalar:Float):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#+=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="+=(that:cogx.cogmath.algebra.real.Matrix):Unit"></a>
+      <a id="+=(Matrix):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus$eq" class="name">+=</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@+=(that:cogx.cogmath.algebra.real.Matrix):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#+=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="+=(scalar:Float):Unit"></a>
+      <a id="+=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus$eq" class="name">+=</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@+=(scalar:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#-" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="-(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="-(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus" class="name">-</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@-(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#-" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="-(scalar:Float):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="-(Float):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus" class="name">-</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@-(scalar:Float):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#-=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="-=(that:cogx.cogmath.algebra.real.Matrix):Unit"></a>
+      <a id="-=(Matrix):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$eq" class="name">-=</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@-=(that:cogx.cogmath.algebra.real.Matrix):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#-=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="-=(scalar:Float):Unit"></a>
+      <a id="-=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$eq" class="name">-=</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@-=(scalar:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#/" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="/(scalar:Float):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="/(Float):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $div" class="name">/</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@/(scalar:Float):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#/=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="/=(scalar:Float):Unit"></a>
+      <a id="/=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $div$eq" class="name">/=</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@/=(scalar:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#:*" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":*(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id=":*(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$times" class="name">:*</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@:*(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#:*=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":*=(that:cogx.cogmath.algebra.real.Matrix):Unit"></a>
+      <a id=":*=(Matrix):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$times$eq" class="name">:*=</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@:*=(that:cogx.cogmath.algebra.real.Matrix):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#:/" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":/(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id=":/(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$div" class="name">:/</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@:/(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#:/=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":/=(that:cogx.cogmath.algebra.real.Matrix):Unit"></a>
+      <a id=":/=(Matrix):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$div$eq" class="name">:/=</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@:/=(that:cogx.cogmath.algebra.real.Matrix):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#:=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":=(that:cogx.cogmath.algebra.real.Matrix):Unit"></a>
+      <a id=":=(Matrix):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$eq" class="name">:=</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@:=(that:cogx.cogmath.algebra.real.Matrix):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#:=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":=(scalar:Float):Unit"></a>
+      <a id=":=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$eq" class="name">:=</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@:=(scalar:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#:\" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":\(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id=":\(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$bslash" class="name">:\</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@:\(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#:\=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":\=(that:cogx.cogmath.algebra.real.Matrix):Unit"></a>
+      <a id=":\=(Matrix):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$bslash$eq" class="name">:\=</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@:\=(that:cogx.cogmath.algebra.real.Matrix):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#:^" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":^(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id=":^(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$up" class="name">:^</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@:^(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#:^=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":^=(that:cogx.cogmath.algebra.real.Matrix):Unit"></a>
+      <a id=":^=(Matrix):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$up$eq" class="name">:^=</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@:^=(that:cogx.cogmath.algebra.real.Matrix):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#&lt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;(v:Float):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="&lt;(Float):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less" class="name">&lt;</span><span class="params">(<span name="v">v: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@&lt;(v:Float):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#&lt;=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;=(v:Float):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="&lt;=(Float):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less$eq" class="name">&lt;=</span><span class="params">(<span name="v">v: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@&lt;=(v:Float):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#===" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="===(that:cogx.cogmath.algebra.real.Matrix):Boolean"></a>
+      <a id="===(Matrix):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq$eq" class="name">===</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@===(that:cogx.cogmath.algebra.real.Matrix):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&gt;(v:Float):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="&gt;(Float):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="v">v: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@&gt;(v:Float):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#&gt;=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&gt;=(v:Float):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="&gt;=(Float):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater$eq" class="name">&gt;=</span><span class="params">(<span name="v">v: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@&gt;=(v:Float):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#^" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="^(scalar:Float):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="^(Float):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $up" class="name">^</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@^(scalar:Float):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#^=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="^=(scalar:Float):Unit"></a>
+      <a id="^=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $up$eq" class="name">^=</span><span class="params">(<span name="scalar">scalar: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@^=(scalar:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#abs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="abs:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="abs:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">abs</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@abs:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(rows:Range,columns:Range):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="apply(Range,Range):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="rows">rows: <span class="extype" name="scala.Range">Range</span></span>, <span name="columns">columns: <span class="extype" name="scala.Range">Range</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@apply(rows:Range,columns:Range):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Synonym for submatrix.</p><div class="fullcomment"><div class="comment cmt"><p>Synonym for submatrix.
+</p></div><dl class="paramcmts block"><dt class="param">rows</dt><dd class="cmt"><p>Range of rows to extract.</p></dd><dt class="param">columns</dt><dd class="cmt"><p>Range of columns to extract.</p></dd><dt>returns</dt><dd class="cmt"><p>The specified submatrix.</p></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(row:Int,column:Int):Float"></a>
+      <a id="apply(Int,Int):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="row">row: <span class="extype" name="scala.Int">Int</span></span>, <span name="column">column: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@apply(row:Int,column:Int):Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">2D coordinates element access</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(index:Int):Float"></a>
+      <a id="apply(Int):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@apply(index:Int):Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Linear element access</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#asArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="asArray:Array[Float]"></a>
+      <a id="asArray:Array[Float]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asArray</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@asArray:Array[Float]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">View the matrix as a flat array of data.</p>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#backwardDivergence" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="backwardDivergence(v1:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="backwardDivergence(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">backwardDivergence</span><span class="params">(<span name="v1">v1: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@backwardDivergence(v1:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Tensor#canEqual" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="canEqual(other:Any):Boolean"></a>
+      <a id="canEqual(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">canEqual</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@canEqual(other:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Helper for equals.</p><div class="fullcomment"><div class="comment cmt"><p>Helper for equals.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#cholesky" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cholesky:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="cholesky:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cholesky</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@cholesky:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#column" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="column(colIndex:Int):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="column(Int):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">column</span><span class="params">(<span name="colIndex">colIndex: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@column(colIndex:Int):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#columns" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="columns:Int"></a>
+      <a id="columns:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">columns</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@columns:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The number of columns in the matrix.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#compactString" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="compactString:String"></a>
+      <a id="compactString:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compactString</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@compactString:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#convolve" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="convolve(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="convolve(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">convolve</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@convolve(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Convolve this matrix with another.</p><div class="fullcomment"><div class="comment cmt"><p>Convolve this matrix with another. Useful for convolving two filters.
+Works only with square, odd-sized filters.
+</p></div><dl class="paramcmts block"><dt class="param">that</dt><dd class="cmt"><p>The matrix to be convolved with this.</p></dd><dt>returns</dt><dd class="cmt"><p>The convolution of the filters, larger than either.</p></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#copy" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="copy:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="copy:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">copy</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@copy:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Make a copy of a Matrix.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#dot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="dot(that:cogx.cogmath.algebra.real.Matrix):Float"></a>
+      <a id="dot(Matrix):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">dot</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@dot(that:cogx.cogmath.algebra.real.Matrix):Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Dot product of &quot;this&quot; and &quot;that&quot;</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#eigen" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="eigen:(cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix)"></a>
+      <a id="eigen:(Matrix,Matrix)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eigen</span><span class="result">: (<a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>, <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@eigen:(cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Tensor#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(other:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@equals(other:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test &quot;this&quot; and &quot;other&quot; for deep equality.</p><div class="fullcomment"><div class="comment cmt"><p>Test &quot;this&quot; and &quot;other&quot; for deep equality. Allows &quot;==&quot; to work.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a> → AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#expand" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="expand(bigRows:Int,bigColumns:Int,borderFill:Boolean):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="expand(Int,Int,Boolean):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">expand</span><span class="params">(<span name="bigRows">bigRows: <span class="extype" name="scala.Int">Int</span></span>, <span name="bigColumns">bigColumns: <span class="extype" name="scala.Int">Int</span></span>, <span name="borderFill">borderFill: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@expand(bigRows:Int,bigColumns:Int,borderFill:Boolean):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Expand the matrix, optionally extending the border into the expanded
+region.</p><div class="fullcomment"><div class="comment cmt"><p>Expand the matrix, optionally extending the border into the expanded
+region. This operation is a key part of the FFT. The new matrix is of
+size &quot;bigRows&quot; x &quot;bigColumns&quot; and element (0, 0) of this is anchored at
+(0, 0) in the larger matrix. If &quot;borderFill&quot; is true, then the four
+edges of the matrix are extended evenly in all directions, as though
+the bigger matrix were actually a torus with opposite edges touching.
+</p></div></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#flip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flip:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="flip:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flip</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@flip:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Flip the matrix left-to-right and top-to-bottom.</p><div class="fullcomment"><div class="comment cmt"><p>Flip the matrix left-to-right and top-to-bottom. This is useful for
+creating correlation matrices that are implemented using convolution.
+</p></div></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#forwardGradient" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="forwardGradient:(cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix)"></a>
+      <a id="forwardGradient:(Matrix,Matrix)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forwardGradient</span><span class="result">: (<a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>, <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@forwardGradient:(cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#getData" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getData:Array[Float]"></a>
+      <a id="getData:Array[Float]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getData</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@getData:Array[Float]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Get the data in the tensor, flattened to a linear array.</p><div class="fullcomment"><div class="comment cmt"><p>Get the data in the tensor, flattened to a linear array.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../package.html" class="extype" name="cogx">cogx</a>] </dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Tensor#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Required because of overriding equals.</p><div class="fullcomment"><div class="comment cmt"><p>Required because of overriding equals.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a> → AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#invert" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="invert:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="invert:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">invert</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@invert:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Tensor#length" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="length:Int"></a>
+      <a id="length:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">length</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@length:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The number of &quot;numbers&quot; held in the tensor.</p><div class="fullcomment"><div class="comment cmt"><p>The number of &quot;numbers&quot; held in the tensor.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#lu" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="lu:(cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix)"></a>
+      <a id="lu:(Matrix,Matrix)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lu</span><span class="result">: (<a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>, <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@lu:(cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#map" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="map(f:Float=&gt;Float):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="map((Float)⇒Float):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">map</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Float">Float</span>) ⇒ <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@map(f:Float=&gt;Float):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#mapSelf" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="mapSelf(f:Float=&gt;Float):Unit"></a>
+      <a id="mapSelf((Float)⇒Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mapSelf</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Float">Float</span>) ⇒ <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@mapSelf(f:Float=&gt;Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#max" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="max(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="max(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">max</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@max(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#min" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="min(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="min(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">min</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@min(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#normalizeColumns" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="normalizeColumns:Unit"></a>
+      <a id="normalizeColumns:Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">normalizeColumns</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@normalizeColumns:Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#normalizeRows" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="normalizeRows:Unit"></a>
+      <a id="normalizeRows:Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">normalizeRows</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@normalizeRows:Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#print" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="print:Unit"></a>
+      <a id="print:Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">print</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@print:Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#pseudoInverse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="pseudoInverse:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="pseudoInverse:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pseudoInverse</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@pseudoInverse:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compute the Moore-Penrose pseudo inverse.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#qr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="qr:(cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix)"></a>
+      <a id="qr:(Matrix,Matrix)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">qr</span><span class="result">: (<a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>, <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@qr:(cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#randomize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="randomize:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="randomize:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">randomize</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@randomize:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#rank" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rank:Int"></a>
+      <a id="rank:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rank</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@rank:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Find the rank of a matrix.</p><div class="fullcomment"><div class="comment cmt"><p>Find the rank of a matrix.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Rank of the matrix.</p></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#read" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="read(index:Int):Float"></a>
+      <a id="read(Int):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">read</span><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@read(index:Int):Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tensor accessor.</p><div class="fullcomment"><div class="comment cmt"><p>Tensor accessor.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a> → <a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#reciprocal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="reciprocal:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="reciprocal:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reciprocal</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@reciprocal:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#rectify" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="rectify:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="rectify:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rectify</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@rectify:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#reduce" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="reduce(f:(Float,Float)=&gt;Float):Float"></a>
+      <a id="reduce((Float,Float)⇒Float):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reduce</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Float">Float</span>, <span class="extype" name="scala.Float">Float</span>) ⇒ <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@reduce(f:(Float,Float)=&gt;Float):Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reduce the matrix to a scalar.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#reshape" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="reshape(newRows:Int,newColumns:Int):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="reshape(Int,Int):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reshape</span><span class="params">(<span name="newRows">newRows: <span class="extype" name="scala.Int">Int</span></span>, <span name="newColumns">newColumns: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@reshape(newRows:Int,newColumns:Int):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#row" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="row(rowIndex:Int):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="row(Int):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">row</span><span class="params">(<span name="rowIndex">rowIndex: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@row(rowIndex:Int):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#rows" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="rows:Int"></a>
+      <a id="rows:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rows</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@rows:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The number of rows in the matrix.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#separate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="separate:Option[(cogx.cogmath.algebra.real.Vector,cogx.cogmath.algebra.real.Vector)]"></a>
+      <a id="separate:Option[(Vector,Vector)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">separate</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[(<a href="Vector.html" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a>, <a href="Vector.html" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@separate:Option[(cogx.cogmath.algebra.real.Vector,cogx.cogmath.algebra.real.Vector)]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Attempt to separate this matrix into an outer product of two vectors.</p><div class="fullcomment"><div class="comment cmt"><p>Attempt to separate this matrix into an outer product of two vectors.
+Relies on a tolerance, here taken to be the machine epsilon.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Some((verticalVector, horizontalVector)) if separable, otherwise
+        None.</p></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#sgn" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sgn:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="sgn:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sgn</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@sgn:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#shape" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="shape:cogx.cogmath.geometry.Shape"></a>
+      <a id="shape:geometry.Shape"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shape</span><span class="result">: <a href="../../geometry/Shape.html" class="extype" name="cogx.cogmath.geometry.Shape">geometry.Shape</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@shape:cogx.cogmath.geometry.Shape" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Shape of the matrix.</p><div class="fullcomment"><div class="comment cmt"><p>Shape of the matrix.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a> → <a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#shift" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="shift(shiftRows:Int,shiftColumns:Int):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="shift(Int,Int):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shift</span><span class="params">(<span name="shiftRows">shiftRows: <span class="extype" name="scala.Int">Int</span></span>, <span name="shiftColumns">shiftColumns: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@shift(shiftRows:Int,shiftColumns:Int):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Shift a matrix with zero fill on the edges.</p><div class="fullcomment"><div class="comment cmt"><p>Shift a matrix with zero fill on the edges.
+</p></div><dl class="paramcmts block"><dt class="param">shiftRows</dt><dd class="cmt"><p>Number of rows to shift <code>this</code> down.</p></dd><dt class="param">shiftColumns</dt><dd class="cmt"><p>Number of columns to shift <code>this</code> to the right.</p></dd><dt>returns</dt><dd class="cmt"><p>Shifted matrix, zero-filling on edges.</p></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#shiftAndExpand" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="shiftAndExpand(shift:Int,bigRows:Int,bigColumns:Int):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="shiftAndExpand(Int,Int,Int):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shiftAndExpand</span><span class="params">(<span name="shift">shift: <span class="extype" name="scala.Int">Int</span></span>, <span name="bigRows">bigRows: <span class="extype" name="scala.Int">Int</span></span>, <span name="bigColumns">bigColumns: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@shiftAndExpand(shift:Int,bigRows:Int,bigColumns:Int):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Shift &quot;this&quot; matrix down by &quot;shift&quot; rows and right by &quot;shift&quot; columns,
+expand to a &quot;bigRows&quot; x &quot;bigColumns&quot; complex matrix, padding with zeros
+everywhere an element is not defined by &quot;this&quot;.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#shiftCyclic" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="shiftCyclic(deltaRows:Int,deltaColumns:Int):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="shiftCyclic(Int,Int):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shiftCyclic</span><span class="params">(<span name="deltaRows">deltaRows: <span class="extype" name="scala.Int">Int</span></span>, <span name="deltaColumns">deltaColumns: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@shiftCyclic(deltaRows:Int,deltaColumns:Int):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Shifts the elements of a matrix cyclicly as though it were a torus, wrapping
+around the left side to the right side, and the top to the bottom.</p><div class="fullcomment"><div class="comment cmt"><p>Shifts the elements of a matrix cyclicly as though it were a torus, wrapping
+around the left side to the right side, and the top to the bottom. The
+rotation is specified by the tuple(&quot;deltaRows&quot;, &quot;deltaColumns&quot;). For
+example, the tuple value (2, 3) would cause the element at location (0, 0)
+to be moved to location (2, 3). In a 5 x 5 matrix, the same tuple would
+cause the element at (4, 4) to be moved to (1, 2), wrapping around the
+torus. Returns the cyclicly shifted matrix.
+</p></div></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#size" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="size:Int"></a>
+      <a id="size:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">size</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@size:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#sizeString" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sizeString:String"></a>
+      <a id="sizeString:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sizeString</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@sizeString:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Get the size of the matrix as a string.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#submatrix" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="submatrix(rowRange:Range,columnRange:Range):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="submatrix(Range,Range):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">submatrix</span><span class="params">(<span name="rowRange">rowRange: <span class="extype" name="scala.Range">Range</span></span>, <span name="columnRange">columnRange: <span class="extype" name="scala.Range">Range</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@submatrix(rowRange:Range,columnRange:Range):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#svd" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="svd:(cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix)"></a>
+      <a id="svd:(Matrix,Matrix,Matrix)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">svd</span><span class="result">: (<a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>, <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>, <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@svd:(cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix,cogx.cogmath.algebra.real.Matrix)" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@toString():String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#toVector" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="toVector:cogx.cogmath.algebra.real.Vector"></a>
+      <a id="toVector:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toVector</span><span class="result">: <a href="Vector.html" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@toVector:cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Flatten the rows of this matrix to a vector.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#transpose" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="transpose:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="transpose:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">transpose</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@transpose:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#trim" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="trim(smallRows:Int,smallColumns:Int):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="trim(Int,Int):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">trim</span><span class="params">(<span name="smallRows">smallRows: <span class="extype" name="scala.Int">Int</span></span>, <span name="smallColumns">smallColumns: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@trim(smallRows:Int,smallColumns:Int):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trim &quot;this&quot; to a &quot;smallRows&quot; x &quot;smallColumns&quot; matrix.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#unary_-" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="unary_-:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="unary_-:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: unary_$minus" class="name">unary_-</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@unary_-:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Matrix#update" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="update(row:Int,vector:cogx.cogmath.algebra.real.Vector):Unit"></a>
+      <a id="update(Int,Vector):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">update</span><span class="params">(<span name="row">row: <span class="extype" name="scala.Int">Int</span></span>, <span name="vector">vector: <a href="Vector.html" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@update(row:Int,vector:cogx.cogmath.algebra.real.Vector):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Write the row &quot;row&quot; with the data in &quot;vector&quot;.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#update" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="update(rowRange:Range,columnRange:Range,values:cogx.cogmath.algebra.real.Matrix):Unit"></a>
+      <a id="update(Range,Range,Matrix):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">update</span><span class="params">(<span name="rowRange">rowRange: <span class="extype" name="scala.Range">Range</span></span>, <span name="columnRange">columnRange: <span class="extype" name="scala.Range">Range</span></span>, <span name="values">values: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@update(rowRange:Range,columnRange:Range,values:cogx.cogmath.algebra.real.Matrix):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Update a subset of a matrix.</p><div class="fullcomment"><div class="comment cmt"><p>Update a subset of a matrix.
+</p></div><dl class="paramcmts block"><dt class="param">rowRange</dt><dd class="cmt"><p>Range of rows to update.</p></dd><dt class="param">columnRange</dt><dd class="cmt"><p>Range of columns to update.</p></dd><dt class="param">values</dt><dd class="cmt"><p>The new values to be written in the submatrix specified
+       by <code>rows</code> and <code>columns</code>. This must have the exact same shape
+       as (rows, columns), or it must be a 1 x 1 matrix, in which case
+       it is treated like a scalar.</p></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#update" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="update(row:Int,column:Int,value:Float):Unit"></a>
+      <a id="update(Int,Int,Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">update</span><span class="params">(<span name="row">row: <span class="extype" name="scala.Int">Int</span></span>, <span name="column">column: <span class="extype" name="scala.Int">Int</span></span>, <span name="value">value: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@update(row:Int,column:Int,value:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Modify an element given its 2D coordinates.</p>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#update" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="update(index:Int,value:Float):Unit"></a>
+      <a id="update(Int,Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">update</span><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="value">value: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@update(index:Int,value:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Modify an element given its linear position.</p>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Matrix#~==" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="~==(that:cogx.cogmath.algebra.real.Matrix):Boolean"></a>
+      <a id="~==(Matrix):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $tilde$eq$eq" class="name">~==</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Matrix@~==(that:cogx.cogmath.algebra.real.Matrix):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="cogx.cogmath.algebra.real.Tensor">
+              <h3>Inherited from <a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></h3>
+            </div><div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

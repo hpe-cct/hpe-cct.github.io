@@ -1,0 +1,200 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>utilities - cogx.utilities</title>
+          <meta name="description" content="utilities - cogx.utilities" />
+          <meta name="keywords" content="utilities cogx.utilities" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'cogx.utilities.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="cogx">cogx</a></p>
+        <h1>utilities</h1><span class="permalink">
+      <a href="../../index.html#cogx.utilities.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">utilities</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.utilities.Random" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RandomextendsRandomwithSerializable"></a>
+      <a id="Random:Random"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Random.html"><span class="name">Random</span></a><span class="result"> extends <span class="extype" name="java.util.Random">java.util.Random</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.utilities.package@RandomextendsRandomwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Single source of Random number generators from within the Cog core
+software.</p><div class="fullcomment"><div class="comment cmt"><p>Single source of Random number generators from within the Cog core
+software.  Outside the core, cog.Library.Random is generally used.</p><p>Usage:</p><p>new cogx.utilities.Random()   returns generator per the global policy on
+                         determinism (see Random.Deterministic)</p><p>new cogx.utilities.Random(seed)  returns seeded (i.e. deterministic) RNG</p><p>Ultimately, all of the underlying java.util.Random rng's have their
+seeds set.  The seeds are taken from the seedGenerator, itself a random
+number generator.  When the Deterministic flag is set, the seedGenerator
+is itself seeded, so all the other rng's have deterministic seeds.  When
+the Deterministic flag is not set, the seedGenerator is not seeded and
+so returns a random sequence of seeds to the various rng's that get created.</p><p>Cog's Random here has extra hooks to help maintain randomly initialized
+fields.  The idea is that such a field should look the same to multiple
+observers, and also reset back to the same initial state.  A field's init
+function is guaranteed to be called starting with the first field point
+(with all-zero coordinates), plus Cog will ask for the field points contents
+in a deterministic manner.</p><p>User: Dick Carter
+Date: 12/12/12
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogx.utilities.AnnotateThread" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AnnotateThread"></a>
+      <a id="AnnotateThread:AnnotateThread"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AnnotateThread$.html"><span class="name">AnnotateThread</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.utilities.package@AnnotateThread" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Created by Dick Carter on 10/2/14.</p><div class="fullcomment"><div class="comment cmt"><p>Created by Dick Carter on 10/2/14.</p><p>Adds a string to the name of the thread as seen by profilers and other tools like jconsole
+</p></div></div>
+    </li><li name="cogx.utilities.Random" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Random"></a>
+      <a id="Random:Random"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Random$.html"><span class="name">Random</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.utilities.package@Random" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="cogx.utilities.PGMImageFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PGMImageFile"></a>
+      <a id="PGMImageFile:PGMImageFile"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PGMImageFile$.html"><span class="name deprecated" title="Deprecated: (Since version 4.1.11) This functionality has been moved to cogio.imagefiles.GrayscaleImage.fromPGM and will be removed in cog 5.0">PGMImageFile</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.utilities.package@PGMImageFile" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reader of PGM (portable gray map) image files.</p><div class="fullcomment"><div class="comment cmt"><p>Reader of PGM (portable gray map) image files.</p><p>This will only handle &quot;raw&quot; PGM files where the pixels are unsigned bytes
+and will only read the first image in the file. This could easily be
+extended to read PGM files with multiple images in them.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 4.1.11)</i> This functionality has been moved to cogio.imagefiles.GrayscaleImage.fromPGM and will be removed in cog 5.0</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

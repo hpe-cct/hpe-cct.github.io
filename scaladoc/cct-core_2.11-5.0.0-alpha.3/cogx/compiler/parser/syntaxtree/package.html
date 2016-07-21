@@ -1,0 +1,937 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>syntaxtree - cogx.compiler.parser.syntaxtree</title>
+          <meta name="description" content="syntaxtree - cogx.compiler.parser.syntaxtree" />
+          <meta name="keywords" content="syntaxtree cogx.compiler.parser.syntaxtree" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogx.compiler.parser.syntaxtree.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogx">cogx</a>.<a href="../../package.html" class="extype" name="cogx.compiler">compiler</a>.<a href="../package.html" class="extype" name="cogx.compiler.parser">parser</a></p>
+        <h1>syntaxtree</h1><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">syntaxtree</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.compiler.parser.syntaxtree.Actuator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ActuatorextendsScalarFieldwithSemanticErrorwithRestoreHooks"></a>
+      <a id="Actuator:Actuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Actuator.html"><span class="name">Actuator</span></a><span class="result"> extends <a href="ScalarField.html" class="extype" name="cogx.compiler.parser.syntaxtree.ScalarField">ScalarField</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ActuatorextendsScalarFieldwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An output from a Cog computation, called an actuator, here pipelined to overlap CPU and GPU work.</p><div class="fullcomment"><div class="comment cmt"><p>An output from a Cog computation, called an actuator, here pipelined to overlap CPU and GPU work.</p><p>An output scalar field value is generated on every cycle of the
+simulation. The user function <code>update</code> is called when the output is
+ready, so that the user may use that information elsewhere.</p><p>Implicit ClassTag included to disambiguate the signature from another using Function1[Iterator[Float],Unit]</p><p>This class needs some clean-up, since Actuators are created through both the 'new' keyword and factory object
+apply() methods.  The apply methods are better on the one hand for isolating user code from changes in the
+platform implementation.  However, the recommended approach for saving/restoring Actuators has the user
+create a subclass of Actuator with restoreParameters and restoringClass overridden.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.CogFloat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CogFloatextendsAnyRef"></a>
+      <a id="CogFloat:CogFloat"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CogFloat.html"><span class="name">CogFloat</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@CogFloatextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A wrapper for Floats that allows commutative operations between fields and
+floats.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.CogSymbolicOperators" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CogSymbolicOperatorsextendsAnyRef"></a>
+      <a id="CogSymbolicOperators:CogSymbolicOperators"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CogSymbolicOperators.html"><span class="name">CogSymbolicOperators</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@CogSymbolicOperatorsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cog symbolic operators implemented using GPUOperators.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.ColorActuator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ColorActuatorextendsColorFieldwithSemanticErrorwithRestoreHooks"></a>
+      <a id="ColorActuator:ColorActuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorActuator.html"><span class="name">ColorActuator</span></a><span class="result"> extends <a href="ColorField.html" class="extype" name="cogx.compiler.parser.syntaxtree.ColorField">ColorField</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ColorActuatorextendsColorFieldwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An output from a Cog computation, called an actuator, here pipelined to overlap CPU and GPU work.</p><div class="fullcomment"><div class="comment cmt"><p>An output from a Cog computation, called an actuator, here pipelined to overlap CPU and GPU work.</p><p>An output color field value is generated on every cycle of the
+simulation. The user function <code>update</code> is called when the output is
+ready, so that the user may use that information elsewhere.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.ColorField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ColorFieldextendsFieldwithCompilerErrorwithSemanticError"></a>
+      <a id="ColorField:ColorField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorField.html"><span class="name">ColorField</span></a><span class="result"> extends <a href="Field.html" class="extype" name="cogx.compiler.parser.syntaxtree.Field">Field</a> with <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ColorFieldextendsFieldwithCompilerErrorwithSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A color image.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.ColorSensor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ColorSensorextendsColorFieldwithSemanticErrorwithRestoreHooks"></a>
+      <a id="ColorSensor:ColorSensor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorSensor.html"><span class="name">ColorSensor</span></a><span class="result"> extends <a href="ColorField.html" class="extype" name="cogx.compiler.parser.syntaxtree.ColorField">ColorField</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ColorSensorextendsColorFieldwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Inputs to a Cog computation are called sensors.</p><div class="fullcomment"><div class="comment cmt"><p>Inputs to a Cog computation are called sensors.  This implements the pipelined version of ColorSensors.</p><p>Sensors can be either pipelined or unpipelined.  Pipelined sensors use the CPU to produce
+an input to the GPU while the GPU is working on the previous input.  Thus, there's
+effectively a pipeline stage between the CPU and the GPU and both do their work in parallel.
+Unpipelined sensors have no such pipeline stage, so the CPU must provide its input first
+before the GPU processes that input further, i.e. the CPU and GPU do their work in series.</p><p>When an unpipelined sensor's nextValue method is called, it must always return an iterator
+over the next input's data.  However, a pipelined sensor has the option of returning None,
+if no new input is available.  In that case the pipeline register that the sensor is feeding
+is not clocked and the same data is presented to the GPU.  This can be used to decouple a slow
+sensor from a fast-running simulation, making the sensor appear effectively 'asynchronous'.</p><p>Both sensor types can accept a resetHook method, which can be used for example to go back to
+frame-0 of a movie that's played out from a file, or to start over from the first image of a
+training set.  If a sensor supplies no nextValue iterator upon reset, an all-0 field will be supplied.</p><p>Finally, sensors can be throttled back to a specified simulation rate by the '<code>desiredFramesPerSecond</code>
+parameter.  This ensures that a movie is played out at the appropriate speed, for example.</p><p>Both types of sensors supply their next input by <code>nextValue</code> function which (optionally) returns an
+iterator of the values of the new input in row-major order.</p><p>NOTE: if the user wishes to optimize input using, for example, multiple threads or double-buffering,
+that must be done in the implementation of the function <code>nextValue</code>.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.ComplexField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ComplexFieldextendsFieldwithCompilerErrorwithSemanticError"></a>
+      <a id="ComplexField:ComplexField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ComplexField.html"><span class="name">ComplexField</span></a><span class="result"> extends <a href="Field.html" class="extype" name="cogx.compiler.parser.syntaxtree.Field">Field</a> with <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ComplexFieldextendsFieldwithCompilerErrorwithSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A multidimensional array of complex numbers.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.ComplexVectorField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ComplexVectorFieldextendsFieldwithCompilerErrorwithSemanticError"></a>
+      <a id="ComplexVectorField:ComplexVectorField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ComplexVectorField.html"><span class="name">ComplexVectorField</span></a><span class="result"> extends <a href="Field.html" class="extype" name="cogx.compiler.parser.syntaxtree.Field">Field</a> with <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ComplexVectorFieldextendsFieldwithCompilerErrorwithSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A multidimensional array of complex vectors.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.Field" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="FieldextendsHyperedge[cogx.compiler.parser.syntaxtree.Operation]withRecurrenceTraitwithSemanticErrorwithCompilerErrorwithImplicitConversionswithFieldNamewithFieldParameterswithCogOperatorAPI"></a>
+      <a id="Field:Field"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Field.html"><span class="name">Field</span></a><span class="result"> extends <span class="extype" name="cogx.cogmath.hypercircuit.Hyperedge">Hyperedge</span>[<span class="extype" name="cogx.compiler.parser.syntaxtree.Operation">Operation</span>] with <span class="extype" name="cogx.compiler.parser.syntaxtree.RecurrenceTrait">RecurrenceTrait</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span> with <a href="../../../api/ImplicitConversions.html" class="extype" name="cogx.api.ImplicitConversions">ImplicitConversions</a> with <a href="FieldName.html" class="extype" name="cogx.compiler.parser.syntaxtree.FieldName">FieldName</a> with <span class="extype" name="cogx.platform.types.FieldParameters">FieldParameters</span> with <a href="../../../api/CogOperatorAPI.html" class="extype" name="cogx.api.CogOperatorAPI">CogOperatorAPI</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@FieldextendsHyperedge[cogx.compiler.parser.syntaxtree.Operation]withRecurrenceTraitwithSemanticErrorwithCompilerErrorwithImplicitConversionswithFieldNamewithFieldParameterswithCogOperatorAPI" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Base class for all Fields; defines the operators that can be applied to
+Fields.</p><div class="fullcomment"><div class="comment cmt"><p>Base class for all Fields; defines the operators that can be applied to
+Fields.</p><p><b>Fields</b></p><p>A field is a multidimensional array of tensors, where tensors are defined
+to be multidimensional arrays of numbers. The dimensionality of the field
+may be 0, 1, 2 or 3. The actual size of the field dimensions are called
+the &quot;field shape.&quot; To make programming easier, the field shape is described
+using the terms <code>layers</code>, <code>rows</code> and <code>columns</code>. 3D fields uses all three
+values. 2D fields use only <code>rows</code> and <code>columns</code> and have <code>layers</code> set to 1
+for convenience. 1D fields use only <code>columns</code> and have <code>layers</code> and
+<code>rows</code> set to 1 for convenience. 0D fields have only a single tensor and
+have no need for <code>layers</code>, <code>rows</code> or <code>columns</code>, but for convenience these
+values are set to 1.</p><p><b>Tensors</b></p><p>The dimensionality of a tensor is called its &quot;order&quot; which may be 0
+(for scalars), 1 (vectors), or 2 (matrices). Tensors also have a shape which
+uses similar naming as for field shapes. For example, a matrix has <code>rows</code>
+and <code>columns</code>. All tensors within a given field have exactly the same
+shape.</p><p><b>Operators</b></p><p>Operators take one or more fields (which can be considered as immutable
+objects) and produce a result field. Each operator has a set of rules
+defining the legal combinations of fields it accepts as inputs, and how
+those inputs are combined to produce the output. Fortunately most operators
+use only one of a small set of different rules; the most common rules are
+now described:</p><p><b>Algebraic binary operator rules</b></p><p>Binary operators take two fields as inputs. Generally if one of them is
+a complex field, the other will be implicitly converted to a complex
+form (with zero imaginary components) before proceeding.</p><p>The two inputs Fields are algebraically compatible if they satisfy one
+of the following four conditions (which also define the nature of their
+result):</p><p>1. They have exactly the same field shape and tensor shape. In this
+case, corresponding elements of the two fields are combined to produce
+the result: a field with the same field shape and tensor shape as the two
+input fields.</p><p>2. They have exactly the same field shape, but one of them is a scalar
+field and the other is a (non-scalar) tensor field. In this case the
+scalar at each location in the scalar field is combined with the tensor
+in the corresponding location in the tensor field. The result is a
+tensor field with the same field shape and tensor shape as the input
+tensor field.</p><p>3. One of them is a 0-dimensional scalar field. In this case the single
+scalar of the 0D scalar field is combined with each element of every tensor
+in tensor field. The result is a tensor field with the same field shape and
+tensor shape as the input tensor field.</p><p>4. One of them is a 0-dimensional tensor field (non-scalar). In this case,
+the tensor shape of the 0-dimensional field must exactly match the tensor
+shape of the other field. The tensor from the 0-dimensional field is
+combined element-wise with each of the tensors in the other field to
+produce the result, which has the same field shape and tensor shape of
+the larger input field.</p><p><b>Algebraic unary operator rules</b></p><p>Operators which take only one field as input (and an optional
+numeric constant) produce a result with the same field shape and tensor
+shape as the input field. If the input field is complex, the optional
+numeric constant is converted to complex (with zero imaginary part) before
+proceeding with the operation.</p><p><b>Boolean result rules</b></p><p>Operators which produce boolean results, such as the comparison operators,
+use 1.0f to represent true and 0.0f to represent false.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.FieldName" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="FieldNameextendsAnyRef"></a>
+      <a id="FieldName:FieldName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldName.html"><span class="name">FieldName</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@FieldNameextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait that centralizes the policies for naming fields.</p><div class="fullcomment"><div class="comment cmt"><p>Trait that centralizes the policies for naming fields.</p><p>Field names are Scala-like path names with '.' separated components. The
+last component is called the simple name, while the components leading
+up to the simple name comprise the path name prefix.</p><p>Naming is sticky. Once a path name prefix has been declared, it cannot be
+changed. Similarly, once a simple name has been declared, it cannot be
+changed.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.MatrixField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MatrixFieldextendsFieldwithCompilerErrorwithSemanticError"></a>
+      <a id="MatrixField:MatrixField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MatrixField.html"><span class="name">MatrixField</span></a><span class="result"> extends <a href="Field.html" class="extype" name="cogx.compiler.parser.syntaxtree.Field">Field</a> with <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@MatrixFieldextendsFieldwithCompilerErrorwithSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A multidimensional array of matrices.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.RestoreHooks" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RestoreHooksextendsAnyRef"></a>
+      <a id="RestoreHooks:RestoreHooks"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="RestoreHooks.html"><span class="name">RestoreHooks</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@RestoreHooksextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Augmenting methods for those sensor and actuator classes wishing to be saved to a file and restored.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.ScalarField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ScalarFieldextendsFieldwithCompilerErrorwithSemanticError"></a>
+      <a id="ScalarField:ScalarField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalarField.html"><span class="name">ScalarField</span></a><span class="result"> extends <a href="Field.html" class="extype" name="cogx.compiler.parser.syntaxtree.Field">Field</a> with <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ScalarFieldextendsFieldwithCompilerErrorwithSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A multidimensional array of scalars.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.Sensor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SensorextendsScalarFieldwithSemanticErrorwithRestoreHooks"></a>
+      <a id="Sensor:Sensor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Sensor.html"><span class="name">Sensor</span></a><span class="result"> extends <a href="ScalarField.html" class="extype" name="cogx.compiler.parser.syntaxtree.ScalarField">ScalarField</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@SensorextendsScalarFieldwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Inputs to a Cog computation are called sensors.</p><div class="fullcomment"><div class="comment cmt"><p>Inputs to a Cog computation are called sensors.  This implements the pipelined version.</p><p>Sensors can be either pipelined or unpipelined.  Pipelined sensors use the CPU to produce
+an input to the GPU while the GPU is working on the previous input.  Thus, there's
+effectively a pipeline stage between the CPU and the GPU and both do their work in parallel.
+Unpipelined sensors have no such pipeline stage, so the CPU must provide its input first
+before the GPU processes that input further, i.e. the CPU and GPU do their work in series.</p><p>When an unpipelined sensor's nextValue method is called, it must always return an iterator
+over the next input's data.  However, a pipelined sensor has the option of returning None,
+if no new input is available.  In that case the pipeline register that the sensor is feeding
+is not clocked and the same data is presented to the GPU.  This can be used to decouple a slow
+sensor from a fast-running simulation, making the sensor appear effectively 'asynchronous'.</p><p>Both sensor types can accept a resetHook method, which can be used for example to go back to
+frame-0 of a movie that's played out from a file, or to start over from the first image of a
+training set.  If a sensor supplies no nextValue iterator upon reset, an all-0 field will be supplied.</p><p>Finally, sensors can be throttled back to a specified simulation rate by the '<code>desiredFramesPerSecond</code>
+parameter.  This ensures that a movie is played out at the appropriate speed, for example.</p><p>Both types of sensors supply their next input by <code>nextValue</code> function which (optionally) returns an
+iterator over the values of the new input in row-major order.  Alternatively, the <code>nextValue</code> function
+can supply the full dataset as an Array[Float] (for 0D or 1D fields), Array[Array][Float]] (for 2D
+fields), etc.</p><p>The use of implicits here is primarily to avoid duplicate constructor signatures.  Further work can be
+put into taking the primary constructor private, with only <code>nextValue</code> functions of certain forms allowed (not
+the generic () =&gt; Option[_]).</p><p>NOTE: if the user wishes to optimize input using, for example, multiple threads or double-buffering,
+that must be done in the implementation of the function <code>nextValue</code>.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.UnpipelinedActuator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnpipelinedActuatorextendsOperationwithSemanticErrorwithRestoreHooks"></a>
+      <a id="UnpipelinedActuator:UnpipelinedActuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="UnpipelinedActuator.html"><span class="name">UnpipelinedActuator</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.syntaxtree.Operation">Operation</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@UnpipelinedActuatorextendsOperationwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An output from a Cog computation, called an actuator.</p><div class="fullcomment"><div class="comment cmt"><p>An output from a Cog computation, called an actuator.</p><p>An output scalar field value is generated on every cycle of the
+simulation. The user function <code>newOutput</code> is called when the output is
+ready, so that the user may use that information elsewhere.</p><p>This class needs some clean-up, since Actuators are created through both the 'new' keyword and factory object
+apply() methods.  The apply methods are better on the one hand for isolating user code from changes in the
+platform implementation.  However, the recommended approach for saving/restoring Actuators has the user
+create a subclass of Actuator with restoreParameters and restoringClass overridden.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.UnpipelinedColorActuator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnpipelinedColorActuatorextendsOperationwithSemanticErrorwithRestoreHooks"></a>
+      <a id="UnpipelinedColorActuator:UnpipelinedColorActuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="UnpipelinedColorActuator.html"><span class="name">UnpipelinedColorActuator</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.syntaxtree.Operation">Operation</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@UnpipelinedColorActuatorextendsOperationwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An output from a Cog computation, called an actuator.</p><div class="fullcomment"><div class="comment cmt"><p>An output from a Cog computation, called an actuator.</p><p>An output color field value is generated on every cycle of the
+simulation. The user function <code>newOutput</code> is called when the output is
+ready, so that the user may use that information elsewhere.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.UnpipelinedColorSensor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnpipelinedColorSensorextendsColorFieldwithSemanticErrorwithRestoreHooks"></a>
+      <a id="UnpipelinedColorSensor:UnpipelinedColorSensor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="UnpipelinedColorSensor.html"><span class="name">UnpipelinedColorSensor</span></a><span class="result"> extends <a href="ColorField.html" class="extype" name="cogx.compiler.parser.syntaxtree.ColorField">ColorField</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@UnpipelinedColorSensorextendsColorFieldwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Inputs to a Cog computation are called sensors.</p><div class="fullcomment"><div class="comment cmt"><p>Inputs to a Cog computation are called sensors.  This implements the unpipelined version of ColorSensors.</p><p>Sensors can be either pipelined or unpipelined.  Pipelined sensors use the CPU to produce
+an input to the GPU while the GPU is working on the previous input.  Thus, there's
+effectively a pipeline stage between the CPU and the GPU and both do their work in parallel.
+Unpipelined sensors have no such pipeline stage, so the CPU must provide its input first
+before the GPU processes that input further, i.e. the CPU and GPU do their work in series.</p><p>When an unpipelined sensor's nextValue method is called, it must always return an iterator
+over the next input's data.  However, a pipelined sensor has the option of returning None,
+if no new input is available.  In that case the pipeline register that the sensor is feeding
+is not clocked and the same data is presented to the GPU.  This can be used to decouple a slow
+sensor from a fast-running simulation, making the sensor appear effectively 'asynchronous'.</p><p>Both sensor types can accept a resetHook method, which can be used for example to go back to
+frame-0 of a movie that's played out from a file, or to start over from the first image of a
+training set.  If a sensor supplies no nextValue iterator upon reset, an all-0 field will be supplied.</p><p>Finally, sensors can be throttled back to a specified simulation rate by the '<code>desiredFramesPerSecond</code>
+parameter.  This ensures that a movie is played out at the appropriate speed, for example.</p><p>Both types of sensors supply their next input by <code>nextValue</code> function which (optionally) returns an
+iterator of the values of the new input in row-major order.</p><p>NOTE: if the user wishes to optimize input using, for example, multiple threads or double-buffering,
+that must be done in the implementation of the function <code>nextValue</code>.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.UnpipelinedSensor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnpipelinedSensorextendsScalarFieldwithSemanticErrorwithRestoreHooks"></a>
+      <a id="UnpipelinedSensor:UnpipelinedSensor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="UnpipelinedSensor.html"><span class="name">UnpipelinedSensor</span></a><span class="result"> extends <a href="ScalarField.html" class="extype" name="cogx.compiler.parser.syntaxtree.ScalarField">ScalarField</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@UnpipelinedSensorextendsScalarFieldwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Inputs to a Cog computation are called sensors.</p><div class="fullcomment"><div class="comment cmt"><p>Inputs to a Cog computation are called sensors.  This implements the unpipelined version.</p><p>Sensors can be either pipelined or unpipelined.  Pipelined sensors use the CPU to produce
+an input to the GPU while the GPU is working on the previous input.  Thus, there's
+effectively a pipeline stage between the CPU and the GPU and both do their work in parallel.
+Unpipelined sensors have no such pipeline stage, so the CPU must provide its input first
+before the GPU processes that input further, i.e. the CPU and GPU do their work in series.</p><p>When an unpipelined sensor's nextValue method is called, it must always return an iterator
+over the next input's data.  However, a pipelined sensor has the option of returning None,
+if no new input is available.  In that case the pipeline register that the sensor is feeding
+is not clocked and the same data is presented to the GPU.  This can be used to decouple a slow
+sensor from a fast-running simulation, making the sensor appear effectively 'asynchronous'.</p><p>Both sensor types can accept a resetHook method, which can be used for example to go back to
+frame-0 of a movie that's played out from a file, or to start over from the first image of a
+training set.  If a sensor supplies no nextValue iterator upon reset, an all-0 field will be supplied.</p><p>Finally, sensors can be throttled back to a specified simulation rate by the '<code>desiredFramesPerSecond</code>
+parameter.  This ensures that a movie is played out at the appropriate speed, for example.</p><p>Both types of sensors supply their next input by <code>nextValue</code> function which (optionally) returns an
+iterator over the values of the new input in row-major order.  Alternatively, the <code>nextValue</code> function
+can supply the full dataset as an Array[Float] (for 0D or 1D fields), Array[Array][Float]] (for 2D
+fields), etc.</p><p>The use of implicits here is primarily to avoid duplicate constructor signatures.  Further work can be
+put into taking the primary constructor private, with only <code>nextValue</code> functions of certain forms allowed (not
+the generic () =&gt; _).</p><p>NOTE: if the user wishes to optimize input using, for example, multiple threads or double-buffering,
+that must be done in the implementation of the function <code>nextValue</code>.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.UnpipelinedVectorActuator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnpipelinedVectorActuatorextendsOperationwithSemanticErrorwithRestoreHooks"></a>
+      <a id="UnpipelinedVectorActuator:UnpipelinedVectorActuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="UnpipelinedVectorActuator.html"><span class="name">UnpipelinedVectorActuator</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.syntaxtree.Operation">Operation</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@UnpipelinedVectorActuatorextendsOperationwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An output from a Cog computation, called an actuator.</p><div class="fullcomment"><div class="comment cmt"><p>An output from a Cog computation, called an actuator.</p><p>An output scalar field value is generated on every cycle of the
+simulation. The user function <code>newOutput</code> is called when the output is
+ready, so that the user may use that information elsewhere.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.UnpipelinedVectorSensor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnpipelinedVectorSensorextendsVectorFieldwithSemanticErrorwithRestoreHooks"></a>
+      <a id="UnpipelinedVectorSensor:UnpipelinedVectorSensor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="UnpipelinedVectorSensor.html"><span class="name">UnpipelinedVectorSensor</span></a><span class="result"> extends <a href="VectorField.html" class="extype" name="cogx.compiler.parser.syntaxtree.VectorField">VectorField</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@UnpipelinedVectorSensorextendsVectorFieldwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Inputs to a Cog computation are called sensors.</p><div class="fullcomment"><div class="comment cmt"><p>Inputs to a Cog computation are called sensors.  This implements the unpipelined vector version.</p><p>Sensors can be either pipelined or unpipelined.  Pipelined sensors use the CPU to produce
+an input to the GPU while the GPU is working on the previous input.  Thus, there's
+effectively a pipeline stage between the CPU and the GPU and both do their work in parallel.
+Unpipelined sensors have no such pipeline stage, so the CPU must provide its input first
+before the GPU processes that input further, i.e. the CPU and GPU do their work in series.</p><p>When an unpipelined sensor's nextValue method is called, it must always return an iterator
+over the next input's data.  However, a pipelined sensor has the option of returning None,
+if no new input is available.  In that case the pipeline register that the sensor is feeding
+is not clocked and the same data is presented to the GPU.  This can be used to decouple a slow
+sensor from a fast-running simulation, making the sensor appear effectively 'asynchronous'.</p><p>Both sensor types can accept a resetHook method, which can be used for example to go back to
+frame-0 of a movie that's played out from a file, or to start over from the first image of a
+training set.  If a sensor supplies no nextValue iterator upon reset, an all-0 field will be supplied.</p><p>Finally, sensors can be throttled back to a specified simulation rate by the '<code>desiredFramesPerSecond</code>
+parameter.  This ensures that a movie is played out at the appropriate speed, for example.</p><p>Both types of sensors supply their next input by <code>nextValue</code> function which (optionally) returns an
+iterator of the values of the new input in row-major order.</p><p>NOTE: if the user wishes to optimize input using, for example, multiple threads or double-buffering,
+that must be done in the implementation of the function <code>nextValue</code>.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.VectorActuator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VectorActuatorextendsVectorFieldwithSemanticErrorwithRestoreHooks"></a>
+      <a id="VectorActuator:VectorActuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorActuator.html"><span class="name">VectorActuator</span></a><span class="result"> extends <a href="VectorField.html" class="extype" name="cogx.compiler.parser.syntaxtree.VectorField">VectorField</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@VectorActuatorextendsVectorFieldwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An output from a Cog computation, called an actuator, here pipelined to overlap CPU and GPU work.</p><div class="fullcomment"><div class="comment cmt"><p>An output from a Cog computation, called an actuator, here pipelined to overlap CPU and GPU work.</p><p>An output vector field value is generated on every cycle of the
+simulation. The user function <code>update</code> is called when the output is
+ready, so that the user may use that information elsewhere.
+</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.VectorField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorFieldextendsFieldwithCompilerErrorwithSemanticError"></a>
+      <a id="VectorField:VectorField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorField.html"><span class="name">VectorField</span></a><span class="result"> extends <a href="Field.html" class="extype" name="cogx.compiler.parser.syntaxtree.Field">Field</a> with <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@VectorFieldextendsFieldwithCompilerErrorwithSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A multidimensional array of vectors.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.VectorSensor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VectorSensorextendsVectorFieldwithSemanticErrorwithRestoreHooks"></a>
+      <a id="VectorSensor:VectorSensor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorSensor.html"><span class="name">VectorSensor</span></a><span class="result"> extends <a href="VectorField.html" class="extype" name="cogx.compiler.parser.syntaxtree.VectorField">VectorField</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="RestoreHooks.html" class="extype" name="cogx.compiler.parser.syntaxtree.RestoreHooks">RestoreHooks</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@VectorSensorextendsVectorFieldwithSemanticErrorwithRestoreHooks" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Inputs to a Cog computation are called sensors.</p><div class="fullcomment"><div class="comment cmt"><p>Inputs to a Cog computation are called sensors.  This implements the pipelined version.</p><p>Sensors can be either pipelined or unpipelined.  Pipelined sensors use the CPU to produce
+an input to the GPU while the GPU is working on the previous input.  Thus, there's
+effectively a pipeline stage between the CPU and the GPU and both do their work in parallel.
+Unpipelined sensors have no such pipeline stage, so the CPU must provide its input first
+before the GPU processes that input further, i.e. the CPU and GPU do their work in series.</p><p>When an unpipelined sensor's nextValue method is called, it must always return an iterator
+over the next input's data.  However, a pipelined sensor has the option of returning None,
+if no new input is available.  In that case the pipeline register that the sensor is feeding
+is not clocked and the same data is presented to the GPU.  This can be used to decouple a slow
+sensor from a fast-running simulation, making the sensor appear effectively 'asynchronous'.</p><p>Both sensor types can accept a resetHook method, which can be used for example to go back to
+frame-0 of a movie that's played out from a file, or to start over from the first image of a
+training set.  If a sensor supplies no nextValue iterator upon reset, an all-0 field will be supplied.</p><p>Finally, sensors can be throttled back to a specified simulation rate by the '<code>desiredFramesPerSecond</code>
+parameter.  This ensures that a movie is played out at the appropriate speed, for example.</p><p>Both types of sensors supply their next input by <code>nextValue</code> function which (optionally) returns an
+iterator of the values of the new input in row-major order.</p><p>NOTE: if the user wishes to optimize input using, for example, multiple threads or double-buffering,
+that must be done in the implementation of the function <code>nextValue</code>.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogx.compiler.parser.syntaxtree.Actuator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Actuator"></a>
+      <a id="Actuator:Actuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Actuator$.html"><span class="name">Actuator</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@Actuator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating actuators that write fields to Scala arrays.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.ColorActuator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ColorActuator"></a>
+      <a id="ColorActuator:ColorActuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorActuator$.html"><span class="name">ColorActuator</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ColorActuator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating actuators that write fields to Scala arrays of Pixels.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.ColorField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ColorField"></a>
+      <a id="ColorField:ColorField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorField$.html"><span class="name">ColorField</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ColorField" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Function for creating constant/recurrent color fields.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.ColorSensor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ColorSensor"></a>
+      <a id="ColorSensor:ColorSensor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorSensor$.html"><span class="name">ColorSensor</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ColorSensor" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.compiler.parser.syntaxtree.ComplexField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ComplexField"></a>
+      <a id="ComplexField:ComplexField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ComplexField$.html"><span class="name">ComplexField</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ComplexField" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions for creating constant/recurrent complex fields.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.ComplexVectorField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ComplexVectorField"></a>
+      <a id="ComplexVectorField:ComplexVectorField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ComplexVectorField$.html"><span class="name">ComplexVectorField</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ComplexVectorField" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions for creating constant/recurrent complex vector fields.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.Field" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Field"></a>
+      <a id="Field:Field"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Field$.html"><span class="name">Field</span></a><span class="result"> extends <a href="../../../api/CogFunctionAPI.html" class="extype" name="cogx.api.CogFunctionAPI">CogFunctionAPI</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@Field" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating constant fields.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for creating constant fields.</p><p>This object extends Intrinsics to give the ImplicitConversions trait a
+convenient place to access the methods defined there, as in:
+Field.vectorField(in1, in2)</p></div></div>
+    </li><li name="cogx.compiler.parser.syntaxtree.MatrixField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MatrixField"></a>
+      <a id="MatrixField:MatrixField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MatrixField$.html"><span class="name">MatrixField</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@MatrixField" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions for creating constant/recurrent matrix fields.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.Operation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Operation"></a>
+      <a id="Operation:Operation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Operation$.html"><span class="name">Operation</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@Operation" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.compiler.parser.syntaxtree.ScalarField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ScalarField"></a>
+      <a id="ScalarField:ScalarField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalarField$.html"><span class="name">ScalarField</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@ScalarField" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions for creating constant/recurrent scalar fields.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.Sensor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Sensor"></a>
+      <a id="Sensor:Sensor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Sensor$.html"><span class="name">Sensor</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@Sensor" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.compiler.parser.syntaxtree.UnpipelinedActuator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UnpipelinedActuator"></a>
+      <a id="UnpipelinedActuator:UnpipelinedActuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UnpipelinedActuator$.html"><span class="name">UnpipelinedActuator</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@UnpipelinedActuator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating actuators that write fields to Scala arrays.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.UnpipelinedColorActuator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UnpipelinedColorActuator"></a>
+      <a id="UnpipelinedColorActuator:UnpipelinedColorActuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UnpipelinedColorActuator$.html"><span class="name">UnpipelinedColorActuator</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@UnpipelinedColorActuator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating actuators that write fields to Scala arrays.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.VectorActuator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorActuator"></a>
+      <a id="VectorActuator:VectorActuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorActuator$.html"><span class="name">VectorActuator</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@VectorActuator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating actuators that write fields to Scala arrays.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.VectorField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorField"></a>
+      <a id="VectorField:VectorField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorField$.html"><span class="name">VectorField</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.CompilerError">CompilerError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@VectorField" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions for creating constant/recurrent vector fields.</p>
+    </li><li name="cogx.compiler.parser.syntaxtree.VectorSensor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorSensor"></a>
+      <a id="VectorSensor:VectorSensor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorSensor$.html"><span class="name">VectorSensor</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.parser.syntaxtree.package@VectorSensor" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

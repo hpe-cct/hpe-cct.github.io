@@ -1,0 +1,1872 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>CustomPanel - cogdebugger.ui.components.TestingStuff.CustomPanel</title>
+          <meta name="description" content="CustomPanel - cogdebugger.ui.components.TestingStuff.CustomPanel" />
+          <meta name="keywords" content="CustomPanel cogdebugger.ui.components.TestingStuff.CustomPanel" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'cogdebugger.ui.components.TestingStuff$$CustomPanel';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../lib/class_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="cogdebugger">cogdebugger</a>.<a href="../package.html" class="extype" name="cogdebugger.ui">ui</a>.<a href="package.html" class="extype" name="cogdebugger.ui.components">components</a>.<a href="TestingStuff$.html" class="extype" name="cogdebugger.ui.components.TestingStuff">TestingStuff</a></p>
+        <h1>CustomPanel</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="TestingStuff$.html" class="extype" name="cogdebugger.ui.components.TestingStuff">package TestingStuff</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CustomPanel</span><span class="result"> extends <span class="extype" name="scala.swing.GridPanel">GridPanel</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.swing.GridPanel">GridPanel</span>, <span class="extype" name="scala.swing.SequentialContainer.Wrapper">Wrapper</span>, <span class="extype" name="scala.swing.SequentialContainer">SequentialContainer</span>, <span class="extype" name="scala.swing.Panel">Panel</span>, <span class="extype" name="scala.swing.Container.Wrapper">Wrapper</span>, <span class="extype" name="scala.swing.Container">Container</span>, <span class="extype" name="scala.swing.Component">Component</span>, <span class="extype" name="scala.swing.UIElement">UIElement</span>, <span class="extype" name="scala.swing.LazyPublisher">LazyPublisher</span>, <span class="extype" name="scala.swing.Publisher">Publisher</span>, <span class="extype" name="scala.swing.Reactor">Reactor</span>, <span class="extype" name="scala.Proxy">Proxy</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogdebugger.ui.components.TestingStuff.CustomPanel"><span>CustomPanel</span></li><li class="in" name="scala.swing.GridPanel"><span>GridPanel</span></li><li class="in" name="scala.swing.SequentialContainer.Wrapper"><span>Wrapper</span></li><li class="in" name="scala.swing.SequentialContainer"><span>SequentialContainer</span></li><li class="in" name="scala.swing.Panel"><span>Panel</span></li><li class="in" name="scala.swing.Container.Wrapper"><span>Wrapper</span></li><li class="in" name="scala.swing.Container"><span>Container</span></li><li class="in" name="scala.swing.Component"><span>Component</span></li><li class="in" name="scala.swing.UIElement"><span>UIElement</span></li><li class="in" name="scala.swing.LazyPublisher"><span>LazyPublisher</span></li><li class="in" name="scala.swing.Publisher"><span>Publisher</span></li><li class="in" name="scala.swing.Reactor"><span>Reactor</span></li><li class="in" name="scala.Proxy"><span>Proxy</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="cogdebugger.ui.components.TestingStuff.CustomPanel#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(wrapped:scala.swing.Component):cogdebugger.ui.components.TestingStuff.CustomPanel"></a>
+      <a id="&lt;init&gt;:CustomPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CustomPanel</span><span class="params">(<span name="wrapped">wrapped: <span class="extype" name="scala.swing.Component">Component</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@&lt;init&gt;(wrapped:scala.swing.Component):cogdebugger.ui.components.TestingStuff.CustomPanel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.swing.Container.Wrapper.Content" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ContentextendsBufferWrapper[scala.swing.Component]"></a>
+      <a id="Content:Content"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Content</span><span class="result"> extends <span class="extype" name="scala.swing.BufferWrapper">BufferWrapper</span>[<span class="extype" name="scala.swing.Component">Component</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@ContentextendsBufferWrapper[scala.swing.Component]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Wrapper</dd></dl></div>
+    </li><li name="scala.swing.Component.SuperMixin" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SuperMixinextendsJComponent"></a>
+      <a id="SuperMixin:SuperMixin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SuperMixin</span><span class="result"> extends <span class="extype" name="javax.swing.JComponent">JComponent</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@SuperMixinextendsJComponent" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.swing.Container.Wrapper#_contents" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_contents:Wrapper.this.Content"></a>
+      <a id="_contents:Content"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">_contents</span><span class="result">: <a href="#ContentextendsBufferWrapper[scala.swing.Component]" class="extmbr" name="cogdebugger.ui.components.TestingStuff.CustomPanel.Content">Content</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@_contents:Wrapper.this.Content" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Wrapper</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.swing.UIElement#background" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="background:scala.swing.Color"></a>
+      <a id="background:Color"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">background</span><span class="result">: <span class="extype" name="scala.swing.Color">Color</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@background:scala.swing.Color" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#background_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="background_=(c:scala.swing.Color):Unit"></a>
+      <a id="background_=(Color):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: background_$eq" class="name">background_=</span><span class="params">(<span name="c">c: <span class="extype" name="scala.swing.Color">Color</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@background_=(c:scala.swing.Color):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component#border" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="border:javax.swing.border.Border"></a>
+      <a id="border:Border"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">border</span><span class="result">: <span class="extype" name="javax.swing.border.Border">Border</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@border:javax.swing.border.Border" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#border_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="border_=(b:javax.swing.border.Border):Unit"></a>
+      <a id="border_=(Border):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: border_$eq" class="name">border_=</span><span class="params">(<span name="b">b: <span class="extype" name="javax.swing.border.Border">Border</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@border_=(b:javax.swing.border.Border):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.UIElement#bounds" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bounds:java.awt.Rectangle"></a>
+      <a id="bounds:Rectangle"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bounds</span><span class="result">: <span class="extype" name="java.awt.Rectangle">Rectangle</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@bounds:java.awt.Rectangle" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.swing.GridPanel#columns" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="columns:Int"></a>
+      <a id="columns:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">columns</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@columns:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GridPanel</dd></dl></div>
+    </li><li name="scala.swing.GridPanel#columns_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="columns_=(n:&lt;?&gt;):Unit"></a>
+      <a id="columns_=(Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: columns_$eq" class="name">columns_=</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@columns_=(n:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GridPanel</dd></dl></div>
+    </li><li name="scala.swing.SequentialContainer.Wrapper#contents" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="contents:scala.collection.mutable.Buffer[scala.swing.Component]"></a>
+      <a id="contents:Buffer[Component]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">contents</span><span class="result">: <span class="extype" name="scala.collection.mutable.Buffer">Buffer</span>[<span class="extype" name="scala.swing.Component">Component</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@contents:scala.collection.mutable.Buffer[scala.swing.Component]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Wrapper → Wrapper → SequentialContainer → Container</dd></dl></div>
+    </li><li name="scala.swing.UIElement#cursor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cursor:java.awt.Cursor"></a>
+      <a id="cursor:Cursor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cursor</span><span class="result">: <span class="extype" name="java.awt.Cursor">Cursor</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@cursor:java.awt.Cursor" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#cursor_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cursor_=(c:java.awt.Cursor):Unit"></a>
+      <a id="cursor_=(Cursor):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: cursor_$eq" class="name">cursor_=</span><span class="params">(<span name="c">c: <span class="extype" name="java.awt.Cursor">Cursor</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@cursor_=(c:java.awt.Cursor):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Reactor#deafTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="deafTo(ps:scala.swing.Publisher*):Unit"></a>
+      <a id="deafTo(Publisher*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">deafTo</span><span class="params">(<span name="ps">ps: <span class="extype" name="scala.swing.Publisher">Publisher</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@deafTo(ps:scala.swing.Publisher*):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Reactor</dd></dl></div>
+    </li><li name="scala.swing.UIElement#displayable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="displayable:Boolean"></a>
+      <a id="displayable:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">displayable</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@displayable:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component#enabled" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enabled:Boolean"></a>
+      <a id="enabled:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enabled</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@enabled:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#enabled_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enabled_=(b:Boolean):Unit"></a>
+      <a id="enabled_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: enabled_$eq" class="name">enabled_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@enabled_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Proxy#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(that:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="that">that: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@equals(that:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Proxy → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.swing.Component#focusable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="focusable:Boolean"></a>
+      <a id="focusable:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">focusable</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@focusable:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#focusable_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="focusable_=(b:Boolean):Unit"></a>
+      <a id="focusable_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: focusable_$eq" class="name">focusable_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@focusable_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.UIElement#font" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="font:scala.swing.Font"></a>
+      <a id="font:Font"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">font</span><span class="result">: <span class="extype" name="scala.swing.Font">Font</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@font:scala.swing.Font" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#font_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="font_=(f:scala.swing.Font):Unit"></a>
+      <a id="font_=(Font):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: font_$eq" class="name">font_=</span><span class="params">(<span name="f">f: <span class="extype" name="scala.swing.Font">Font</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@font_=(f:scala.swing.Font):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#foreground" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="foreground:scala.swing.Color"></a>
+      <a id="foreground:Color"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">foreground</span><span class="result">: <span class="extype" name="scala.swing.Color">Color</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@foreground:scala.swing.Color" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#foreground_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="foreground_=(c:scala.swing.Color):Unit"></a>
+      <a id="foreground_=(Color):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: foreground_$eq" class="name">foreground_=</span><span class="params">(<span name="c">c: <span class="extype" name="scala.swing.Color">Color</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@foreground_=(c:scala.swing.Color):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.swing.GridPanel#hGap" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hGap:Int"></a>
+      <a id="hGap:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hGap</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@hGap:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GridPanel</dd></dl></div>
+    </li><li name="scala.swing.GridPanel#hGap_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hGap_=(n:&lt;?&gt;):Unit"></a>
+      <a id="hGap_=(Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: hGap_$eq" class="name">hGap_=</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@hGap_=(n:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GridPanel</dd></dl></div>
+    </li><li name="scala.swing.Component#hasFocus" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hasFocus:Boolean"></a>
+      <a id="hasFocus:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasFocus</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@hasFocus:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.Proxy#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Proxy → Any</dd></dl></div>
+    </li><li name="scala.swing.UIElement#ignoreRepaint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ignoreRepaint:Boolean"></a>
+      <a id="ignoreRepaint:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ignoreRepaint</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@ignoreRepaint:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#ignoreRepaint_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ignoreRepaint_=(b:Boolean):Unit"></a>
+      <a id="ignoreRepaint_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: ignoreRepaint_$eq" class="name">ignoreRepaint_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@ignoreRepaint_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component#initP" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="initP:javax.swing.JComponent"></a>
+      <a id="initP:JComponent"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">initP</span><span class="result">: <span class="extype" name="javax.swing.JComponent">JComponent</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@initP:javax.swing.JComponent" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#inputVerifier" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inputVerifier:scala.swing.Component=&gt;Boolean"></a>
+      <a id="inputVerifier:(Component)⇒Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inputVerifier</span><span class="result">: (<span class="extype" name="scala.swing.Component">Component</span>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@inputVerifier:scala.swing.Component=&gt;Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#inputVerifier_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inputVerifier_=(v:scala.swing.Component=&gt;Boolean):Unit"></a>
+      <a id="inputVerifier_=((Component)⇒Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: inputVerifier_$eq" class="name">inputVerifier_=</span><span class="params">(<span name="v">v: (<span class="extype" name="scala.swing.Component">Component</span>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@inputVerifier_=(v:scala.swing.Component=&gt;Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.swing.Reactor#listenTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="listenTo(ps:scala.swing.Publisher*):Unit"></a>
+      <a id="listenTo(Publisher*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">listenTo</span><span class="params">(<span name="ps">ps: <span class="extype" name="scala.swing.Publisher">Publisher</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@listenTo(ps:scala.swing.Publisher*):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Reactor</dd></dl></div>
+    </li><li name="scala.swing.Publisher#listeners" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="listeners:scala.swing.RefSet[scala.swing.Reactions.Reaction]{valunderlying:scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]]}"></a>
+      <a id="listeners:RefSet[Reaction]{valunderlying:scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]]}"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">listeners</span><span class="result">: <span class="extype" name="scala.swing.RefSet">RefSet</span>[<span class="extype" name="scala.swing.Reactions.Reaction">Reaction</span>] { val underlying: scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]] }</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@listeners:scala.swing.RefSet[scala.swing.Reactions.Reaction]{valunderlying:scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]]}" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Publisher</dd></dl></div>
+    </li><li name="scala.swing.UIElement#locale" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="locale:java.util.Locale"></a>
+      <a id="locale:Locale"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">locale</span><span class="result">: <span class="extype" name="java.util.Locale">Locale</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@locale:java.util.Locale" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#location" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="location:java.awt.Point"></a>
+      <a id="location:Point"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">location</span><span class="result">: <span class="extype" name="java.awt.Point">Point</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@location:java.awt.Point" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#locationOnScreen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="locationOnScreen:java.awt.Point"></a>
+      <a id="locationOnScreen:Point"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">locationOnScreen</span><span class="result">: <span class="extype" name="java.awt.Point">Point</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@locationOnScreen:java.awt.Point" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#maximumSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="maximumSize:java.awt.Dimension"></a>
+      <a id="maximumSize:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">maximumSize</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@maximumSize:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#maximumSize_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="maximumSize_=(x:scala.swing.Dimension):Unit"></a>
+      <a id="maximumSize_=(Dimension):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: maximumSize_$eq" class="name">maximumSize_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.swing.Dimension">Dimension</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@maximumSize_=(x:scala.swing.Dimension):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#minimumSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="minimumSize:java.awt.Dimension"></a>
+      <a id="minimumSize:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">minimumSize</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@minimumSize:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#minimumSize_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="minimumSize_=(x:scala.swing.Dimension):Unit"></a>
+      <a id="minimumSize_=(Dimension):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: minimumSize_$eq" class="name">minimumSize_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.swing.Dimension">Dimension</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@minimumSize_=(x:scala.swing.Dimension):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component.mouse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mouse"></a>
+      <a id="mouse:mouse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mouse</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@mouse" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#name" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="name:String"></a>
+      <a id="name:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@name:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#name_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="name_=(s:String):Unit"></a>
+      <a id="name_=(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: name_$eq" class="name">name_=</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@name_=(s:String):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.swing.Component#onFirstSubscribe" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="onFirstSubscribe():Unit"></a>
+      <a id="onFirstSubscribe():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onFirstSubscribe</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@onFirstSubscribe():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Component → UIElement → LazyPublisher</dd></dl></div>
+    </li><li name="scala.swing.UIElement#onLastUnsubscribe" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="onLastUnsubscribe():Unit"></a>
+      <a id="onLastUnsubscribe():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onLastUnsubscribe</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@onLastUnsubscribe():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>UIElement → LazyPublisher</dd></dl></div>
+    </li><li name="scala.swing.Component#opaque" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="opaque:Boolean"></a>
+      <a id="opaque:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">opaque</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@opaque:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#opaque_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="opaque_=(b:Boolean):Unit"></a>
+      <a id="opaque_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: opaque_$eq" class="name">opaque_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@opaque_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#paint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="paint(g:scala.swing.Graphics2D):Unit"></a>
+      <a id="paint(Graphics2D):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">paint</span><span class="params">(<span name="g">g: <span class="extype" name="scala.swing.Graphics2D">Graphics2D</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@paint(g:scala.swing.Graphics2D):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#paintBorder" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="paintBorder(g:scala.swing.Graphics2D):Unit"></a>
+      <a id="paintBorder(Graphics2D):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">paintBorder</span><span class="params">(<span name="g">g: <span class="extype" name="scala.swing.Graphics2D">Graphics2D</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@paintBorder(g:scala.swing.Graphics2D):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#paintChildren" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="paintChildren(g:scala.swing.Graphics2D):Unit"></a>
+      <a id="paintChildren(Graphics2D):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">paintChildren</span><span class="params">(<span name="g">g: <span class="extype" name="scala.swing.Graphics2D">Graphics2D</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@paintChildren(g:scala.swing.Graphics2D):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#paintComponent" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="paintComponent(g:scala.swing.Graphics2D):Unit"></a>
+      <a id="paintComponent(Graphics2D):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">paintComponent</span><span class="params">(<span name="g">g: <span class="extype" name="scala.swing.Graphics2D">Graphics2D</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@paintComponent(g:scala.swing.Graphics2D):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.GridPanel#peer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="peer:javax.swing.JPanelwithGridPanel.this.SuperMixin"></a>
+      <a id="peer:JPanelwithSuperMixin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">peer</span><span class="result">: <span class="extype" name="javax.swing.JPanel">JPanel</span> with <a href="#SuperMixinextendsJComponent" class="extmbr" name="cogdebugger.ui.components.TestingStuff.CustomPanel.SuperMixin">SuperMixin</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@peer:javax.swing.JPanelwithGridPanel.this.SuperMixin" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GridPanel → Panel → Wrapper → Component → UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#preferredSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preferredSize:java.awt.Dimension"></a>
+      <a id="preferredSize:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">preferredSize</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@preferredSize:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#preferredSize_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preferredSize_=(x:scala.swing.Dimension):Unit"></a>
+      <a id="preferredSize_=(Dimension):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: preferredSize_$eq" class="name">preferredSize_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.swing.Dimension">Dimension</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@preferredSize_=(x:scala.swing.Dimension):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Publisher#publish" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="publish(e:scala.swing.event.Event):Unit"></a>
+      <a id="publish(Event):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">publish</span><span class="params">(<span name="e">e: <span class="extype" name="scala.swing.event.Event">Event</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@publish(e:scala.swing.event.Event):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Publisher</dd></dl></div>
+    </li><li name="scala.swing.Reactor#reactions" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="reactions:scala.swing.Reactions"></a>
+      <a id="reactions:Reactions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reactions</span><span class="result">: <span class="extype" name="scala.swing.Reactions">Reactions</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@reactions:scala.swing.Reactions" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Reactor</dd></dl></div>
+    </li><li name="scala.swing.UIElement#repaint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="repaint(rect:scala.swing.Rectangle):Unit"></a>
+      <a id="repaint(Rectangle):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">repaint</span><span class="params">(<span name="rect">rect: <span class="extype" name="scala.swing.Rectangle">Rectangle</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@repaint(rect:scala.swing.Rectangle):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#repaint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="repaint():Unit"></a>
+      <a id="repaint():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">repaint</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@repaint():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component#requestFocus" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="requestFocus():Unit"></a>
+      <a id="requestFocus():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">requestFocus</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@requestFocus():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#requestFocusInWindow" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="requestFocusInWindow():Boolean"></a>
+      <a id="requestFocusInWindow():Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">requestFocusInWindow</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@requestFocusInWindow():Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#revalidate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="revalidate():Unit"></a>
+      <a id="revalidate():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">revalidate</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@revalidate():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.GridPanel#rows" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rows:Int"></a>
+      <a id="rows:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rows</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@rows:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GridPanel</dd></dl></div>
+    </li><li name="scala.swing.GridPanel#rows_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rows_=(n:&lt;?&gt;):Unit"></a>
+      <a id="rows_=(Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: rows_$eq" class="name">rows_=</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@rows_=(n:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GridPanel</dd></dl></div>
+    </li><li name="scala.swing.UIElement#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="self:java.awt.Component"></a>
+      <a id="self:Component"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">self</span><span class="result">: <span class="extype" name="java.awt.Component">Component</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@self:java.awt.Component" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement → Proxy</dd></dl></div>
+    </li><li name="scala.swing.UIElement#showing" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="showing:Boolean"></a>
+      <a id="showing:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">showing</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@showing:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#size" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="size:java.awt.Dimension"></a>
+      <a id="size:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">size</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@size:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.LazyPublisher#subscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="subscribe(listener:scala.swing.Reactions.Reaction):Unit"></a>
+      <a id="subscribe(Reaction):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">subscribe</span><span class="params">(<span name="listener">listener: <span class="extype" name="scala.swing.Reactions.Reaction">Reaction</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@subscribe(listener:scala.swing.Reactions.Reaction):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>LazyPublisher → Publisher</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.swing.Component#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component → Proxy → AnyRef → Any</dd></dl></div>
+    </li><li name="scala.swing.UIElement#toolkit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toolkit:java.awt.Toolkit"></a>
+      <a id="toolkit:Toolkit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toolkit</span><span class="result">: <span class="extype" name="java.awt.Toolkit">Toolkit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@toolkit:java.awt.Toolkit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component#tooltip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tooltip:String"></a>
+      <a id="tooltip:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tooltip</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@tooltip:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#tooltip_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tooltip_=(t:String):Unit"></a>
+      <a id="tooltip_=(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: tooltip_$eq" class="name">tooltip_=</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@tooltip_=(t:String):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.LazyPublisher#unsubscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unsubscribe(listener:scala.swing.Reactions.Reaction):Unit"></a>
+      <a id="unsubscribe(Reaction):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unsubscribe</span><span class="params">(<span name="listener">listener: <span class="extype" name="scala.swing.Reactions.Reaction">Reaction</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@unsubscribe(listener:scala.swing.Reactions.Reaction):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>LazyPublisher → Publisher</dd></dl></div>
+    </li><li name="scala.swing.GridPanel#vGap" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="vGap:Int"></a>
+      <a id="vGap:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">vGap</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@vGap:Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GridPanel</dd></dl></div>
+    </li><li name="scala.swing.GridPanel#vGap_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="vGap_=(n:&lt;?&gt;):Unit"></a>
+      <a id="vGap_=(Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: vGap_$eq" class="name">vGap_=</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@vGap_=(n:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GridPanel</dd></dl></div>
+    </li><li name="scala.swing.UIElement#visible" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="visible:Boolean"></a>
+      <a id="visible:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">visible</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@visible:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#visible_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="visible_=(b:Boolean):Unit"></a>
+      <a id="visible_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: visible_$eq" class="name">visible_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@visible_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.swing.Component#xLayoutAlignment" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="xLayoutAlignment:Double"></a>
+      <a id="xLayoutAlignment:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">xLayoutAlignment</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@xLayoutAlignment:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#xLayoutAlignment_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="xLayoutAlignment_=(x:Double):Unit"></a>
+      <a id="xLayoutAlignment_=(Double):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: xLayoutAlignment_$eq" class="name">xLayoutAlignment_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@xLayoutAlignment_=(x:Double):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#yLayoutAlignment" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="yLayoutAlignment:Double"></a>
+      <a id="yLayoutAlignment:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">yLayoutAlignment</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@yLayoutAlignment:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#yLayoutAlignment_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="yLayoutAlignment_=(y:Double):Unit"></a>
+      <a id="yLayoutAlignment_=(Double):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: yLayoutAlignment_$eq" class="name">yLayoutAlignment_=</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.TestingStuff$$CustomPanel@yLayoutAlignment_=(y:Double):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.swing.GridPanel">
+              <h3>Inherited from <span class="extype" name="scala.swing.GridPanel">GridPanel</span></h3>
+            </div><div class="parent" name="scala.swing.SequentialContainer.Wrapper">
+              <h3>Inherited from <span class="extype" name="scala.swing.SequentialContainer.Wrapper">Wrapper</span></h3>
+            </div><div class="parent" name="scala.swing.SequentialContainer">
+              <h3>Inherited from <span class="extype" name="scala.swing.SequentialContainer">SequentialContainer</span></h3>
+            </div><div class="parent" name="scala.swing.Panel">
+              <h3>Inherited from <span class="extype" name="scala.swing.Panel">Panel</span></h3>
+            </div><div class="parent" name="scala.swing.Container.Wrapper">
+              <h3>Inherited from <span class="extype" name="scala.swing.Container.Wrapper">Wrapper</span></h3>
+            </div><div class="parent" name="scala.swing.Container">
+              <h3>Inherited from <span class="extype" name="scala.swing.Container">Container</span></h3>
+            </div><div class="parent" name="scala.swing.Component">
+              <h3>Inherited from <span class="extype" name="scala.swing.Component">Component</span></h3>
+            </div><div class="parent" name="scala.swing.UIElement">
+              <h3>Inherited from <span class="extype" name="scala.swing.UIElement">UIElement</span></h3>
+            </div><div class="parent" name="scala.swing.LazyPublisher">
+              <h3>Inherited from <span class="extype" name="scala.swing.LazyPublisher">LazyPublisher</span></h3>
+            </div><div class="parent" name="scala.swing.Publisher">
+              <h3>Inherited from <span class="extype" name="scala.swing.Publisher">Publisher</span></h3>
+            </div><div class="parent" name="scala.swing.Reactor">
+              <h3>Inherited from <span class="extype" name="scala.swing.Reactor">Reactor</span></h3>
+            </div><div class="parent" name="scala.Proxy">
+              <h3>Inherited from <span class="extype" name="scala.Proxy">Proxy</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

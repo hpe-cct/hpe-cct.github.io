@@ -1,0 +1,1038 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>ComputeGraph - cogx.runtime.ComputeGraph</title>
+          <meta name="description" content="ComputeGraph - cogx.runtime.ComputeGraph" />
+          <meta name="keywords" content="ComputeGraph cogx.runtime.ComputeGraph" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'cogx.runtime.ComputeGraph';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="ComputeGraph$.html" title="See companion object"><img alt="Class/Object" src="../../lib/class_to_object_big.png" /></a>
+        <p id="owner"><a href="../package.html" class="extype" name="cogx">cogx</a>.<a href="package.html" class="extype" name="cogx.runtime">runtime</a></p>
+        <h1><a href="ComputeGraph$.html" title="See companion object">ComputeGraph</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="ComputeGraph$.html" title="See companion object">object ComputeGraph</a>
+            | <a href="package.html" class="extype" name="cogx.runtime">package runtime</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ComputeGraph</span><span class="result"> extends <a href="../platform/checkpoint/Saveable.html" class="extype" name="cogx.platform.checkpoint.Saveable">Saveable</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A Cog computation graph.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../platform/checkpoint/Saveable.html" class="extype" name="cogx.platform.checkpoint.Saveable">Saveable</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogx.runtime.ComputeGraph"><span>ComputeGraph</span></li><li class="in" name="cogx.platform.checkpoint.Saveable"><span>Saveable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="cogx.runtime.ComputeGraph#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():cogx.runtime.ComputeGraph"></a>
+      <a id="&lt;init&gt;:ComputeGraph"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ComputeGraph</span><span class="params">()</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@&lt;init&gt;():cogx.runtime.ComputeGraph" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Default constructor for users, forces optimization (though they can
+disable it to varying degrees using probes or probeAll.)
+</p>
+    </li><li name="cogx.runtime.ComputeGraph#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(optimize:Boolean,device:Option[Int],fftUse:cogx.platform.types.ConvolutionFFTUsePolicy,convolveSmallTensorUse:cogx.platform.types.ConvolutionSmallTensorUsePolicy):cogx.runtime.ComputeGraph"></a>
+      <a id="&lt;init&gt;:ComputeGraph"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ComputeGraph</span><span class="params">(<span name="optimize">optimize: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="device">device: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>] = <span class="symbol">None</span></span>, <span name="fftUse">fftUse: <span class="extype" name="cogx.platform.types.ConvolutionFFTUsePolicy">platform.types.ConvolutionFFTUsePolicy</span> = <span class="symbol"><span class="name"><a href="../package.html">UseFFTWhenBest</a></span></span></span>, <span name="convolveSmallTensorUse">convolveSmallTensorUse: <span class="extype" name="cogx.platform.types.ConvolutionSmallTensorUsePolicy">platform.types.ConvolutionSmallTensorUsePolicy</span> = <span class="symbol"><span class="name"><a href="../package.html">UseSmallTensorWhenBest</a></span></span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@&lt;init&gt;(optimize:Boolean,device:Option[Int],fftUse:cogx.platform.types.ConvolutionFFTUsePolicy,convolveSmallTensorUse:cogx.platform.types.ConvolutionSmallTensorUsePolicy):cogx.runtime.ComputeGraph" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">optimize</dt><dd class="cmt"><p>When false, turns off the optimizer, allowing the graph to
+             be more easily debugged, since all fields declared by the
+             user remain visible.</p></dd><dt class="param">fftUse</dt><dd class="cmt"><p>policy for FFT use in fast convolution.</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#Verbose" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Verbose:Boolean"></a>
+      <a id="Verbose:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Verbose</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@Verbose:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Debug flag</p>
+    </li><li name="cogx.runtime.ComputeGraph#VerbosePrint" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VerbosePrint:Boolean"></a>
+      <a id="VerbosePrint:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">VerbosePrint</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@VerbosePrint:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Turns on printing of the compiled circuit for debugging.</p>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@clone():Object" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#codeGenerator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="codeGenerator:cogx.compiler.codegenerator.opencl.generator.OpenCLCodeGenerator"></a>
+      <a id="codeGenerator:OpenCLCodeGenerator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">codeGenerator</span><span class="result">: <span class="extype" name="cogx.compiler.codegenerator.opencl.generator.OpenCLCodeGenerator">OpenCLCodeGenerator</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@codeGenerator:cogx.compiler.codegenerator.opencl.generator.OpenCLCodeGenerator" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Translator from SyntaxTree to KernelCircuit</p>
+    </li><li name="cogx.runtime.ComputeGraph#computeGraphName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="computeGraphName:String"></a>
+      <a id="computeGraphName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">computeGraphName</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@computeGraphName:String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A user-friendly name for this computegraph.</p><div class="fullcomment"><div class="comment cmt"><p>A user-friendly name for this computegraph. Used in logs and for
+debugging.</p></div></div>
+    </li><li name="cogx.runtime.ComputeGraph#debugTouch" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="debugTouch:Unit"></a>
+      <a id="debugTouch:Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">debugTouch</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@debugTouch:Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.runtime.ComputeGraph#description" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="description:Option[String]"></a>
+      <a id="description:Option[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">description</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@description:Option[String]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The user's description of this computegraph.</p>
+    </li><li name="cogx.runtime.ComputeGraph#description_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="description_=(desc:String):Unit"></a>
+      <a id="description_=(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: description_$eq" class="name">description_=</span><span class="params">(<span name="desc">desc: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@description_=(desc:String):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Set a description for the computegraph.</p><div class="fullcomment"><div class="comment cmt"><p>Set a description for the computegraph. Used in logs and for
+debugging.</p></div></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#getUnpipelinedActuator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getUnpipelinedActuator(sourceFieldName:String):cogx.compiler.parser.syntaxtree.UnpipelinedActuator"></a>
+      <a id="getUnpipelinedActuator(String):compiler.parser.syntaxtree.UnpipelinedActuator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getUnpipelinedActuator</span><span class="params">(<span name="sourceFieldName">sourceFieldName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../compiler/parser/syntaxtree/UnpipelinedActuator.html" class="extype" name="cogx.compiler.parser.syntaxtree.UnpipelinedActuator">compiler.parser.syntaxtree.UnpipelinedActuator</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@getUnpipelinedActuator(sourceFieldName:String):cogx.compiler.parser.syntaxtree.UnpipelinedActuator" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Retrieve an Unpipelinedactuator from a restored compute graph using the name of the source field.</p>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#mode" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="mode:cogx.runtime.allocation.AllocationMode"></a>
+      <a id="mode:AllocationMode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mode</span><span class="result">: <a href="allocation/AllocationMode.html" class="extype" name="cogx.runtime.allocation.AllocationMode">AllocationMode</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@mode:cogx.runtime.allocation.AllocationMode" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The specific device(s) that will evaluate the ComputeGraph, now bound at ComputeGraph creation time.</p>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@notify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#optimize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="optimize:Boolean"></a>
+      <a id="optimize:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">optimize</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@optimize:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">When false, turns off the optimizer, allowing the graph to
+             be more easily debugged, since all fields declared by the
+             user remain visible.</p>
+    </li><li name="cogx.runtime.ComputeGraph#print" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="print():Unit"></a>
+      <a id="print():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">print</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@print():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Print out the ComputeGrap for debugging.</p>
+    </li><li name="cogx.runtime.ComputeGraph#printEvaluator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="printEvaluator:Unit"></a>
+      <a id="printEvaluator:Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">printEvaluator</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@printEvaluator:Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.runtime.ComputeGraph#probeAll" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="probeAll:Unit"></a>
+      <a id="probeAll:Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">probeAll</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@probeAll:Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Probe all fields; this effectively disables the optimizer.</p>
+    </li><li name="cogx.runtime.ComputeGraph#probedCircuit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="probedCircuit:cogx.runtime.debugger.ProbedCircuit"></a>
+      <a id="probedCircuit:ProbedCircuit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">probedCircuit</span><span class="result">: <a href="debugger/ProbedCircuit.html" class="extype" name="cogx.runtime.debugger.ProbedCircuit">ProbedCircuit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@probedCircuit:cogx.runtime.debugger.ProbedCircuit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Optimized circuit that exposes only probed fields (for debugger).</p>
+    </li><li name="cogx.runtime.ComputeGraph#read" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="read(field:cogx.runtime.debugger.ProbedField,done:(cogx.runtime.debugger.ProbedField,cogx.platform.cpumemory.AbstractFieldMemory)=&gt;Unit):Unit"></a>
+      <a id="read(ProbedField,(ProbedField,platform.cpumemory.AbstractFieldMemory)⇒Unit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">read</span><span class="params">(<span name="field">field: <a href="debugger/ProbedField.html" class="extype" name="cogx.runtime.debugger.ProbedField">ProbedField</a></span>, <span name="done">done: (<a href="debugger/ProbedField.html" class="extype" name="cogx.runtime.debugger.ProbedField">ProbedField</a>, <a href="../platform/cpumemory/AbstractFieldMemory.html" class="extype" name="cogx.platform.cpumemory.AbstractFieldMemory">platform.cpumemory.AbstractFieldMemory</a>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@read(field:cogx.runtime.debugger.ProbedField,done:(cogx.runtime.debugger.ProbedField,cogx.platform.cpumemory.AbstractFieldMemory)=&gt;Unit):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Future interface for debugger.</p><div class="fullcomment"><div class="comment cmt"><p>Future interface for debugger. Note that the AbstractFieldMemory
+referenced in done must be released before the field can be read again.
+</p></div></div>
+    </li><li name="cogx.runtime.ComputeGraph#read" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="read(field:cogx.runtime.debugger.ProbedField,to:cogx.platform.cpumemory.AbstractFieldMemory,done:(cogx.runtime.debugger.ProbedField,cogx.platform.cpumemory.AbstractFieldMemory)=&gt;Unit):Unit"></a>
+      <a id="read(ProbedField,platform.cpumemory.AbstractFieldMemory,(ProbedField,platform.cpumemory.AbstractFieldMemory)⇒Unit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">read</span><span class="params">(<span name="field">field: <a href="debugger/ProbedField.html" class="extype" name="cogx.runtime.debugger.ProbedField">ProbedField</a></span>, <span name="to">to: <a href="../platform/cpumemory/AbstractFieldMemory.html" class="extype" name="cogx.platform.cpumemory.AbstractFieldMemory">platform.cpumemory.AbstractFieldMemory</a></span>, <span name="done">done: (<a href="debugger/ProbedField.html" class="extype" name="cogx.runtime.debugger.ProbedField">ProbedField</a>, <a href="../platform/cpumemory/AbstractFieldMemory.html" class="extype" name="cogx.platform.cpumemory.AbstractFieldMemory">platform.cpumemory.AbstractFieldMemory</a>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@read(field:cogx.runtime.debugger.ProbedField,to:cogx.platform.cpumemory.AbstractFieldMemory,done:(cogx.runtime.debugger.ProbedField,cogx.platform.cpumemory.AbstractFieldMemory)=&gt;Unit):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Read a field, calling <code>done</code> when the field data is available
+(asynchronous call).</p><div class="fullcomment"><div class="comment cmt"><p>Read a field, calling <code>done</code> when the field data is available
+(asynchronous call). This primarily used by the debugger, but may be
+used by arbitrary user code.
+</p></div><dl class="paramcmts block"><dt class="param">field</dt><dd class="cmt"><p>The field that is being read</p></dd><dt class="param">to</dt><dd class="cmt"><p>Pre-allocated field memory, passed to the <code>done</code> function, that
+       receives the read field data.</p></dd><dt class="param">done</dt><dd class="cmt"><p>Callback which returns memory holding the field data; this
+       memory must be released before this field can be read again.</p></dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#read" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="read(field:cogx.compiler.parser.syntaxtree.Field):cogx.platform.cpumemory.readerwriter.FieldReader"></a>
+      <a id="read(compiler.parser.syntaxtree.Field):platform.cpumemory.readerwriter.FieldReader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">read</span><span class="params">(<span name="field">field: <a href="../compiler/parser/syntaxtree/Field.html" class="extype" name="cogx.compiler.parser.syntaxtree.Field">compiler.parser.syntaxtree.Field</a></span>)</span><span class="result">: <a href="../platform/cpumemory/readerwriter/FieldReader.html" class="extype" name="cogx.platform.cpumemory.readerwriter.FieldReader">platform.cpumemory.readerwriter.FieldReader</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@read(field:cogx.compiler.parser.syntaxtree.Field):cogx.platform.cpumemory.readerwriter.FieldReader" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Read a field (user access to the field data).</p>
+    </li><li name="cogx.runtime.ComputeGraph#readByName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="readByName(fieldName:String):cogx.platform.cpumemory.readerwriter.FieldReader"></a>
+      <a id="readByName(String):platform.cpumemory.readerwriter.FieldReader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">readByName</span><span class="params">(<span name="fieldName">fieldName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="../platform/cpumemory/readerwriter/FieldReader.html" class="extype" name="cogx.platform.cpumemory.readerwriter.FieldReader">platform.cpumemory.readerwriter.FieldReader</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@readByName(fieldName:String):cogx.platform.cpumemory.readerwriter.FieldReader" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Read a field given the name.</p><div class="fullcomment"><div class="comment cmt"><p>Read a field given the name.  Used typically for restored compute graphs that no longer have fields.
+</p></div></div>
+    </li><li name="cogx.runtime.ComputeGraph#release" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="release:Unit"></a>
+      <a id="release:Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">release</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@release:Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Release all resources for this (and ALL) compute graphs.</p><div class="fullcomment"><div class="comment cmt"><p>Release all resources for this (and ALL) compute graphs.</p><p>This attempts to minimize memory leaks due to the JVM garbage
+collector not being able to handle direct memory very well.</p><p>After release of a ComputeGraph, we still have references to the Direct Buffers
+from singleton objects like HyperCircuit, which prevents the direct buffer freeing
+from being immediately successful.  Making a new ComputeGraph should overwrite those
+references, thus freeing up the direct memory for the next ComputeGraph.  Making a tiny
+ComputeGraph and releasing it between 'real' ComputeGraphs would be one hack at the user
+level to combat direct buffer freeing problems.
+</p></div></div>
+    </li><li name="cogx.runtime.ComputeGraph#reset" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="reset:Long"></a>
+      <a id="reset:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reset</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@reset:Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reset the computation to an initial state defined by the user (synchronous
+call).</p><div class="fullcomment"><div class="comment cmt"><p>Reset the computation to an initial state defined by the user (synchronous
+call).</p><p>If the computation is running, it is stopped before the initialization
+takes place.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Zero (the simulation time after reset).</p></dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#run" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="run:Unit"></a>
+      <a id="run:Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">run</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@run:Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Start the computation running until <code>stop</code> is called (asynchronous call)</p>
+    </li><li name="cogx.runtime.ComputeGraph#save" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="save(saver:cogx.platform.checkpoint.ObjectSaver):Unit"></a>
+      <a id="save(ObjectSaver):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">save</span><span class="params">(<span name="saver">saver: <a href="../platform/checkpoint/ObjectSaver.html" class="extype" name="cogx.platform.checkpoint.ObjectSaver">ObjectSaver</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@save(saver:cogx.platform.checkpoint.ObjectSaver):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Write this compute graph instance with the facilities offered by an
+ObjectSaver.</p><div class="fullcomment"><div class="comment cmt"><p>Write this compute graph instance with the facilities offered by an
+ObjectSaver.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogx.runtime.ComputeGraph">ComputeGraph</a> → <a href="../platform/checkpoint/Saveable.html" class="extype" name="cogx.platform.checkpoint.Saveable">Saveable</a></dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#step" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="step(count:Long):Long"></a>
+      <a id="step(Long):Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">step</span><span class="params">(<span name="count">count: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@step(count:Long):Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Step the computation <code>count</code> cycles, returning the resulting simulation
+ time (synchronous call).</p><div class="fullcomment"><div class="comment cmt"><p>Step the computation <code>count</code> cycles, returning the resulting simulation
+ time (synchronous call).
+</p></div><dl class="paramcmts block"><dt class="param">count</dt><dd class="cmt"><p>Number of steps to take.</p></dd><dt>returns</dt><dd class="cmt"><p>the number of steps taken from the last reset</p></dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#step" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="step:Long"></a>
+      <a id="step:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">step</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@step:Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Step the computation one cycle, returning the resulting simulation time
+(synchronous call).</p><div class="fullcomment"><div class="comment cmt"><p>Step the computation one cycle, returning the resulting simulation time
+(synchronous call).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the number of steps taken from the last reset</p></dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#stop" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="stop:Long"></a>
+      <a id="stop:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">stop</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@stop:Long" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Stop the computation, returning the simulation time (synchronous call).</p>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#time" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="time(done:Long=&gt;Unit):Unit"></a>
+      <a id="time((Long)⇒Unit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">time</span><span class="params">(<span name="done">done: (<span class="extype" name="scala.Long">Long</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@time(done:Long=&gt;Unit):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Get the current simulation time (asynchronous call).</p><div class="fullcomment"><div class="comment cmt"><p>Get the current simulation time (asynchronous call).
+</p></div><dl class="paramcmts block"><dt class="param">done</dt><dd class="cmt"><p>Callback function with the simulation time</p></dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@wait():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="cogx.runtime.ComputeGraph#withRelease" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withRelease(operations:=&gt;Unit):Unit"></a>
+      <a id="withRelease(⇒Unit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withRelease</span><span class="params">(<span name="operations">operations: ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@withRelease(operations:=&gt;Unit):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Make sure release is called, even if an exception is thrown.</p>
+    </li><li name="cogx.runtime.ComputeGraph#write" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="write(filename:String,checkpointerType:cogx.platform.types.CheckpointerType):Unit"></a>
+      <a id="write(String,platform.types.CheckpointerType):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">write</span><span class="params">(<span name="filename">filename: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="checkpointerType">checkpointerType: <span class="extype" name="cogx.platform.types.CheckpointerType">platform.types.CheckpointerType</span> = <span class="defval" name='<span class="name"><a href="ComputeGraph$.html">ComputeGraph.defaultCheckpointerType</a></span>'>...</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.ComputeGraph@write(filename:String,checkpointerType:cogx.platform.types.CheckpointerType):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Write the compute graph to a file with the given checkpoint technology (e.g.</p><div class="fullcomment"><div class="comment cmt"><p>Write the compute graph to a file with the given checkpoint technology (e.g. hdf5)</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="cogx.platform.checkpoint.Saveable">
+              <h3>Inherited from <a href="../platform/checkpoint/Saveable.html" class="extype" name="cogx.platform.checkpoint.Saveable">Saveable</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

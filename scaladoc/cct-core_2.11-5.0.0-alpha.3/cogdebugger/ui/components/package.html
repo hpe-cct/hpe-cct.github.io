@@ -1,0 +1,583 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>components - cogdebugger.ui.components</title>
+          <meta name="description" content="components - cogdebugger.ui.components" />
+          <meta name="keywords" content="components cogdebugger.ui.components" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'cogdebugger.ui.components.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="cogdebugger">cogdebugger</a>.<a href="../package.html" class="extype" name="cogdebugger.ui">ui</a></p>
+        <h1>components</h1><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">components</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This package is for reusable generic GUI components that have no dependence
+on Cog, sort of like the old buildingblocks package from the old coggui
+(perhaps that package should be copied here).</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogdebugger.ui.components"><span>components</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogdebugger.ui.components.DoubleBufferedImagePanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DoubleBufferedImagePanelextendsPanelwithZoomProperty"></a>
+      <a id="DoubleBufferedImagePanel:DoubleBufferedImagePanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DoubleBufferedImagePanel.html"><span class="name">DoubleBufferedImagePanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.Panel">Panel</span> with <a href="../fieldvisualizations/ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@DoubleBufferedImagePanelextendsPanelwithZoomProperty" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A double-buffered variant of ImagePanel.</p><div class="fullcomment"><div class="comment cmt"><p>A double-buffered variant of ImagePanel. Meant to alleviate some of the
+screen-tearing seen using the old implementation. Note that there is
+currently no way to resize the internal buffers once they've been created.</p><p>The <code>imgType</code> argument should be one of the constants defined in
+java.awt.image.BufferedImage, e.g. BufferedImage.TYPE_3BYTE_BGR.
+</p></div></div>
+    </li><li name="cogdebugger.ui.components.ImagePanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ImagePanelextendsPanelwithZoomProperty"></a>
+      <a id="ImagePanel:ImagePanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ImagePanel.html"><span class="name">ImagePanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.Panel">Panel</span> with <a href="../fieldvisualizations/ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@ImagePanelextendsPanelwithZoomProperty" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A panel that displays an image.</p><div class="fullcomment"><div class="comment cmt"><p>A panel that displays an image. Preferred size is initially set to the
+current image's unscaled dimensions.</p></div></div>
+    </li><li name="cogdebugger.ui.components.LoadingAnimationPanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LoadingAnimationPanelextendsBoxPanel"></a>
+      <a id="LoadingAnimationPanel:LoadingAnimationPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LoadingAnimationPanel.html"><span class="name">LoadingAnimationPanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BoxPanel">BoxPanel</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@LoadingAnimationPanelextendsBoxPanel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A panel that displays an infinite progress bar at its center, with an
+optional label.</p><div class="fullcomment"><div class="comment cmt"><p>A panel that displays an infinite progress bar at its center, with an
+optional label.</p><p>Drop this panel into your GUI where you want to put components that take a
+long time to initialize. Once said expensive component has finished its
+initialization, swap it with your LoadingAnimationPanel.</p></div></div>
+    </li><li name="cogdebugger.ui.components.MouseDragZoom" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MouseDragZoomextendsAnyRef"></a>
+      <a id="MouseDragZoom:MouseDragZoom"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MouseDragZoom.html"><span class="name">MouseDragZoom</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@MouseDragZoomextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A mixin that enables right-click-and-drag to adjust the magnification of
+a Zoomable component.</p><div class="fullcomment"><div class="comment cmt"><p>A mixin that enables right-click-and-drag to adjust the magnification of
+a Zoomable component.</p><p>This style of zoom level control lends itself to non-integral
+multiplicative zoom changes - e.g. each pixel of drag makes the view 10%
+larger, as opposed to 1x, 2x, 3x normal size. Note however that not every
+Swing component (including some of our own visualizations) draw with
+anti-aliasing enabled - this will become very noticable with non-integral
+zoom.</p><p>Created by gonztobi on 3/31/2014.
+</p></div></div>
+    </li><li name="cogdebugger.ui.components.MousePanAndZoom" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MousePanAndZoomextendsComponentwithZoomable"></a>
+      <a id="MousePanAndZoom:MousePanAndZoom"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MousePanAndZoom.html"><span class="name">MousePanAndZoom</span></a><span class="result"> extends <span class="extype" name="scala.swing.Component">Component</span> with <a href="../fieldvisualizations/Zoomable.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Zoomable">Zoomable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@MousePanAndZoomextendsComponentwithZoomable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Augments a panel with mouse pan and zoom capability (sort of like your
+favorite online maps application).</p><div class="fullcomment"><div class="comment cmt"><p>Augments a panel with mouse pan and zoom capability (sort of like your
+favorite online maps application).</p><p>Rather than mixing in this trait directly to some panel displaying the
+visual that you want to pan and zoom, you should wrap that panel in another
+panel and mix in this trait to the wrapper. This helps guarantee clean
+redraws of the panel (otherwise a screen clear can &quot;miss&quot; due to the
+applied pan and zoom).</p></div></div>
+    </li><li name="cogdebugger.ui.components.PanPane" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PanPaneextendsScrollPane"></a>
+      <a id="PanPane:PanPane"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PanPane.html"><span class="name">PanPane</span></a><span class="result"> extends <span class="extype" name="scala.swing.ScrollPane">ScrollPane</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@PanPaneextendsScrollPane" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A ScrollPane that scrolls in response to mouse drags on its viewport, in
+addition to the standard interactions with its scrollbars.</p><div class="fullcomment"><div class="comment cmt"><p>A ScrollPane that scrolls in response to mouse drags on its viewport, in
+addition to the standard interactions with its scrollbars. The captured
+mouse drag events act on the scrollbars directly, so mouse-pan and
+scrollbar-pan should stay in sync.</p><p>---</p><p>Note: This is the most robust implementation so far, in that children with
+tooltips enabled won't interfere with the mouse drag. It's built using an
+AWTEventListener, which gets ALL mouse events produced by the app,
+regardless of whether another listener somewhere is getting the events
+first (e.g. a tooltip enabled child). One small quirk of this approach is
+that you can initiate a pan by dragging from the blank corner formed by the
+horizontal and vertical scrollbars.</p><p>Created by gonztobi on 3/11/14.
+</p></div></div>
+    </li><li name="cogdebugger.ui.components.PopupButton" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PopupButtonextendsButton"></a>
+      <a id="PopupButton:PopupButton"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PopupButton.html"><span class="name">PopupButton</span></a><span class="result"> extends <span class="extype" name="scala.swing.Button">Button</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@PopupButtonextendsButton" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A button that, when clicked, pops up a menu anchored at this button (as
+opposed to the mouse's current position).</p><div class="fullcomment"><div class="comment cmt"><p>A button that, when clicked, pops up a menu anchored at this button (as
+opposed to the mouse's current position).</p><p>Add scala.swing.Menu Menus and scala.swing.MenuItem MenuItems to
+it just like you would an ordinary menu.</p></div></div>
+    </li><li name="cogdebugger.ui.components.PopupMenu" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PopupMenuextendsComponentwithSequentialContainer.WrapperwithPublisher"></a>
+      <a id="PopupMenu:PopupMenu"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PopupMenu.html"><span class="name">PopupMenu</span></a><span class="result"> extends <span class="extype" name="scala.swing.Component">Component</span> with <span class="extype" name="scala.swing.SequentialContainer.Wrapper">Wrapper</span> with <span class="extype" name="scala.swing.Publisher">Publisher</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@PopupMenuextendsComponentwithSequentialContainer.WrapperwithPublisher" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A popup menu.</p><div class="fullcomment"><div class="comment cmt"><p>A popup menu.</p><p>Example usage:</p><pre><span class="kw">val</span> popupMenu = <span class="kw">new</span> PopupMenu {
+  contents += <span class="kw">new</span> Menu(<span class="lit">"menu 1"</span>) {
+    contents += <span class="kw">new</span> RadioMenuItem(<span class="lit">"radio 1.1"</span>)
+    contents += <span class="kw">new</span> RadioMenuItem(<span class="lit">"radio 1.2"</span>)
+  }
+  contents += <span class="kw">new</span> Menu(<span class="lit">"menu 2"</span>) {
+    contents += <span class="kw">new</span> RadioMenuItem(<span class="lit">"radio 2.1"</span>)
+    contents += <span class="kw">new</span> RadioMenuItem(<span class="lit">"radio 2.2"</span>)
+  }
+}
+<span class="kw">val</span> button = <span class="kw">new</span> Button(<span class="lit">"Show Popup Menu"</span>)
+reactions += {
+  <span class="kw">case</span> e: ButtonClicked <span class="kw">=&gt;</span> popupMenu.show(button, <span class="num">0</span>, button.bounds.height)
+}
+listenTo(button)</pre></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>javax.swing.JPopupMenu</p></span></dd></dl></div>
+    </li><li name="cogdebugger.ui.components.PopupMenuCanceled" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PopupMenuCanceledextendsPopupMenuEventwithProductwithSerializable"></a>
+      <a id="PopupMenuCanceled:PopupMenuCanceled"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="PopupMenuCanceled.html"><span class="name">PopupMenuCanceled</span></a><span class="params">(<span name="source">source: <a href="PopupMenu.html" class="extype" name="cogdebugger.ui.components.PopupMenu">PopupMenu</a></span>)</span><span class="result"> extends <a href="PopupMenuEvent.html" class="extype" name="cogdebugger.ui.components.PopupMenuEvent">PopupMenuEvent</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@PopupMenuCanceledextendsPopupMenuEventwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.PopupMenuEvent" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PopupMenuEventextendsComponentEvent"></a>
+      <a id="PopupMenuEvent:PopupMenuEvent"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PopupMenuEvent.html"><span class="name">PopupMenuEvent</span></a><span class="result"> extends <span class="extype" name="scala.swing.event.ComponentEvent">ComponentEvent</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@PopupMenuEventextendsComponentEvent" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.PopupMenuWillBecomeInvisible" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PopupMenuWillBecomeInvisibleextendsPopupMenuEventwithProductwithSerializable"></a>
+      <a id="PopupMenuWillBecomeInvisible:PopupMenuWillBecomeInvisible"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="PopupMenuWillBecomeInvisible.html"><span class="name">PopupMenuWillBecomeInvisible</span></a><span class="params">(<span name="source">source: <a href="PopupMenu.html" class="extype" name="cogdebugger.ui.components.PopupMenu">PopupMenu</a></span>)</span><span class="result"> extends <a href="PopupMenuEvent.html" class="extype" name="cogdebugger.ui.components.PopupMenuEvent">PopupMenuEvent</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@PopupMenuWillBecomeInvisibleextendsPopupMenuEventwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.PopupMenuWillBecomeVisible" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PopupMenuWillBecomeVisibleextendsPopupMenuEventwithProductwithSerializable"></a>
+      <a id="PopupMenuWillBecomeVisible:PopupMenuWillBecomeVisible"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="PopupMenuWillBecomeVisible.html"><span class="name">PopupMenuWillBecomeVisible</span></a><span class="params">(<span name="source">source: <a href="PopupMenu.html" class="extype" name="cogdebugger.ui.components.PopupMenu">PopupMenu</a></span>)</span><span class="result"> extends <a href="PopupMenuEvent.html" class="extype" name="cogdebugger.ui.components.PopupMenuEvent">PopupMenuEvent</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@PopupMenuWillBecomeVisibleextendsPopupMenuEventwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.Spinner" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SpinnerextendsComponent"></a>
+      <a id="Spinner:Spinner"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Spinner.html"><span class="name">Spinner</span></a><span class="result"> extends <span class="extype" name="scala.swing.Component">Component</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@SpinnerextendsComponent" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.SquareIcon" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SquareIconextendsIcon"></a>
+      <a id="SquareIcon:SquareIcon"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SquareIcon.html"><span class="name">SquareIcon</span></a><span class="result"> extends <span class="extype" name="javax.swing.Icon">Icon</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@SquareIconextendsIcon" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An icon that is just a small, colored square.</p><div class="fullcomment"><div class="comment cmt"><p>An icon that is just a small, colored square.</p><p>Created by gonztobi on 2/20/14.
+</p></div></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="StackedTimeseriesPlotextendsBorderPanelwithZoomable"></a>
+      <a id="StackedTimeseriesPlot:StackedTimeseriesPlot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StackedTimeseriesPlot.html"><span class="name">StackedTimeseriesPlot</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../fieldvisualizations/Zoomable.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Zoomable">Zoomable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@StackedTimeseriesPlotextendsBorderPanelwithZoomable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A data visualization that displays a number of timeseries plots stacked on
+top of each other.</p><div class="fullcomment"><div class="comment cmt"><p>A data visualization that displays a number of timeseries plots stacked on
+top of each other. Each chart has its own set of y/range values and range
+axis, but all share the same x/domain values and axis. This class is
+intended to provide the same functionality as Cog 3's MultiXYPlot class.</p><p>All data is sorted according by the domain value prior to rendering. Thus,
+the lines drawn on the timeseries plots can never double back.
+</p></div></div>
+    </li><li name="cogdebugger.ui.components.ToolBar" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ToolBarextendsComponentwithSequentialContainer.Wrapper"></a>
+      <a id="ToolBar:ToolBar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ToolBar.html"><span class="name">ToolBar</span></a><span class="result"> extends <span class="extype" name="scala.swing.Component">Component</span> with <span class="extype" name="scala.swing.SequentialContainer.Wrapper">Wrapper</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@ToolBarextendsComponentwithSequentialContainer.Wrapper" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A wrapper for a JToolBar.</p>
+    </li><li name="cogdebugger.ui.components.WrapPanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WrapPanelextendsFlowPanel"></a>
+      <a id="WrapPanel:WrapPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="WrapPanel.html"><span class="name">WrapPanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.FlowPanel">FlowPanel</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@WrapPanelextendsFlowPanel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A (hopefully) more intelligent variant of the scala.swing.FlowPanel, in
+that it should wrap its child components properly when placed inside of
+ScrollPanes or SplitPanes.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogdebugger.ui.components.MousePanAndZoom" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MousePanAndZoom"></a>
+      <a id="MousePanAndZoom:MousePanAndZoom"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MousePanAndZoom$.html"><span class="name">MousePanAndZoom</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@MousePanAndZoom" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.PanPane" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PanPane"></a>
+      <a id="PanPane:PanPane"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PanPane$.html"><span class="name">PanPane</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@PanPane" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.PopupMenu" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PopupMenu"></a>
+      <a id="PopupMenu:PopupMenu"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PopupMenu$.html"><span class="name">PopupMenu</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@PopupMenu" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.Test" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Test"></a>
+      <a id="Test:Test"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Test$.html"><span class="name">Test</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@Test" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.TestToolbar" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TestToolbar"></a>
+      <a id="TestToolbar:TestToolbar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TestToolbar$.html"><span class="name">TestToolbar</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@TestToolbar" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.TestingStuff" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TestingStuff"></a>
+      <a id="TestingStuff:TestingStuff"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TestingStuff$.html"><span class="name">TestingStuff</span></a><span class="result"> extends <span class="extype" name="scala.swing.SimpleSwingApplication">SimpleSwingApplication</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.package@TestingStuff" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>matrix - cogdebugger.ui.fieldvisualizations.matrix</title>
+          <meta name="description" content="matrix - cogdebugger.ui.fieldvisualizations.matrix" />
+          <meta name="keywords" content="matrix cogdebugger.ui.fieldvisualizations.matrix" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogdebugger.ui.fieldvisualizations.matrix.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogdebugger">cogdebugger</a>.<a href="../../package.html" class="extype" name="cogdebugger.ui">ui</a>.<a href="../package.html" class="extype" name="cogdebugger.ui.fieldvisualizations">fieldvisualizations</a></p>
+        <h1>matrix</h1><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.matrix.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">matrix</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogdebugger.ui.fieldvisualizations.matrix.MatrixComponentsView" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MatrixComponentsViewextendsWrapPanelwithEventDrivenViewerwithZoomPropertywithRestorableStatewithToolbarItems"></a>
+      <a id="MatrixComponentsView:MatrixComponentsView"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MatrixComponentsView.html"><span class="name">MatrixComponentsView</span></a><span class="result"> extends <a href="../../components/WrapPanel.html" class="extype" name="cogdebugger.ui.components.WrapPanel">WrapPanel</a> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a> with <a href="../ToolbarItems.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ToolbarItems">ToolbarItems</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.matrix.package@MatrixComponentsViewextendsWrapPanelwithEventDrivenViewerwithZoomPropertywithRestorableStatewithToolbarItems" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An alternative view for matrix fields that decomposes the field into
+collections of like components rather than displaying individual matrices,
+analogous to the VectorComponents view defined for vector fields.</p><div class="fullcomment"><div class="comment cmt"><p>An alternative view for matrix fields that decomposes the field into
+collections of like components rather than displaying individual matrices,
+analogous to the VectorComponents view defined for vector fields. This view
+is most useful for large fields of small matrices.</p><p>In the same way that a vector is a collection of components (x, y, z, ...)
+a matrix is a collection of components - it just happens to be a tensor of
+a higher dimension. Just as we could collect all the x's from all the
+vectors in a vector field and display them together, we can collect the
+first elements from all the matrices and display them together, and we
+could do the same for the second element, and the third, and so on.</p><p>Consider this 2x3 field of 2x2 matrices, rendered the &quot;normal&quot; or intuitive
+way (like <a href="MatrixMemoryView.html" class="extype" name="cogdebugger.ui.fieldvisualizations.matrix.MatrixMemoryView">MatrixMemoryView</a> does). The outer indices tell you the
+location of a particular tensor (matrix) within the field, the inner
+indices tell you the location of the element within the tensor:</p><pre><span class="num">0</span>, <span class="num">0</span>            <span class="num">0</span>, <span class="num">1</span>            <span class="num">0</span>, <span class="num">2</span>
++------+------+ +------+------+ +------+------+
+| <span class="num">0</span>, <span class="num">0</span> | <span class="num">0</span>, <span class="num">1</span> | | <span class="num">0</span>, <span class="num">0</span> | <span class="num">0</span>, <span class="num">1</span> | | <span class="num">0</span>, <span class="num">0</span> | <span class="num">0</span>, <span class="num">1</span> |
++------+------+ +------+------+ +------+------+
+| <span class="num">1</span>, <span class="num">0</span> | <span class="num">1</span>, <span class="num">1</span> | | <span class="num">1</span>, <span class="num">0</span> | <span class="num">1</span>, <span class="num">1</span> | | <span class="num">1</span>, <span class="num">0</span> | <span class="num">1</span>, <span class="num">1</span> |
++------+------+ +------+------+ +------+------+
+
+<span class="num">0</span>, <span class="num">0</span>            <span class="num">0</span>, <span class="num">1</span>            <span class="num">0</span>, <span class="num">2</span>
++------+------+ +------+------+ +------+------+
+| <span class="num">0</span>, <span class="num">0</span> | <span class="num">0</span>, <span class="num">1</span> | | <span class="num">0</span>, <span class="num">0</span> | <span class="num">0</span>, <span class="num">1</span> | | <span class="num">0</span>, <span class="num">0</span> | <span class="num">0</span>, <span class="num">1</span> |
++------+------+ +------+------+ +------+------+
+| <span class="num">1</span>, <span class="num">0</span> | <span class="num">1</span>, <span class="num">1</span> | | <span class="num">1</span>, <span class="num">0</span> | <span class="num">1</span>, <span class="num">1</span> | | <span class="num">1</span>, <span class="num">0</span> | <span class="num">1</span>, <span class="num">1</span> |
++------+------+ +------+------+ +------+------+</pre><p>Each individual matrix has a component (0, 0), (0, 1), (1, 0), and so
+forth. Displayed as above, we have many small matrices. We can instead
+gather all the (0, 0) tensor elements and display them together, then do
+the same for the (0, 1) tensor elements and so on. The outer indices
+now refer to the element index within tensors, and the inner index which
+of the tensors in the field a particular element came from.</p><pre><span class="num">0</span>, <span class="num">0</span> in tenors         <span class="num">0</span>, <span class="num">1</span> in tensors
++------+------+------+ +------+------+------+
+| <span class="num">0</span>, <span class="num">0</span> | <span class="num">0</span>, <span class="num">1</span> | <span class="num">0</span>, <span class="num">0</span> | | <span class="num">0</span>, <span class="num">0</span> | <span class="num">0</span>, <span class="num">1</span> | <span class="num">0</span>, <span class="num">0</span> |
++------+------+------+ +------+------+------+
+| <span class="num">1</span>, <span class="num">0</span> | <span class="num">1</span>, <span class="num">1</span> | <span class="num">1</span>, <span class="num">0</span> | | <span class="num">1</span>, <span class="num">0</span> | <span class="num">1</span>, <span class="num">1</span> | <span class="num">1</span>, <span class="num">0</span> |
++------+------+------+ +------+------+------+
+
+<span class="num">0</span>, <span class="num">0</span> in tensors        <span class="num">0</span>, <span class="num">1</span> in tensors
++------+------+------+ +------+------+------+
+| <span class="num">0</span>, <span class="num">0</span> | <span class="num">0</span>, <span class="num">1</span> | <span class="num">0</span>, <span class="num">0</span> | | <span class="num">0</span>, <span class="num">0</span> | <span class="num">0</span>, <span class="num">1</span> | <span class="num">0</span>, <span class="num">0</span> |
++------+------+------+ +------+------+------+
+| <span class="num">1</span>, <span class="num">0</span> | <span class="num">1</span>, <span class="num">1</span> | <span class="num">1</span>, <span class="num">0</span> | | <span class="num">1</span>, <span class="num">0</span> | <span class="num">1</span>, <span class="num">1</span> | <span class="num">1</span>, <span class="num">0</span> |
++------+------+------+ +------+------+------+</pre><p>This swapping of indices compacts the visualization for this particular
+matrix field a bit - rather than many small images, we have a few larger
+ones.</p><p>Created by gonztobi on 4/23/2014.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.matrix.MatrixFieldSuperPanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MatrixFieldSuperPanelextendsViewerSuperPanel"></a>
+      <a id="MatrixFieldSuperPanel:MatrixFieldSuperPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MatrixFieldSuperPanel.html"><span class="name">MatrixFieldSuperPanel</span></a><span class="result"> extends <a href="../ViewerSuperPanel.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ViewerSuperPanel">ViewerSuperPanel</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.matrix.package@MatrixFieldSuperPanelextendsViewerSuperPanel" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Host panel for Matrix field visualizations.</p><div class="fullcomment"><div class="comment cmt"><p>Host panel for Matrix field visualizations. Provides a toolbar with common
+controls and a combo box for selecting between the different matrix field
+visualizations.</p><p>If you've implemented a new visualization for matrix fields and want to plug
+it into the GUI, provide a name for it to the <code>viewerNames</code> list and a case
+for it in the <code>viewerNameToInstance</code> memoized factory.</p><p>Created by gonztobi on 2/24/14.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.matrix.MatrixMemoryView" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MatrixMemoryViewextendsBorderPanelwithEventDrivenViewerwithZoomPropertywithRestorableStatewithToolbarItems"></a>
+      <a id="MatrixMemoryView:MatrixMemoryView"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MatrixMemoryView.html"><span class="name">MatrixMemoryView</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a> with <a href="../ToolbarItems.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ToolbarItems">ToolbarItems</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.matrix.package@MatrixMemoryViewextendsBorderPanelwithEventDrivenViewerwithZoomPropertywithRestorableStatewithToolbarItems" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A panel for graphically displaying a Matrix field.</p><div class="fullcomment"><div class="comment cmt"><p>A panel for graphically displaying a Matrix field. Each Matrix
+is displayed as a grayscale image of size rows x columns, with one entry in
+the image for each element in the matrix.</p><p>The mapping of matrix element value to grayscale value depends on the
+current state of the &quot;Floating Max&quot; toggle button in this viewer's toolbar.
+When toggled off (the default state), the smallest value ever recorded by
+the viewer (absMin) is rendered as black, the largest value ever recored
+(absMax) is white, and intermediate data values display as gray
+proportionate to where they lie between absMin and absMax.
+If the toggle is on, the ends of the scale are determined by the values
+of the current step only (stepMin and stepMax).</p><p>The display also shows the grayscale encoding to help interpret the view,
+which looks roughly like this for a sequence of three output elements,
+each with two inputs:
+<pre>
+
+     +-+              +-+
+     |*| = -3.62      | | = 3.62
+     +-+              +-+
+
+
+     +---------+   +---------+   +---------+
+     |         |   |         |   |         |
+     |  image  |   |  image  |   |  image  |
+     |         |   |         |   |         |
+     +---------+   +---------+   +---------+
+     +---------+   +---------+   +---------+
+     |         |   |         |   |         |
+     |  image  |   |  image  |   |  image  |
+     |         |   |         |   |         |
+     +---------+   +---------+   +---------+
+</pre>
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogdebugger.ui.fieldvisualizations.matrix.MatrixFieldSuperPanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MatrixFieldSuperPanel"></a>
+      <a id="MatrixFieldSuperPanel:MatrixFieldSuperPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MatrixFieldSuperPanel$.html"><span class="name">MatrixFieldSuperPanel</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.matrix.package@MatrixFieldSuperPanel" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,789 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>cogdebugger - cogdebugger</title>
+          <meta name="description" content="cogdebugger - cogdebugger" />
+          <meta name="keywords" content="cogdebugger cogdebugger" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../index.html';
+            var hash = 'cogdebugger.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../lib/package_big.png" />
+        
+        <h1>cogdebugger</h1><span class="permalink">
+      <a href="../index.html#cogdebugger.package" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cogdebugger</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogdebugger.BooleanProperty" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BooleanPropertyextendsProperty[Boolean]"></a>
+      <a id="BooleanProperty:BooleanProperty"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BooleanProperty.html"><span class="name">BooleanProperty</span></a><span class="result"> extends <a href="Property.html" class="extype" name="cogdebugger.Property">Property</a>[<span class="extype" name="scala.Boolean">Boolean</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@BooleanPropertyextendsProperty[Boolean]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.Cog3StyleDebuggerUI" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Cog3StyleDebuggerUIextendsBorderPanelwithUIwithProductwithSerializable"></a>
+      <a id="Cog3StyleDebuggerUI:Cog3StyleDebuggerUI"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Cog3StyleDebuggerUI.html"><span class="name">Cog3StyleDebuggerUI</span></a><span class="params">(<span name="mainToolbar">mainToolbar: <span class="extype" name="scala.swing.BoxPanel">BoxPanel</span></span>, <span name="structurePane">structurePane: <a href="ui/structure/StructurePane.html" class="extype" name="cogdebugger.ui.structure.StructurePane">StructurePane</a></span>, <span name="probeDesktop">probeDesktop: <a href="ui/Desktop.html" class="extype" name="cogdebugger.ui.Desktop">Desktop</a></span>, <span name="msgPanel">msgPanel: <a href="ui/MessagesPanel.html" class="extype" name="cogdebugger.ui.MessagesPanel">MessagesPanel</a></span>)</span><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="UI.html" class="extype" name="cogdebugger.UI">UI</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@Cog3StyleDebuggerUIextendsBorderPanelwithUIwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A GUI designed to look and feel like what existed for Cog 3.</p><div class="fullcomment"><div class="comment cmt"><p>A GUI designed to look and feel like what existed for Cog 3. Consists of
+three major UI portions: the main toolbar, the graph viewer, and the probe
+desktop. The main toolbar goes across the top of the window, the graph
+graph viewer exists as a sort of sidebar in the main area, the and probe
+desktop takes up the reaming space (and the builk of the entire UI). This
+style eschews the menu bar, status bar,a nd message windows.</p></div></div>
+    </li><li name="cogdebugger.CogDebuggerApp" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CogDebuggerAppextendsAnyRef"></a>
+      <a id="CogDebuggerApp:CogDebuggerApp"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CogDebuggerApp.html"><span class="name">CogDebuggerApp</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@CogDebuggerAppextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Base class for Cog applications that make use of the Cog Browser for the
+purpose of visualizing field contents.</p><div class="fullcomment"><div class="comment cmt"><p>Base class for Cog applications that make use of the Cog Browser for the
+purpose of visualizing field contents. It works sort of like
+SimpleSwingApplication, except that instead of defining some anonymous
+subclass of a MainFrame, clients will define a ComputeGraph.</p></div></div>
+    </li><li name="cogdebugger.CogProbedDebuggerApp" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CogProbedDebuggerAppextendsCogDebuggerApp"></a>
+      <a id="CogProbedDebuggerApp:CogProbedDebuggerApp"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CogProbedDebuggerApp.html"><span class="name">CogProbedDebuggerApp</span></a><span class="result"> extends <a href="CogDebuggerApp.html" class="extype" name="cogdebugger.CogDebuggerApp">CogDebuggerApp</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@CogProbedDebuggerAppextendsCogDebuggerApp" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A debugger that probes all fields in a compute graph.</p>
+    </li><li name="cogdebugger.DebuggerState" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DebuggerStateextendsAnyRef"></a>
+      <a id="DebuggerState:DebuggerState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DebuggerState.html"><span class="name">DebuggerState</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@DebuggerStateextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A wrapper for for any debugger state that is tied to a particular compute
+graph.</p><div class="fullcomment"><div class="comment cmt"><p>A wrapper for for any debugger state that is tied to a particular compute
+graph. If this object is lost/destroyed, any of the GUI state here should
+be cleaned up.</p><p>Created by gonztobi on 1/22/2015.
+</p></div></div>
+    </li><li name="cogdebugger.DoubleProperty" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DoublePropertyextendsProperty[Double]"></a>
+      <a id="DoubleProperty:DoubleProperty"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DoubleProperty.html"><span class="name">DoubleProperty</span></a><span class="result"> extends <a href="Property.html" class="extype" name="cogdebugger.Property">Property</a>[<span class="extype" name="scala.Double">Double</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@DoublePropertyextendsProperty[Double]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.FieldNode" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="FieldNodeextendsModuleTreeNodewithProductwithSerializable"></a>
+      <a id="FieldNode:FieldNode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldNode.html"><span class="name">FieldNode</span></a><span class="params">(<span name="wrappedField">wrappedField: <a href="../cogx/runtime/debugger/ProbedField.html" class="extype" name="cogx.runtime.debugger.ProbedField">ProbedField</a></span>, <span name="parent">parent: <a href="ModuleNode.html" class="extype" name="cogdebugger.ModuleNode">ModuleNode</a></span>)</span><span class="result"> extends <a href="ModuleTreeNode.html" class="extype" name="cogdebugger.ModuleTreeNode">ModuleTreeNode</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@FieldNodeextendsModuleTreeNodewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A leaf node representing a (probed) field.</p><div class="fullcomment"><div class="comment cmt"><p>A leaf node representing a (probed) field.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="cogdebugger.FloatProperty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="FloatPropertyextendsProperty[Float]"></a>
+      <a id="FloatProperty:FloatProperty"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FloatProperty.html"><span class="name">FloatProperty</span></a><span class="result"> extends <a href="Property.html" class="extype" name="cogdebugger.Property">Property</a>[<span class="extype" name="scala.Float">Float</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@FloatPropertyextendsProperty[Float]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Represents a single floating point value.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a single floating point value. Can be rendered as a spinner
+by <a href="ToolFactory$.html" class="extype" name="cogdebugger.ToolFactory">cogdebugger.ToolFactory</a>.</p></div></div>
+    </li><li name="cogdebugger.IntProperty" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IntPropertyextendsProperty[Int]"></a>
+      <a id="IntProperty:IntProperty"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="IntProperty.html"><span class="name">IntProperty</span></a><span class="result"> extends <a href="Property.html" class="extype" name="cogdebugger.Property">Property</a>[<span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@IntPropertyextendsProperty[Int]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.Memoize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Memoize[-ArgType,+ReturnType]extendsArgType=&gt;ReturnType"></a>
+      <a id="Memoize[-ArgType,+ReturnType]:Memoize[ArgType,ReturnType]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Memoize.html"><span class="name">Memoize</span></a><span class="tparams">[<span name="ArgType">-ArgType</span>, <span name="ReturnType">+ReturnType</span>]</span><span class="result"> extends (<span class="extype" name="cogdebugger.Memoize.ArgType">ArgType</span>) ⇒ <span class="extype" name="cogdebugger.Memoize.ReturnType">ReturnType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@Memoize[-ArgType,+ReturnType]extendsArgType=&gt;ReturnType" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A utility class for building memoized functions.</p><div class="fullcomment"><div class="comment cmt"><p>A utility class for building memoized functions. Initially an empty
+(mutable) Map, the first call to <code>apply</code> with a particular key uses the
+<code>function</code> argument to produce a value and store it in the map before
+returning it. Subsequent re-use of this key will return the stored value.</p><p>Note that the underlying data structure is a
+scala.collection.mutable.HashMap, which may not be thread-safe.</p><p>Created by gonztobi on 2/25/14.
+</p></div></div>
+    </li><li name="cogdebugger.ModuleHierarchyTree" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ModuleHierarchyTreeextendsAnyRef"></a>
+      <a id="ModuleHierarchyTree:ModuleHierarchyTree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ModuleHierarchyTree.html"><span class="name">ModuleHierarchyTree</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ModuleHierarchyTreeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A tree describing the module hierarchy implied in a given Cog model's
+definition.</p><div class="fullcomment"><div class="comment cmt"><p>A tree describing the module hierarchy implied in a given Cog model's
+definition. Supports lookups and traversals.</p><p>Basically, any class that has Cog fields as members is called a Module. In
+addition, any class that has a Module as a member is also called a Module,
+and is considered a parent to all those member Modules. Any Module that
+doesn't have a parent is attached as a child to a meta-Module that we just
+call Root.</p><p>The actual reflection/introspection code that finds all these module
+relationships lives in the field auto-naming logic within ComputeGraph.
+This class is actually determining the relationships by breaking apart
+field names.</p><p>Example:</p><pre><span class="kw">class</span> Bar { <span class="kw">val</span> scalarField = ScalarField( ... ) }
+<span class="kw">class</span> Foo { <span class="kw">val</span> bar = <span class="kw">new</span> Bar() }
+<span class="kw">val</span> cg = <span class="kw">new</span> ComputeGraph {
+  <span class="kw">val</span> foo = <span class="kw">new</span> Foo()
+}</pre><p>In the above compute graph, a single scalar field is created that will be
+named &quot;foo.bar.scalarField.&quot; This name is generated using reflection:
+the anonymous ComputeGraph has a Foo member named foo which in turn has a
+Bar member named bar which in turn has a ScalarField member named
+scalarField. The namer smashes those together to create a long name for the
+field; this ModuleHierarchyTree class breaks the name back apart to
+determine relationships between fields and parent objects (the so-called
+Modules).
+</p></div></div>
+    </li><li name="cogdebugger.ModuleNode" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ModuleNodeextendsModuleTreeNodewithProductwithSerializable"></a>
+      <a id="ModuleNode:ModuleNode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ModuleNode.html"><span class="name">ModuleNode</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="parent">parent: <a href="ModuleNode.html" class="extype" name="cogdebugger.ModuleNode">ModuleNode</a></span>)</span><span class="result"> extends <a href="ModuleTreeNode.html" class="extype" name="cogdebugger.ModuleTreeNode">ModuleTreeNode</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ModuleNodeextendsModuleTreeNodewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A node representing a module.</p><div class="fullcomment"><div class="comment cmt"><p>A node representing a module. ModuleNodes can contain both other
+other ModuleNodes and FieldNodes as children.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="cogdebugger.ModuleTreeNode" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ModuleTreeNodeextendsAnyRef"></a>
+      <a id="ModuleTreeNode:ModuleTreeNode"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ModuleTreeNode.html"><span class="name">ModuleTreeNode</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ModuleTreeNodeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A node in the module tree.</p><div class="fullcomment"><div class="comment cmt"><p>A node in the module tree. One of either <a href="ModuleNode.html" class="extype" name="cogdebugger.ModuleNode">cogdebugger.ModuleNode</a> or
+<a href="FieldNode.html" class="extype" name="cogdebugger.FieldNode">cogdebugger.FieldNode</a>.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="cogdebugger.NewProbeData" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NewProbeDataextendsProbeEventwithProductwithSerializable"></a>
+      <a id="NewProbeData:NewProbeData"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NewProbeData.html"><span class="name">NewProbeData</span></a><span class="params">(<span name="src">src: <a href="../cogx/runtime/debugger/ProbedField.html" class="extype" name="cogx.runtime.debugger.ProbedField">ProbedField</a></span>, <span name="data">data: <a href="../libcog/package.html#AbstractFieldMemory=cogx.platform.cpumemory.AbstractFieldMemory" class="extmbr" name="libcog.AbstractFieldMemory">libcog.AbstractFieldMemory</a></span>, <span name="simTick">simTick: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <a href="ProbeEvent.html" class="extype" name="cogdebugger.ProbeEvent">ProbeEvent</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@NewProbeDataextendsProbeEventwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.OneOfNProperty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OneOfNPropertyextendsProperty[String]"></a>
+      <a id="OneOfNProperty:OneOfNProperty"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="OneOfNProperty.html"><span class="name">OneOfNProperty</span></a><span class="result"> extends <a href="Property.html" class="extype" name="cogdebugger.Property">Property</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@OneOfNPropertyextendsProperty[String]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Represents a finite number of states, of which only one is active.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a finite number of states, of which only one is active. Can be
+rendered as a combobox by <a href="ToolFactory$.html" class="extype" name="cogdebugger.ToolFactory">cogdebugger.ToolFactory</a>.</p></div></div>
+    </li><li name="cogdebugger.Probe" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ProbeextendsAnyRef"></a>
+      <a id="Probe:Probe"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Probe.html"><span class="name">Probe</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ProbeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ProbeEvent" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ProbeEventextendsAnyRef"></a>
+      <a id="ProbeEvent:ProbeEvent"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ProbeEvent.html"><span class="name">ProbeEvent</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ProbeEventextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ProbeListener" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ProbeListenerextendsAnyRef"></a>
+      <a id="ProbeListener:ProbeListener"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ProbeListener.html"><span class="name">ProbeListener</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ProbeListenerextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ProbeManager" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProbeManagerextendsAnyRef"></a>
+      <a id="ProbeManager:ProbeManager"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProbeManager.html"><span class="name">ProbeManager</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ProbeManagerextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ProbedFieldProbe" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProbedFieldProbeextendsProbe"></a>
+      <a id="ProbedFieldProbe:ProbedFieldProbe"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProbedFieldProbe.html"><span class="name">ProbedFieldProbe</span></a><span class="result"> extends <a href="Probe.html" class="extype" name="cogdebugger.Probe">Probe</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ProbedFieldProbeextendsProbe" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.Property" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Property[T]extendsAction.TriggerwithPublisher"></a>
+      <a id="Property[T]:Property[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Property.html"><span class="name">Property</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.swing.Action.Trigger">Trigger</span> with <span class="extype" name="scala.swing.Publisher">Publisher</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@Property[T]extendsAction.TriggerwithPublisher" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Represents part of the state of some GUI element (e.g.</p><div class="fullcomment"><div class="comment cmt"><p>Represents part of the state of some GUI element (e.g. the zoom level of
+a visualization). Meant to help assist with preservation of UI settings
+and appearance across application runs.</p><p>Setting a Property's value will cause the onPropertyChanged method to be
+called, which by default calls the apply method of the installed
+scala.swing.Action. The default Action, however, is
+scala.swing.Action.NoAction, which of course does nothing. Either
+install an appropriate Action or override onPropertyChanged if you want
+to trigger some behavior when the value of the Property is changed.</p><p>Each property can produce an XML tag suitable for saving into a properties
+file, and can later parse that tag to restore the previous state.</p></div></div>
+    </li><li name="cogdebugger.PropertyValueChanged" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PropertyValueChanged[T]extendsEventwithProductwithSerializable"></a>
+      <a id="PropertyValueChanged[T]:PropertyValueChanged[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="PropertyValueChanged.html"><span class="name">PropertyValueChanged</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="source">source: <a href="Property.html" class="extype" name="cogdebugger.Property">Property</a>[_]</span>, <span name="oldValue">oldValue: <span class="extype" name="cogdebugger.PropertyValueChanged.T">T</span></span>, <span name="newValue">newValue: <span class="extype" name="cogdebugger.PropertyValueChanged.T">T</span></span>)</span><span class="result"> extends <span class="extype" name="scala.swing.event.Event">Event</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@PropertyValueChanged[T]extendsEventwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.RestorableState" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RestorableStateextendsAnyRef"></a>
+      <a id="RestorableState:RestorableState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="RestorableState.html"><span class="name">RestorableState</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@RestorableStateextendsAnyRef" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.StringProperty" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StringPropertyextendsProperty[String]"></a>
+      <a id="StringProperty:StringProperty"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StringProperty.html"><span class="name">StringProperty</span></a><span class="result"> extends <a href="Property.html" class="extype" name="cogdebugger.Property">Property</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@StringPropertyextendsProperty[String]" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.UI" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="UIextendsPanelwithRestorableState"></a>
+      <a id="UI:UI"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="UI.html"><span class="name">UI</span></a><span class="result"> extends <span class="extype" name="scala.swing.Panel">Panel</span> with <a href="RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@UIextendsPanelwithRestorableState" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A graphical user interface that supports saving/restoring at least some of
+its state to disk between runs (things like windows position and size).</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogdebugger.CogDebuggerApp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CogDebuggerApp"></a>
+      <a id="CogDebuggerApp:CogDebuggerApp"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CogDebuggerApp$.html"><span class="name">CogDebuggerApp</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@CogDebuggerApp" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.Launcher" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Launcher"></a>
+      <a id="Launcher:Launcher"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Launcher$.html"><span class="name">Launcher</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@Launcher" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sketch of a standalone launcher for the CogDebugger application.</p><div class="fullcomment"><div class="comment cmt"><p>Sketch of a standalone launcher for the CogDebugger application. Right now,
+all it really does is pop up a splash screen (and that only if you use the
+right run configuration).</p><p>Eventually, will take the name of a .class file defining an extension of
+ComputeGraph as an argument, and set up the browser for that app.</p></div></div>
+    </li><li name="cogdebugger.Memoize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Memoize"></a>
+      <a id="Memoize:Memoize"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Memoize$.html"><span class="name">Memoize</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@Memoize" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ProbeReset" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProbeReset"></a>
+      <a id="ProbeReset:ProbeReset"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ProbeReset$.html"><span class="name">ProbeReset</span></a><span class="result"> extends <a href="ProbeEvent.html" class="extype" name="cogdebugger.ProbeEvent">ProbeEvent</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ProbeReset" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.RestorableState" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RestorableState"></a>
+      <a id="RestorableState:RestorableState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="RestorableState$.html"><span class="name">RestorableState</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@RestorableState" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.Restorer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Restorer"></a>
+      <a id="Restorer:Restorer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Restorer$.html"><span class="name">Restorer</span></a><span class="result"> extends <span class="extype" name="scala.App">App</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@Restorer" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Created by Dick Carter on 3/5/15.</p><div class="fullcomment"><div class="comment cmt"><p>Created by Dick Carter on 3/5/15.</p><p>Simple app for launching the Cog debugger on a model restored from an HDF5 file.
+This will be obsoleted when the debugger implements a &quot;Load&quot; button.</p><p>Use this by entering the filename in the IntelliJ IDEA run config under &quot;Program arguments&quot;.
+The path can be absolute or relative to the launch directory, which is the top-level project
+directory.
+</p></div></div>
+    </li><li name="cogdebugger.ToolFactory" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ToolFactory"></a>
+      <a id="ToolFactory:ToolFactory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ToolFactory$.html"><span class="name">ToolFactory</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ToolFactory" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A factory that makes GUI controls for the different types of Properties,
+and sets them up to keep their states synched.</p><div class="fullcomment"><div class="comment cmt"><p>A factory that makes GUI controls for the different types of Properties,
+and sets them up to keep their states synched. That is, changes to the
+property will cause the GUI elements to change state when appropriate, and
+acting on the controls will change the values stored in the properties.</p><p>This synching is implemented primarily for the benefit of XML resore
+mechanism built into Properties; restoring the state of a Property from a
+XML file will cause its associated UI elements to be restored as well.
+</p></div></div>
+    </li><li name="cogdebugger.Util" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Util"></a>
+      <a id="Util:Util"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Util$.html"><span class="name">Util</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@Util" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A collection of utility and miscellaneous functions used in the
+implementation of the Cog Debugger that don't have a compelling reason to be
+ placed in a particular package.</p><div class="fullcomment"><div class="comment cmt"><p>A collection of utility and miscellaneous functions used in the
+implementation of the Cog Debugger that don't have a compelling reason to be
+ placed in a particular package.</p><p>User: gonztobi
+Date: 8/21/13
+Time: 2:40 PM
+</p></div></div>
+    </li><li name="cogdebugger.coggui3ports" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="coggui3ports"></a>
+      <a id="coggui3ports:coggui3ports"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="coggui3ports/package.html"><span class="name">coggui3ports</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@coggui3ports" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.opengl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="opengl"></a>
+      <a id="opengl:opengl"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="opengl/package.html"><span class="name">opengl</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@opengl" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ui"></a>
+      <a id="ui:ui"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="ui/package.html"><span class="name">ui</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../index.html#cogdebugger.package@ui" title="Permalink" target="_top">
+        <img src="../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
