@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>{{ page.title }}</title>
+			<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+			<!-- link to main stylesheet -->
+			<link rel="stylesheet" type="text/css" href="/css/main.css">
+		</head>
+		<body>
+			<nav>
+	    		<ul>
+	    		    <li><a href="/">CCT Home</a></li>
+	    		    <li><a href="/downloadAndSetup">Download And Setup</a></li>
+	    		    <li><a href="/gettingStarted">Getting Started</a></li>
+		            <li><a href="/programmingGuide">Programming Guide</a></li>
+	    		</ul>
+			</nav>
+			<div class="container">
+			
+			  {{ content }}
+			
+			</div><!-- /.container -->
+			<footer>
+	    		<ul>
+	        		<li><a href="https://github.com/hpe-cct">github.com/hpe-cct</a></li>
+				</ul>
+			</footer>
+		</body>
+	</html>
