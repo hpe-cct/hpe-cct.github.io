@@ -12,15 +12,17 @@ The HPE Cognitive Computing Toolkit (CCT) is a GPU-accelerated platform for deep
 *   [Introductory Examples](#introductory-examples)
 *   [Tensor Fields](#tensor-fields)
       *    [Sensors](#sensors)
-         *    [cct-io Sensors](#cct-io-sensors)
-         *    [cct-nn Sensors](#cct-nn-sensors)
+             *    [cct-io Sensors](#cct-io-sensors)
+             *    [cct-nn Sensors](#cct-nn-sensors)
       *    [Actuators](#actuators)
 *   [Operators](#operators)
       * [Built-in Operators](#built-in-operators)   
       * [The Feedback Operator](#the-feedback-operator)
       * [User-defined GPU Operators](#user-defined-gpu-operators)  
       * [User-defined CPU Operators](#user-defined-cpu-operators)  
-*   [Coming Soon](#coming-soon)
+*   [Compute Graphs](#compute-graphs)
+*   [Neural Network Toolkit](#neural-network-toolkit)
+
 
 
 ## Intro
@@ -147,12 +149,13 @@ In CCT, fields (or *tensor fields*) are the primary data structures used for inp
 A *tensor field* is a multidimensional array of multidimensional arrays of numbers. A *tensor* is a multidimensional array. Thus, a *tensor field* is a multidimensional array of tensors. 
 
 Types of fields:
-* ScalarField
-* VectorField
-* MatrixField
-* ComplexField       (a scalar field with complex elements)
-* ComplexVectorField (a vector field with complex elements)
-* ColorField         (a field where each order-1 tensor is a pixel)
+
+* `ScalarField`
+* `VectorField`
+* `MatrixField`
+* `ComplexField`       (a scalar field with complex elements)
+* `ComplexVectorField` (a vector field with complex elements)
+* `ColorField`         (a field where each order-1 tensor is a pixel)
 
 Each field has a `fieldShape`, a `tensorShape`, and an `elementType`. The field shape has a dimension. The tensor shape also has a dimension, called an order or `tensorOrder`.  CCT supports up to 3 dimensions and up to 3rd-order tensors. Shapes are defined by layers, rows, and columns. A field with 3 dimensions has layers, rows, and columns. A field with 2 dimensions has rows and columns. For tensors, an order-0 tensor is called a scalar and contains a single number. An order-1 tensor is called a vector and contains one or more numbers. An order-2 tensor is called a matrix. The 3rd-order tensor is just called `Tensor3` in CCT. Tensors hold elements, which are defined by the `ElementType`, e.g. `Float32`. The complex fields have real and imaginary components, which are both floats. 
 
@@ -161,6 +164,7 @@ Additional field types may be defined by the user.
 For example #1, `counter` is a `ScalarField`. Its field shape is `Shape(200 200)`, for 200 rows and 200 columns. Its `dimensions` is 2. The `tensorOrder` is 0.  
 
 In [BackgroundSubtraction](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/cogio/BackgroundSubtraction.scala), `movie` is a `ColorField( 720 480 )( 3 )` with the following:
+
 * `movie.fieldShape = Shape(270 480)`
 * `movie.fieldShape.dimensions = 2`
 * `movie.tensorShape = Shape(3)`
@@ -182,11 +186,13 @@ In `libcog/sensors`, the [ScalarSensorActuatorExample.scala](https://github.com/
 Scala iterators and functions.
 
 Here's the constructor of a new sensor:
+
 `val date = new Sensor(Shape(3), getTime)`
 
 The `Sensor` constructor take a parameterless function, which returns an `Option[Iterator[Float]]`. In this example, the function is `getTime`.
 
 `Sensor` constructor parameters are:
+
 * `fieldShape`
 * `nextValue`  - Option Iterator, returns the next field in row-major order, can return `None`.
 * `resetHook` - function to reset to initial value, this can be empty.
@@ -211,6 +217,7 @@ Actuators are to output *tensor fields* from a *compute graph*. The *compute gra
 This tutorial has two Actuator examples. The simplest example is the [ActuatorExample](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/libcog/actuators/ActuatorExample.scala), located in `libcog/actuators`.   
 
 Here is the constructor: 
+
 `val actuator = Actuator(field, actuatorData, (column) => 4 - column)`
 
 In this actuator, the `actuatorData` array is a copy of the data in `field`. It can then be printed out at each step of the *compute graph*. The third parameter is used to define the initial state of `actuator`.
@@ -218,6 +225,7 @@ In this actuator, the `actuatorData` array is a copy of the data in `field`. It 
 The second example, [ScalarSensorActuatorExample](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/libcog/sensors/ScalarSensorActuatorExample.scala), defines an actuator function which is a unit function that takes an `Iterator[Float]`. This is a user-supplied callback function that is provided an iterator over the actuator's new data.
 
 Here is the constructor used in the second example:
+
 `val printer = new Actuator(date, printIterator)`
 
 where `date` is the `Sensor` defined above and `printIterator` is a function defined as: 
@@ -268,6 +276,59 @@ A CPU operator is a useful way to develop and test a new operator. These are eas
 CPU operators are described in the [User-defined operators](../programmingGuide/#user-defined-operators) section *CCT Programming Guide*.
 
 
-## Coming Soon
+## Compute Graphs
 
-Come back here soon. More information will be posted about the Compute Graph, Neural Network Toolkit, and more.
+The *compute graph* defines the inputs and outputs and all of the operations. The *compute graph* wraps all of the operations into a single, massively-parallel unit of computation. It is a state machine that evolves in discrete time. A single tick, or *step* of the CCT clock sends the input data through the entire *compute graph* to its outputs. 
+
+Persistent state, for learning and adaptation, is handled using feedback. The state of a field can be updated at each step and fed back into the compute graph at the next step, providing control loops and learning. The *compute graph* can be embedded in and controlled by a conventional application. 
+
+External data is fed into the compute graph via sensors and output to external sources using actuators. 
+
+Several examples in this tutorial demonstrate some of the basic uses of the *compute graph*. In the Counter example, a simple compute graph is wrapped by the CogDebugger. The ScalarSensorActuatorExample, defines a simple compute graph then shows some code that steps through the compute graph. This example also has a detailed description in the comments about what happens in the first call to `step` of a compute graph.  The ActuatorExample shows yet another way to invoke the use of a compute graph. 
+
+Here are some code snippets from [ScalarSensorActuatorExample](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/libcog/sensors/ScalarSensorActuatorExample.scala):
+
+    val cg = new ComputeGraph {
+      val date = new Sensor(Shape(3), getTime)
+      val printer = new Actuator(date, printIterator)
+    }
+    ...
+  
+    println("First ComputeGraph step")
+    cg.step(1)
+
+    for(i<-0 until 10){
+      Thread.sleep(1000)
+      println("")
+      println("Stepping ComputeGraph again.")
+      cg.step(1)
+    }
+
+    //release ComputeGraph resources. This must be done explicitly to shutdown the Actor system.
+    cg.release
+
+The most common methods of a compute graph are `step`, `reset`, and `release`. You can also use `save` to save a compute graph and its state.  See [Controlling The Computation](../programmingGuide/#controlling-the-computation) section of the Programming Guide for more information about stepping and resetting the `ComputeGraph`. 
+
+The [Programming Cog Applications](../programmingGuide/#programming-cog-applications) section of the Programming Guide has more detail about the internals of stepping the compute graph and how the feedback operators update the tensor fields using a 2-phase clock.
+
+ 
+## Neural Network Toolkit
+
+There are several examples in the **cct-tutorial** that use the Neural Network Toolkit (cct-nn). 
+
+All 4 examples use the MNIST data set, which can be downloaded from [yann.lecun.com](http://yann.lecun.com/exdb/mnist/). The MNIST data set includes all 4 files, uncompressed. This data set contains 60,000 training images and 10,000 test/validation images and associated labels. The tutorial examples will look for the data in one of two locations:  `../data/MNIST` (relative to the root directory of the **cct-tutorial** project) or `~/cog/data/MNIST`. To override these locations, you can update [MNISTdata.scala](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/toolkit/neuralnetwork/MNISTdata.scala).
+
+The simplest example is [LogisticRegression](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/toolkit/neuralnetwork/LogisticRegression.scala). This examples trains a network using `FullyConnectedLayer`. The `loss` is calculated using Cross Entropy (`CrossEntropySoftmax`), then Stochastic Gradient Descent for the back propagation(`normLoss.activateSGD`). The training accuracy using this model plateaus at about 92% after 12000 cycles (with a batch size of 120, that is 1.44M training images) using the default settings. Since there are 60,000 training images, this means the model passes through the entire training set 24 times (epochs). 
+
+All of these examples use the following: 
+
+- `batchSize` (images per cycle) - this can be tuned based on the GPU model you have, especially if you get CL_OUT_OF_RESOURCES
+- `StandardLearningRule(learningRate, momentum, weightDecay)` - learning rules used for adjusting the weights when training 
+- accuracy (`avgCorrect`) is calculated using `LowPass` or `NormalizedLowPass`, which recalculates total accuracy by adding the number of correct predictions for each cycle in a weighted fashion.
+- `ByteDataSource` and `ByteLabelSource` are the `Sensors` into the `ComputeGraph` feeding images and labels from files.
+
+The [DualPortRegression](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/toolkit/neuralnetwork/DualPortRegression.scala) example shows how to add a validation layer. It trains using the same model as the logistic regression example. Validation is done using a separate data set, using weights from the training and does not back propagation. The accuracy numbers are about the same as the first example, which is about 92% after 1.44M images). Note the layer names change, for example, `FullyConnectedLayer` is used for training while `FullyConnected` is used for validation.
+
+[TwoLayerNet](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/toolkit/neuralnetwork/TwoLayerNet.scala) is similar to `DualPortRegression`, but it includes a second logistic regression layer (`FullyConnectedLayer`). The accuracy from this two layer model jumps to 97%, after 40,000 cycles with a batch size of 120, compared to the 92% with just one layer. 
+
+In the last example, [ConvNet](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/toolkit/neuralnetwork/ConvNet.scala)  trains a model using Convolution. It also has 2 convolution layers that also use functions for Bias, Max Pooling , ReLU (rectified linear unit) and tanh. This model trains to 100% accuracy (using `AvgCorrect`) on a server running with a modified batch size of 200 for about 18,400 cycles (3.68M images). 
