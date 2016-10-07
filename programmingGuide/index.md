@@ -1123,9 +1123,9 @@ A computational step involves a two phase protocol:
 > buffer. This frees up all master buffers and immediately allows the
 > following to proceed in parallel:
 
-1.  Sensors fill their master buffers with new data from their external source (such as a video stream).
-2.  The field data in the input slaves flows up through the field computation to the inputs of the actuator master buffers.
-3.  Actuators write their slave buffers out to an external sink (such as a video display).
+> 1.  Sensors fill their master buffers with new data from their external source (such as a video stream).
+> 2.  The field data in the input slaves flows up through the field computation to the inputs of the actuator master buffers.
+> 3.  Actuators write their slave buffers out to an external sink (such as a video display).
 
 > In *phase 2* of a clock cycle, each master buffer latches its input
 > data. For a sensor, the master input data is supplied by an external
