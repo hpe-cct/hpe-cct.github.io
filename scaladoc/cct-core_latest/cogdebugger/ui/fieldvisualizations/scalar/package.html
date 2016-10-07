@@ -1,0 +1,343 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>scalar - cogdebugger.ui.fieldvisualizations.scalar</title>
+          <meta name="description" content="scalar - cogdebugger.ui.fieldvisualizations.scalar" />
+          <meta name="keywords" content="scalar cogdebugger.ui.fieldvisualizations.scalar" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogdebugger.ui.fieldvisualizations.scalar.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogdebugger">cogdebugger</a>.<a href="../../package.html" class="extype" name="cogdebugger.ui">ui</a>.<a href="../package.html" class="extype" name="cogdebugger.ui.fieldvisualizations">fieldvisualizations</a></p>
+        <h1>scalar</h1><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.scalar.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">scalar</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogdebugger.ui.fieldvisualizations.scalar.AcceleratedStackedTimeseriesPanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="AcceleratedStackedTimeseriesPanelextendsPanelwithEventDrivenViewer"></a>
+      <a id="AcceleratedStackedTimeseriesPanel:AcceleratedStackedTimeseriesPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AcceleratedStackedTimeseriesPanel.html"><span class="name">AcceleratedStackedTimeseriesPanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.Panel">Panel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.scalar.package@AcceleratedStackedTimeseriesPanelextendsPanelwithEventDrivenViewer" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A timeseries plot that shows a fixed sized history, not unlike the old
+TimeseriesPlotPanel (which was renamed to StackedTimeseriesPanel).</p><div class="fullcomment"><div class="comment cmt"><p>A timeseries plot that shows a fixed sized history, not unlike the old
+TimeseriesPlotPanel (which was renamed to StackedTimeseriesPanel). This
+plot, however, uses a different dataset implementation and is better
+suited for fast changing, live data.</p><p>Like the old implementation, each point in the target field is displayed in
+its own subplot, with the subplots stacked on top of each other. For fields
+with more than a handful of points, this can get pretty expensive to draw.</p><p>This version of the viewer supports up to 2D fields.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.scalar.DynamicXYDataset" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DynamicXYDatasetextendsAbstractXYDataset"></a>
+      <a id="DynamicXYDataset:DynamicXYDataset"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DynamicXYDataset.html"><span class="name">DynamicXYDataset</span></a><span class="result"> extends <span class="extype" name="org.jfree.data.xy.AbstractXYDataset">AbstractXYDataset</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.scalar.package@DynamicXYDatasetextendsAbstractXYDataset" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An XYDataset with a fixed size internal circular buffer amenable to fast
+&quot;drop oldest and append&quot; operations.</p>
+    </li><li name="cogdebugger.ui.fieldvisualizations.scalar.GrayscaleImagePanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GrayscaleImagePanelextendsFlowPanelwithEventDrivenViewerwithZoomPropertywithRestorableState"></a>
+      <a id="GrayscaleImagePanel:GrayscaleImagePanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GrayscaleImagePanel.html"><span class="name">GrayscaleImagePanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.FlowPanel">FlowPanel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.scalar.package@GrayscaleImagePanelextendsFlowPanelwithEventDrivenViewerwithZoomPropertywithRestorableState" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A viewer for ScalarFields that assumes that they're holding grayscale
+images.</p><div class="fullcomment"><div class="comment cmt"><p>A viewer for ScalarFields that assumes that they're holding grayscale
+images. That is, the values in the ScalarField are in the range [0f, 1f],
+with values &lt;= 0 to be represented as black, and values &gt;= 1 as pure white.</p><p>The view presented can look quite similar to that of the ScalarMemoryView,
+but because this view makes assumptions about the possible range of values,
+it's potentially more performant.</p><p>Only accepts ScalarFields of 2 dimensions or lower.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.scalar.ScalarFieldSuperPanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ScalarFieldSuperPanelextendsViewerSuperPanel"></a>
+      <a id="ScalarFieldSuperPanel:ScalarFieldSuperPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalarFieldSuperPanel.html"><span class="name">ScalarFieldSuperPanel</span></a><span class="result"> extends <a href="../ViewerSuperPanel.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ViewerSuperPanel">ViewerSuperPanel</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.scalar.package@ScalarFieldSuperPanelextendsViewerSuperPanel" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Host panel for Scalar field visualizations.</p><div class="fullcomment"><div class="comment cmt"><p>Host panel for Scalar field visualizations. Provides a toolbar with common
+controls and a combo box for selecting between the different scalar field
+visualizations.</p><p>If you've implemented a new visualization for scalar fields and want to plug
+it into the GUI, provide a name for it to the <code>viewerNames</code> list and a case
+for it in the <code>viewerNameToInstance</code> memoized factory.</p><p>Created by gonztobi on 2/24/14.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.scalar.ScalarMemoryView" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ScalarMemoryViewextendsBorderPanelwithEventDrivenViewerwithZoomPropertywithRestorableStatewithToolbarItems"></a>
+      <a id="ScalarMemoryView:ScalarMemoryView"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalarMemoryView.html"><span class="name">ScalarMemoryView</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a> with <a href="../ToolbarItems.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ToolbarItems">ToolbarItems</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.scalar.package@ScalarMemoryViewextendsBorderPanelwithEventDrivenViewerwithZoomPropertywithRestorableStatewithToolbarItems" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A panel for graphically displaying a Scalar field.</p><div class="fullcomment"><div class="comment cmt"><p>A panel for graphically displaying a Scalar field. Each layer in the field
+is displayed as a separate grayscale image with dimensions columns x rows,
+with each element in a layer represented by a single pixel.</p><p>The mapping from a value to a grayscale shade depends on the minimum and
+maximum values in the whole field (and not just the layer). By default,
+black represents a minimum and white a maximum, with a linear gradient
+representing values in-between. Toggling the 'Invert' property to true will
+reverse this gradient such that white represetns a minimum and black a
+maximum.</p><p>The minimum and maximum used for shading purposes are by default
+'cumulative,' that is, they are the smallest and largest values seen in the
+field across all updates since the last reset. This behavior can be changed
+by toggling the 'Floating Max' property to true, which causes shading to be
+based on the minimum and maxmimum values present in the field only at the
+latest update, ignoring all previous updates.</p><p>All put together, it looks something like this for a three-dimensional
+scalar field with 6 layers:
+<pre>
+     +-+              +-+
+     |*| = -3.62      | | = 3.62
+     +-+              +-+
+
+
+     +---------+   +---------+   +---------+
+     |         |   |         |   |         |
+     | layer 0 |   | layer 1 |   | layer 2 |
+     |         |   |         |   |         |
+     +---------+   +---------+   +---------+
+     +---------+   +---------+   +---------+
+     |         |   |         |   |         |
+     | layer 3 |   | layer 4 |   | layer 5 |
+     |         |   |         |   |         |
+     +---------+   +---------+   +---------+
+</pre>
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.scalar.ScatterPlot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ScatterPlotextendsPanelwithEventDrivenViewer"></a>
+      <a id="ScatterPlot:ScatterPlot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ScatterPlot.html"><span class="name">ScatterPlot</span></a><span class="result"> extends <span class="extype" name="scala.swing.Panel">Panel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.scalar.package@ScatterPlotextendsPanelwithEventDrivenViewer" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A visualization for ScalarFields of two dimensions or less that presents
+the field as a scatter plot of column index vs value.</p><div class="fullcomment"><div class="comment cmt"><p>A visualization for ScalarFields of two dimensions or less that presents
+the field as a scatter plot of column index vs value. For 2D fields, rows
+are differentiated by using a different set of colors/symbols for each row.</p><p>An example of a 2x10 2D scalar field containing values in [0, 1] viewed as
+a scatter plot would look something like this:</p><pre>    <span class="num">1.0</span> |                   x
+        |             o
+        |    o                 x     o
+        |             x        o
+value   |    x  x  o     x           x
+        | o        x     o        o
+        | x     o            o    x
+        |
+      <span class="num">0</span> +------------------------------
+          <span class="num">0</span>  <span class="num">1</span>  <span class="num">2</span>  <span class="num">3</span>  <span class="num">4</span>  <span class="num">5</span>  <span class="num">6</span>  <span class="num">7</span>  <span class="num">8</span>  <span class="num">9</span>
+                      column
+        +-----------------------------+
+        |   x = row <span class="num">0</span>   o = row <span class="num">1</span>     |
+        +-----------------------------+</pre></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.scalar.StackedTimeSeriesPanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="StackedTimeSeriesPanelextendsBorderPanelwithEventDrivenViewerwithZoomable"></a>
+      <a id="StackedTimeSeriesPanel:StackedTimeSeriesPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StackedTimeSeriesPanel.html"><span class="name">StackedTimeSeriesPanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a> with <a href="../Zoomable.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Zoomable">Zoomable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.scalar.package@StackedTimeSeriesPanelextendsBorderPanelwithEventDrivenViewerwithZoomable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A visualization for SalarFields of two or fewer dimensions that renders the
+field as a number of stacked timeseries plots, one per field element.</p><div class="fullcomment"><div class="comment cmt"><p>A visualization for SalarFields of two or fewer dimensions that renders the
+field as a number of stacked timeseries plots, one per field element. This
+visaulization's performance is quite sensitive to the target field's size;
+it is not recommened for fields with a large number of elements, as it will
+render quite slowly.</p><p>This implementation keeps a fixed size history of the last 500 steps. The
+oldest value is at the left end of the chart, the most recent at the right.
+(This history is part of the reason this visualization can't handle large
+fields; the field size is effecitvely multiplied by 500.))</p><p>This visualization is based off the old Cog 3.x MultiXYPlot, which was
+not particularly efficient. This visualization also takes a long time to
+update, especially if its tracking many values from a large field. If the
+target field is updating more rapidly than the visualization, there will be
+gaps in the history. The most recently recorded value is extended into
+these gaps (which has the tendency to cause the timeseries to render as a
+stepped line).
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.scalar.Timeseries2" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Timeseries2extendsPanelwithEventDrivenViewer"></a>
+      <a id="Timeseries2:Timeseries2"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Timeseries2.html"><span class="name">Timeseries2</span></a><span class="result"> extends <span class="extype" name="scala.swing.Panel">Panel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.scalar.package@Timeseries2extendsPanelwithEventDrivenViewer" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An experimental, accelerated version of the old XYPlot (since renamed to
+Timeseries and TimeseriesPlot).</p><div class="fullcomment"><div class="comment cmt"><p>An experimental, accelerated version of the old XYPlot (since renamed to
+Timeseries and TimeseriesPlot). There are several big visual differences -
+for one, all series share a single drawing area (rather than having one
+graph per series).</p><p>Needs some tools to control scaling and range of the axes.</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogdebugger.ui.fieldvisualizations.scalar.ScalarFieldSuperPanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ScalarFieldSuperPanel"></a>
+      <a id="ScalarFieldSuperPanel:ScalarFieldSuperPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalarFieldSuperPanel$.html"><span class="name">ScalarFieldSuperPanel</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.scalar.package@ScalarFieldSuperPanel" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

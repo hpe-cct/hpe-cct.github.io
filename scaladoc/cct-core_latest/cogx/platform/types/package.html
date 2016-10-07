@@ -1,0 +1,295 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>types - cogx.platform.types</title>
+          <meta name="description" content="types - cogx.platform.types" />
+          <meta name="keywords" content="types cogx.platform.types" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'cogx.platform.types.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="cogx">cogx</a>.<a href="../package.html" class="extype" name="cogx.platform">platform</a></p>
+        <h1>types</h1><span class="permalink">
+      <a href="../../../index.html#cogx.platform.types.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">types</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Implements the core computational abstractions in Cog:</p><p>1. Fields, which are multidimensional arrays of data. The FieldType class
+describes the structure of the field (shape), while the ElementType class
+describes the elements within that field (e.g. floating point numbers,
+pixels, ...)</p><p>2. Buffers, memory regions on the CPU and GPU which hold Fields.</p><p>3. Kernels, which take fields as inputs and compute resulting fields as
+outputs. The AbstractKernel class is the base representation for all
+kernels, and extends the Node class so that kernels may be connected
+together into directed acyclic graphs, called Circuits. The Circuit
+structure supplies the dependence structure of the computation, so that
+the kernels may be properly scheduled for execution. Each kernel is assigned
+an Opcode which designates the computation that it performs.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogx.platform.types"><span>types</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.platform.types.FieldType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="FieldTypeextendsSerializablewithSaveable"></a>
+      <a id="FieldType:FieldType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldType.html"><span class="name">FieldType</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span> with <a href="../checkpoint/Saveable.html" class="extype" name="cogx.platform.checkpoint.Saveable">Saveable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.types.package@FieldTypeextendsSerializablewithSaveable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The type of a node in the syntax tree.</p><div class="fullcomment"><div class="comment cmt"><p>The type of a node in the syntax tree.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="cogx.platform.types.Pixel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PixelextendsAnyRef"></a>
+      <a id="Pixel:Pixel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Pixel.html"><span class="name">Pixel</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.types.package@PixelextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A pixel has red, green and blue color channels, each of which is
+represented by a byte.</p><div class="fullcomment"><div class="comment cmt"><p>A pixel has red, green and blue color channels, each of which is
+represented by a byte. This is readable and writable, mimicking a vector.
+</p></div></div>
+    </li><li name="cogx.platform.types.VirtualFieldRegisterInfo" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VirtualFieldRegisterInfoextendsProductwithSerializable"></a>
+      <a id="VirtualFieldRegisterInfo:VirtualFieldRegisterInfo"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="VirtualFieldRegisterInfo.html"><span class="name">VirtualFieldRegisterInfo</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="probed">probed: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="fieldType">fieldType: <a href="FieldType.html" class="extype" name="cogx.platform.types.FieldType">FieldType</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.types.package@VirtualFieldRegisterInfoextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Helper class to hold VirtualFieldRegister info before actually instantiating one.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogx.platform.types.FieldType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FieldType"></a>
+      <a id="FieldType:FieldType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldType$.html"><span class="name">FieldType</span></a><span class="result"> extends <a href="../checkpoint/RestoreFactory.html" class="extype" name="cogx.platform.checkpoint.RestoreFactory">RestoreFactory</a> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.types.package@FieldType" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for creating FieldTypes from their stored representations.</p>
+    </li><li name="cogx.platform.types.KernelCodeTypes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="KernelCodeTypes"></a>
+      <a id="KernelCodeTypes:KernelCodeTypes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KernelCodeTypes$.html"><span class="name">KernelCodeTypes</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.types.package@KernelCodeTypes" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Facility for saving/restoring a Cog kernel code type.</p><div class="fullcomment"><div class="comment cmt"><p>Facility for saving/restoring a Cog kernel code type.</p><p>The 'stock' Scala sealed abstract class lacks a factory maker of class instances given a stored id.
+The apply() method below achieves this, but requires that all additions or deletions to the case objects
+be reflected in the 'codeTypes' Seq.  Important then to keep this in-sync!!!</p><p>A plain Scala enumeration lacks the compile-time exhaustive match checking of sealed abstract classes.
+I was also concerned that over time there might be deletions in the list of supported code types.  It
+would be important to keep the id's the same for the values that had already been stored (i.e. better
+to allow holes to appear in the sequence of valid id's than to shift the id assignments).</p><p>Created by Dick Carter.
+</p></div></div>
+    </li><li name="cogx.platform.types.KernelTypes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="KernelTypes"></a>
+      <a id="KernelTypes:KernelTypes"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KernelTypes$.html"><span class="name">KernelTypes</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.types.package@KernelTypes" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Facility for saving/restoring a Cog kernel code type.</p><div class="fullcomment"><div class="comment cmt"><p>Facility for saving/restoring a Cog kernel code type.</p><p>The 'stock' Scala sealed abstract class lacks a factory maker of class instances given a stored id.
+The apply() method below achieves this, but requires that all additions or deletions to the case objects
+be reflected in the 'codeTypes' Seq.  Important then to keep this in-sync!!!</p><p>A plain Scala enumeration lacks the compile-time exhaustive match checking of sealed abstract classes.
+I was also concerned that over time there might be deletions in the list of supported code types.  It
+would be important to keep the id's the same for the values that had already been stored (i.e. better
+to allow holes to appear in the sequence of valid id's than to shift the id assignments).</p><p>Created by Dick Carter.
+</p></div></div>
+    </li><li name="cogx.platform.types.Pixel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Pixel"></a>
+      <a id="Pixel:Pixel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Pixel$.html"><span class="name">Pixel</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.types.package@Pixel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion for Pixel class to help constructors.</p>
+    </li><li name="cogx.platform.types.VirtualFieldRegister" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VirtualFieldRegister"></a>
+      <a id="VirtualFieldRegister:VirtualFieldRegister"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VirtualFieldRegister$.html"><span class="name">VirtualFieldRegister</span></a><span class="result"> extends <a href="../checkpoint/RestoreFactory.html" class="extype" name="cogx.platform.checkpoint.RestoreFactory">RestoreFactory</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.types.package@VirtualFieldRegister" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,713 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>vector - cogdebugger.ui.fieldvisualizations.vector</title>
+          <meta name="description" content="vector - cogdebugger.ui.fieldvisualizations.vector" />
+          <meta name="keywords" content="vector cogdebugger.ui.fieldvisualizations.vector" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogdebugger.ui.fieldvisualizations.vector.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogdebugger">cogdebugger</a>.<a href="../../package.html" class="extype" name="cogdebugger.ui">ui</a>.<a href="../package.html" class="extype" name="cogdebugger.ui.fieldvisualizations">fieldvisualizations</a></p>
+        <h1>vector</h1><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">vector</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogdebugger.ui.fieldvisualizations.vector.ColorFlow" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ColorFlowextendsBorderPanelwithEventDrivenViewerwithZoomProperty"></a>
+      <a id="ColorFlow:ColorFlow"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFlow.html"><span class="name">ColorFlow</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@ColorFlowextendsBorderPanelwithEventDrivenViewerwithZoomProperty" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowGL" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ColorFlowGLextendsSGLCanvaswithEventDrivenViewer"></a>
+      <a id="ColorFlowGL:ColorFlowGL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFlowGL.html"><span class="name">ColorFlowGL</span></a><span class="result"> extends <a href="../../../opengl/SGLCanvas.html" class="extype" name="cogdebugger.opengl.SGLCanvas">SGLCanvas</a> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@ColorFlowGLextendsSGLCanvaswithEventDrivenViewer" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A ColorFlowVectorPanel accelerated using OpenGL.</p><div class="fullcomment"><div class="comment cmt"><p>A ColorFlowVectorPanel accelerated using OpenGL. &quot;ColorFlow&quot; here is a
+mapping from a 2D geometric vector to a single pixel: the color of the
+pixel indicates the vector's direction, and saturation denotes the vector's
+magnitude.</p><p>The 'maxVectorLength' variable within this class controls the saturation
+of a pixel representing a vector. The saturation value of a pixel for a
+given vector is determined by dividing the vector length by
+maxVectorLength. 0-length vectors will make for white pixels, and vectors
+with lengths meeting or exceeding maxVectorLength will produce fully
+saturated pixels.</p><p>Implementation notes:</p><p>Cog VectorFields are stored in a planar format (as opposed to interleaved).
+Since OpenGL doesn't have any built-in planar image formats, we slice the
+VectorField into individual component planes and load each plane into a
+separate texture. The fragment shader can then sample a single component
+out of each texture, reassemble the vector, and encode it.</p><p>All the real work is done in the fragment shader. All we're rendering is a
+single full-screen (or rather full-canvas) quad, so there's not much to the
+vertex shader; it really just passes its input through the pipeline.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowGLSubpanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ColorFlowGLSubpanelextendsBorderPanel"></a>
+      <a id="ColorFlowGLSubpanel:ColorFlowGLSubpanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFlowGLSubpanel.html"><span class="name">ColorFlowGLSubpanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@ColorFlowGLSubpanelextendsBorderPanel" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A wrapper for <a href="ColorFlowGL.html" class="extype" name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowGL">cogdebugger.ui.fieldvisualizations.vector.ColorFlowGL</a>
+that adds a few nice features, such as a hideable color key that shows the
+mapping between angle and color.</p><div class="fullcomment"><div class="comment cmt"><p>A wrapper for <a href="ColorFlowGL.html" class="extype" name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowGL">cogdebugger.ui.fieldvisualizations.vector.ColorFlowGL</a>
+that adds a few nice features, such as a hideable color key that shows the
+mapping between angle and color. It's expected that this is the component
+that'll be dropped into GUIs, rather than ColorFlowGL directly.</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowSubpanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ColorFlowSubpanelextendsBorderPanelwithViewerwithZoomPropertywithRestorableStatewithToolbarItems"></a>
+      <a id="ColorFlowSubpanel:ColorFlowSubpanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFlowSubpanel.html"><span class="name">ColorFlowSubpanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../Viewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Viewer">Viewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a> with <a href="../ToolbarItems.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ToolbarItems">ToolbarItems</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@ColorFlowSubpanelextendsBorderPanelwithViewerwithZoomPropertywithRestorableStatewithToolbarItems" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A visualization for VectorFields of two dimensions containing vectors of
+two dimensions.</p><div class="fullcomment"><div class="comment cmt"><p>A visualization for VectorFields of two dimensions containing vectors of
+two dimensions. Renders the field as a color image, one pixel per vector
+in the field, with the color hue of a pixel denoting the orientation of
+its corresponding vector and color saturation denoting magnitude. By
+default, shorter vectors appear desaturated (white), and longer vectors
+appear more saturated.</p><p>To speed up rendering, this visualization does <b>not</b> attempt to
+discover or report the minimum and maximum lengths of vectors in the field.
+Instead, the <code>toolbarComponents</code> method provides a control that allows
+users to specify a 'clip length' denoting the magnitude at which vectors
+should appear maximally saturated in the visualization. Vectors longer than
+this clip length are considered &quot;out of range&quot; and rendered as black.
+Vectors shorter than this clip length will appear more and more desaturated
+as their length approaches zero (how desaturated is proportional to their
+distance between the clip length and zero), with vectors of length zero
+rendering as pure white.</p><p>The color encoding used by this visualization is based on the encoding used
+in the Middlebury studies on Optical Flow. Rather than a more
+straightforward translation from from vector orientation to hue in an HSV
+color space, the Middlebury institude modified their transformation on the
+basis that certain colors are difficult for human eyes to differentiate.
+Thus, in the HSV color space, the rate at which colors <i>appear</i> to vary
+with orientation is non-linear. The Middlebury color key stretches some
+color transitions while compressing others in attempt to make the color
+space appear more linear to human vision and thus make the vector display
+easier to interpret.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowVectorPanelGL" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ColorFlowVectorPanelGLextendsBorderPanelwithEventDrivenViewer"></a>
+      <a id="ColorFlowVectorPanelGL:ColorFlowVectorPanelGL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFlowVectorPanelGL.html"><span class="name">ColorFlowVectorPanelGL</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@ColorFlowVectorPanelGLextendsBorderPanelwithEventDrivenViewer" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A wrapper for <a href="ColorFlowGL.html" class="extype" name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowGL">cogdebugger.ui.fieldvisualizations.vector.ColorFlowGL</a>
+that adds a few nice features, such as a hideable color key that shows the
+mapping between angle and color.</p><div class="fullcomment"><div class="comment cmt"><p>A wrapper for <a href="ColorFlowGL.html" class="extype" name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowGL">cogdebugger.ui.fieldvisualizations.vector.ColorFlowGL</a>
+that adds a few nice features, such as a hideable color key that shows the
+mapping between angle and color. It's expected that this is the component
+that'll be dropped into GUIs, rather than ColorFlowGL directly.</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.Geometric2DVectorView" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Geometric2DVectorViewextendsTileBasedFieldPanel[libcog.VectorFieldReader]withEventDrivenViewerwithToolbarItems"></a>
+      <a id="Geometric2DVectorView:Geometric2DVectorView"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Geometric2DVectorView.html"><span class="name">Geometric2DVectorView</span></a><span class="result"> extends <a href="../TileBasedFieldPanel.html" class="extype" name="cogdebugger.ui.fieldvisualizations.TileBasedFieldPanel">TileBasedFieldPanel</a>[<a href="../../../../libcog/package.html#VectorFieldReader=cogx.platform.cpumemory.readerwriter.VectorFieldReader" class="extmbr" name="libcog.VectorFieldReader">libcog.VectorFieldReader</a>] with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a> with <a href="../ToolbarItems.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ToolbarItems">ToolbarItems</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@Geometric2DVectorViewextendsTileBasedFieldPanel[libcog.VectorFieldReader]withEventDrivenViewerwithToolbarItems" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Created with IntelliJ IDEA.</p><div class="fullcomment"><div class="comment cmt"><p>Created with IntelliJ IDEA.
+User: gonzatob
+Date: 9/6/12
+Time: 3:46 PM</p><p>Viewer for fields of two-dimensional geometric vectors. Vectors are
+displayed as directed lines on a grid, whith the grid having identical
+dimensions to that of the field.</p><p>Cog uses a row, column coordinate system. We can think of rows and columns
+corresponding to y and x in a Cartesian coordinate system, but bear in mind
+then that row indices increase in the <i>downward</i> direction, and thus our
+y coordinate increases in the downward direction as well. Also note the
+order in which we present row, column coordinates: the vertical or y
+component comes first. For these reasons, the canonical 2D geometric vector
+in Cog maps to a (-y, x) ordered pair in a traditional x-increases-to-the-
+right and y-increased-up Cartesian space.</p><p>So, a Cog vector v = Vector(-5, 7) looks like this in Cartesian coordinates:</p><pre>                    |             v
+                    |          .  .
+                    |       .     .
+                    |    .        .
+                    | .           .
+- - - - - - - - - - <span class="num">0</span> - - - - - - - - - -
+                    |
+                    |
+                    |
+                    |</pre></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VecToColorMap" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="VecToColorMapextendsAnyRef"></a>
+      <a id="VecToColorMap:VecToColorMap"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="VecToColorMap.html"><span class="name">VecToColorMap</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VecToColorMapextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorColorFlowGL" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VectorColorFlowGLextendsSGLCanvaswithEventDrivenViewer"></a>
+      <a id="VectorColorFlowGL:VectorColorFlowGL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorColorFlowGL.html"><span class="name">VectorColorFlowGL</span></a><span class="result"> extends <a href="../../../opengl/SGLCanvas.html" class="extype" name="cogdebugger.opengl.SGLCanvas">SGLCanvas</a> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorColorFlowGLextendsSGLCanvaswithEventDrivenViewer" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A ColorFlowVectorPanel accelerated using OpenGL.</p><div class="fullcomment"><div class="comment cmt"><p>A ColorFlowVectorPanel accelerated using OpenGL. &quot;ColorFlow&quot; here is a
+mapping from a 2D geometric vector to a single pixel: the color of the
+pixel indicates the vector's direction, and saturation denotes the vector's
+magnitude.</p><p>The 'maxVectorLength' variable within this class controls the saturation
+of a pixel representing a vector. The saturation value of a pixel for a
+given vector is determined by dividing the vector length by
+maxVectorLength. 0-length vectors will make for white pixels, and vectors
+with lengths meeting or exceeding maxVectorLength will produce fully
+saturated pixels.</p><p>Implementation notes:</p><p>Cog VectorFields are stored in a planar format (as opposed to interleaved).
+Since OpenGL doesn't have any built-in planar image formats, we slice the
+VectorField into individual component planes and load each plane into a
+separate texture. The fragment shader can then sample a single component
+out of each texture, reassemble the vector, and encode it.</p><p>All the real work is done in the fragment shader. All we're rendering is a
+single full-screen (or rather full-canvas) quad, so there's not much to the
+vertex shader; it really just passes its input through the pipeline.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorComponentSliceAsScalarFieldReader" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VectorComponentSliceAsScalarFieldReaderextendslibcog.ScalarFieldReader"></a>
+      <a id="VectorComponentSliceAsScalarFieldReader:VectorComponentSliceAsScalarFieldReader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorComponentSliceAsScalarFieldReader.html"><span class="name">VectorComponentSliceAsScalarFieldReader</span></a><span class="result"> extends <a href="../../../../libcog/package.html#ScalarFieldReader=cogx.platform.cpumemory.readerwriter.ScalarFieldReader" class="extmbr" name="libcog.ScalarFieldReader">libcog.ScalarFieldReader</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorComponentSliceAsScalarFieldReaderextendslibcog.ScalarFieldReader" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A wrapper for VectorFieldMemory that presents a single component slice of
+it as a ScalarFieldReader.</p><div class="fullcomment"><div class="comment cmt"><p>A wrapper for VectorFieldMemory that presents a single component slice of
+it as a ScalarFieldReader. Handy for re-using viewers that already know how
+to present scalar fields but don't have explicit support for vector fields.</p><p>This is perhaps dodging the Cog API too much. The last checkin that didn't
+use this system was revision 7386.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorComponentsSubpanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VectorComponentsSubpanelextendsBorderPanelwithViewerwithZoomPropertywithRestorableStatewithToolbarItems"></a>
+      <a id="VectorComponentsSubpanel:VectorComponentsSubpanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorComponentsSubpanel.html"><span class="name">VectorComponentsSubpanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../Viewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Viewer">Viewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a> with <a href="../ToolbarItems.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ToolbarItems">ToolbarItems</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorComponentsSubpanelextendsBorderPanelwithViewerwithZoomPropertywithRestorableStatewithToolbarItems" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A display for VectorFields that breaks the vectors apart into their
+individual components and displays each set of components as a grayscale
+image - essentially, slicing each component out of the field as displaying
+it with a <a href="../package.html#ScalarMemoryView=cogdebugger.ui.fieldvisualizations.scalar.ScalarMemoryView" class="extmbr" name="cogdebugger.ui.fieldvisualizations.ScalarMemoryView">ScalarMemoryView</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A display for VectorFields that breaks the vectors apart into their
+individual components and displays each set of components as a grayscale
+image - essentially, slicing each component out of the field as displaying
+it with a <a href="../package.html#ScalarMemoryView=cogdebugger.ui.fieldvisualizations.scalar.ScalarMemoryView" class="extmbr" name="cogdebugger.ui.fieldvisualizations.ScalarMemoryView">ScalarMemoryView</a>.</p><p>Just as a vector is a linear collection of scalars, a VectorField can be
+thought of as a linear collection of ScalarFields, one for each component.
+This visualization treats the target VectorField just so, and essentially
+serves to translate the vector field into a multi-layer (3D) ScalarField
+and view it as such.</p><p>Each individual vector component is &quot;sliced&quot; out of the field to create
+a scalar field with the same dimensions as the original vector field. That
+scalar field is visually represented as a grayscale image, with a single
+pixel per field element. The default color mapping represents the minimum
+value for the vector component as black, the maximum as white, and
+intermediate values falling on a linear gradient between those two
+extremes. Thus, a vector field of n dimensions will be displayed as n
+grayscale images. Each image annotated with a title indicating the vector
+component it represents as well as a color key showing which colors
+correspond to the minimum and maximum values for that component, as well
+as the value of the minimum and maximums themselves.</p><p>As a rought example, a vector field with 50 rows and 100 columns containing
+two-dimensional vectors would look something like this:</p><pre>   Component <span class="num">0</span>                 Component <span class="num">1</span>
++---------------+           +---------------+
+|               |           |               |
+| <span class="num">100</span>x50 image  |           | <span class="num">100</span>x50 image  |
+|               |           |               |
++---------------+           +---------------+
+[X] = &lt;min&gt; [ ] = &lt;max&gt;     [X] = &lt;min&gt; [ ] = &lt;max&gt;</pre></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorFieldComponentsPanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VectorFieldComponentsPanelextendsBorderPanelwithEventDrivenViewerwithZoomProperty"></a>
+      <a id="VectorFieldComponentsPanel:VectorFieldComponentsPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorFieldComponentsPanel.html"><span class="name">VectorFieldComponentsPanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorFieldComponentsPanelextendsBorderPanelwithEventDrivenViewerwithZoomProperty" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A VectorField display that collects together the same-indexed components of
+the vectors and shows them like we do ScalarFields.</p><div class="fullcomment"><div class="comment cmt"><p>A VectorField display that collects together the same-indexed components of
+the vectors and shows them like we do ScalarFields.</p><p>E.g., for a vector field of vectors with three compnents, x, y, and z,
+all the x's will be grouped together and displayed like a single
+ScalarField, as will the y's and z's.</p><p>Note that this sort of visualization can be made with a bit of field
+slicing in the Cog model itself.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorFieldSuperPanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorFieldSuperPanelextendsBorderPanelwithEventDrivenViewerwithZoomablewithRestorableState"></a>
+      <a id="VectorFieldSuperPanel:VectorFieldSuperPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorFieldSuperPanel.html"><span class="name">VectorFieldSuperPanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a> with <a href="../Zoomable.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Zoomable">Zoomable</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorFieldSuperPanelextendsBorderPanelwithEventDrivenViewerwithZoomablewithRestorableState" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A panel for displaying vector fields that allows you to change the format
+of the display at runtime.</p>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorGeometricSubpanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VectorGeometricSubpanelextendsTileBasedFieldPanel[libcog.VectorFieldReader]withViewerwithRestorableStatewithToolbarItems"></a>
+      <a id="VectorGeometricSubpanel:VectorGeometricSubpanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorGeometricSubpanel.html"><span class="name">VectorGeometricSubpanel</span></a><span class="result"> extends <a href="../TileBasedFieldPanel.html" class="extype" name="cogdebugger.ui.fieldvisualizations.TileBasedFieldPanel">TileBasedFieldPanel</a>[<a href="../../../../libcog/package.html#VectorFieldReader=cogx.platform.cpumemory.readerwriter.VectorFieldReader" class="extmbr" name="libcog.VectorFieldReader">libcog.VectorFieldReader</a>] with <a href="../Viewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Viewer">Viewer</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a> with <a href="../ToolbarItems.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ToolbarItems">ToolbarItems</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorGeometricSubpanelextendsTileBasedFieldPanel[libcog.VectorFieldReader]withViewerwithRestorableStatewithToolbarItems" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Created with IntelliJ IDEA.</p><div class="fullcomment"><div class="comment cmt"><p>Created with IntelliJ IDEA.
+User: gonzatob
+Date: 9/6/12
+Time: 3:46 PM</p><p>A visualization for VectorFields that treats vector components as Cartesian
+components in two-dimensional space. Two components of each vector are
+treated as x and y and then displayed as directed lines on a grid.</p><p>For fields of three dimensions, each layer is sliced out into a separate
+grid. Each cell in the grid(s) renders a directed line representing a
+single vector. Lines originates from the center of their respective cells,
+and the visual length of all lines are normalized such that the longest
+line/vector in the field is fully contained in its cell.</p><p>Since this visual representation can only account for two components of
+vectors at a time, the <code>toolbarComponents</code> method will return a user
+control for picking which components to treat as 'x' and 'y' if the field
+contains vectors of three or more dimensions. This user control is not
+provided if the field contains vectors of exactly two dimensions - in that
+case, the first component is taken to be -y and the second component as x.
+This is the mapping between Cog's (row, column) indexing an a conventional
+Cartesian space with y increasing in the upward direction and x increasing
+to the right.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorToHSVColorMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorToHSVColorMapextendsVecToColorMap"></a>
+      <a id="VectorToHSVColorMap:VectorToHSVColorMap"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorToHSVColorMap.html"><span class="name">VectorToHSVColorMap</span></a><span class="result"> extends <a href="VecToColorMap.html" class="extype" name="cogdebugger.ui.fieldvisualizations.vector.VecToColorMap">VecToColorMap</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorToHSVColorMapextendsVecToColorMap" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorsToColorFields" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VectorsToColorFieldsextendsBorderPanelwithEventDrivenViewerwithZoomPropertywithRestorableState"></a>
+      <a id="VectorsToColorFields:VectorsToColorFields"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorsToColorFields.html"><span class="name">VectorsToColorFields</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../EventDrivenViewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.EventDrivenViewer">EventDrivenViewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorsToColorFieldsextendsBorderPanelwithEventDrivenViewerwithZoomPropertywithRestorableState" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A special purpose viewer for 2-D vector fields having vector lengths that
+are a multiple of 3.</p><div class="fullcomment"><div class="comment cmt"><p>A special purpose viewer for 2-D vector fields having vector lengths that
+are a multiple of 3.</p><p>If you think of the vector field as a stack of planes, one plane per
+vector element index, then every three planes are taken to the RGB color
+planes of a single image.</p><p>All values in the vector field are assumed to be on the range [0, 1]. Zero
+represents no intensity, and one represent maximum intensity.</p><p>E.g.</p><pre>Vector element planes --&gt;  color images
+    _______
+  /  r    / ------
+/_______/          \      +---------------+
+    _______          \    |               |
+  /  g    / ------------- | color image <span class="num">1</span> |
+/_______/            /    |               |
+    _______        /      +---------------+
+  /  b    / ------
+/_______/
+    _______
+  /  r    / ------
+/_______/          \      +---------------+
+    _______          \    |               |
+  /  g    / ------------- | color image <span class="num">2</span> |
+/_______/            /    |               |
+    _______        /      +---------------+
+  /  b    / ------
+/_______/</pre><p>Created by gonztobi on 11/12/2014.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogdebugger.ui.fieldvisualizations.vector.ColorFlow" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ColorFlow"></a>
+      <a id="ColorFlow:ColorFlow"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFlow$.html"><span class="name">ColorFlow</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@ColorFlow" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowGL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ColorFlowGL"></a>
+      <a id="ColorFlowGL:ColorFlowGL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFlowGL$.html"><span class="name">ColorFlowGL</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@ColorFlowGL" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowGLSubpanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ColorFlowGLSubpanel"></a>
+      <a id="ColorFlowGLSubpanel:ColorFlowGLSubpanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFlowGLSubpanel$.html"><span class="name">ColorFlowGLSubpanel</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@ColorFlowGLSubpanel" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.ColorFlowVectorPanelGL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ColorFlowVectorPanelGL"></a>
+      <a id="ColorFlowVectorPanelGL:ColorFlowVectorPanelGL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFlowVectorPanelGL$.html"><span class="name">ColorFlowVectorPanelGL</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@ColorFlowVectorPanelGL" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.DummyProbeTarget" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DummyProbeTarget"></a>
+      <a id="DummyProbeTarget:DummyProbeTarget"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DummyProbeTarget$.html"><span class="name">DummyProbeTarget</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@DummyProbeTarget" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.DummyProbeTarget2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DummyProbeTarget2"></a>
+      <a id="DummyProbeTarget2:DummyProbeTarget2"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DummyProbeTarget2$.html"><span class="name">DummyProbeTarget2</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@DummyProbeTarget2" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorColorFlowGL" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorColorFlowGL"></a>
+      <a id="VectorColorFlowGL:VectorColorFlowGL"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorColorFlowGL$.html"><span class="name">VectorColorFlowGL</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorColorFlowGL" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorComponentsSubpanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorComponentsSubpanel"></a>
+      <a id="VectorComponentsSubpanel:VectorComponentsSubpanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorComponentsSubpanel$.html"><span class="name">VectorComponentsSubpanel</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorComponentsSubpanel" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorFieldComponentsPanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorFieldComponentsPanel"></a>
+      <a id="VectorFieldComponentsPanel:VectorFieldComponentsPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorFieldComponentsPanel$.html"><span class="name">VectorFieldComponentsPanel</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorFieldComponentsPanel" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorFieldSuperPanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorFieldSuperPanel"></a>
+      <a id="VectorFieldSuperPanel:VectorFieldSuperPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorFieldSuperPanel$.html"><span class="name">VectorFieldSuperPanel</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorFieldSuperPanel" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.fieldvisualizations.vector.VectorFieldViewer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorFieldViewer"></a>
+      <a id="VectorFieldViewer:VectorFieldViewer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorFieldViewer$.html"><span class="name">VectorFieldViewer</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.vector.package@VectorFieldViewer" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

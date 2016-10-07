@@ -1,0 +1,383 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>contourlets - toolkit.filtering.contourlets</title>
+          <meta name="description" content="contourlets - toolkit.filtering.contourlets" />
+          <meta name="keywords" content="contourlets toolkit.filtering.contourlets" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'toolkit.filtering.contourlets.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="toolkit">toolkit</a>.<a href="../package.html" class="extype" name="toolkit.filtering">filtering</a></p>
+        <h1>contourlets</h1><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">contourlets</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="toolkit.filtering.contourlets.Filter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FilterextendsAnyRef"></a>
+      <a id="Filter:Filter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Filter.html"><span class="name">Filter</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@FilterextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A filter is a matrix with an origin at some place other than (0, 0).</p>
+    </li><li name="toolkit.filtering.contourlets.ReadMe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ReadMeextendsAnyRef"></a>
+      <a id="ReadMe:ReadMe"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadMe.html"><span class="name">ReadMe</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@ReadMeextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This package implements the nonsubsampled contourlet transform.</p><div class="fullcomment"><div class="comment cmt"><p>This package implements the nonsubsampled contourlet transform.</p><p>It is based on the Matlab nonsubsampled contourlet toolbox available here:</p><p>http://www.mathworks.com/matlabcentral/fileexchange/10049-nonsubsampled-contourlet-toolbox</p><p>Here's a map of Matlab files to corresponding Scala files in this
+directory:</p><pre>atrousfilters.m   AtrousFilters
+dfilters.m        DirectionalFilters
+dmaxflat.m        DiamondMaxFlatFilters
+mctrans.m         McClellanTransform
+modulate2.m       Modulate
+nsctdec.m         ContourletTransform
+nsdfbdec.m        DirectionalFilterbank
+parafilters.m     ParallelogramFilters
+resamplz.m        Shear</pre></div></div>
+    </li><li name="toolkit.filtering.contourlets.Shear" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Shearextendslibcog.Operator"></a>
+      <a id="Shear:Shear"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Shear.html"><span class="name">Shear</span></a><span class="result"> extends <a href="../../../libcog/package.html#Operator=cogx.compiler.cpu_operator.Operator" class="extmbr" name="libcog.Operator">libcog.Operator</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@Shearextendslibcog.Operator" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An instance of the Shear operator.</p><div class="fullcomment"><div class="comment cmt"><p>An instance of the Shear operator.</p><p>Used only by the companion object.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="toolkit.filtering.contourlets.AtrousFilter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AtrousFilter"></a>
+      <a id="AtrousFilter:AtrousFilter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AtrousFilter$.html"><span class="name">AtrousFilter</span></a><span class="result"> extends <a href="../MatlabFunctions.html" class="extype" name="toolkit.filtering.MatlabFunctions">MatlabFunctions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@AtrousFilter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements atrousfilters.m from the nonsubsampled contourlet toolbox.</p>
+    </li><li name="toolkit.filtering.contourlets.ContourletTransform" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ContourletTransform"></a>
+      <a id="ContourletTransform:ContourletTransform"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ContourletTransform$.html"><span class="name">ContourletTransform</span></a><span class="result"> extends <a href="../../../libcog/package.html#Logarithm=cogx.cogmath.algebra.real.Logarithm" class="extmbr" name="libcog.Logarithm">libcog.Logarithm</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@ContourletTransform" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements a simple Contourlet transform and its inverse.</p><div class="fullcomment"><div class="comment cmt"><p>Implements a simple Contourlet transform and its inverse.</p><p>This supports only a single level of decomposition, since that's all that's
+needed for my application. You may extend this if needed, but it will be
+tricky since it involves an &quot;a trous&quot; convolution (if you have to ask...).</p><p>Implements nsctdec.m and nsctrec.m
+</p></div></div>
+    </li><li name="toolkit.filtering.contourlets.DiamondFilter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DiamondFilter"></a>
+      <a id="DiamondFilter:DiamondFilter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DiamondFilter$.html"><span class="name">DiamondFilter</span></a><span class="result"> extends <a href="../MatlabFunctions.html" class="extype" name="toolkit.filtering.MatlabFunctions">MatlabFunctions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@DiamondFilter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Directional filters.</p><div class="fullcomment"><div class="comment cmt"><p>Directional filters.</p><p>Implements dfilters.m (although only one of the filters).
+</p></div></div>
+    </li><li name="toolkit.filtering.contourlets.DiamondMaxFlatFilter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DiamondMaxFlatFilter"></a>
+      <a id="DiamondMaxFlatFilter:DiamondMaxFlatFilter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DiamondMaxFlatFilter$.html"><span class="name">DiamondMaxFlatFilter</span></a><span class="result"> extends <a href="../MatlabFunctions.html" class="extype" name="toolkit.filtering.MatlabFunctions">MatlabFunctions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@DiamondMaxFlatFilter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Diamond max flat filters of various orders.</p>
+    </li><li name="toolkit.filtering.contourlets.DirectionalFilterbank" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DirectionalFilterbank"></a>
+      <a id="DirectionalFilterbank:DirectionalFilterbank"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DirectionalFilterbank$.html"><span class="name">DirectionalFilterbank</span></a><span class="result"> extends <a href="../../../libcog/package.html#Logarithm=cogx.cogmath.algebra.real.Logarithm" class="extmbr" name="libcog.Logarithm">libcog.Logarithm</a> with <a href="../MatlabFunctions.html" class="extype" name="toolkit.filtering.MatlabFunctions">MatlabFunctions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@DirectionalFilterbank" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Directional filterbank and its inverse.</p><div class="fullcomment"><div class="comment cmt"><p>Directional filterbank and its inverse.</p><p>Implements the filter construction part of nsdfbdec.m and nsdfbrec.m,
+but does not do the convolution. Although the matlab code supports an
+arbitrary number of channels (that are a power of 2), I cut this off at
+8 channels. This makes the code much more readable. If you need more
+channels, you may add the code for that.
+</p></div></div>
+    </li><li name="toolkit.filtering.contourlets.McClellanTransform" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="McClellanTransform"></a>
+      <a id="McClellanTransform:McClellanTransform"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="McClellanTransform$.html"><span class="name">McClellanTransform</span></a><span class="result"> extends <a href="../MatlabFunctions.html" class="extype" name="toolkit.filtering.MatlabFunctions">MatlabFunctions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@McClellanTransform" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Constructs a 2D FIR filter from a 1D filter.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs a 2D FIR filter from a 1D filter.</p><p>Implements mctrans.m
+</p></div></div>
+    </li><li name="toolkit.filtering.contourlets.Modulate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Modulate"></a>
+      <a id="Modulate:Modulate"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Modulate$.html"><span class="name">Modulate</span></a><span class="result"> extends <a href="../MatlabFunctions.html" class="extype" name="toolkit.filtering.MatlabFunctions">MatlabFunctions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@Modulate" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Creates a 2D modulated filter from a 1D filter.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a 2D modulated filter from a 1D filter.</p><p>Implements modulate2d.m
+</p></div></div>
+    </li><li name="toolkit.filtering.contourlets.ParallelogramFilters" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ParallelogramFilters"></a>
+      <a id="ParallelogramFilters:ParallelogramFilters"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ParallelogramFilters$.html"><span class="name">ParallelogramFilters</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@ParallelogramFilters" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Generates a set of 4 parallelogram filters from a diamond filter.</p><div class="fullcomment"><div class="comment cmt"><p>Generates a set of 4 parallelogram filters from a diamond filter.</p><p>Implements parafilters.m
+</p></div></div>
+    </li><li name="toolkit.filtering.contourlets.Resample" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Resample"></a>
+      <a id="Resample:Resample"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Resample$.html"><span class="name">Resample</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@Resample" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Resamples a filter.</p><div class="fullcomment"><div class="comment cmt"><p>Resamples a filter. See &quot;Multidimensional filter banks and multiscale
+geometric representations,&quot; Do and Lu, 2011.
+</p></div></div>
+    </li><li name="toolkit.filtering.contourlets.SamplingMatrices" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SamplingMatrices"></a>
+      <a id="SamplingMatrices:SamplingMatrices"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SamplingMatrices$.html"><span class="name">SamplingMatrices</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@SamplingMatrices" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The fundamental sampling matrices.</p><div class="fullcomment"><div class="comment cmt"><p>The fundamental sampling matrices. See &quot;Multidimension filter banks
+and multiscale geometric representations,&quot; Do and Lu, Foundations and
+Trends in Signal Processing, 2011.</p><p>Note that the names here correspond to those in the Matlab code, not the
+paper. Here's the mapping:</p><pre>paper       code (matlab and here)
+
+ Q0           Q1
+ Q1           Q2
+ R0           R1
+ R1           R2
+ R2           R3
+ R3           R4
+
+ D1           D1
+ D2           D2</pre><p>the same as Q1 in the Matlab code).
+</p></div></div>
+    </li><li name="toolkit.filtering.contourlets.Shear" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Shear"></a>
+      <a id="Shear:Shear"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Shear$.html"><span class="name">Shear</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.filtering.contourlets.package@Shear" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Operator which resamples an image by shearing it in various ways.</p><div class="fullcomment"><div class="comment cmt"><p>Operator which resamples an image by shearing it in various ways. This
+is not periodic, rather it extends the input where necessary with zeroes.
+This means the output is always twice as big as the input.</p><p>The implements the functionality of resampz.m
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>platform - cogx.platform</title>
+          <meta name="description" content="platform - cogx.platform" />
+          <meta name="keywords" content="platform cogx.platform" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'cogx.platform.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="cogx">cogx</a></p>
+        <h1>platform</h1><span class="permalink">
+      <a href="../../index.html#cogx.platform.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">platform</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>The raw GPU platform on which Cog runs. This basically supplies single
+GPU support for a computation--multiple GPUs, perhaps distributed across
+a network, must be supported by a higher level package.</p><p>In principle it can support both OpenCL and CUDA, and could be expanded to
+support other platforms as well.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogx.platform"><span>platform</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogx.platform.checkpoint" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="checkpoint"></a>
+      <a id="checkpoint:checkpoint"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="checkpoint/package.html"><span class="name">checkpoint</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.platform.package@checkpoint" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.platform.cpumemory" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cpumemory"></a>
+      <a id="cpumemory:cpumemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="cpumemory/package.html"><span class="name">cpumemory</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.platform.package@cpumemory" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This package contains classes for holding fields in CPU memory.</p><div class="fullcomment"><div class="comment cmt"><p>This package contains classes for holding fields in CPU memory. The format
+of fields is hidden and identical to format used to hold fields in GPU
+memory. &quot;Direct memory&quot; is used to hold the field data since it exists
+outside of the JVM heap, and also handles all endian-ness compatibility
+issues.
+</p></div></div>
+    </li><li name="cogx.platform.opencl" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="opencl"></a>
+      <a id="opencl:opencl"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="opencl/package.html"><span class="name">opencl</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.platform.package@opencl" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This packages wraps the OpenCL primitive classes with new classes that
+simplify their usage.</p><div class="fullcomment"><div class="comment cmt"><p>This packages wraps the OpenCL primitive classes with new classes that
+simplify their usage. This was done for several reasons:</p><p>1. The OpenCL API is large and complicated; wrapping them simplifies this
+by eliminating features that aren't needed for Cog.</p><p>2. Nvidia's implementation of OpenCL performs poorly when OpenCL contexts
+are shared by more than one device. Better performance results when one
+context and one command queue are assigned to a device, and scheduling
+(and synchronization) is done externally. Thus we can simplify the
+interface by burying contexts and</p><p>3. It provides a centralized scheme for resource allocation and release,
+necessary for the Cog environment where the node on which a kernel
+executes can be dynamically changed at runtime.</p><p>A computation is executed using a combination of OpenCL device kernels
+and &quot;CPU kernels&quot; (analogous to &quot;native kernels&quot; in the OpenCL spec, which
+must be written in C or C++). Synchronization of all kernels is done
+using OpenCL 1.1 CLEvents, so CPU kernels are platform dependent.
+</p></div></div>
+    </li><li name="cogx.platform.types" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="types"></a>
+      <a id="types:types"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="types/package.html"><span class="name">types</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.platform.package@types" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements the core computational abstractions in Cog:</p><div class="fullcomment"><div class="comment cmt"><p>Implements the core computational abstractions in Cog:</p><p>1. Fields, which are multidimensional arrays of data. The FieldType class
+describes the structure of the field (shape), while the ElementType class
+describes the elements within that field (e.g. floating point numbers,
+pixels, ...)</p><p>2. Buffers, memory regions on the CPU and GPU which hold Fields.</p><p>3. Kernels, which take fields as inputs and compute resulting fields as
+outputs. The AbstractKernel class is the base representation for all
+kernels, and extends the Node class so that kernels may be connected
+together into directed acyclic graphs, called Circuits. The Circuit
+structure supplies the dependence structure of the computation, so that
+the kernels may be properly scheduled for execution. Each kernel is assigned
+an Opcode which designates the computation that it performs.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,1786 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>Vector - cogx.cogmath.algebra.real.Vector</title>
+          <meta name="description" content="Vector - cogx.cogmath.algebra.real.Vector" />
+          <meta name="keywords" content="Vector cogx.cogmath.algebra.real.Vector" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogx.cogmath.algebra.real.Vector';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="Vector$.html" title="See companion object"><img alt="Class/Object" src="../../../../lib/class_to_object_big.png" /></a>
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogx">cogx</a>.<a href="../../package.html" class="extype" name="cogx.cogmath">cogmath</a>.<a href="../package.html" class="extype" name="cogx.cogmath.algebra">algebra</a>.<a href="package.html" class="extype" name="cogx.cogmath.algebra.real">real</a></p>
+        <h1><a href="Vector$.html" title="See companion object">Vector</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="Vector$.html" title="See companion object">object Vector</a>
+            | <a href="package.html" class="extype" name="cogx.cogmath.algebra.real">package real</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Vector</span><span class="result"> extends <a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A column vector.</p><p>The interface is modeled on that provided by Scalala (which
+in turn was modeled on Matlab), with the exception that all operations are
+executed immediately. This provides a more natural interface, at the cost
+of suboptimal performance since linear algebra libraries are not used.</p><p>In the following descriptions, &quot;v&quot; represents a vector, &quot;s&quot; a scalar, &quot;m&quot;
+a matrix, &quot;b&quot; a boolean, &quot;i&quot; and integer, &quot;d&quot; a double. The update operations,
+such as &quot;+=&quot;, update the elements of the vector in place.</p><pre>Constructors:
+  <span class="kw">new</span> Vector(i)              (create vector of length i)
+  <span class="kw">new</span> Vector(d*)             (create vector <span class="kw">with</span> elements d)
+  copy           <span class="kw">=&gt;</span> v        (create a copy of a vector)
+  length         <span class="kw">=&gt;</span> i        (number of elements in vector)
+
+Vector operations:
+  map(f: d <span class="kw">=&gt;</span> d)     <span class="kw">=&gt;</span> v        (map a Vector by applying f to each element)
+  mapSelf(f: d <span class="kw">=&gt;</span> d)			    (use f to map each element in place)
+  reduce((d, d)<span class="kw">=&gt;</span> d) <span class="kw">=&gt;</span> d        (reduce a Vector to a scalar)
+  randomize                      (initialize to random values in [<span class="num">0</span>, <span class="num">1</span>))
+
+Vector / Scalar operations:
+  v + s   <span class="kw">=&gt;</span> v          (add scalar to each element to produce a <span class="kw">new</span> matrix)
+  v += s                (add scalar to all elements of matrix in-place)
+  v - s   <span class="kw">=&gt;</span> v
+  v -= s
+  v * s   <span class="kw">=&gt;</span> v
+  v *= s
+  v / s   <span class="kw">=&gt;</span> v
+  v /= s
+  -v      <span class="kw">=&gt;</span> v          (map each element to <span class="kw">new</span> matrix my multiplying by -<span class="num">1</span>)
+  v := s                (assign scalar to all elements of the matrix)
+
+Vector / Vector operations:
+  v + v          <span class="kw">=&gt;</span> v
+  v += v
+  v - v          <span class="kw">=&gt;</span> v
+  v -= v
+  v :* v         <span class="kw">=&gt;</span> v   (element-wise multiplication)
+  v :*= v               (element-wise multiplication in-place)
+  v :/ v         <span class="kw">=&gt;</span> v   (element-wise right division)
+  v :/= n               (element-wise right division in-place)
+  v :\ v         <span class="kw">=&gt;</span> v   (element-wise left division)
+  v :\= v               (element-wise left division in-place)
+  v1 === v2		<span class="kw">=&gt;</span> b   (m1 and m2 have same shape, identical elements)
+  v1 !=== v2     <span class="kw">=&gt;</span> b
+  v1 ~== v2
+  v1 !~== v2
+  v1 := v2			   (assign elements of v2 to v1)
+
+
+--------------------
+  v1 dot v2           <span class="kw">=&gt;</span> d   (dot product of two vectors)
+  v1 outerProduct v2  <span class="kw">=&gt;</span> m   (outer product of two vectors)
+  v concat v2         <span class="kw">=&gt;</span> v   (concatentate two vectors)
+
+
+ -------------------------------------------------
+
+
+
+
+Matrix conversions:
+  shape(i, i)           <span class="kw">=&gt;</span> m (create matrix)
+  rectangularize        <span class="kw">=&gt;</span> m (create squarest matrix possible)
+
+Miscellaneous:
+  normL1     <span class="kw">=&gt;</span> d       (L1 norm of the vector)
+  normL2     <span class="kw">=&gt;</span> d       (L2 norm of the vector)
+  argmax     <span class="kw">=&gt;</span> i       (index of largest element)
+  print                 (print out a vector <span class="kw">for</span> debugging)</pre></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">()</span>
+              
+        </dd></dl><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a>, <span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="Dyad2D.html" class="extype" name="cogx.cogmath.algebra.real.Dyad2D">Dyad2D</a>, <a href="../../../../libcog/fields/SymmetricTensor.html" class="extype" name="libcog.fields.SymmetricTensor">SymmetricTensor</a></div>
+          </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogx.cogmath.algebra.real.Vector"><span>Vector</span></li><li class="in" name="cogx.cogmath.algebra.real.Tensor"><span>Tensor</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="cogx.cogmath.algebra.real.Vector#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(tensor:cogx.cogmath.algebra.real.Tensor):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="&lt;init&gt;:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Vector</span><span class="params">(<span name="tensor">tensor: <a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@&lt;init&gt;(tensor:cogx.cogmath.algebra.real.Tensor):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a vector from a 1-dimensional tensor.</p>
+    </li><li name="cogx.cogmath.algebra.real.Vector#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(e:Float*):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="&lt;init&gt;:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Vector</span><span class="params">(<span name="e">e: <span class="extype" name="scala.Float">Float</span>*</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@&lt;init&gt;(e:Float*):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a vector from one or more Floats.</p>
+    </li><li name="cogx.cogmath.algebra.real.Vector#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(length:Int):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="&lt;init&gt;:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Vector</span><span class="params">(<span name="length">length: <span class="extype" name="scala.Int">Int</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@&lt;init&gt;(length:Int):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a vector of size &quot;length&quot;.</p>
+    </li><li name="cogx.cogmath.algebra.real.Vector#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(data:Array[Float]):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="&lt;init&gt;:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Vector</span><span class="params">(<span name="data">data: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@&lt;init&gt;(data:Array[Float]):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#!===" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="!===(v:cogx.cogmath.algebra.real.Vector):Boolean"></a>
+      <a id="!===(Vector):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq$eq$eq" class="name">!===</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@!===(v:cogx.cogmath.algebra.real.Vector):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#!~==" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="!~==(v:cogx.cogmath.algebra.real.Vector):Boolean"></a>
+      <a id="!~==(Vector):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$tilde$eq$eq" class="name">!~==</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@!~==(v:cogx.cogmath.algebra.real.Vector):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@##():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#*" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="*(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="*(Matrix):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $times" class="name">*</span><span class="params">(<span name="that">that: <a href="Matrix.html" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>)</span><span class="result">: <a href="Matrix.html" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@*(that:cogx.cogmath.algebra.real.Matrix):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#*" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="*(s:Float):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="*(Float):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $times" class="name">*</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@*(s:Float):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#*=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="*=(s:Float):Unit"></a>
+      <a id="*=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $times$eq" class="name">*=</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@*=(s:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#+" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="+(v:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="+(Vector):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="name">+</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@+(v:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#+" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="+(s:Float):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="+(Float):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="name">+</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@+(s:Float):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#+=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="+=(v:cogx.cogmath.algebra.real.Vector):Unit"></a>
+      <a id="+=(Vector):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus$eq" class="name">+=</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@+=(v:cogx.cogmath.algebra.real.Vector):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#+=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="+=(s:Float):Unit"></a>
+      <a id="+=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus$eq" class="name">+=</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@+=(s:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#-" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="-(v:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="-(Vector):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus" class="name">-</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@-(v:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#-" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="-():cogx.cogmath.algebra.real.Vector"></a>
+      <a id="-():Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus" class="name">-</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@-():cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#-" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="-(s:Float):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="-(Float):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus" class="name">-</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@-(s:Float):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#-=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="-=(v:cogx.cogmath.algebra.real.Vector):Unit"></a>
+      <a id="-=(Vector):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$eq" class="name">-=</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@-=(v:cogx.cogmath.algebra.real.Vector):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#-=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="-=(s:Float):Unit"></a>
+      <a id="-=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$eq" class="name">-=</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@-=(s:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#/" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="/(s:Float):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="/(Float):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $div" class="name">/</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@/(s:Float):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#/=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="/=(s:Float):Unit"></a>
+      <a id="/=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $div$eq" class="name">/=</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@/=(s:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#:*" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":*(v:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector"></a>
+      <a id=":*(Vector):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$times" class="name">:*</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@:*(v:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#:*=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":*=(v:cogx.cogmath.algebra.real.Vector):Unit"></a>
+      <a id=":*=(Vector):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$times$eq" class="name">:*=</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@:*=(v:cogx.cogmath.algebra.real.Vector):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#:/" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":/(v:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector"></a>
+      <a id=":/(Vector):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$div" class="name">:/</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@:/(v:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#:/=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":/=(v:cogx.cogmath.algebra.real.Vector):Unit"></a>
+      <a id=":/=(Vector):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$div$eq" class="name">:/=</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@:/=(v:cogx.cogmath.algebra.real.Vector):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#:=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":=(v:cogx.cogmath.algebra.real.Vector):Unit"></a>
+      <a id=":=(Vector):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$eq" class="name">:=</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@:=(v:cogx.cogmath.algebra.real.Vector):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#:=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":=(s:Float):Unit"></a>
+      <a id=":=(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$eq" class="name">:=</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@:=(s:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#:\" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":\(v:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector"></a>
+      <a id=":\(Vector):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$bslash" class="name">:\</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@:\(v:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#:\=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id=":\=(v:cogx.cogmath.algebra.real.Vector):Unit"></a>
+      <a id=":\=(Vector):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$bslash$eq" class="name">:\=</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@:\=(v:cogx.cogmath.algebra.real.Vector):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#&lt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;(v:Float):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="&lt;(Float):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less" class="name">&lt;</span><span class="params">(<span name="v">v: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@&lt;(v:Float):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#&lt;=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;=(v:Float):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="&lt;=(Float):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less$eq" class="name">&lt;=</span><span class="params">(<span name="v">v: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@&lt;=(v:Float):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#===" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="===(v:cogx.cogmath.algebra.real.Vector):Boolean"></a>
+      <a id="===(Vector):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq$eq" class="name">===</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@===(v:cogx.cogmath.algebra.real.Vector):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&gt;(v:Float):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="&gt;(Float):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater" class="name">&gt;</span><span class="params">(<span name="v">v: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@&gt;(v:Float):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#&gt;=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&gt;=(v:Float):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="&gt;=(Float):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater$eq" class="name">&gt;=</span><span class="params">(<span name="v">v: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@&gt;=(v:Float):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#abs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="abs:cogx.cogmath.algebra.real.Vector"></a>
+      <a id="abs:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">abs</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@abs:cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(index:Int):Float"></a>
+      <a id="apply(Int):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@apply(index:Int):Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#argmax" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="argmax:Int"></a>
+      <a id="argmax:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">argmax</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@argmax:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#asArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="asArray:Array[Float]"></a>
+      <a id="asArray:Array[Float]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asArray</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@asArray:Array[Float]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">View this Vector as an array with full read and write access.</p>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Tensor#canEqual" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="canEqual(other:Any):Boolean"></a>
+      <a id="canEqual(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">canEqual</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@canEqual(other:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Helper for equals.</p><div class="fullcomment"><div class="comment cmt"><p>Helper for equals.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#concat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="concat(that:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="concat(Vector):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">concat</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@concat(that:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#copy" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="copy:cogx.cogmath.algebra.real.Vector"></a>
+      <a id="copy:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">copy</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@copy:cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#dot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="dot(that:cogx.cogmath.algebra.real.Vector):Float"></a>
+      <a id="dot(Vector):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">dot</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@dot(that:cogx.cogmath.algebra.real.Vector):Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Compute the dot product of &quot;this&quot; and &quot;that&quot;.</p>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Tensor#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(other:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@equals(other:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Test &quot;this&quot; and &quot;other&quot; for deep equality.</p><div class="fullcomment"><div class="comment cmt"><p>Test &quot;this&quot; and &quot;other&quot; for deep equality. Allows &quot;==&quot; to work.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a> → AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#expand" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="expand(bigSize:Int,borderFill:Boolean):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="expand(Int,Boolean):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">expand</span><span class="params">(<span name="bigSize">bigSize: <span class="extype" name="scala.Int">Int</span></span>, <span name="borderFill">borderFill: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@expand(bigSize:Int,borderFill:Boolean):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Expand the vector, optionally extending the border into the expanded
+region.</p><div class="fullcomment"><div class="comment cmt"><p>Expand the vector, optionally extending the border into the expanded
+region. This operation is a key part of the FFT. The new vector is of
+size &quot;bigSize&quot; element (0) of this is anchored at
+(0) in the larger vector. If &quot;borderFill&quot; is true, then the two
+edges of the vector are extended evenly in all directions, as though
+the bigger vector were actually a loop with opposite edges touching.
+</p></div></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#flip" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="flip:cogx.cogmath.algebra.real.Vector"></a>
+      <a id="flip:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flip</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@flip:cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reverses the order of the elements in <code>this</code></p>
+    </li><li name="cogx.cogmath.algebra.real.Vector#fold" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fold(initValue:Float)(f:(Float,Float)=&gt;Float):Float"></a>
+      <a id="fold(Float)((Float,Float)⇒Float):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fold</span><span class="params">(<span name="initValue">initValue: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Float">Float</span>, <span class="extype" name="scala.Float">Float</span>) ⇒ <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@fold(initValue:Float)(f:(Float,Float)=&gt;Float):Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#getData" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getData:Array[Float]"></a>
+      <a id="getData:Array[Float]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getData</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@getData:Array[Float]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Get the data in the tensor, flattened to a linear array.</p><div class="fullcomment"><div class="comment cmt"><p>Get the data in the tensor, flattened to a linear array.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../package.html" class="extype" name="cogx">cogx</a>] </dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Tensor#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Required because of overriding equals.</p><div class="fullcomment"><div class="comment cmt"><p>Required because of overriding equals.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a> → AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Tensor#length" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="length:Int"></a>
+      <a id="length:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">length</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@length:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The number of &quot;numbers&quot; held in the tensor.</p><div class="fullcomment"><div class="comment cmt"><p>The number of &quot;numbers&quot; held in the tensor.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#map" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="map(f:Float=&gt;Float):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="map((Float)⇒Float):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">map</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Float">Float</span>) ⇒ <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@map(f:Float=&gt;Float):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#mapSelf" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="mapSelf(f:Float=&gt;Float):Unit"></a>
+      <a id="mapSelf((Float)⇒Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mapSelf</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Float">Float</span>) ⇒ <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@mapSelf(f:Float=&gt;Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#normL1" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="normL1:Float"></a>
+      <a id="normL1:Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">normL1</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@normL1:Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#normL2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="normL2:Float"></a>
+      <a id="normL2:Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">normL2</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@normL2:Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#outerProduct" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="outerProduct(that:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="outerProduct(Vector):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">outerProduct</span><span class="params">(<span name="that">that: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <a href="Matrix.html" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@outerProduct(that:cogx.cogmath.algebra.real.Vector):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#print" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="print:Unit"></a>
+      <a id="print:Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">print</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@print:Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#randomize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="randomize:cogx.cogmath.algebra.real.Vector"></a>
+      <a id="randomize:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">randomize</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@randomize:cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#read" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="read(index:Int):Float"></a>
+      <a id="read(Int):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">read</span><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@read(index:Int):Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tensor accessor.</p><div class="fullcomment"><div class="comment cmt"><p>Tensor accessor.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a> → <a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#reciprocal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="reciprocal:cogx.cogmath.algebra.real.Vector"></a>
+      <a id="reciprocal:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reciprocal</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@reciprocal:cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#rectangularize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="rectangularize:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="rectangularize:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rectangularize</span><span class="result">: <a href="Matrix.html" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@rectangularize:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#rectify" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="rectify:cogx.cogmath.algebra.real.Vector"></a>
+      <a id="rectify:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rectify</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@rectify:cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#reduce" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="reduce(f:(Float,Float)=&gt;Float):Float"></a>
+      <a id="reduce((Float,Float)⇒Float):Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reduce</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Float">Float</span>, <span class="extype" name="scala.Float">Float</span>) ⇒ <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@reduce(f:(Float,Float)=&gt;Float):Float" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reduce a Vector to a scalar using &quot;f&quot;.</p>
+    </li><li name="cogx.cogmath.algebra.real.Vector#sgn" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sgn:cogx.cogmath.algebra.real.Vector"></a>
+      <a id="sgn:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sgn</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@sgn:cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#shape" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="shape(rows:Int,columns:Int):cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="shape(Int,Int):Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shape</span><span class="params">(<span name="rows">rows: <span class="extype" name="scala.Int">Int</span></span>, <span name="columns">columns: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="Matrix.html" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@shape(rows:Int,columns:Int):cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#shape" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="shape:cogx.cogmath.geometry.Shape"></a>
+      <a id="shape:geometry.Shape"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shape</span><span class="result">: <a href="../../geometry/Shape.html" class="extype" name="cogx.cogmath.geometry.Shape">geometry.Shape</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@shape:cogx.cogmath.geometry.Shape" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Shape of the vector.</p><div class="fullcomment"><div class="comment cmt"><p>Shape of the vector.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a> → <a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#shiftCyclic" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="shiftCyclic(delta:Int):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="shiftCyclic(Int):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shiftCyclic</span><span class="params">(<span name="delta">delta: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@shiftCyclic(delta:Int):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Rotates the elements of a vector, wrapping around the left side to the
+right side.</p><div class="fullcomment"><div class="comment cmt"><p>Rotates the elements of a vector, wrapping around the left side to the
+right side.</p><p>The rotation is specified by &quot;delta&quot;; for example, delta=2
+would cause the element at location (0) to be moved to location (2).
+Returns the rotated vector.  This was added in support of the
+LowPassFunction kernel, and because Matrix has a similar method.
+Not currently tested.  -RJC  XXX
+</p></div></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#size" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="size:Int"></a>
+      <a id="size:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">size</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@size:Int" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#sort" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sort:cogx.cogmath.algebra.real.Vector"></a>
+      <a id="sort:Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sort</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@sort:cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sort vector elements in ascending order (creates new Vector, &quot;this&quot; unchanged).</p>
+    </li><li name="cogx.cogmath.algebra.real.Vector#subvector" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="subvector(indexRange:Range):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="subvector(Range):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">subvector</span><span class="params">(<span name="indexRange">indexRange: <span class="extype" name="scala.Range">Range</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@subvector(indexRange:Range):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#toArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="toArray:Array[Float]"></a>
+      <a id="toArray:Array[Float]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toArray</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@toArray:Array[Float]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Convert Vector to an array of doubles (copy).</p>
+    </li><li name="cogx.cogmath.algebra.real.Vector#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@toString():String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a> → AnyRef → Any</dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#transpose" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="transpose:cogx.cogmath.algebra.real.Matrix"></a>
+      <a id="transpose:Matrix"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">transpose</span><span class="result">: <a href="Matrix.html" class="extype" name="cogx.cogmath.algebra.real.Matrix">Matrix</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@transpose:cogx.cogmath.algebra.real.Matrix" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#trim" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="trim(smallSize:Int):cogx.cogmath.algebra.real.Vector"></a>
+      <a id="trim(Int):Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">trim</span><span class="params">(<span name="smallSize">smallSize: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@trim(smallSize:Int):cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trim &quot;this&quot; to a Vector of length <code>smallSize</code>.</p>
+    </li><li name="cogx.cogmath.algebra.real.Vector#unary_-" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="unary_-():cogx.cogmath.algebra.real.Vector"></a>
+      <a id="unary_-():Vector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: unary_$minus" class="name">unary_-</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@unary_-():cogx.cogmath.algebra.real.Vector" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.cogmath.algebra.real.Vector#update" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="update(index:Int,value:Float):Unit"></a>
+      <a id="update(Int,Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">update</span><span class="params">(<span name="index">index: <span class="extype" name="scala.Int">Int</span></span>, <span name="value">value: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@update(index:Int,value:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="cogx.cogmath.algebra.real.Vector#~==" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="~==(v:cogx.cogmath.algebra.real.Vector):Boolean"></a>
+      <a id="~==(Vector):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $tilde$eq$eq" class="name">~==</span><span class="params">(<span name="v">v: <a href="" class="extype" name="cogx.cogmath.algebra.real.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.cogmath.algebra.real.Vector@~==(v:cogx.cogmath.algebra.real.Vector):Boolean" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="cogx.cogmath.algebra.real.Tensor">
+              <h3>Inherited from <a href="Tensor.html" class="extype" name="cogx.cogmath.algebra.real.Tensor">Tensor</a></h3>
+            </div><div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

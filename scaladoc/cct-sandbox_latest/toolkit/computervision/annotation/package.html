@@ -1,0 +1,153 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>annotation - toolkit.computervision.annotation</title>
+          <meta name="description" content="annotation - toolkit.computervision.annotation" />
+          <meta name="keywords" content="annotation toolkit.computervision.annotation" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'toolkit.computervision.annotation.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="toolkit">toolkit</a>.<a href="../package.html" class="extype" name="toolkit.computervision">computervision</a></p>
+        <h1>annotation</h1><span class="permalink">
+      <a href="../../../index.html#toolkit.computervision.annotation.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">annotation</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="toolkit.computervision.annotation.CircleWriter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CircleWriterextendslibcog.Operator"></a>
+      <a id="CircleWriter:CircleWriter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CircleWriter.html"><span class="name">CircleWriter</span></a><span class="result"> extends <a href="../../../libcog/package.html#Operator=cogx.compiler.cpu_operator.Operator" class="extmbr" name="libcog.Operator">libcog.Operator</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.computervision.annotation.package@CircleWriterextendslibcog.Operator" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A user function class for writing a circle to a <code>ScalarField</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A user function class for writing a circle to a <code>ScalarField</code>. The shape of
+the output must be defined at definition time. The position and size of the
+circle are specified by <code>ScalarField</code>s which can change over time.</p><p>Example:</p><p>val circleWriter = new CircleWriter(Shape(10,10))
+val row = ScalarField(5f)
+val column = ScalarField(5f)
+val radius = ScalarField(5f)
+val fieldWithCircle = cirlceWriter(row, column, radius)</p><p>Note that <code>CircleWriter</code>s contains internal state that is mutated each time
+the operator is called, requiring a different <code>CircleWriter</code> for each cross
+you want to generate.
+</p></div></div>
+    </li><li name="toolkit.computervision.annotation.CrossWriter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CrossWriterextendslibcog.Operator"></a>
+      <a id="CrossWriter:CrossWriter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CrossWriter.html"><span class="name">CrossWriter</span></a><span class="result"> extends <a href="../../../libcog/package.html#Operator=cogx.compiler.cpu_operator.Operator" class="extmbr" name="libcog.Operator">libcog.Operator</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.computervision.annotation.package@CrossWriterextendslibcog.Operator" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A user function class for writing a cross to a <code>ScalarField</code>.</p><div class="fullcomment"><div class="comment cmt"><p>A user function class for writing a cross to a <code>ScalarField</code>. The shape of
+the output must be defined at definition time. The position and size of the
+cross are specified by <code>ScalarField</code>s which can change over time.</p><p>Example:</p><p>val crossWriter = new CrossWriter(Shape(10,10))
+val row = ScalarField(5f)
+val column = ScalarField(5f)
+val radius = ScalarField(5f)
+val fieldWithCross = crossWriter(row, column, radius)</p><p>Note that <code>CrossWriter</code>s contains internal state that is mutated each time
+the operator is called, requiring a different <code>CrossWriter</code> for each cross
+you want to generate.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

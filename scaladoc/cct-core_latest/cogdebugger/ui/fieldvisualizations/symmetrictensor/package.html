@@ -1,0 +1,183 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>symmetrictensor - cogdebugger.ui.fieldvisualizations.symmetrictensor</title>
+          <meta name="description" content="symmetrictensor - cogdebugger.ui.fieldvisualizations.symmetrictensor" />
+          <meta name="keywords" content="symmetrictensor cogdebugger.ui.fieldvisualizations.symmetrictensor" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogdebugger.ui.fieldvisualizations.symmetrictensor.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogdebugger">cogdebugger</a>.<a href="../../package.html" class="extype" name="cogdebugger.ui">ui</a>.<a href="../package.html" class="extype" name="cogdebugger.ui.fieldvisualizations">fieldvisualizations</a></p>
+        <h1>symmetrictensor</h1><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.symmetrictensor.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">symmetrictensor</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogdebugger.ui.fieldvisualizations.symmetrictensor.StickGeometrySubpanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="StickGeometrySubpanelextendsTileBasedFieldPanel[libcog.ComplexFieldReader]withViewerwithRestorableStatewithToolbarItems"></a>
+      <a id="StickGeometrySubpanel:StickGeometrySubpanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StickGeometrySubpanel.html"><span class="name">StickGeometrySubpanel</span></a><span class="result"> extends <a href="../TileBasedFieldPanel.html" class="extype" name="cogdebugger.ui.fieldvisualizations.TileBasedFieldPanel">TileBasedFieldPanel</a>[<a href="../../../../libcog/package.html#ComplexFieldReader=cogx.platform.cpumemory.readerwriter.ComplexFieldReader" class="extmbr" name="libcog.ComplexFieldReader">libcog.ComplexFieldReader</a>] with <a href="../Viewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Viewer">Viewer</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a> with <a href="../ToolbarItems.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ToolbarItems">ToolbarItems</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.symmetrictensor.package@StickGeometrySubpanelextendsTileBasedFieldPanel[libcog.ComplexFieldReader]withViewerwithRestorableStatewithToolbarItems" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A panel which displays a stick tensor field as geometrical objects.</p><div class="fullcomment"><div class="comment cmt"><p>A panel which displays a stick tensor field as geometrical objects.</p><p>Each tensor is rendered as a line contained in a single cell in a grid of
+cells. The midpoint of a line is fixed to the center of its cell, and its
+orientation and length are determined by the phase and magnitude of the
+tensor it represents. The visual length of the tensors are normalized such
+that the longest line is contained entirely in its cell.</p><p>This visualization supports the notion of a &quot;floating maximum.&quot; The scaling
+of the lines representing tensors can be based either upon the largest
+magnitude tensor seen by this visualization across all updates since the
+last reset or upon only the values present in the latest field data handed
+to the viewer. The floating max property is set to 'false' by default; all
+lines drawn have their lengths scaled according to the maximum magnitude
+seen by the visualization across all updates. A user control for changing
+this setting is supplied by the <code>toolbarComponents</code> method.
+</p></div></div>
+    </li><li name="cogdebugger.ui.fieldvisualizations.symmetrictensor.SticknessOrientationSubpanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SticknessOrientationSubpanelextendsBorderPanelwithViewerwithZoomPropertywithRestorableState"></a>
+      <a id="SticknessOrientationSubpanel:SticknessOrientationSubpanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SticknessOrientationSubpanel.html"><span class="name">SticknessOrientationSubpanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../Viewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Viewer">Viewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.symmetrictensor.package@SticknessOrientationSubpanelextendsBorderPanelwithViewerwithZoomPropertywithRestorableState" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A panel which displays a complex field as a modulus panel and an
+argument panel, side by side.</p>
+    </li><li name="cogdebugger.ui.fieldvisualizations.symmetrictensor.SymmetricGeometrySubpanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SymmetricGeometrySubpanelextendsTileBasedFieldPanel[libcog.VectorFieldReader]withViewerwithRestorableStatewithToolbarItems"></a>
+      <a id="SymmetricGeometrySubpanel:SymmetricGeometrySubpanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SymmetricGeometrySubpanel.html"><span class="name">SymmetricGeometrySubpanel</span></a><span class="result"> extends <a href="../TileBasedFieldPanel.html" class="extype" name="cogdebugger.ui.fieldvisualizations.TileBasedFieldPanel">TileBasedFieldPanel</a>[<a href="../../../../libcog/package.html#VectorFieldReader=cogx.platform.cpumemory.readerwriter.VectorFieldReader" class="extmbr" name="libcog.VectorFieldReader">libcog.VectorFieldReader</a>] with <a href="../Viewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Viewer">Viewer</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a> with <a href="../ToolbarItems.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ToolbarItems">ToolbarItems</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.symmetrictensor.package@SymmetricGeometrySubpanelextendsTileBasedFieldPanel[libcog.VectorFieldReader]withViewerwithRestorableStatewithToolbarItems" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A panel which displays a symmetric tensor field as geometrical objects.</p>
+    </li><li name="cogdebugger.ui.fieldvisualizations.symmetrictensor.TensorComponentsSubpanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="TensorComponentsSubpanelextendsBorderPanelwithViewerwithZoomPropertywithRestorableState"></a>
+      <a id="TensorComponentsSubpanel:TensorComponentsSubpanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TensorComponentsSubpanel.html"><span class="name">TensorComponentsSubpanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../Viewer.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Viewer">Viewer</a> with <a href="../ZoomProperty.html" class="extype" name="cogdebugger.ui.fieldvisualizations.ZoomProperty">ZoomProperty</a> with <a href="../../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogdebugger.ui.fieldvisualizations.symmetrictensor.package@TensorComponentsSubpanelextendsBorderPanelwithViewerwithZoomPropertywithRestorableState" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A panel which displays a symmetric tensor field as 3 panels, side by side:</p><div class="fullcomment"><div class="comment cmt"><p>A panel which displays a symmetric tensor field as 3 panels, side by side:</p><p>stickness</p><p>ballness</p><p>orientation
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

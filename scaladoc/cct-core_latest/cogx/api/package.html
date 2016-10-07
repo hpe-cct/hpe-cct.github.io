@@ -1,0 +1,197 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>api - cogx.api</title>
+          <meta name="description" content="api - cogx.api" />
+          <meta name="keywords" content="api cogx.api" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'cogx.api.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="cogx">cogx</a></p>
+        <h1>api</h1><span class="permalink">
+      <a href="../../index.html#cogx.api.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">api</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.api.CogFunctionAPI" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CogFunctionAPIextendsSemanticErrorwithImplicitConversions"></a>
+      <a id="CogFunctionAPI:CogFunctionAPI"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CogFunctionAPI.html"><span class="name">CogFunctionAPI</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="ImplicitConversions.html" class="extype" name="cogx.api.ImplicitConversions">ImplicitConversions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.api.package@CogFunctionAPIextendsSemanticErrorwithImplicitConversions" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Function API for Cog.</p><div class="fullcomment"><div class="comment cmt"><p>Function API for Cog.</p><p>Algebraic operators are defined in CogOperatorAPI.
+</p></div></div>
+    </li><li name="cogx.api.CogOperatorAPI" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CogOperatorAPIextendsAnyRef"></a>
+      <a id="CogOperatorAPI:CogOperatorAPI"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CogOperatorAPI.html"><span class="name">CogOperatorAPI</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.api.package@CogOperatorAPIextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cog API for operators (+, -, ...)</p><div class="fullcomment"><div class="comment cmt"><p>Cog API for operators (+, -, ...)</p><p>Because Scala does not support operator functions very well, we implement
+these as methods on Fields.  A description of the Field class follows:</p><p><b>Fields</b></p><p>A field is a multidimensional array of tensors, where tensors are defined
+to be multidimensional arrays of numbers. The dimensionality of the field
+may be 0, 1, 2 or 3. The actual size of the field dimensions are called
+the &quot;field shape.&quot; To make programming easier, the field shape is described
+using the terms <code>layers</code>, <code>rows</code> and <code>columns</code>. 3D fields uses all three
+values. 2D fields use only <code>rows</code> and <code>columns</code> and have <code>layers</code> set to 1
+for convenience. 1D fields use only <code>columns</code> and have <code>layers</code> and
+<code>rows</code> set to 1 for convenience. 0D fields have only a single tensor and
+have no need for <code>layers</code>, <code>rows</code> or <code>columns</code>, but for convenience these
+values are set to 1.</p><p><b>Tensors</b></p><p>The dimensionality of a tensor is called its &quot;order&quot; which may be 0
+(for scalars), 1 (vectors), or 2 (matrices). Tensors also have a shape which
+uses similar naming as for field shapes. For example, a matrix has <code>rows</code>
+and <code>columns</code>. All tensors within a given field have exactly the same
+shape.</p><p><b>Operators</b></p><p>Operators take one or more fields (which can be considered as immutable
+objects) and produce a result field. Each operator has a set of rules
+defining the legal combinations of fields it accepts as inputs, and how
+those inputs are combined to produce the output. Fortunately most operators
+use only one of a small set of different rules; the most common rules are
+now described:</p><p><b>Algebraic binary operator rules</b></p><p>Binary operators take two fields as inputs. Generally if one of them is
+a complex field, the other will be implicitly converted to a complex
+form (with zero imaginary components) before proceeding.</p><p>The two inputs Fields are algebraically compatible if they satisfy one
+of the following four conditions (which also define the nature of their
+result):</p><p>1. They have exactly the same field shape and tensor shape. In this
+case, corresponding elements of the two fields are combined to produce
+the result: a field with the same field shape and tensor shape as the two
+input fields.</p><p>2. They have exactly the same field shape, but one of them is a scalar
+field and the other is a (non-scalar) tensor field. In this case the
+scalar at each location in the scalar field is combined with the tensor
+in the corresponding location in the tensor field. The result is a
+tensor field with the same field shape and tensor shape as the input
+tensor field.</p><p>3. One of them is a 0-dimensional scalar field. In this case the single
+scalar of the 0D scalar field is combined with each element of every tensor
+in tensor field. The result is a tensor field with the same field shape and
+tensor shape as the input tensor field.</p><p>4. One of them is a 0-dimensional tensor field (non-scalar). In this case,
+the tensor shape of the 0-dimensional field must exactly match the tensor
+shape of the other field. The tensor from the 0-dimensional field is
+combined element-wise with each of the tensors in the other field to
+produce the result, which has the same field shape and tensor shape of
+the larger input field.</p><p><b>Algebraic unary operator rules</b></p><p>Operators which take only one field as input (and an optional
+numeric constant) produce a result with the same field shape and tensor
+shape as the input field. If the input field is complex, the optional
+numeric constant is converted to complex (with zero imaginary part) before
+proceeding with the operation.</p><p><b>Boolean result rules</b></p><p>Operators which produce boolean results, such as the comparison operators,
+use 1.0f to represent true and 0.0f to represent false.</p></div></div>
+    </li><li name="cogx.api.ImplicitConversions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ImplicitConversionsextendsAnyRef"></a>
+      <a id="ImplicitConversions:ImplicitConversions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ImplicitConversions.html"><span class="name">ImplicitConversions</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.api.package@ImplicitConversionsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implicit conversions needed to emulate static typing in Cog.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

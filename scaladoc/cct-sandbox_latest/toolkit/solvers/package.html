@@ -1,0 +1,457 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>solvers - toolkit.solvers</title>
+          <meta name="description" content="solvers - toolkit.solvers" />
+          <meta name="keywords" content="solvers toolkit.solvers" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'toolkit.solvers.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="toolkit">toolkit</a></p>
+        <h1>solvers</h1><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">solvers</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="toolkit.solvers"><span>solvers</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="toolkit.solvers.DynamicShrink" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DynamicShrinkextendsProjectionFunctionwithProductwithSerializable"></a>
+      <a id="DynamicShrink:DynamicShrink"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="DynamicShrink.html"><span class="name">DynamicShrink</span></a><span class="params">(<span name="multiplier">multiplier: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result"> extends <a href="ProjectionFunction.html" class="extype" name="toolkit.solvers.ProjectionFunction">ProjectionFunction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@DynamicShrinkextendsProjectionFunctionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.solvers.FieldArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FieldArrayextendsAnyRef"></a>
+      <a id="FieldArray:FieldArray"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldArray.html"><span class="name">FieldArray</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@FieldArrayextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A rich class which contains a 1D scala array of fields and defines some
+common operators on arrays of fields.</p>
+    </li><li name="toolkit.solvers.LineSearchFISTASolver" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LineSearchFISTASolverextendsAnyRef"></a>
+      <a id="LineSearchFISTASolver:LineSearchFISTASolver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LineSearchFISTASolver.html"><span class="name">LineSearchFISTASolver</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@LineSearchFISTASolverextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A solver for finding the minimum of a separable convex function f
+which is minimized with a gradient step followed by a proximal map.</p><div class="fullcomment"><div class="comment cmt"><p>A solver for finding the minimum of a separable convex function f
+which is minimized with a gradient step followed by a proximal map. The
+method is outlined in:</p><p>  Beck, A. and M. Teboulle (2009). &quot;A Fast Iterative Shrinkage-Thresholding
+    Algorithm for Linear Inverse Problems.&quot; SIAM J. Img. Sci. 2(1): 183-202.
+</p></div></div>
+    </li><li name="toolkit.solvers.ProjectionFunction" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ProjectionFunctionextendsAnyRef"></a>
+      <a id="ProjectionFunction:ProjectionFunction"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProjectionFunction.html"><span class="name">ProjectionFunction</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@ProjectionFunctionextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="toolkit.solvers.StaticShrink" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StaticShrinkextendsProjectionFunctionwithProductwithSerializable"></a>
+      <a id="StaticShrink:StaticShrink"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="StaticShrink.html"><span class="name">StaticShrink</span></a><span class="params">(<span name="lambda">lambda: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result"> extends <a href="ProjectionFunction.html" class="extype" name="toolkit.solvers.ProjectionFunction">ProjectionFunction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@StaticShrinkextendsProjectionFunctionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="toolkit.solvers.DiffuseDirichlet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DiffuseDirichlet"></a>
+      <a id="DiffuseDirichlet:DiffuseDirichlet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DiffuseDirichlet$.html"><span class="name">DiffuseDirichlet</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@DiffuseDirichlet" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements diffusion with both insulating and Dirichlet boundary
+constraints using a multigrid algorithm.</p>
+    </li><li name="toolkit.solvers.FISTASolver" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="FISTASolver"></a>
+      <a id="FISTASolver:FISTASolver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FISTASolver$.html"><span class="name">FISTASolver</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@FISTASolver" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A solver for finding the minimum of a separable convex function f
+which is minimized with a gradient step followed by a proximal map.</p><div class="fullcomment"><div class="comment cmt"><p>A solver for finding the minimum of a separable convex function f
+which is minimized with a gradient step followed by a proximal map. The
+method is outlined in:</p><p>  Beck, A. and M. Teboulle (2009). &quot;A Fast Iterative Shrinkage-Thresholding
+    Algorithm for Linear Inverse Problems.&quot; SIAM J. Img. Sci. 2(1): 183-202.
+</p></div></div>
+    </li><li name="toolkit.solvers.FieldArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FieldArray"></a>
+      <a id="FieldArray:FieldArray"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldArray$.html"><span class="name">FieldArray</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@FieldArray" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.solvers.GoldenSectionSolver" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GoldenSectionSolver"></a>
+      <a id="GoldenSectionSolver:GoldenSectionSolver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GoldenSectionSolver$.html"><span class="name">GoldenSectionSolver</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@GoldenSectionSolver" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Solver for finding the minimum position of nonlinear, convex scalar function f
+on the line between bound1 and bound2.</p><div class="fullcomment"><div class="comment cmt"><p>Solver for finding the minimum position of nonlinear, convex scalar function f
+on the line between bound1 and bound2. Implements the algorithm from:
+https://en.wikipedia.org/wiki/Golden_section_search
+</p></div></div>
+    </li><li name="toolkit.solvers.IdentityFunction" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="IdentityFunction"></a>
+      <a id="IdentityFunction:IdentityFunction"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IdentityFunction$.html"><span class="name">IdentityFunction</span></a><span class="result"> extends <a href="ProjectionFunction.html" class="extype" name="toolkit.solvers.ProjectionFunction">ProjectionFunction</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@IdentityFunction" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.solvers.Kmeans" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Kmeans"></a>
+      <a id="Kmeans:Kmeans"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Kmeans$.html"><span class="name">Kmeans</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@Kmeans" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="toolkit.solvers.LSQRSolver" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LSQRSolver"></a>
+      <a id="LSQRSolver:LSQRSolver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LSQRSolver$.html"><span class="name">LSQRSolver</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@LSQRSolver" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A solver for inverting linear problems of the form A.x = b using the LSQR
+method outlined in:</p><div class="fullcomment"><div class="comment cmt"><p>A solver for inverting linear problems of the form A.x = b using the LSQR
+method outlined in:</p><p>C. C. Paige and M. A. Saunders, Algorithm 583; LSQR: Sparse linear equations
+  and least-squares problems, TOMS 8(2), 195-209 (1982).</p><p>LSQR uses a functional representation of applying the A matrix, op(), in order
+to optimally perform sparse operations. The algorithm also requires explicit
+definition of the operator that is adjoint to op(), adj(). operator/adjoint
+pairs can be debugged with an AdjointTester</p><p>b and x0 can be Fields or FieldArrays of any type structure, under the
+following conditions:
+  1) op(x0) returns a type structure equivalent to b
+  2) adj(b) returns a type structure equivalent to x0
+</p></div></div>
+    </li><li name="toolkit.solvers.Poisson" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Poisson"></a>
+      <a id="Poisson:Poisson"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Poisson$.html"><span class="name">Poisson</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@Poisson" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Poisson solver as described in &quot;Real-Time Gradient-Domain Painting&quot; by
+McCann and Pollard (2008).</p><div class="fullcomment"><div class="comment cmt"><p>Poisson solver as described in &quot;Real-Time Gradient-Domain Painting&quot; by
+McCann and Pollard (2008). This implementation covers only the solver, not
+differentiation or blending modes. The expected input is a ColorFieldExpr
+containing the Laplacian of the desired output.
+</p></div></div>
+    </li><li name="toolkit.solvers.PoissonSolver" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PoissonSolver"></a>
+      <a id="PoissonSolver:PoissonSolver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PoissonSolver$.html"><span class="name">PoissonSolver</span></a><span class="result"> extends <a href="../../libcog/package.html#Logarithm=cogx.cogmath.algebra.real.Logarithm" class="extmbr" name="libcog.Logarithm">libcog.Logarithm</a> with <a href="../../libcog/package.html#FloatMath=libcog.floatmath.FloatMath" class="extmbr" name="libcog.FloatMath">FloatMath</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@PoissonSolver" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">&quot;Integrates&quot; a gradient field to reconstruct an image.</p><div class="fullcomment"><div class="comment cmt"><p>&quot;Integrates&quot; a gradient field to reconstruct an image. See
+&quot;Fourier analysis of the 2D screened Poisson equation for gradient
+domain problems,&quot; by Bhat, Curless, Cohen and Zitnick, 2008.
+</p></div></div>
+    </li><li name="toolkit.solvers.ProjectedLSQRSolver" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProjectedLSQRSolver"></a>
+      <a id="ProjectedLSQRSolver:ProjectedLSQRSolver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ProjectedLSQRSolver$.html"><span class="name">ProjectedLSQRSolver</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@ProjectedLSQRSolver" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="toolkit.solvers.ScreenedPoissonSolver" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ScreenedPoissonSolver"></a>
+      <a id="ScreenedPoissonSolver:ScreenedPoissonSolver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ScreenedPoissonSolver$.html"><span class="name">ScreenedPoissonSolver</span></a><span class="result"> extends <a href="../../libcog/package.html#Logarithm=cogx.cogmath.algebra.real.Logarithm" class="extmbr" name="libcog.Logarithm">libcog.Logarithm</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@ScreenedPoissonSolver" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Solves the screened Poisson equation in the Fourier domain.</p><div class="fullcomment"><div class="comment cmt"><p>Solves the screened Poisson equation in the Fourier domain. See the paper
+&quot;Fourier analysis of the 2D screened Poisson equation for gradient
+domain problems,&quot; by Bhat, Curless, Cohen and Zitnick, 2008.
+</p></div></div>
+    </li><li name="toolkit.solvers.shrink" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="shrink"></a>
+      <a id="shrink:shrink"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="shrink$.html"><span class="name">shrink</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#toolkit.solvers.package@shrink" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The ISTA shrinkage function sets values below lambda to zero and shrinks
+values close to lambda with a multiplier &lt; 1</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

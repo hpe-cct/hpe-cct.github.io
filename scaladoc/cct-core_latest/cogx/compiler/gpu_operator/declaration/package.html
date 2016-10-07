@@ -1,0 +1,161 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>declaration - cogx.compiler.gpu_operator.declaration</title>
+          <meta name="description" content="declaration - cogx.compiler.gpu operator.declaration" />
+          <meta name="keywords" content="declaration cogx.compiler.gpu operator.declaration" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogx.compiler.gpu_operator.declaration.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogx">cogx</a>.<a href="../../package.html" class="extype" name="cogx.compiler">compiler</a>.<a href="../package.html" class="extype" name="cogx.compiler.gpu_operator">gpu_operator</a></p>
+        <h1>declaration</h1><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.declaration.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">declaration</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.compiler.gpu_operator.declaration.GPUArrayConstant" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GPUArrayConstantextendsGPUArrayVariablewithSemanticErrorwithFloatConstantsTrait"></a>
+      <a id="GPUArrayConstant:GPUArrayConstant"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GPUArrayConstant.html"><span class="name">GPUArrayConstant</span></a><span class="result"> extends <a href="GPUArrayVariable.html" class="extype" name="cogx.compiler.gpu_operator.declaration.GPUArrayVariable">GPUArrayVariable</a> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <a href="../FloatConstantsTrait.html" class="extype" name="cogx.compiler.gpu_operator.FloatConstantsTrait">FloatConstantsTrait</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.declaration.package@GPUArrayConstantextendsGPUArrayVariablewithSemanticErrorwithFloatConstantsTrait" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A constant array declaration.</p><div class="fullcomment"><div class="comment cmt"><p>A constant array declaration. This currently supports only arrays of floats.</p><p>NOTE: These have been disabled since constant arrays may only be declared
+at program scope and we don't yet have a mechanism for doing that.
+</p></div></div>
+    </li><li name="cogx.compiler.gpu_operator.declaration.GPUArrayVariable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GPUArrayVariableextendsDeclarationwithSemanticErrorwithConstraints"></a>
+      <a id="GPUArrayVariable:GPUArrayVariable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GPUArrayVariable.html"><span class="name">GPUArrayVariable</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.gpu_operator.declaration.Declaration">Declaration</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <span class="extype" name="cogx.compiler.gpu_operator.Constraints">Constraints</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.declaration.package@GPUArrayVariableextendsDeclarationwithSemanticErrorwithConstraints" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A variable array declaration.</p><div class="fullcomment"><div class="comment cmt"><p>A variable array declaration.</p><p>Base types of variables are of the &quot;float4&quot; or &quot;float&quot; which means that
+scalars have been merged into the vector formulation and that all base
+types are vectors. It is possible to have arrays of base types, vectors,
+as well.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogx.compiler.gpu_operator.declaration.ConstantExpression" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ConstantExpression"></a>
+      <a id="ConstantExpression:ConstantExpression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ConstantExpression$.html"><span class="name">ConstantExpression</span></a><span class="result"> extends <a href="../function/ConstantExpressionFunctions.html" class="extype" name="cogx.compiler.gpu_operator.function.ConstantExpressionFunctions">ConstantExpressionFunctions</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.declaration.package@ConstantExpression" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

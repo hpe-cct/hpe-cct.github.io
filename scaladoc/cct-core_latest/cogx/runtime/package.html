@@ -1,0 +1,232 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>runtime - cogx.runtime</title>
+          <meta name="description" content="runtime - cogx.runtime" />
+          <meta name="keywords" content="runtime cogx.runtime" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'cogx.runtime.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="cogx">cogx</a></p>
+        <h1>runtime</h1><span class="permalink">
+      <a href="../../index.html#cogx.runtime.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runtime</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.runtime.ComputeGraph" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ComputeGraphextendsSaveable"></a>
+      <a id="ComputeGraph:ComputeGraph"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ComputeGraph.html"><span class="name">ComputeGraph</span></a><span class="result"> extends <a href="../platform/checkpoint/Saveable.html" class="extype" name="cogx.platform.checkpoint.Saveable">Saveable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.package@ComputeGraphextendsSaveable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A Cog computation graph.</p>
+    </li><li name="cogx.runtime.ComputeGraphRestorerState" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ComputeGraphRestorerStateextendsAnyRef"></a>
+      <a id="ComputeGraphRestorerState:ComputeGraphRestorerState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ComputeGraphRestorerState.html"><span class="name">ComputeGraphRestorerState</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.package@ComputeGraphRestorerStateextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The KernelCircuit is a &quot;web of objects&quot; that must be restored in a particular order that requires some
+global state.</p><div class="fullcomment"><div class="comment cmt"><p>The KernelCircuit is a &quot;web of objects&quot; that must be restored in a particular order that requires some
+global state.  These collections are mixed into the ObjectRestorer to permit this.
+</p></div></div>
+    </li><li name="cogx.runtime.ComputeGraphSaverState" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ComputeGraphSaverStateextendsAnyRef"></a>
+      <a id="ComputeGraphSaverState:ComputeGraphSaverState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ComputeGraphSaverState.html"><span class="name">ComputeGraphSaverState</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.package@ComputeGraphSaverStateextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The KernelCircuit is a &quot;web of objects&quot; that must be saved in a particular order that requires some
+global state.</p><div class="fullcomment"><div class="comment cmt"><p>The KernelCircuit is a &quot;web of objects&quot; that must be saved in a particular order that requires some
+global state.  These collections are mixed into the ObjectSaver to permit this.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogx.runtime.ComputeGraph" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ComputeGraph"></a>
+      <a id="ComputeGraph:ComputeGraph"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ComputeGraph$.html"><span class="name">ComputeGraph</span></a><span class="result"> extends <a href="../platform/checkpoint/RestoreFactory.html" class="extype" name="cogx.platform.checkpoint.RestoreFactory">RestoreFactory</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.package@ComputeGraph" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory object for making compute graphs from a ComputeGraphCheckpoint instance or a
+file-saved version of one.</p>
+    </li><li name="cogx.runtime.allocation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="allocation"></a>
+      <a id="allocation:allocation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="allocation/package.html"><span class="name">allocation</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.package@allocation" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This package handles all allocation of compute resources for a computation.</p>
+    </li><li name="cogx.runtime.checkpoint" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="checkpoint"></a>
+      <a id="checkpoint:checkpoint"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="checkpoint/package.html"><span class="name">checkpoint</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.package@checkpoint" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogx.runtime.debugger" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="debugger"></a>
+      <a id="debugger:debugger"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="debugger/package.html"><span class="name">debugger</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogx.runtime.package@debugger" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This package contains classes that make debugging easier for the user.</p><div class="fullcomment"><div class="comment cmt"><p>This package contains classes that make debugging easier for the user. They
+are mainly used, indirectly, by the Cog debugger.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
