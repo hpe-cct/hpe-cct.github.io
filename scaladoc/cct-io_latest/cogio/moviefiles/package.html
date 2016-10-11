@@ -1,0 +1,230 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>moviefiles - cogio.moviefiles</title>
+          <meta name="description" content="moviefiles - cogio.moviefiles" />
+          <meta name="keywords" content="moviefiles cogio.moviefiles" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'cogio.moviefiles.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="cogio">cogio</a></p>
+        <h1>moviefiles</h1><span class="permalink">
+      <a href="../../index.html#cogio.moviefiles.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">moviefiles</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogio.moviefiles.MovieProperties" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MoviePropertiesextendsAnyRef"></a>
+      <a id="MovieProperties:MovieProperties"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MovieProperties.html"><span class="name">MovieProperties</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogio.moviefiles.package@MoviePropertiesextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogio.moviefiles.ColorMovie" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ColorMovie"></a>
+      <a id="ColorMovie:ColorMovie"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorMovie$.html"><span class="name">ColorMovie</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogio.moviefiles.package@ColorMovie" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating a color sensor that reads in successive frames of a
+movie from a movie file.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for creating a color sensor that reads in successive frames of a
+movie from a movie file. The sensor loops back to the beginning of the movie
+after it hits the last frame, forming an endless loop.  This uses a pipelined
+sensor, so the ffmpeg processing is done in parallel with any GPU processing
+of the frames.
+</p></div></div>
+    </li><li name="cogio.moviefiles.GrayscaleMovie" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GrayscaleMovie"></a>
+      <a id="GrayscaleMovie:GrayscaleMovie"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GrayscaleMovie$.html"><span class="name">GrayscaleMovie</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogio.moviefiles.package@GrayscaleMovie" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating a sensor that reads in successive frames of a
+movie from a movie file.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for creating a sensor that reads in successive frames of a
+movie from a movie file. The sensor loops back to the beginning of the movie
+after it hits the last frame, forming an endless loop.  This uses a pipelined
+sensor, so the ffmpeg processing is done in parallel with any GPU processing
+of the frames.
+</p></div></div>
+    </li><li name="cogio.moviefiles.MovieProperties" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MovieProperties"></a>
+      <a id="MovieProperties:MovieProperties"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MovieProperties$.html"><span class="name">MovieProperties</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogio.moviefiles.package@MovieProperties" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogio.moviefiles.UnpipelinedColorMovie" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnpipelinedColorMovie"></a>
+      <a id="UnpipelinedColorMovie:UnpipelinedColorMovie"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UnpipelinedColorMovie$.html"><span class="name">UnpipelinedColorMovie</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogio.moviefiles.package@UnpipelinedColorMovie" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating a color sensor that reads in successive frames of a
+movie from a movie file.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for creating a color sensor that reads in successive frames of a
+movie from a movie file. The sensor loops back to the beginning of the movie
+after it hits the last frame, forming an endless loop.  This uses an unpipelined
+sensor, so the ffmpeg processing is done in series with any GPU processing of
+the frames.
+</p></div></div>
+    </li><li name="cogio.moviefiles.UnpipelinedGrayscaleMovie" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UnpipelinedGrayscaleMovie"></a>
+      <a id="UnpipelinedGrayscaleMovie:UnpipelinedGrayscaleMovie"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UnpipelinedGrayscaleMovie$.html"><span class="name">UnpipelinedGrayscaleMovie</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogio.moviefiles.package@UnpipelinedGrayscaleMovie" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating a sensor that reads in successive frames of a
+movie from a movie file.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for creating a sensor that reads in successive frames of a
+movie from a movie file. The sensor loops back to the beginning of the movie
+after it hits the last frame, forming an endless loop.  This uses an unpipelined
+sensor, so the ffmpeg processing is done in series with any GPU processing of
+the frames.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

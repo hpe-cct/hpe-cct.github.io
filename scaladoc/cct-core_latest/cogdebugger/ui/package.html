@@ -1,0 +1,386 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>ui - cogdebugger.ui</title>
+          <meta name="description" content="ui - cogdebugger.ui" />
+          <meta name="keywords" content="ui cogdebugger.ui" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'cogdebugger.ui.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="cogdebugger">cogdebugger</a></p>
+        <h1>ui</h1><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ui</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogdebugger.ui.ClockToolbar" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ClockToolbarextendsBoxPanel"></a>
+      <a id="ClockToolbar:ClockToolbar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ClockToolbar.html"><span class="name">ClockToolbar</span></a><span class="result"> extends <span class="extype" name="scala.swing.BoxPanel">BoxPanel</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@ClockToolbarextendsBoxPanel" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements a toolbar with buttons for stepping a model as well as counters
+for showing how many simulation ticks have passed and the model's current
+rate of execution (in ticks per second).</p><div class="fullcomment"><div class="comment cmt"><p>Implements a toolbar with buttons for stepping a model as well as counters
+for showing how many simulation ticks have passed and the model's current
+rate of execution (in ticks per second). This class spawns a new thread
+that will periodically query <code>computeGraph</code> for the current sim tick and
+update the counters.</p></div></div>
+    </li><li name="cogdebugger.ui.CogDebugger" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CogDebuggerextendsMainFramewithRestorableState"></a>
+      <a id="CogDebugger:CogDebugger"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CogDebugger.html"><span class="name">CogDebugger</span></a><span class="result"> extends <span class="extype" name="scala.swing.MainFrame">MainFrame</span> with <a href="../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@CogDebuggerextendsMainFramewithRestorableState" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements the main window for the Cog Ex Machina Visual Debugging Tool.</p><div class="fullcomment"><div class="comment cmt"><p>Implements the main window for the Cog Ex Machina Visual Debugging Tool.</p><p>The debugger consists of two large views and a main toolbar:</p><p>The first of the main views displays the structure of probed fields in a
+compute graph. It can show data dependencies between fields by drawing the
+actual graph, or more compactly just show the fields without their data
+connections. Clicking a field in this first main view launches a probe
+window on the second view.</p><p>The second view serves as the home for probe windows. A probe window
+visualizes the current state of a field in some manner (exactly how is
+dependent on what type of field is being probed; some fields have several
+visualizations that a user can switch between). Probe windows can be
+rearranged, resized, and closed on this view.</p><p>The main toolbar hosts controls for stepping, running continuously,
+stopping, and resetting the ComputeGraph. It also hosts counters for
+monitoring the current simulation time and rate of execution.</p><p>---</p><p>Until we're past our demo in mid-August, the Cog 4 browser's toolbars
+have been reworked to look more like they did in Cog 3, so that we don't
+have to rewrite the whole programmer's manual. That mostly means no
+menubar and different button placements on the toolbars.
+</p></div></div>
+    </li><li name="cogdebugger.ui.Desktop" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DesktopextendsProbeDesktopwithRestorableState"></a>
+      <a id="Desktop:Desktop"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Desktop.html"><span class="name">Desktop</span></a><span class="result"> extends <a href="../coggui3ports/ProbeDesktop.html" class="extype" name="cogdebugger.coggui3ports.ProbeDesktop">ProbeDesktop</a> with <a href="../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@DesktopextendsProbeDesktopwithRestorableState" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A desktop that hosts windows/frames that in turn host visualizations for
+fields.</p><div class="fullcomment"><div class="comment cmt"><p>A desktop that hosts windows/frames that in turn host visualizations for
+fields.</p><p>The Desktop reacts to <a href="structure/InteractiveGraphEvent.html" class="extype" name="cogdebugger.ui.structure.InteractiveGraphEvent">cogdebugger.ui.structure.InteractiveGraphEvent</a>s
+(produced by one of the classes in cogdebugger.ui.structure) that indicate
+that a user is interested in some field. Please remember to actually
+subscribe this class to an event source! In response to an event, a window
+is launched on the Desktop that contains some manner of visualization of
+the data within the field. Windows can be resized, repositioned, and closed
+by users.</p><p>If requested, the Desktop can encode the state of any open visualizations
+(size, position, installed Viewer implementation) into an XML tag. If
+peristed to disk, this tag can then later be used to restore the state of
+the Desktop in a subsequent debugger session.
+</p></div></div>
+    </li><li name="cogdebugger.ui.DesktopFrame" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DesktopFrameextendsInternalFrame"></a>
+      <a id="DesktopFrame:DesktopFrame"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DesktopFrame.html"><span class="name">DesktopFrame</span></a><span class="result"> extends <span class="extype" name="org.interactivemesh.scala.swing.InternalFrame">InternalFrame</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@DesktopFrameextendsInternalFrame" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An InternalFrame intended to hold an instance of one of our various Viewer
+classes.</p><div class="fullcomment"><div class="comment cmt"><p>An InternalFrame intended to hold an instance of one of our various Viewer
+classes. It's been augmented to keep track of its associated probes and to
+raise an event when it's packed itself (this event can be used by
+<a href="../coggui3ports/Tiler.html" class="extype" name="cogdebugger.coggui3ports.Tiler">cogdebugger.coggui3ports.Tiler</a> to intelligently size and place the
+frame on the desktop).</p></div></div>
+    </li><li name="cogdebugger.ui.MessagesPanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MessagesPanelextendsBorderPanel"></a>
+      <a id="MessagesPanel:MessagesPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MessagesPanel.html"><span class="name">MessagesPanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@MessagesPanelextendsBorderPanel" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Panel for showing messages generated by the application.</p><div class="fullcomment"><div class="comment cmt"><p>Panel for showing messages generated by the application.
+Intended to eliminate tons of flipping back and forth between the browser
+and an IDE.</p></div></div>
+    </li><li name="cogdebugger.ui.ProbeToolbar" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ProbeToolbarextendsBoxPanel"></a>
+      <a id="ProbeToolbar:ProbeToolbar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProbeToolbar.html"><span class="name">ProbeToolbar</span></a><span class="result"> extends <span class="extype" name="scala.swing.BoxPanel">BoxPanel</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@ProbeToolbarextendsBoxPanel" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements a toolbar with a combo box for controlling the rate at which
+probes refresh.</p><div class="fullcomment"><div class="comment cmt"><p>Implements a toolbar with a combo box for controlling the rate at which
+probes refresh. Spawns a new thread to call the manager's readProbes method
+at the set rate.</p></div></div>
+    </li><li name="cogdebugger.ui.StatusPanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StatusPanelextendsBoxPanel"></a>
+      <a id="StatusPanel:StatusPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StatusPanel.html"><span class="name">StatusPanel</span></a><span class="result"> extends <span class="extype" name="scala.swing.BoxPanel">BoxPanel</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@StatusPanelextendsBoxPanel" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Implements a status bar for display along the bottom of the main window.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogdebugger.ui.CogDebugger" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CogDebugger"></a>
+      <a id="CogDebugger:CogDebugger"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CogDebugger$.html"><span class="name">CogDebugger</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@CogDebugger" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.Desktop" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Desktop"></a>
+      <a id="Desktop:Desktop"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Desktop$.html"><span class="name">Desktop</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@Desktop" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.MessagesPanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MessagesPanel"></a>
+      <a id="MessagesPanel:MessagesPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MessagesPanel$.html"><span class="name">MessagesPanel</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@MessagesPanel" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.ProbeToolbar" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProbeToolbar"></a>
+      <a id="ProbeToolbar:ProbeToolbar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ProbeToolbar$.html"><span class="name">ProbeToolbar</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@ProbeToolbar" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="components"></a>
+      <a id="components:components"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="components/package.html"><span class="name">components</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@components" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This package is for reusable generic GUI components that have no dependence
+on Cog, sort of like the old buildingblocks package from the old coggui
+(perhaps that package should be copied here).</p>
+    </li><li name="cogdebugger.ui.fieldvisualizations" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fieldvisualizations"></a>
+      <a id="fieldvisualizations:fieldvisualizations"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="fieldvisualizations/package.html"><span class="name">fieldvisualizations</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@fieldvisualizations" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.structure" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="structure"></a>
+      <a id="structure:structure"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="structure/package.html"><span class="name">structure</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.package@structure" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,2088 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>CogDebugger - cogdebugger.ui.CogDebugger</title>
+          <meta name="description" content="CogDebugger - cogdebugger.ui.CogDebugger" />
+          <meta name="keywords" content="CogDebugger cogdebugger.ui.CogDebugger" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'cogdebugger.ui.CogDebugger';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="CogDebugger$.html" title="See companion object"><img alt="Class/Object" src="../../lib/class_to_object_big.png" /></a>
+        <p id="owner"><a href="../package.html" class="extype" name="cogdebugger">cogdebugger</a>.<a href="package.html" class="extype" name="cogdebugger.ui">ui</a></p>
+        <h1><a href="CogDebugger$.html" title="See companion object">CogDebugger</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="CogDebugger$.html" title="See companion object">object CogDebugger</a>
+            | <a href="package.html" class="extype" name="cogdebugger.ui">package ui</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CogDebugger</span><span class="result"> extends <span class="extype" name="scala.swing.MainFrame">MainFrame</span> with <a href="../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Implements the main window for the Cog Ex Machina Visual Debugging Tool.</p><p>The debugger consists of two large views and a main toolbar:</p><p>The first of the main views displays the structure of probed fields in a
+compute graph. It can show data dependencies between fields by drawing the
+actual graph, or more compactly just show the fields without their data
+connections. Clicking a field in this first main view launches a probe
+window on the second view.</p><p>The second view serves as the home for probe windows. A probe window
+visualizes the current state of a field in some manner (exactly how is
+dependent on what type of field is being probed; some fields have several
+visualizations that a user can switch between). Probe windows can be
+rearranged, resized, and closed on this view.</p><p>The main toolbar hosts controls for stepping, running continuously,
+stopping, and resetting the ComputeGraph. It also hosts counters for
+monitoring the current simulation time and rate of execution.</p><p>---</p><p>Until we're past our demo in mid-August, the Cog 4 browser's toolbars
+have been reworked to look more like they did in Cog 3, so that we don't
+have to rewrite the whole programmer's manual. That mostly means no
+menubar and different button placements on the toolbars.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a>, <span class="extype" name="scala.swing.MainFrame">MainFrame</span>, <span class="extype" name="scala.swing.Frame">Frame</span>, <span class="extype" name="scala.swing.RichWindow">RichWindow</span>, <span class="extype" name="scala.swing.Window">Window</span>, <span class="extype" name="scala.swing.RootPanel">RootPanel</span>, <span class="extype" name="scala.swing.Container">Container</span>, <span class="extype" name="scala.swing.UIElement">UIElement</span>, <span class="extype" name="scala.swing.LazyPublisher">LazyPublisher</span>, <span class="extype" name="scala.swing.Publisher">Publisher</span>, <span class="extype" name="scala.swing.Reactor">Reactor</span>, <span class="extype" name="scala.Proxy">Proxy</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogdebugger.ui.CogDebugger"><span>CogDebugger</span></li><li class="in" name="cogdebugger.RestorableState"><span>RestorableState</span></li><li class="in" name="scala.swing.MainFrame"><span>MainFrame</span></li><li class="in" name="scala.swing.Frame"><span>Frame</span></li><li class="in" name="scala.swing.RichWindow"><span>RichWindow</span></li><li class="in" name="scala.swing.Window"><span>Window</span></li><li class="in" name="scala.swing.RootPanel"><span>RootPanel</span></li><li class="in" name="scala.swing.Container"><span>Container</span></li><li class="in" name="scala.swing.UIElement"><span>UIElement</span></li><li class="in" name="scala.swing.LazyPublisher"><span>LazyPublisher</span></li><li class="in" name="scala.swing.Publisher"><span>Publisher</span></li><li class="in" name="scala.swing.Reactor"><span>Reactor</span></li><li class="in" name="scala.Proxy"><span>Proxy</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="cogdebugger.ui.CogDebugger#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(computeGraph:libcog.ComputeGraph):cogdebugger.ui.CogDebugger"></a>
+      <a id="&lt;init&gt;:CogDebugger"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CogDebugger</span><span class="params">(<span name="computeGraph">computeGraph: <a href="../../libcog/package.html#ComputeGraph=cogx.runtime.ComputeGraph" class="extmbr" name="libcog.ComputeGraph">libcog.ComputeGraph</a></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@&lt;init&gt;(computeGraph:libcog.ComputeGraph):cogdebugger.ui.CogDebugger" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.CogDebugger#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(computeGraph:libcog.ComputeGraph,appName:String):cogdebugger.ui.CogDebugger"></a>
+      <a id="&lt;init&gt;:CogDebugger"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CogDebugger</span><span class="params">(<span name="computeGraph">computeGraph: <a href="../../libcog/package.html#ComputeGraph=cogx.runtime.ComputeGraph" class="extmbr" name="libcog.ComputeGraph">libcog.ComputeGraph</a></span>, <span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@&lt;init&gt;(computeGraph:libcog.ComputeGraph,appName:String):cogdebugger.ui.CogDebugger" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.CogDebugger#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(computeGraph:libcog.ComputeGraph,appName:String,clockToolbarLearningRate:Float,clockToolbarUpdateInterval:Int):cogdebugger.ui.CogDebugger"></a>
+      <a id="&lt;init&gt;:CogDebugger"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CogDebugger</span><span class="params">(<span name="computeGraph">computeGraph: <a href="../../libcog/package.html#ComputeGraph=cogx.runtime.ComputeGraph" class="extmbr" name="libcog.ComputeGraph">libcog.ComputeGraph</a></span>, <span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="clockToolbarLearningRate">clockToolbarLearningRate: <span class="extype" name="scala.Float">Float</span></span>, <span name="clockToolbarUpdateInterval">clockToolbarUpdateInterval: <span class="extype" name="scala.Int">Int</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@&lt;init&gt;(computeGraph:libcog.ComputeGraph,appName:String,clockToolbarLearningRate:Float,clockToolbarUpdateInterval:Int):cogdebugger.ui.CogDebugger" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.CogDebugger#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(computeGraphAndAppName:Option[(libcog.ComputeGraph,String)],clockToolbarLearningRate:Float,clockToolbarUpdateInterval:Int):cogdebugger.ui.CogDebugger"></a>
+      <a id="&lt;init&gt;:CogDebugger"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CogDebugger</span><span class="params">(<span name="computeGraphAndAppName">computeGraphAndAppName: <span class="extype" name="scala.Option">Option</span>[(<a href="../../libcog/package.html#ComputeGraph=cogx.runtime.ComputeGraph" class="extmbr" name="libcog.ComputeGraph">libcog.ComputeGraph</a>, <span class="extype" name="scala.Predef.String">String</span>)]</span>, <span name="clockToolbarLearningRate">clockToolbarLearningRate: <span class="extype" name="scala.Float">Float</span></span>, <span name="clockToolbarUpdateInterval">clockToolbarUpdateInterval: <span class="extype" name="scala.Int">Int</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@&lt;init&gt;(computeGraphAndAppName:Option[(libcog.ComputeGraph,String)],clockToolbarLearningRate:Float,clockToolbarUpdateInterval:Int):cogdebugger.ui.CogDebugger" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">computeGraphAndAppName</dt><dd class="cmt"><p>An (optional) ComputeGraph and window title
+                              with which to immediately initialize the UI.
+                              If None is provided, the user will be
+                              prompted to select a ComputeGraph file using
+                              a file browser.</p></dd><dt class="param">clockToolbarLearningRate</dt><dd class="cmt"><p>Learning rate for the leaky integrator that
+                                calculates the graph's rate of execution</p></dd><dt class="param">clockToolbarUpdateInterval</dt><dd class="cmt"><p>Interval between updates to the counters
+                                  tracking simulation tick and tick rate</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.swing.RichWindow.InterfaceMixin" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="InterfaceMixinextendsRichWindow.this.InterfaceMixin"></a>
+      <a id="InterfaceMixin:InterfaceMixin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">InterfaceMixin</span><span class="result"> extends <span class="extype" name="scala.swing.Window.InterfaceMixin">scala.swing.RichWindow.InterfaceMixin</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@InterfaceMixinextendsRichWindow.this.InterfaceMixin" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RichWindow</dd></dl></div>
+    </li><li name="scala.swing.Window.SuperMixin" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SuperMixinextendsWindow"></a>
+      <a id="SuperMixin:SuperMixin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SuperMixin</span><span class="result"> extends <span class="extype" name="java.awt.Window">Window</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@SuperMixinextendsWindow" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.swing.UIElement#background" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="background:scala.swing.Color"></a>
+      <a id="background:Color"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">background</span><span class="result">: <span class="extype" name="scala.swing.Color">Color</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@background:scala.swing.Color" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#background_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="background_=(c:scala.swing.Color):Unit"></a>
+      <a id="background_=(Color):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: background_$eq" class="name">background_=</span><span class="params">(<span name="c">c: <span class="extype" name="scala.swing.Color">Color</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@background_=(c:scala.swing.Color):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#bounds" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bounds:java.awt.Rectangle"></a>
+      <a id="bounds:Rectangle"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bounds</span><span class="result">: <span class="extype" name="java.awt.Rectangle">Rectangle</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@bounds:java.awt.Rectangle" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Window#bounds_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bounds_=(rect:&lt;?&gt;):Unit"></a>
+      <a id="bounds_=(Rectangle):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: bounds_$eq" class="name">bounds_=</span><span class="params">(<span name="rect">rect: <span class="extype" name="scala.swing.Rectangle">Rectangle</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@bounds_=(rect:scala.swing.Rectangle):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#buildUI" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="buildUI(state:cogdebugger.DebuggerState):Unit"></a>
+      <a id="buildUI(DebuggerState):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">buildUI</span><span class="params">(<span name="state">state: <a href="../DebuggerState.html" class="extype" name="cogdebugger.DebuggerState">DebuggerState</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@buildUI(state:cogdebugger.DebuggerState):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">(Re-)Initializes the core components of the UI (run controls, network
+viewer, probe desktop) and installs them in the main window.</p><div class="fullcomment"><div class="comment cmt"><p>(Re-)Initializes the core components of the UI (run controls, network
+viewer, probe desktop) and installs them in the main window.</p><p>The old GUI components and any references to the old graph are destroyed.
+</p></div><dl class="paramcmts block"><dt class="param">state</dt><dd class="cmt"><p>The DebuggerState this GUI is associated with</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.swing.Window#centerOnScreen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="centerOnScreen():Unit"></a>
+      <a id="centerOnScreen():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">centerOnScreen</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@centerOnScreen():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#cleanupOperation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cleanupOperation:Option[()=&gt;Unit]"></a>
+      <a id="cleanupOperation:Option[()⇒Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cleanupOperation</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[() ⇒ <span class="extype" name="scala.Unit">Unit</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@cleanupOperation:Option[()=&gt;Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@clone():Object" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.swing.Window#close" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="close():Unit"></a>
+      <a id="close():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">close</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@close():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#closeOperation" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="closeOperation():Unit"></a>
+      <a id="closeOperation():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">closeOperation</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@closeOperation():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogdebugger.ui.CogDebugger">CogDebugger</a> → MainFrame → Window</dd></dl></div>
+    </li><li name="scala.swing.RootPanel#contents" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="contents:Seq[scala.swing.Component]"></a>
+      <a id="contents:Seq[Component]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">contents</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.swing.Component">Component</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@contents:Seq[scala.swing.Component]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RootPanel → Container</dd></dl></div>
+    </li><li name="scala.swing.Window#contents_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="contents_=(c:scala.swing.Component):Unit"></a>
+      <a id="contents_=(Component):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: contents_$eq" class="name">contents_=</span><span class="params">(<span name="c">c: <span class="extype" name="scala.swing.Component">Component</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@contents_=(c:scala.swing.Component):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window → RootPanel</dd></dl></div>
+    </li><li name="scala.swing.UIElement#cursor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cursor:java.awt.Cursor"></a>
+      <a id="cursor:Cursor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cursor</span><span class="result">: <span class="extype" name="java.awt.Cursor">Cursor</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@cursor:java.awt.Cursor" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#cursor_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cursor_=(c:java.awt.Cursor):Unit"></a>
+      <a id="cursor_=(Cursor):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: cursor_$eq" class="name">cursor_=</span><span class="params">(<span name="c">c: <span class="extype" name="java.awt.Cursor">Cursor</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@cursor_=(c:java.awt.Cursor):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Reactor#deafTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="deafTo(ps:scala.swing.Publisher*):Unit"></a>
+      <a id="deafTo(Publisher*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">deafTo</span><span class="params">(<span name="ps">ps: <span class="extype" name="scala.swing.Publisher">Publisher</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@deafTo(ps:scala.swing.Publisher*):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Reactor</dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#debuggerState" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="debuggerState:Option[cogdebugger.DebuggerState]"></a>
+      <a id="debuggerState:Option[DebuggerState]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">debuggerState</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="../DebuggerState.html" class="extype" name="cogdebugger.DebuggerState">DebuggerState</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@debuggerState:Option[cogdebugger.DebuggerState]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../package.html" class="extype" name="cogdebugger">cogdebugger</a>] </dd></dl></div>
+    </li><li name="scala.swing.Window#defaultButton" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="defaultButton:Option[scala.swing.Button]"></a>
+      <a id="defaultButton:Option[Button]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">defaultButton</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.swing.Button">Button</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@defaultButton:Option[scala.swing.Button]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="scala.swing.Window#defaultButton_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="defaultButton_=(b:&lt;?&gt;):Unit"></a>
+      <a id="defaultButton_=(Option[Button]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: defaultButton_$eq" class="name">defaultButton_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.swing.Button">Button</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@defaultButton_=(b:Option[scala.swing.Button]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="scala.swing.Window#defaultButton_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="defaultButton_=(b:&lt;?&gt;):Unit"></a>
+      <a id="defaultButton_=(Button):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: defaultButton_$eq" class="name">defaultButton_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.swing.Button">Button</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@defaultButton_=(b:scala.swing.Button):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="scala.swing.UIElement#displayable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="displayable:Boolean"></a>
+      <a id="displayable:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">displayable</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@displayable:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Window#dispose" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="dispose():Unit"></a>
+      <a id="dispose():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">dispose</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@dispose():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#doRestoreComputeGraph" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="doRestoreComputeGraph(state:cogdebugger.DebuggerState):Unit"></a>
+      <a id="doRestoreComputeGraph(DebuggerState):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">doRestoreComputeGraph</span><span class="params">(<span name="state">state: <a href="../DebuggerState.html" class="extype" name="cogdebugger.DebuggerState">DebuggerState</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@doRestoreComputeGraph(state:cogdebugger.DebuggerState):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Prompt the user with an open dialog to load a saved computegraph file
+from disk, and if approved, instantiate the computegraph and reinitialize
+the GUI to display display its contents, throwing out anything pertaining
+to the old.</p><div class="fullcomment"><div class="comment cmt"><p>Prompt the user with an open dialog to load a saved computegraph file
+from disk, and if approved, instantiate the computegraph and reinitialize
+the GUI to display display its contents, throwing out anything pertaining
+to the old.
+</p></div><dl class="paramcmts block"><dt class="param">state</dt><dd class="cmt"><p>A DebuggerState used as a hint to determine the chooser's
+             starting directory in the event there have been no
+             computegraph files recently saved/opened.</p></dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#doSaveComputeGraph" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="doSaveComputeGraph(state:cogdebugger.DebuggerState):Unit"></a>
+      <a id="doSaveComputeGraph(DebuggerState):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">doSaveComputeGraph</span><span class="params">(<span name="state">state: <a href="../DebuggerState.html" class="extype" name="cogdebugger.DebuggerState">DebuggerState</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@doSaveComputeGraph(state:cogdebugger.DebuggerState):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Prompt the user with a save dialog to select a file into which to save
+the current ComputeGraph, and if approved by the user, write the
+computegraph to disk.</p><div class="fullcomment"><div class="comment cmt"><p>Prompt the user with a save dialog to select a file into which to save
+the current ComputeGraph, and if approved by the user, write the
+computegraph to disk.
+</p></div><dl class="paramcmts block"><dt class="param">state</dt><dd class="cmt"><p>A DebuggerState used as a hint to determine the chooser's
+             starting directory in the event there have been no
+             computegraph files recently saved/opened.</p></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Proxy#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(that:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="that">that: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@equals(that:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Proxy → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.swing.UIElement#font" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="font:scala.swing.Font"></a>
+      <a id="font:Font"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">font</span><span class="result">: <span class="extype" name="scala.swing.Font">Font</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@font:scala.swing.Font" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#font_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="font_=(f:scala.swing.Font):Unit"></a>
+      <a id="font_=(Font):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: font_$eq" class="name">font_=</span><span class="params">(<span name="f">f: <span class="extype" name="scala.swing.Font">Font</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@font_=(f:scala.swing.Font):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#foreground" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="foreground:scala.swing.Color"></a>
+      <a id="foreground:Color"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">foreground</span><span class="result">: <span class="extype" name="scala.swing.Color">Color</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@foreground:scala.swing.Color" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#foreground_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="foreground_=(c:scala.swing.Color):Unit"></a>
+      <a id="foreground_=(Color):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: foreground_$eq" class="name">foreground_=</span><span class="params">(<span name="c">c: <span class="extype" name="scala.swing.Color">Color</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@foreground_=(c:scala.swing.Color):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Proxy#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Proxy → Any</dd></dl></div>
+    </li><li name="scala.swing.Frame#iconImage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="iconImage:scala.swing.Image"></a>
+      <a id="iconImage:Image"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">iconImage</span><span class="result">: <span class="extype" name="scala.swing.Image">Image</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@iconImage:scala.swing.Image" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Frame</dd></dl></div>
+    </li><li name="scala.swing.Frame#iconImage_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="iconImage_=(i:&lt;?&gt;):Unit"></a>
+      <a id="iconImage_=(Image):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: iconImage_$eq" class="name">iconImage_=</span><span class="params">(<span name="i">i: <span class="extype" name="scala.swing.Image">Image</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@iconImage_=(i:scala.swing.Image):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Frame</dd></dl></div>
+    </li><li name="scala.swing.Frame#iconified" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="iconified:Boolean"></a>
+      <a id="iconified:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">iconified</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@iconified:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Frame</dd></dl></div>
+    </li><li name="scala.swing.Frame#iconify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="iconify():Unit"></a>
+      <a id="iconify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">iconify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@iconify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Frame</dd></dl></div>
+    </li><li name="scala.swing.UIElement#ignoreRepaint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ignoreRepaint:Boolean"></a>
+      <a id="ignoreRepaint:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ignoreRepaint</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@ignoreRepaint:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#ignoreRepaint_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ignoreRepaint_=(b:Boolean):Unit"></a>
+      <a id="ignoreRepaint_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: ignoreRepaint_$eq" class="name">ignoreRepaint_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@ignoreRepaint_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.swing.Reactor#listenTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="listenTo(ps:scala.swing.Publisher*):Unit"></a>
+      <a id="listenTo(Publisher*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">listenTo</span><span class="params">(<span name="ps">ps: <span class="extype" name="scala.swing.Publisher">Publisher</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@listenTo(ps:scala.swing.Publisher*):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Reactor</dd></dl></div>
+    </li><li name="scala.swing.Publisher#listeners" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="listeners:scala.swing.RefSet[scala.swing.Reactions.Reaction]{valunderlying:scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]]}"></a>
+      <a id="listeners:RefSet[Reaction]{valunderlying:scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]]}"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">listeners</span><span class="result">: <span class="extype" name="scala.swing.RefSet">RefSet</span>[<span class="extype" name="scala.swing.Reactions.Reaction">Reaction</span>] { val underlying: scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]] }</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@listeners:scala.swing.RefSet[scala.swing.Reactions.Reaction]{valunderlying:scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]]}" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Publisher</dd></dl></div>
+    </li><li name="scala.swing.UIElement#locale" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="locale:java.util.Locale"></a>
+      <a id="locale:Locale"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">locale</span><span class="result">: <span class="extype" name="java.util.Locale">Locale</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@locale:java.util.Locale" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#location" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="location:java.awt.Point"></a>
+      <a id="location:Point"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">location</span><span class="result">: <span class="extype" name="java.awt.Point">Point</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@location:java.awt.Point" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#locationOnScreen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="locationOnScreen:java.awt.Point"></a>
+      <a id="locationOnScreen:Point"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">locationOnScreen</span><span class="result">: <span class="extype" name="java.awt.Point">Point</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@locationOnScreen:java.awt.Point" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Window#location_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="location_=(p:scala.swing.Point):Unit"></a>
+      <a id="location_=(Point):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: location_$eq" class="name">location_=</span><span class="params">(<span name="p">p: <span class="extype" name="scala.swing.Point">Point</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@location_=(p:scala.swing.Point):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="scala.swing.Frame#maximize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="maximize():Unit"></a>
+      <a id="maximize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">maximize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@maximize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Frame</dd></dl></div>
+    </li><li name="scala.swing.Frame#maximized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="maximized:Boolean"></a>
+      <a id="maximized:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">maximized</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@maximized:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Frame</dd></dl></div>
+    </li><li name="scala.swing.UIElement#maximumSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="maximumSize:java.awt.Dimension"></a>
+      <a id="maximumSize:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">maximumSize</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@maximumSize:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#maximumSize_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="maximumSize_=(x:scala.swing.Dimension):Unit"></a>
+      <a id="maximumSize_=(Dimension):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: maximumSize_$eq" class="name">maximumSize_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.swing.Dimension">Dimension</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@maximumSize_=(x:scala.swing.Dimension):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.RichWindow#menuBar" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="menuBar:scala.swing.MenuBar"></a>
+      <a id="menuBar:MenuBar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">menuBar</span><span class="result">: <span class="extype" name="scala.swing.MenuBar">MenuBar</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@menuBar:scala.swing.MenuBar" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RichWindow</dd></dl></div>
+    </li><li name="scala.swing.RichWindow#menuBar_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="menuBar_=(m:&lt;?&gt;):Unit"></a>
+      <a id="menuBar_=(MenuBar):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: menuBar_$eq" class="name">menuBar_=</span><span class="params">(<span name="m">m: <span class="extype" name="scala.swing.MenuBar">MenuBar</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@menuBar_=(m:scala.swing.MenuBar):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RichWindow</dd></dl></div>
+    </li><li name="scala.swing.UIElement#minimumSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="minimumSize:java.awt.Dimension"></a>
+      <a id="minimumSize:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">minimumSize</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@minimumSize:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#minimumSize_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="minimumSize_=(x:scala.swing.Dimension):Unit"></a>
+      <a id="minimumSize_=(Dimension):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: minimumSize_$eq" class="name">minimumSize_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.swing.Dimension">Dimension</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@minimumSize_=(x:scala.swing.Dimension):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@notify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.swing.UIElement#onFirstSubscribe" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="onFirstSubscribe():Unit"></a>
+      <a id="onFirstSubscribe():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onFirstSubscribe</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@onFirstSubscribe():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>UIElement → LazyPublisher</dd></dl></div>
+    </li><li name="scala.swing.UIElement#onLastUnsubscribe" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="onLastUnsubscribe():Unit"></a>
+      <a id="onLastUnsubscribe():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onLastUnsubscribe</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@onLastUnsubscribe():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>UIElement → LazyPublisher</dd></dl></div>
+    </li><li name="scala.swing.Window#open" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="open():Unit"></a>
+      <a id="open():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">open</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@open():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="scala.swing.Window#owner" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="owner:scala.swing.Window"></a>
+      <a id="owner:Window"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">owner</span><span class="result">: <span class="extype" name="scala.swing.Window">Window</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@owner:scala.swing.Window" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="scala.swing.Window#pack" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="pack():Window.this.type"></a>
+      <a id="pack():CogDebugger.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pack</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="cogdebugger.ui.CogDebugger">CogDebugger</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@pack():Window.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="scala.swing.Frame#peer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="peer:javax.swing.JFramewithFrame.this.InterfaceMixin"></a>
+      <a id="peer:JFramewithInterfaceMixin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">peer</span><span class="result">: <span class="extype" name="javax.swing.JFrame">JFrame</span> with <a href="#InterfaceMixinextendsRichWindow.this.InterfaceMixin" class="extmbr" name="cogdebugger.ui.CogDebugger.InterfaceMixin">InterfaceMixin</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@peer:javax.swing.JFramewithFrame.this.InterfaceMixin" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Frame → RichWindow → Window → RootPanel → UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#preferredSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preferredSize:java.awt.Dimension"></a>
+      <a id="preferredSize:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">preferredSize</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@preferredSize:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#preferredSize_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preferredSize_=(x:scala.swing.Dimension):Unit"></a>
+      <a id="preferredSize_=(Dimension):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: preferredSize_$eq" class="name">preferredSize_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.swing.Dimension">Dimension</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@preferredSize_=(x:scala.swing.Dimension):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Publisher#publish" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="publish(e:scala.swing.event.Event):Unit"></a>
+      <a id="publish(Event):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">publish</span><span class="params">(<span name="e">e: <span class="extype" name="scala.swing.event.Event">Event</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@publish(e:scala.swing.event.Event):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Publisher</dd></dl></div>
+    </li><li name="scala.swing.Reactor#reactions" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="reactions:scala.swing.Reactions"></a>
+      <a id="reactions:Reactions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reactions</span><span class="result">: <span class="extype" name="scala.swing.Reactions">Reactions</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@reactions:scala.swing.Reactions" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Reactor</dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#releaseOpenCLResources" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="releaseOpenCLResources():Unit"></a>
+      <a id="releaseOpenCLResources():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">releaseOpenCLResources</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@releaseOpenCLResources():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.swing.UIElement#repaint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="repaint(rect:scala.swing.Rectangle):Unit"></a>
+      <a id="repaint(Rectangle):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">repaint</span><span class="params">(<span name="rect">rect: <span class="extype" name="scala.swing.Rectangle">Rectangle</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@repaint(rect:scala.swing.Rectangle):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#repaint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="repaint():Unit"></a>
+      <a id="repaint():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">repaint</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@repaint():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.RichWindow#resizable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resizable:Boolean"></a>
+      <a id="resizable:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">resizable</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@resizable:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RichWindow</dd></dl></div>
+    </li><li name="scala.swing.RichWindow#resizable_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resizable_=(b:&lt;?&gt;):Unit"></a>
+      <a id="resizable_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: resizable_$eq" class="name">resizable_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@resizable_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RichWindow</dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#restore" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="restore(savedState:scala.xml.Node):Unit"></a>
+      <a id="restore(Node):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">restore</span><span class="params">(<span name="savedState">savedState: <span class="extype" name="scala.xml.Node">Node</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@restore(savedState:scala.xml.Node):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Restore the debugger to a state described in the given XML node.</p><div class="fullcomment"><div class="comment cmt"><p>Restore the debugger to a state described in the given XML node.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogdebugger.ui.CogDebugger">CogDebugger</a> → <a href="../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#restore" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="restore():Unit"></a>
+      <a id="restore():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">restore</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@restore():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Restore the debugger to a state defined by an XML file present on disk.</p><div class="fullcomment"><div class="comment cmt"><p>Restore the debugger to a state defined by an XML file present on disk.
+At present, state that can be restored is mostly related to probe frames:
+which visualizations are open, their size and position, and the state
+of their buttons and dropdowns.
+</p></div></div>
+    </li><li name="cogdebugger.ui.CogDebugger#save" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="save:scala.xml.Elem"></a>
+      <a id="save:Elem"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">save</span><span class="result">: <span class="extype" name="scala.xml.Elem">Elem</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@save:scala.xml.Elem" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Describe the current debugger state in an XML element.</p><div class="fullcomment"><div class="comment cmt"><p>Describe the current debugger state in an XML element. This description
+includes mostly layout-related information (size and position of the
+debugger window and probe frames), but also includes the state of buttons
+and dropdowns on most probe frames.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The root XML node describing this debugger session.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogdebugger.ui.CogDebugger">CogDebugger</a> → <a href="../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#saveApplicationState" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="saveApplicationState():Unit"></a>
+      <a id="saveApplicationState():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">saveApplicationState</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@saveApplicationState():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Save any layout-related information of the current debugger session to
+disk so that the debugger can be restored to its current state on a
+subsequent run.</p><div class="fullcomment"><div class="comment cmt"><p>Save any layout-related information of the current debugger session to
+disk so that the debugger can be restored to its current state on a
+subsequent run. Layout-relted information includes the size and position
+of the debugger window, the location of any dividers for the various
+panes, the size and position of probe frames open on the desktop, and
+the state of any buttons or dropdowns on those probe frames.
+</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.swing.UIElement#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="self:java.awt.Component"></a>
+      <a id="self:Component"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">self</span><span class="result">: <span class="extype" name="java.awt.Component">Component</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@self:java.awt.Component" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement → Proxy</dd></dl></div>
+    </li><li name="scala.swing.Window#setLocationRelativeTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setLocationRelativeTo(c:&lt;?&gt;):Unit"></a>
+      <a id="setLocationRelativeTo(UIElement):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setLocationRelativeTo</span><span class="params">(<span name="c">c: <span class="extype" name="scala.swing.UIElement">UIElement</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@setLocationRelativeTo(c:scala.swing.UIElement):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#setupCGExecutionControls" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setupCGExecutionControls(state:cogdebugger.DebuggerState):scala.swing.BoxPanel"></a>
+      <a id="setupCGExecutionControls(DebuggerState):BoxPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setupCGExecutionControls</span><span class="params">(<span name="state">state: <a href="../DebuggerState.html" class="extype" name="cogdebugger.DebuggerState">DebuggerState</a></span>)</span><span class="result">: <span class="extype" name="scala.swing.BoxPanel">BoxPanel</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@setupCGExecutionControls(state:cogdebugger.DebuggerState):scala.swing.BoxPanel" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Builds a toolbar with controls for stepping the compute graph and
+controlling the rate at which probes refresh.</p><div class="fullcomment"><div class="comment cmt"><p>Builds a toolbar with controls for stepping the compute graph and
+controlling the rate at which probes refresh. This toolbar is also home
+to the cycle counter and cycles/sec readout.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>The GUI's main toolbar component</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#setupProbeDesktop" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setupProbeDesktop(state:cogdebugger.DebuggerState):cogdebugger.ui.Desktop"></a>
+      <a id="setupProbeDesktop(DebuggerState):Desktop"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setupProbeDesktop</span><span class="params">(<span name="state">state: <a href="../DebuggerState.html" class="extype" name="cogdebugger.DebuggerState">DebuggerState</a></span>)</span><span class="result">: <a href="Desktop.html" class="extype" name="cogdebugger.ui.Desktop">Desktop</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@setupProbeDesktop(state:cogdebugger.DebuggerState):cogdebugger.ui.Desktop" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Builds the ProbeDesktop.</p><div class="fullcomment"><div class="comment cmt"><p>Builds the ProbeDesktop.</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#setupStructureViewer" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setupStructureViewer(state:cogdebugger.DebuggerState):cogdebugger.ui.structure.StructurePane"></a>
+      <a id="setupStructureViewer(DebuggerState):StructurePane"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setupStructureViewer</span><span class="params">(<span name="state">state: <a href="../DebuggerState.html" class="extype" name="cogdebugger.DebuggerState">DebuggerState</a></span>)</span><span class="result">: <a href="structure/StructurePane.html" class="extype" name="cogdebugger.ui.structure.StructurePane">StructurePane</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@setupStructureViewer(state:cogdebugger.DebuggerState):cogdebugger.ui.structure.StructurePane" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.swing.UIElement#showing" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="showing:Boolean"></a>
+      <a id="showing:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">showing</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@showing:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#size" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="size:java.awt.Dimension"></a>
+      <a id="size:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">size</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@size:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Window#size_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="size_=(size:scala.swing.Dimension):Unit"></a>
+      <a id="size_=(Dimension):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: size_$eq" class="name">size_=</span><span class="params">(<span name="size">size: <span class="extype" name="scala.swing.Dimension">Dimension</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@size_=(size:scala.swing.Dimension):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Window</dd></dl></div>
+    </li><li name="scala.swing.LazyPublisher#subscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="subscribe(listener:scala.swing.Reactions.Reaction):Unit"></a>
+      <a id="subscribe(Reaction):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">subscribe</span><span class="params">(<span name="listener">listener: <span class="extype" name="scala.swing.Reactions.Reaction">Reaction</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@subscribe(listener:scala.swing.Reactions.Reaction):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>LazyPublisher → Publisher</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="cogdebugger.ui.CogDebugger#teardownUI" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="teardownUI():Unit"></a>
+      <a id="teardownUI():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">teardownUI</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@teardownUI():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Disconnect event transport between any components in the current UI, if
+it exists (else do nothing).</p><div class="fullcomment"><div class="comment cmt"><p>Disconnect event transport between any components in the current UI, if
+it exists (else do nothing).</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="scala.swing.RichWindow#title" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="title:String"></a>
+      <a id="title:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">title</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@title:String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RichWindow</dd></dl></div>
+    </li><li name="scala.swing.RichWindow#title_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="title_=(s:String):Unit"></a>
+      <a id="title_=(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: title_$eq" class="name">title_=</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@title_=(s:String):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>RichWindow</dd></dl></div>
+    </li><li name="scala.Proxy#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Proxy → Any</dd></dl></div>
+    </li><li name="scala.swing.UIElement#toolkit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toolkit:java.awt.Toolkit"></a>
+      <a id="toolkit:Toolkit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toolkit</span><span class="result">: <span class="extype" name="java.awt.Toolkit">Toolkit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@toolkit:java.awt.Toolkit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Frame#uniconify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="uniconify():Unit"></a>
+      <a id="uniconify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">uniconify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@uniconify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Frame</dd></dl></div>
+    </li><li name="scala.swing.Frame#unmaximize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unmaximize():Unit"></a>
+      <a id="unmaximize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unmaximize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@unmaximize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Frame</dd></dl></div>
+    </li><li name="scala.swing.LazyPublisher#unsubscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unsubscribe(listener:scala.swing.Reactions.Reaction):Unit"></a>
+      <a id="unsubscribe(Reaction):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unsubscribe</span><span class="params">(<span name="listener">listener: <span class="extype" name="scala.swing.Reactions.Reaction">Reaction</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@unsubscribe(listener:scala.swing.Reactions.Reaction):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>LazyPublisher → Publisher</dd></dl></div>
+    </li><li name="scala.swing.UIElement#visible" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="visible:Boolean"></a>
+      <a id="visible:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">visible</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@visible:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#visible_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="visible_=(b:Boolean):Unit"></a>
+      <a id="visible_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: visible_$eq" class="name">visible_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@visible_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@wait():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#cogdebugger.ui.CogDebugger@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="cogdebugger.RestorableState">
+              <h3>Inherited from <a href="../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></h3>
+            </div><div class="parent" name="scala.swing.MainFrame">
+              <h3>Inherited from <span class="extype" name="scala.swing.MainFrame">MainFrame</span></h3>
+            </div><div class="parent" name="scala.swing.Frame">
+              <h3>Inherited from <span class="extype" name="scala.swing.Frame">Frame</span></h3>
+            </div><div class="parent" name="scala.swing.RichWindow">
+              <h3>Inherited from <span class="extype" name="scala.swing.RichWindow">RichWindow</span></h3>
+            </div><div class="parent" name="scala.swing.Window">
+              <h3>Inherited from <span class="extype" name="scala.swing.Window">Window</span></h3>
+            </div><div class="parent" name="scala.swing.RootPanel">
+              <h3>Inherited from <span class="extype" name="scala.swing.RootPanel">RootPanel</span></h3>
+            </div><div class="parent" name="scala.swing.Container">
+              <h3>Inherited from <span class="extype" name="scala.swing.Container">Container</span></h3>
+            </div><div class="parent" name="scala.swing.UIElement">
+              <h3>Inherited from <span class="extype" name="scala.swing.UIElement">UIElement</span></h3>
+            </div><div class="parent" name="scala.swing.LazyPublisher">
+              <h3>Inherited from <span class="extype" name="scala.swing.LazyPublisher">LazyPublisher</span></h3>
+            </div><div class="parent" name="scala.swing.Publisher">
+              <h3>Inherited from <span class="extype" name="scala.swing.Publisher">Publisher</span></h3>
+            </div><div class="parent" name="scala.swing.Reactor">
+              <h3>Inherited from <span class="extype" name="scala.swing.Reactor">Reactor</span></h3>
+            </div><div class="parent" name="scala.Proxy">
+              <h3>Inherited from <span class="extype" name="scala.Proxy">Proxy</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

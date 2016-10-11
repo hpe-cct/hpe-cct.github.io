@@ -42,8 +42,8 @@ are included as dependencies for the tutorial.
 
 The full set of Scaladocs for CCT are available here:
 
-  * [cct-core](https://hpe-cct.github.io/scaladoc/cct-core_2.11-5.0.0-alpha.3/#package)
-  * [cct-io](https://hpe-cct.github.io/scaladoc/cct-io_2.11-0.8.7/#cogio.package)
-  * [cct-nn](https://hpe-cct.github.io/scaladoc/cct-nn_2.11-2.0.0-alpha.2/#toolkit.neuralnetwork.package)
-  * [cct-sandbox](https://hpe-cct.github.io/scaladoc/cct-sandbox_2.11-1.2.9/#toolkit.package)
+  * [cct-core](https://hpe-cct.github.io/scaladoc/cct-core_latest/#package)
+  * [cct-io](https://hpe-cct.github.io/scaladoc/cct-io_latest/#cogio.package)
+  * [cct-nn](https://hpe-cct.github.io/scaladoc/cct-nn_latest/#toolkit.neuralnetwork.package)
+  * [cct-sandbox](https://hpe-cct.github.io/scaladoc/cct-sandbox_latest/#toolkit.package)
 

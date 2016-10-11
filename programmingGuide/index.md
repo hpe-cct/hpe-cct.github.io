@@ -1123,9 +1123,9 @@ A computational step involves a two phase protocol:
 > buffer. This frees up all master buffers and immediately allows the
 > following to proceed in parallel:
 
-1.  Sensors fill their master buffers with new data from their external source (such as a video stream).
-2.  The field data in the input slaves flows up through the field computation to the inputs of the actuator master buffers.
-3.  Actuators write their slave buffers out to an external sink (such as a video display).
+> 1.  Sensors fill their master buffers with new data from their external source (such as a video stream).
+> 2.  The field data in the input slaves flows up through the field computation to the inputs of the actuator master buffers.
+> 3.  Actuators write their slave buffers out to an external sink (such as a video display).
 
 > In *phase 2* of a clock cycle, each master buffer latches its input
 > data. For a sensor, the master input data is supplied by an external
@@ -1580,20 +1580,20 @@ The documentation of Cog operators and functions are available in Scaladocs, a t
 1.  A `CogOperatorAPI` that includes methods on the Field class, such as
     the arithmetic operators than can appear in an infix notation like
     `field1 + field2`.  See 
-[Scaladoc for CogOperatorAPI](https://hpe-cct.github.io/scaladoc/cct-core_2.11-5.0.0-alpha.3/#cogx.api.CogOperatorAPI).
+[Scaladoc for CogOperatorAPI](https://hpe-cct.github.io/scaladoc/cct-core_latest/#cogx.api.CogOperatorAPI).
 
 2.  A `CogFunctionAPI` that includes keyword-based functions that operate
-    on Fields, like `convolve(image, filter)`. See [Scaladoc for CogFunctionAPI](https://hpe-cct.github.io/scaladoc/cct-core_2.11-5.0.0-alpha.3/#cogx.api.CogFunctionAPI).
+    on Fields, like `convolve(image, filter)`. See [Scaladoc for CogFunctionAPI](https://hpe-cct.github.io/scaladoc/cct-core_latest/#cogx.api.CogFunctionAPI).
 
 3.  Implicit conversions that can occur within Field expressions.  See
-[Scaladoc for ImplicitConversions](https://hpe-cct.github.io/scaladoc/cct-core_2.11-5.0.0-alpha.3/#cogx.api.ImplicitConversions).
+[Scaladoc for ImplicitConversions](https://hpe-cct.github.io/scaladoc/cct-core_latest/#cogx.api.ImplicitConversions).
 
 The full set of Scaladocs for CCT are available here:
 
-  * [cct-core](https://hpe-cct.github.io/scaladoc/cct-core_2.11-5.0.0-alpha.3/#package)
-  * [cct-io](https://hpe-cct.github.io/scaladoc/cct-io_2.11-0.8.7/#cogio.package)
-  * [cct-nn](https://hpe-cct.github.io/scaladoc/cct-nn_2.11-2.0.0-alpha.2/#toolkit.neuralnetwork.package)
-  * [cct-sandbox](https://hpe-cct.github.io/scaladoc/cct-sandbox_2.11-1.2.9/#toolkit.package)
+  * [cct-core](https://hpe-cct.github.io/scaladoc/cct-core_latest/#package)
+  * [cct-io](https://hpe-cct.github.io/scaladoc/cct-io_latest/#cogio.package)
+  * [cct-nn](https://hpe-cct.github.io/scaladoc/cct-nn_latest/#toolkit.neuralnetwork.package)
+  * [cct-sandbox](https://hpe-cct.github.io/scaladoc/cct-sandbox_latest/#toolkit.package)
 
 
 

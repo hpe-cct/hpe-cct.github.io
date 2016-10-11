@@ -1,0 +1,329 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>function - cogx.compiler.gpu_operator.function</title>
+          <meta name="description" content="function - cogx.compiler.gpu operator.function" />
+          <meta name="keywords" content="function cogx.compiler.gpu operator.function" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogx.compiler.gpu_operator.function.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogx">cogx</a>.<a href="../../package.html" class="extype" name="cogx.compiler">compiler</a>.<a href="../package.html" class="extype" name="cogx.compiler.gpu_operator">gpu_operator</a></p>
+        <h1>function</h1><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">function</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.compiler.gpu_operator.function.AtomicFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AtomicFunctionsextendsAnyRef"></a>
+      <a id="AtomicFunctions:AtomicFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AtomicFunctions.html"><span class="name">AtomicFunctions</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@AtomicFunctionsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Built-in atomic functions.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.BlockFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BlockFunctionsextendsAnyRef"></a>
+      <a id="BlockFunctions:BlockFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BlockFunctions.html"><span class="name">BlockFunctions</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@BlockFunctionsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">User level functions for creating blocks.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.CommonFunctions" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="CommonFunctionsextendsSemanticError"></a>
+      <a id="CommonFunctions:CommonFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CommonFunctions.html"><span class="name">CommonFunctions</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@CommonFunctionsextendsSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Built-in common functions.</p><div class="fullcomment"><div class="comment cmt"><p>Built-in common functions.</p><p>Note that thre following three functions</p><pre>_clamp
+_max
+_min</pre><p>are also IntegerFunctions, so they are designed there.
+</p></div></div>
+    </li><li name="cogx.compiler.gpu_operator.function.ConstantExpressionFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ConstantExpressionFunctionsextendsFloatConstantsTrait"></a>
+      <a id="ConstantExpressionFunctions:ConstantExpressionFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ConstantExpressionFunctions.html"><span class="name">ConstantExpressionFunctions</span></a><span class="result"> extends <a href="../FloatConstantsTrait.html" class="extype" name="cogx.compiler.gpu_operator.FloatConstantsTrait">FloatConstantsTrait</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@ConstantExpressionFunctionsextendsFloatConstantsTrait" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions for creating user constant expressions and Cog thread-local
+constants.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.FieldReadFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FieldReadFunctionsextendsSemanticError"></a>
+      <a id="FieldReadFunctions:FieldReadFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldReadFunctions.html"><span class="name">FieldReadFunctions</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@FieldReadFunctionsextendsSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions that read or access tensor fields.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.FieldVariableFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FieldVariableFunctionsextendsAnyRef"></a>
+      <a id="FieldVariableFunctions:FieldVariableFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldVariableFunctions.html"><span class="name">FieldVariableFunctions</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@FieldVariableFunctionsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions that create variables like the tensors found in a tensor field.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.FieldWriteFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="FieldWriteFunctionsextendsAnyRef"></a>
+      <a id="FieldWriteFunctions:FieldWriteFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldWriteFunctions.html"><span class="name">FieldWriteFunctions</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@FieldWriteFunctionsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Functions that write tensor fields.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.GeometricFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GeometricFunctionsextendsSemanticError"></a>
+      <a id="GeometricFunctions:GeometricFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GeometricFunctions.html"><span class="name">GeometricFunctions</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@GeometricFunctionsextendsSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Built-in geometric functions.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.IntegerFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="IntegerFunctionsextendsSemanticError"></a>
+      <a id="IntegerFunctions:IntegerFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IntegerFunctions.html"><span class="name">IntegerFunctions</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@IntegerFunctionsextendsSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Built-in integer functions.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.MathFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="MathFunctionsextendsSemanticError"></a>
+      <a id="MathFunctions:MathFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MathFunctions.html"><span class="name">MathFunctions</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@MathFunctionsextendsSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Built-in math functions.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.RelationalFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RelationalFunctionsextendsSemanticError"></a>
+      <a id="RelationalFunctions:RelationalFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="RelationalFunctions.html"><span class="name">RelationalFunctions</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@RelationalFunctionsextendsSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Built-in relational functions.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.TypeConversionFunctions" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TypeConversionFunctionsextendsSemanticError"></a>
+      <a id="TypeConversionFunctions:TypeConversionFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TypeConversionFunctions.html"><span class="name">TypeConversionFunctions</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@TypeConversionFunctionsextendsSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Explicit type conversion functions.</p>
+    </li><li name="cogx.compiler.gpu_operator.function.VectorLiteralFunctions" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="VectorLiteralFunctionsextendsSemanticError"></a>
+      <a id="VectorLiteralFunctions:VectorLiteralFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorLiteralFunctions.html"><span class="name">VectorLiteralFunctions</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.function.package@VectorLiteralFunctionsextendsSemanticError" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Vector literal construction functions.</p><div class="fullcomment"><div class="comment cmt"><p>Vector literal construction functions. These follow the rules of OpenCL
+which allow mixing of vector sizes to produce the result, plus allow
+replication when the input is a single scalar.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

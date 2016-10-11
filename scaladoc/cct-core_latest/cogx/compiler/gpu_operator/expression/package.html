@@ -1,0 +1,240 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>expression - cogx.compiler.gpu_operator.expression</title>
+          <meta name="description" content="expression - cogx.compiler.gpu operator.expression" />
+          <meta name="keywords" content="expression cogx.compiler.gpu operator.expression" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogx.compiler.gpu_operator.expression.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogx">cogx</a>.<a href="../../package.html" class="extype" name="cogx.compiler">compiler</a>.<a href="../package.html" class="extype" name="cogx.compiler.gpu_operator">gpu_operator</a></p>
+        <h1>expression</h1><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.expression.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">expression</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.compiler.gpu_operator.expression.ArrayElementPointerExpression" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ArrayElementPointerExpressionextendsGPUExpressionwithPointerExpressionwithProductwithSerializable"></a>
+      <a id="ArrayElementPointerExpression:ArrayElementPointerExpression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ArrayElementPointerExpression.html"><span class="name">ArrayElementPointerExpression</span></a><span class="params">(<span name="to">to: <span class="extype" name="cogx.compiler.gpu_operator.declaration.ArrayLValue">ArrayLValue</span></span>)</span><span class="result"> extends <a href="GPUExpression.html" class="extype" name="cogx.compiler.gpu_operator.expression.GPUExpression">GPUExpression</a> with <a href="PointerExpression.html" class="extype" name="cogx.compiler.gpu_operator.expression.PointerExpression">PointerExpression</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.expression.package@ArrayElementPointerExpressionextendsGPUExpressionwithPointerExpressionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A pointer to an element in an array.</p>
+    </li><li name="cogx.compiler.gpu_operator.expression.GPUExpression" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GPUExpressionextendsAnyRef"></a>
+      <a id="GPUExpression:GPUExpression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GPUExpression.html"><span class="name">GPUExpression</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.expression.package@GPUExpressionextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An expression.</p>
+    </li><li name="cogx.compiler.gpu_operator.expression.PointerExpression" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PointerExpressionextendsAnyRef"></a>
+      <a id="PointerExpression:PointerExpression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PointerExpression.html"><span class="name">PointerExpression</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.expression.package@PointerExpressionextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Base trait for a pointer.</p>
+    </li><li name="cogx.compiler.gpu_operator.expression.ReadTensorElementExpression" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReadTensorElementExpressionextendsGPUExpression"></a>
+      <a id="ReadTensorElementExpression:ReadTensorElementExpression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadTensorElementExpression.html"><span class="name">ReadTensorElementExpression</span></a><span class="result"> extends <a href="GPUExpression.html" class="extype" name="cogx.compiler.gpu_operator.expression.GPUExpression">GPUExpression</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.expression.package@ReadTensorElementExpressionextendsGPUExpression" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An expression generated from a &quot;_readTensor()&quot; call.</p>
+    </li><li name="cogx.compiler.gpu_operator.expression.ReadTensorExpression" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReadTensorExpressionextendsGPUExpression"></a>
+      <a id="ReadTensorExpression:ReadTensorExpression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadTensorExpression.html"><span class="name">ReadTensorExpression</span></a><span class="result"> extends <a href="GPUExpression.html" class="extype" name="cogx.compiler.gpu_operator.expression.GPUExpression">GPUExpression</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.expression.package@ReadTensorExpressionextendsGPUExpression" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An expression generated from a &quot;_readTensor()&quot; call.</p>
+    </li><li name="cogx.compiler.gpu_operator.expression.VariablePointerExpression" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VariablePointerExpressionextendsGPUExpressionwithPointerExpressionwithProductwithSerializable"></a>
+      <a id="VariablePointerExpression:VariablePointerExpression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="VariablePointerExpression.html"><span class="name">VariablePointerExpression</span></a><span class="params">(<span name="to">to: <span class="extype" name="cogx.compiler.gpu_operator.declaration.GPUVariable">declaration.GPUVariable</span></span>)</span><span class="result"> extends <a href="GPUExpression.html" class="extype" name="cogx.compiler.gpu_operator.expression.GPUExpression">GPUExpression</a> with <a href="PointerExpression.html" class="extype" name="cogx.compiler.gpu_operator.expression.PointerExpression">PointerExpression</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.expression.package@VariablePointerExpressionextendsGPUExpressionwithPointerExpressionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A pointer to a variable.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogx.compiler.gpu_operator.expression.ReadTensorElementExpression" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReadTensorElementExpression"></a>
+      <a id="ReadTensorElementExpression:ReadTensorElementExpression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadTensorElementExpression$.html"><span class="name">ReadTensorElementExpression</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.expression.package@ReadTensorElementExpression" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating ReadTensorElementExpressions.</p>
+    </li><li name="cogx.compiler.gpu_operator.expression.ReadTensorExpression" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReadTensorExpression"></a>
+      <a id="ReadTensorExpression:ReadTensorExpression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadTensorExpression$.html"><span class="name">ReadTensorExpression</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.expression.package@ReadTensorExpression" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating ReadTensorExpressions.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

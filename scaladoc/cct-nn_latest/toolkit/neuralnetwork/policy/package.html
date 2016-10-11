@@ -1,0 +1,343 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>policy - toolkit.neuralnetwork.policy</title>
+          <meta name="description" content="policy - toolkit.neuralnetwork.policy" />
+          <meta name="keywords" content="policy toolkit.neuralnetwork.policy" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'toolkit.neuralnetwork.policy.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="toolkit">toolkit</a>.<a href="../package.html" class="extype" name="toolkit.neuralnetwork">neuralnetwork</a></p>
+        <h1>policy</h1><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">policy</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="toolkit.neuralnetwork.policy.ConvolutionalLayerPolicy" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ConvolutionalLayerPolicyextendsAnyRef"></a>
+      <a id="ConvolutionalLayerPolicy:ConvolutionalLayerPolicy"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ConvolutionalLayerPolicy.html"><span class="name">ConvolutionalLayerPolicy</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@ConvolutionalLayerPolicyextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A parameter to direct the implementation of a convolutional layer.</p>
+    </li><li name="toolkit.neuralnetwork.policy.Distribution" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DistributionextendsSerializable"></a>
+      <a id="Distribution:Distribution"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Distribution.html"><span class="name">Distribution</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@DistributionextendsSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Case classes for picking randomly from different types of distributions
+</p>
+    </li><li name="toolkit.neuralnetwork.policy.FCInit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FCInitextendsWeightInitPolicywithProductwithSerializable"></a>
+      <a id="FCInit:FCInit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="FCInit.html"><span class="name">FCInit</span></a><span class="params">(<span name="inputLen">inputLen: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="WeightInitPolicy.html" class="extype" name="toolkit.neuralnetwork.policy.WeightInitPolicy">WeightInitPolicy</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@FCInitextendsWeightInitPolicywithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.policy.LearningRule" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LearningRuleextendsAnyRef"></a>
+      <a id="LearningRule:LearningRule"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="LearningRule.html"><span class="name">LearningRule</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@LearningRuleextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.policy.NormalDistribution" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NormalDistributionextendsDistributionwithProductwithSerializable"></a>
+      <a id="NormalDistribution:NormalDistribution"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NormalDistribution.html"><span class="name">NormalDistribution</span></a><span class="params">(<span name="mu">mu: <span class="extype" name="scala.Float">Float</span></span>, <span name="sigma">sigma: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result"> extends <a href="Distribution.html" class="extype" name="toolkit.neuralnetwork.policy.Distribution">Distribution</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@NormalDistributionextendsDistributionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.policy.StandardLearningRule" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StandardLearningRuleextendsLearningRulewithProductwithSerializable"></a>
+      <a id="StandardLearningRule:StandardLearningRule"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="StandardLearningRule.html"><span class="name">StandardLearningRule</span></a><span class="params">(<span name="learningRate">learningRate: <span class="extype" name="scala.Float">Float</span></span>, <span name="momentum">momentum: <span class="extype" name="scala.Float">Float</span></span>, <span name="weightDecay">weightDecay: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result"> extends <a href="LearningRule.html" class="extype" name="toolkit.neuralnetwork.policy.LearningRule">LearningRule</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@StandardLearningRuleextendsLearningRulewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.policy.UniformDistribution" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UniformDistributionextendsDistributionwithProductwithSerializable"></a>
+      <a id="UniformDistribution:UniformDistribution"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="UniformDistribution.html"><span class="name">UniformDistribution</span></a><span class="params">(<span name="scale">scale: <span class="extype" name="scala.Float">Float</span></span>, <span name="offset">offset: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result"> extends <a href="Distribution.html" class="extype" name="toolkit.neuralnetwork.policy.Distribution">Distribution</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@UniformDistributionextendsDistributionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.policy.WeightInitPolicy" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WeightInitPolicyextendsAnyRef"></a>
+      <a id="WeightInitPolicy:WeightInitPolicy"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WeightInitPolicy.html"><span class="name">WeightInitPolicy</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@WeightInitPolicyextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="toolkit.neuralnetwork.policy.Best" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Best"></a>
+      <a id="Best:Best"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Best$.html"><span class="name">Best</span></a><span class="result"> extends <a href="ConvolutionalLayerPolicy.html" class="extype" name="toolkit.neuralnetwork.policy.ConvolutionalLayerPolicy">ConvolutionalLayerPolicy</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@Best" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Let the platform choose the implementation, guided by such parameters as border policy and downsampling use.</p>
+    </li><li name="toolkit.neuralnetwork.policy.ConvInit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ConvInit"></a>
+      <a id="ConvInit:ConvInit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ConvInit$.html"><span class="name">ConvInit</span></a><span class="result"> extends <a href="WeightInitPolicy.html" class="extype" name="toolkit.neuralnetwork.policy.WeightInitPolicy">WeightInitPolicy</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@ConvInit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.policy.Freq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Freq"></a>
+      <a id="Freq:Freq"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Freq$.html"><span class="name">Freq</span></a><span class="result"> extends <a href="ConvolutionalLayerPolicy.html" class="extype" name="toolkit.neuralnetwork.policy.ConvolutionalLayerPolicy">ConvolutionalLayerPolicy</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@Freq" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Use a frequency-domain implementation of convolution (i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Use a frequency-domain implementation of convolution (i.e. FFT - multiply - InverseFFT).</p></div></div>
+    </li><li name="toolkit.neuralnetwork.policy.Space" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Space"></a>
+      <a id="Space:Space"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Space$.html"><span class="name">Space</span></a><span class="result"> extends <a href="ConvolutionalLayerPolicy.html" class="extype" name="toolkit.neuralnetwork.policy.ConvolutionalLayerPolicy">ConvolutionalLayerPolicy</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@Space" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Use a space-domain implementation of convolution (i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Use a space-domain implementation of convolution (i.e. standard convolution).</p></div></div>
+    </li><li name="toolkit.neuralnetwork.policy.StubInit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StubInit"></a>
+      <a id="StubInit:StubInit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="StubInit$.html"><span class="name">StubInit</span></a><span class="result"> extends <a href="WeightInitPolicy.html" class="extype" name="toolkit.neuralnetwork.policy.WeightInitPolicy">WeightInitPolicy</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@StubInit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="toolkit.neuralnetwork.policy.ZeroInit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZeroInit"></a>
+      <a id="ZeroInit:ZeroInit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ZeroInit$.html"><span class="name">ZeroInit</span></a><span class="result"> extends <a href="WeightInitPolicy.html" class="extype" name="toolkit.neuralnetwork.policy.WeightInitPolicy">WeightInitPolicy</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#toolkit.neuralnetwork.policy.package@ZeroInit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

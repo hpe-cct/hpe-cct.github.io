@@ -1,0 +1,200 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>debugger - cogx.runtime.debugger</title>
+          <meta name="description" content="debugger - cogx.runtime.debugger" />
+          <meta name="keywords" content="debugger cogx.runtime.debugger" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'cogx.runtime.debugger.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="cogx">cogx</a>.<a href="../package.html" class="extype" name="cogx.runtime">runtime</a></p>
+        <h1>debugger</h1><span class="permalink">
+      <a href="../../../index.html#cogx.runtime.debugger.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">debugger</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This package contains classes that make debugging easier for the user. They
+are mainly used, indirectly, by the Cog debugger.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogx.runtime.debugger"><span>debugger</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.runtime.debugger.ProbedCircuit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ProbedCircuitextendsCircuit[cogx.runtime.debugger.ProbedField]"></a>
+      <a id="ProbedCircuit:ProbedCircuit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProbedCircuit.html"><span class="name">ProbedCircuit</span></a><span class="result"> extends <span class="extype" name="cogx.cogmath.circuit.Circuit">Circuit</span>[<a href="ProbedField.html" class="extype" name="cogx.runtime.debugger.ProbedField">ProbedField</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.runtime.debugger.package@ProbedCircuitextendsCircuit[cogx.runtime.debugger.ProbedField]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An optimized computation with a simple interface, primarily intended
+for writing debuggers.</p><div class="fullcomment"><div class="comment cmt"><p>An optimized computation with a simple interface, primarily intended
+for writing debuggers. The structure of the circuit can be analyzed using
+the inherited Circuit methods.</p><p>While the KernelCircuit has been moved to the Hypercircuit/Hypernode classes
+to support multi-output kernels, this class still uses Circuit/Node.  Thus,
+it is not set up yet for probing of multi-output kernels.
+</p></div></div>
+    </li><li name="cogx.runtime.debugger.ProbedField" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProbedFieldextendsNode[cogx.runtime.debugger.ProbedField]"></a>
+      <a id="ProbedField:ProbedField"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ProbedField.html"><span class="name">ProbedField</span></a><span class="result"> extends <span class="extype" name="cogx.cogmath.circuit.Node">Node</span>[<a href="ProbedField.html" class="extype" name="cogx.runtime.debugger.ProbedField">ProbedField</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.runtime.debugger.package@ProbedFieldextendsNode[cogx.runtime.debugger.ProbedField]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A field in a ComputeGraph that is visible for debugging.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogx.runtime.debugger.UserFieldNames" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="UserFieldNames"></a>
+      <a id="UserFieldNames:UserFieldNames"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="UserFieldNames$.html"><span class="name">UserFieldNames</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.runtime.debugger.package@UserFieldNames" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Scans a tree of objects looking for Field instances and array of instances
+and binds the user's 'field' name (discovered through reflection) to that
+Field.</p><div class="fullcomment"><div class="comment cmt"><p>Scans a tree of objects looking for Field instances and array of instances
+and binds the user's 'field' name (discovered through reflection) to that
+Field.</p><p>There is a name conflict here since Field in Cog means something different
+from Field in Scala. I'll use 'field' to refer to a Scala field and Field
+to refer to a Cog field. The idea is that user Fields which have been
+declared as val <code>fields</code> can be detected at runtime through reflection,
+and the user's name for <code>field</code> can be bound to the Field. This is useful
+for debuggers since it allows them to display Fields with a user's
+programmatic name.
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

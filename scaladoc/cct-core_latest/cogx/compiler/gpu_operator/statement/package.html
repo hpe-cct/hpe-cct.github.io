@@ -1,0 +1,208 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>statement - cogx.compiler.gpu_operator.statement</title>
+          <meta name="description" content="statement - cogx.compiler.gpu operator.statement" />
+          <meta name="keywords" content="statement cogx.compiler.gpu operator.statement" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogx.compiler.gpu_operator.statement.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogx">cogx</a>.<a href="../../package.html" class="extype" name="cogx.compiler">compiler</a>.<a href="../package.html" class="extype" name="cogx.compiler.gpu_operator">gpu_operator</a></p>
+        <h1>statement</h1><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.statement.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">statement</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.compiler.gpu_operator.statement.GlobalThreadsStatement" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GlobalThreadsStatementextendsStatementwithProductwithSerializable"></a>
+      <a id="GlobalThreadsStatement:GlobalThreadsStatement"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GlobalThreadsStatement.html"><span class="name">GlobalThreadsStatement</span></a><span class="params">(<span name="fieldType">fieldType: <a href="../../../platform/types/FieldType.html" class="extype" name="cogx.platform.types.FieldType">platform.types.FieldType</a></span>)</span><span class="result"> extends <span class="extype" name="cogx.compiler.gpu_operator.statement.Statement">Statement</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.statement.package@GlobalThreadsStatementextendsStatementwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Statement to override global thread allocation.</p><div class="fullcomment"><div class="comment cmt"><p>Statement to override global thread allocation.
+</p></div><dl class="paramcmts block"><dt class="param">fieldType</dt><dd class="cmt"><p>The type of field to pattern thread allocation after;
+                 typically this will be one thread per tensor.</p></dd></dl></div>
+    </li><li name="cogx.compiler.gpu_operator.statement.LocalThreadsStatement" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="LocalThreadsStatementextendsStatementwithSemanticErrorwithProductwithSerializable"></a>
+      <a id="LocalThreadsStatement:LocalThreadsStatement"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalThreadsStatement.html"><span class="name">LocalThreadsStatement</span></a><span class="params">(<span name="workGroupShape">workGroupShape: <a href="../../../cogmath/geometry/Shape.html" class="extype" name="cogx.cogmath.geometry.Shape">cogmath.geometry.Shape</a></span>)</span><span class="result"> extends <span class="extype" name="cogx.compiler.gpu_operator.statement.Statement">Statement</span> with <span class="extype" name="cogx.compiler.parser.semantics.SemanticError">SemanticError</span> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.statement.package@LocalThreadsStatementextendsStatementwithSemanticErrorwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Statement to override the work group size.</p><div class="fullcomment"><div class="comment cmt"><p>Statement to override the work group size.
+</p></div><dl class="paramcmts block"><dt class="param">workGroupShape</dt><dd class="cmt"><p>The shape of the work group threads.</p></dd></dl></div>
+    </li><li name="cogx.compiler.gpu_operator.statement.WriteStatement" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WriteStatementextendsStatement"></a>
+      <a id="WriteStatement:WriteStatement"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="WriteStatement.html"><span class="name">WriteStatement</span></a><span class="result"> extends <span class="extype" name="cogx.compiler.gpu_operator.statement.Statement">Statement</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.statement.package@WriteStatementextendsStatement" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Base for write statements (writing a tensor or tensor element in a field).</p>
+    </li><li name="cogx.compiler.gpu_operator.statement.WriteTensorElement" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WriteTensorElementextendsWriteStatement"></a>
+      <a id="WriteTensorElement:WriteTensorElement"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="WriteTensorElement.html"><span class="name">WriteTensorElement</span></a><span class="result"> extends <a href="WriteStatement.html" class="extype" name="cogx.compiler.gpu_operator.statement.WriteStatement">WriteStatement</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.statement.package@WriteTensorElementextendsWriteStatement" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Write a tensor element to a field at the default (_layer, _row, _column)
+field point address and default tensor element address _tensorElement..</p>
+    </li><li name="cogx.compiler.gpu_operator.statement.WriteTensorElementNonlocal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WriteTensorElementNonlocalextendsWriteStatement"></a>
+      <a id="WriteTensorElementNonlocal:WriteTensorElementNonlocal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="WriteTensorElementNonlocal.html"><span class="name">WriteTensorElementNonlocal</span></a><span class="result"> extends <a href="WriteStatement.html" class="extype" name="cogx.compiler.gpu_operator.statement.WriteStatement">WriteStatement</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.statement.package@WriteTensorElementNonlocalextendsWriteStatement" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Write a tensor element at an explicit (layer, row, column, tensorIndex)
+address.</p>
+    </li><li name="cogx.compiler.gpu_operator.statement.WriteTensorNonlocal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WriteTensorNonlocalextendsWriteStatement"></a>
+      <a id="WriteTensorNonlocal:WriteTensorNonlocal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="WriteTensorNonlocal.html"><span class="name">WriteTensorNonlocal</span></a><span class="result"> extends <a href="WriteStatement.html" class="extype" name="cogx.compiler.gpu_operator.statement.WriteStatement">WriteStatement</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.compiler.gpu_operator.statement.package@WriteTensorNonlocalextendsWriteStatement" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Statement to write a tensor to a field at an explicitly provided address.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

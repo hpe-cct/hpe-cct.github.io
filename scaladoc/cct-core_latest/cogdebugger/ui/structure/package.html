@@ -1,0 +1,356 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>structure - cogdebugger.ui.structure</title>
+          <meta name="description" content="structure - cogdebugger.ui.structure" />
+          <meta name="keywords" content="structure cogdebugger.ui.structure" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'cogdebugger.ui.structure.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="cogdebugger">cogdebugger</a>.<a href="../package.html" class="extype" name="cogdebugger.ui">ui</a></p>
+        <h1>structure</h1><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">structure</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogdebugger.ui.structure.ButtonsPanel" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ButtonsPanelextendsWrapPanel"></a>
+      <a id="ButtonsPanel:ButtonsPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ButtonsPanel.html"><span class="name">ButtonsPanel</span></a><span class="result"> extends <a href="../components/WrapPanel.html" class="extype" name="cogdebugger.ui.components.WrapPanel">WrapPanel</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@ButtonsPanelextendsWrapPanel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A simpler alternative to <a href="GraphViewer.html" class="extype" name="cogdebugger.ui.structure.GraphViewer">cogdebugger.ui.structure.GraphViewer</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A simpler alternative to <a href="GraphViewer.html" class="extype" name="cogdebugger.ui.structure.GraphViewer">cogdebugger.ui.structure.GraphViewer</a>. Just a
+big list of buttons, one per ProbedField in the given Cog model/app.
+Buttons are labelled with the long name of the field they represent, and
+appear sorted by that name. Clicking a button raises an
+<a href="InteractiveGraphEvent.html" class="extype" name="cogdebugger.ui.structure.InteractiveGraphEvent">cogdebugger.ui.structure.InteractiveGraphEvent</a> event indicating the
+clicked field.</p></div></div>
+    </li><li name="cogdebugger.ui.structure.DrillDownGraphViewer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DrillDownGraphViewerextendsBorderPanel"></a>
+      <a id="DrillDownGraphViewer:DrillDownGraphViewer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DrillDownGraphViewer.html"><span class="name">DrillDownGraphViewer</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@DrillDownGraphViewerextendsBorderPanel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A graph viewer that is module-aware.</p><div class="fullcomment"><div class="comment cmt"><p>A graph viewer that is module-aware. Rather than displaying the entire
+graph at once (which may be quite large), it only draws the contents of a
+single module of interest at a time.</p><p>The user navigates the module hierarchy through the use of a navigation
+toolbar as well as by clicking on the vertices on the graph that correspond
+to modules The vertices corresponding to fields are colored blue; those
+corresponding to modules are a shade of gray.
+</p></div></div>
+    </li><li name="cogdebugger.ui.structure.EdgeLeftClick" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="EdgeLeftClickextendsInteractiveGraphEventwithProductwithSerializable"></a>
+      <a id="EdgeLeftClick:EdgeLeftClick"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="EdgeLeftClick.html"><span class="name">EdgeLeftClick</span></a><span class="params">(<span name="edgeContent">edgeContent: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result"> extends <a href="InteractiveGraphEvent.html" class="extype" name="cogdebugger.ui.structure.InteractiveGraphEvent">InteractiveGraphEvent</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@EdgeLeftClickextendsInteractiveGraphEventwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An event indiciating the user has left-clicked an edge.</p><div class="fullcomment"><div class="comment cmt"><p>An event indiciating the user has left-clicked an edge.</p></div><dl class="paramcmts block"><dt class="param">edgeContent</dt><dd class="cmt"><p>The object bound to the edge</p></dd></dl></div>
+    </li><li name="cogdebugger.ui.structure.EdgeRightClick" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="EdgeRightClickextendsInteractiveGraphEventwithProductwithSerializable"></a>
+      <a id="EdgeRightClick:EdgeRightClick"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="EdgeRightClick.html"><span class="name">EdgeRightClick</span></a><span class="params">(<span name="edgeContent">edgeContent: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result"> extends <a href="InteractiveGraphEvent.html" class="extype" name="cogdebugger.ui.structure.InteractiveGraphEvent">InteractiveGraphEvent</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@EdgeRightClickextendsInteractiveGraphEventwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An event indiciating the user has right-clicked an edge.</p><div class="fullcomment"><div class="comment cmt"><p>An event indiciating the user has right-clicked an edge.</p></div><dl class="paramcmts block"><dt class="param">edgeContent</dt><dd class="cmt"><p>The object bound to the edge</p></dd></dl></div>
+    </li><li name="cogdebugger.ui.structure.GraphViewer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GraphViewerextendsBorderPanel"></a>
+      <a id="GraphViewer:GraphViewer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GraphViewer.html"><span class="name">GraphViewer</span></a><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@GraphViewerextendsBorderPanel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Presents a graphical representation of the structure of a Cog ComputeGraph,
+i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Presents a graphical representation of the structure of a Cog ComputeGraph,
+i.e. a display of its fields and their inputs and outputs.</p><p>Each (probed) field in the compute graph is represented as a single vertex
+in a directed graph. Each field is then connected to its inputs and outputs
+via directed edges. Forward edges in the graph are rendered in one color,
+while recurrence or &quot;backward&quot; edges are rendered in another.</p><p>Clicking a field vertex or edge raises an
+<a href="InteractiveGraphEvent.html" class="extype" name="cogdebugger.ui.structure.InteractiveGraphEvent">cogdebugger.ui.structure.InteractiveGraphEvent</a> that other debugger
+components (such as <a href="../Desktop.html" class="extype" name="cogdebugger.ui.Desktop">cogdebugger.ui.Desktop</a>) may react to.</p><p>The graph viewer operates in one of two modes: the default simple mode
+simply shows everything at once - each vertex represents a (probed) field,
+every input/ouput it has is represented by an incoming/outgoing edge. The
+second mode, referred to as the Drill-Down view, tries to compact the
+visual presentation by taking advantage of any module structure defined in
+the input Compute Graph.</p><p>The module hierarchy of a cmpute graph is implied from the organization of
+its fields and other classes. Essentially, each class instance that
+contains fields is considered a module, including the top-level compute
+graph instance itself (for many of the short example apps, this top-level
+module is the only module). The name of a module is not based on the class
+name, but rather the val/var name to which it is first bound. Consider the
+following pseudo-code:</p><pre><span class="kw">class</span> ModuleExample <span class="kw">extends</span> ComputeGraph {
+  <span class="kw">class</span> ModuleA() {
+    <span class="kw">val</span> aField = ScalarField(...)
+  }
+  <span class="kw">val</span> modA = <span class="kw">new</span> ModuleA()
+  probeAll
+}</pre><p>The above code defines a ScalarField <code>aField</code> within a ModuleA instance
+<code>modA</code>, which is itself within a ComputeGraph instance. Keep in mind that
+modules and fieldsa are named after the val/var to which they are bound.
+The long name of a field includes its path in the app's module structure.
+The full name of the singular field in the above compute graph is
+'modA.aField'.</p><p>In the Drill-Down view, only a single module is &quot;in focus&quot; at a time. The
+children of that module (fields and other modules) are displayed as well
+as inputs and outputs to the module. Clicking a field raises an event as
+in the simple graph viewer, but clicking a module makes that module the
+new focus and redraws the display. A toolbar at the top of the display
+allows for focusing the parent of the current module or jumping back to
+the top level.
+</p></div></div>
+    </li><li name="cogdebugger.ui.structure.InteractiveGraphEvent" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="InteractiveGraphEventextendsEvent"></a>
+      <a id="InteractiveGraphEvent:InteractiveGraphEvent"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="InteractiveGraphEvent.html"><span class="name">InteractiveGraphEvent</span></a><span class="result"> extends <span class="extype" name="scala.swing.event.Event">Event</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@InteractiveGraphEventextendsEvent" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An event signalling that a user has interacted with a graph view in some
+way.</p>
+    </li><li name="cogdebugger.ui.structure.StructurePane" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StructurePaneextendsTabbedPanewithRestorableState"></a>
+      <a id="StructurePane:StructurePane"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StructurePane.html"><span class="name">StructurePane</span></a><span class="result"> extends <span class="extype" name="scala.swing.TabbedPane">TabbedPane</span> with <a href="../../RestorableState.html" class="extype" name="cogdebugger.RestorableState">RestorableState</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@StructurePaneextendsTabbedPanewithRestorableState" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.structure.VertexLeftClick" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VertexLeftClickextendsInteractiveGraphEventwithProductwithSerializable"></a>
+      <a id="VertexLeftClick:VertexLeftClick"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="VertexLeftClick.html"><span class="name">VertexLeftClick</span></a><span class="params">(<span name="vertexContent">vertexContent: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result"> extends <a href="InteractiveGraphEvent.html" class="extype" name="cogdebugger.ui.structure.InteractiveGraphEvent">InteractiveGraphEvent</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@VertexLeftClickextendsInteractiveGraphEventwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An event indiciating the user has left-clicked a vertex.</p><div class="fullcomment"><div class="comment cmt"><p>An event indiciating the user has left-clicked a vertex.</p></div><dl class="paramcmts block"><dt class="param">vertexContent</dt><dd class="cmt"><p>The object bound to the vertex</p></dd></dl></div>
+    </li><li name="cogdebugger.ui.structure.VertexRightClick" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VertexRightClickextendsInteractiveGraphEventwithProductwithSerializable"></a>
+      <a id="VertexRightClick:VertexRightClick"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="VertexRightClick.html"><span class="name">VertexRightClick</span></a><span class="params">(<span name="vertexContent">vertexContent: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result"> extends <a href="InteractiveGraphEvent.html" class="extype" name="cogdebugger.ui.structure.InteractiveGraphEvent">InteractiveGraphEvent</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@VertexRightClickextendsInteractiveGraphEventwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An event indiciating the user has right-clicked a vertex.</p><div class="fullcomment"><div class="comment cmt"><p>An event indiciating the user has right-clicked a vertex.</p></div><dl class="paramcmts block"><dt class="param">vertexContent</dt><dd class="cmt"><p>The object bound to the vertex</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogdebugger.ui.structure.DrillDownPanel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DrillDownPanel"></a>
+      <a id="DrillDownPanel:DrillDownPanel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DrillDownPanel$.html"><span class="name">DrillDownPanel</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@DrillDownPanel" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.structure.GraphViewer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GraphViewer"></a>
+      <a id="GraphViewer:GraphViewer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GraphViewer$.html"><span class="name">GraphViewer</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@GraphViewer" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.structure.StructurePane" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StructurePane"></a>
+      <a id="StructurePane:StructurePane"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="StructurePane$.html"><span class="name">StructurePane</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.structure.package@StructurePane" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

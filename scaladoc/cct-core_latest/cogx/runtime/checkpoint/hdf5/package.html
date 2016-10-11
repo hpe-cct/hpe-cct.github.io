@@ -1,0 +1,184 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>hdf5 - cogx.runtime.checkpoint.hdf5</title>
+          <meta name="description" content="hdf5 - cogx.runtime.checkpoint.hdf5" />
+          <meta name="keywords" content="hdf5 cogx.runtime.checkpoint.hdf5" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'cogx.runtime.checkpoint.hdf5.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="cogx">cogx</a>.<a href="../../package.html" class="extype" name="cogx.runtime">runtime</a>.<a href="../package.html" class="extype" name="cogx.runtime.checkpoint">checkpoint</a></p>
+        <h1>hdf5</h1><span class="permalink">
+      <a href="../../../../index.html#cogx.runtime.checkpoint.hdf5.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hdf5</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.runtime.checkpoint.hdf5.Hdf5Common" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Hdf5CommonextendsAnyRef"></a>
+      <a id="Hdf5Common:Hdf5Common"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Hdf5Common.html"><span class="name">Hdf5Common</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.runtime.checkpoint.hdf5.package@Hdf5CommonextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Common functionality used by Hdf5 object savers and restorers
+</p>
+    </li><li name="cogx.runtime.checkpoint.hdf5.Hdf5ObjectRestorer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Hdf5ObjectRestorerextendsObjectRestorerwithHdf5Common"></a>
+      <a id="Hdf5ObjectRestorer:Hdf5ObjectRestorer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Hdf5ObjectRestorer.html"><span class="name">Hdf5ObjectRestorer</span></a><span class="result"> extends <a href="../../../platform/checkpoint/ObjectRestorer.html" class="extype" name="cogx.platform.checkpoint.ObjectRestorer">ObjectRestorer</a> with <a href="Hdf5Common.html" class="extype" name="cogx.runtime.checkpoint.hdf5.Hdf5Common">Hdf5Common</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.runtime.checkpoint.hdf5.package@Hdf5ObjectRestorerextendsObjectRestorerwithHdf5Common" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cog ComputeGraph restorer based on HDF5</p><div class="fullcomment"><div class="comment cmt"><p>Cog ComputeGraph restorer based on HDF5</p><p>See Hdf5ObjectSaver for more on the approach used to save/restore ComputeGraphs.
+</p></div></div>
+    </li><li name="cogx.runtime.checkpoint.hdf5.Hdf5ObjectSaver" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Hdf5ObjectSaverextendsObjectSaverwithHdf5Common"></a>
+      <a id="Hdf5ObjectSaver:Hdf5ObjectSaver"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Hdf5ObjectSaver.html"><span class="name">Hdf5ObjectSaver</span></a><span class="result"> extends <a href="../../../platform/checkpoint/ObjectSaver.html" class="extype" name="cogx.platform.checkpoint.ObjectSaver">ObjectSaver</a> with <a href="Hdf5Common.html" class="extype" name="cogx.runtime.checkpoint.hdf5.Hdf5Common">Hdf5Common</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#cogx.runtime.checkpoint.hdf5.package@Hdf5ObjectSaverextendsObjectSaverwithHdf5Common" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cog ComputeGraph saver based on HDF5</p><div class="fullcomment"><div class="comment cmt"><p>Cog ComputeGraph saver based on HDF5</p><p>First realize that HDF5 provides considerable flexibility in how ones
+&quot;web of objects&quot; gets mapped to the HDF5 concepts of groups, datasets,
+attributes, etc.  We have taken the approach of not using attributes and
+mapping the objects to groups and datasets as follows:</p><p>- Primitive values (Ints, Floats, Strings, etc.) are stored each in their
+  own dataset, which is named by the writeXXX() call that wrote the primitive.
+- Arrays of primitive values are similarly stored each in their own named
+  dataset.  Only 1D Arrays are currently supported and the length of the
+  array is stored and can be retrieved from the dataspace of the dataset.
+- Single Objects are created as a group (which is like a directory in the
+  filesystem analogy) with the name given in the writeObject() call.  The
+  primitive data members of the object are stored in datasets that are within the
+  object's group.
+- Arrays of Objects are created with a two-level group hierarchy.  First a group
+  is created that has the name provided by the writeObjectArray() call (e.g.
+  &quot;fields&quot;).  Then a special dataSet  called &quot;fieldsSize&quot; is created within this
+  group to hold the integer length of the array.  Finally, each object of the
+  array is stored in the group under a name that includes the array index (e.g.
+  &quot;fields[3]&quot;).  Note that the storing of the individual array objects will add
+  a second level to the group hierarchy.</p><p>  Note that this scheme permits a nesting of Objects and Arrays[Objects].</p><p>  By example, assume you had the following class:</p><p>  class Datapoint { val time: Int, val data: Float }</p><p>  and instance:</p><p>  val points = new Array[Datapoint](3)</p><p>  Assume further that the Datpoint class is set up as a &quot;Saveable&quot; that wrote out
+  its fields with names &quot;time&quot; and &quot;data&quot;.</p><p>  Then the call to writeObjectArray(&quot;points&quot;, points) would generate the
+  following hdf5 datasets:</p><p>  points/pointsSize
+  points/points[0]/time
+  points/points[0]/data
+  points/points[1]/time
+  points/points[1]/data
+  points/points[2]/time
+  points/points[2]/data</p><p>  Note that under the hdf5 root group &quot;/&quot;, the following groups were created:</p><p>  points
+  points/points[0]
+  points/points[1]
+  points/points[2]
+</p></div></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

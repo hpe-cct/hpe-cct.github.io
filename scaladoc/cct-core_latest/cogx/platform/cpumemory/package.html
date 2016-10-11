@@ -1,0 +1,404 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>cpumemory - cogx.platform.cpumemory</title>
+          <meta name="description" content="cpumemory - cogx.platform.cpumemory" />
+          <meta name="keywords" content="cpumemory cogx.platform.cpumemory" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'cogx.platform.cpumemory.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="cogx">cogx</a>.<a href="../package.html" class="extype" name="cogx.platform">platform</a></p>
+        <h1>cpumemory</h1><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cpumemory</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This package contains classes for holding fields in CPU memory. The format
+of fields is hidden and identical to format used to hold fields in GPU
+memory. &quot;Direct memory&quot; is used to hold the field data since it exists
+outside of the JVM heap, and also handles all endian-ness compatibility
+issues.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogx.platform.cpumemory"><span>cpumemory</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="cogx.platform.cpumemory.AbstractFieldMemory" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="AbstractFieldMemoryextendsFieldMemoryLayoutwithFieldReader"></a>
+      <a id="AbstractFieldMemory:AbstractFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AbstractFieldMemory.html"><span class="name">AbstractFieldMemory</span></a><span class="result"> extends <span class="extype" name="cogx.platform.types.FieldMemoryLayout">FieldMemoryLayout</span> with <a href="readerwriter/FieldReader.html" class="extype" name="cogx.platform.cpumemory.readerwriter.FieldReader">cpumemory.readerwriter.FieldReader</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@AbstractFieldMemoryextendsFieldMemoryLayoutwithFieldReader" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">CPU container for a tensor field, including methods for reading and writing
+it.</p><div class="fullcomment"><div class="comment cmt"><p>CPU container for a tensor field, including methods for reading and writing
+it. This implemented using direct, NIO buffers for efficiency.</p><p>This organizes the data within the buffer so that memory accesses by the GPU
+are efficient. This also provides a uniform representation of fields that's
+consistent on both CPU and GPU.</p><p>See the FieldMemoryLayout class for description of the physical layout.
+</p></div></div>
+    </li><li name="cogx.platform.cpumemory.ColorFieldMemory" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ColorFieldMemoryextendsAbstractFieldMemorywithColorFieldReaderwithColorFieldWriter"></a>
+      <a id="ColorFieldMemory:ColorFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFieldMemory.html"><span class="name">ColorFieldMemory</span></a><span class="result"> extends <a href="AbstractFieldMemory.html" class="extype" name="cogx.platform.cpumemory.AbstractFieldMemory">AbstractFieldMemory</a> with <a href="readerwriter/ColorFieldReader.html" class="extype" name="cogx.platform.cpumemory.readerwriter.ColorFieldReader">cpumemory.readerwriter.ColorFieldReader</a> with <a href="readerwriter/ColorFieldWriter.html" class="extype" name="cogx.platform.cpumemory.readerwriter.ColorFieldWriter">cpumemory.readerwriter.ColorFieldWriter</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@ColorFieldMemoryextendsAbstractFieldMemorywithColorFieldReaderwithColorFieldWriter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">CPU memory for an image.</p><div class="fullcomment"><div class="comment cmt"><p>CPU memory for an image.</p><p>Internally this assumes RGBA format, which is the only format guaranteed
+to be supported by OpenCL.
+</p></div></div>
+    </li><li name="cogx.platform.cpumemory.ComplexFieldMemory" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ComplexFieldMemoryextendsAbstractFieldMemorywithComplexFieldReaderwithComplexFieldWriter"></a>
+      <a id="ComplexFieldMemory:ComplexFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ComplexFieldMemory.html"><span class="name">ComplexFieldMemory</span></a><span class="result"> extends <a href="AbstractFieldMemory.html" class="extype" name="cogx.platform.cpumemory.AbstractFieldMemory">AbstractFieldMemory</a> with <a href="readerwriter/ComplexFieldReader.html" class="extype" name="cogx.platform.cpumemory.readerwriter.ComplexFieldReader">cpumemory.readerwriter.ComplexFieldReader</a> with <a href="readerwriter/ComplexFieldWriter.html" class="extype" name="cogx.platform.cpumemory.readerwriter.ComplexFieldWriter">cpumemory.readerwriter.ComplexFieldWriter</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@ComplexFieldMemoryextendsAbstractFieldMemorywithComplexFieldReaderwithComplexFieldWriter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">CPU memory for a complex scalar field.</p>
+    </li><li name="cogx.platform.cpumemory.ComplexVectorFieldMemory" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ComplexVectorFieldMemoryextendsAbstractFieldMemorywithComplexVectorFieldReaderwithComplexVectorFieldWriter"></a>
+      <a id="ComplexVectorFieldMemory:ComplexVectorFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ComplexVectorFieldMemory.html"><span class="name">ComplexVectorFieldMemory</span></a><span class="result"> extends <a href="AbstractFieldMemory.html" class="extype" name="cogx.platform.cpumemory.AbstractFieldMemory">AbstractFieldMemory</a> with <a href="readerwriter/ComplexVectorFieldReader.html" class="extype" name="cogx.platform.cpumemory.readerwriter.ComplexVectorFieldReader">cpumemory.readerwriter.ComplexVectorFieldReader</a> with <a href="readerwriter/ComplexVectorFieldWriter.html" class="extype" name="cogx.platform.cpumemory.readerwriter.ComplexVectorFieldWriter">cpumemory.readerwriter.ComplexVectorFieldWriter</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@ComplexVectorFieldMemoryextendsAbstractFieldMemorywithComplexVectorFieldReaderwithComplexVectorFieldWriter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">CPU memory for a complex vector field.</p>
+    </li><li name="cogx.platform.cpumemory.FieldMemory" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FieldMemoryextendsAnyRef"></a>
+      <a id="FieldMemory:FieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldMemory.html"><span class="name">FieldMemory</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@FieldMemoryextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A class for producing a field memory from a field type.</p>
+    </li><li name="cogx.platform.cpumemory.MatrixFieldMemory" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MatrixFieldMemoryextendsAbstractFieldMemorywithMatrixFieldReaderwithMatrixFieldWriter"></a>
+      <a id="MatrixFieldMemory:MatrixFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MatrixFieldMemory.html"><span class="name">MatrixFieldMemory</span></a><span class="result"> extends <a href="AbstractFieldMemory.html" class="extype" name="cogx.platform.cpumemory.AbstractFieldMemory">AbstractFieldMemory</a> with <a href="readerwriter/MatrixFieldReader.html" class="extype" name="cogx.platform.cpumemory.readerwriter.MatrixFieldReader">cpumemory.readerwriter.MatrixFieldReader</a> with <a href="readerwriter/MatrixFieldWriter.html" class="extype" name="cogx.platform.cpumemory.readerwriter.MatrixFieldWriter">cpumemory.readerwriter.MatrixFieldWriter</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@MatrixFieldMemoryextendsAbstractFieldMemorywithMatrixFieldReaderwithMatrixFieldWriter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">CPU memory for a matrix field.</p>
+    </li><li name="cogx.platform.cpumemory.ScalarFieldMemory" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ScalarFieldMemoryextendsAbstractFieldMemorywithScalarFieldReaderwithScalarFieldWriter"></a>
+      <a id="ScalarFieldMemory:ScalarFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalarFieldMemory.html"><span class="name">ScalarFieldMemory</span></a><span class="result"> extends <a href="AbstractFieldMemory.html" class="extype" name="cogx.platform.cpumemory.AbstractFieldMemory">AbstractFieldMemory</a> with <a href="readerwriter/ScalarFieldReader.html" class="extype" name="cogx.platform.cpumemory.readerwriter.ScalarFieldReader">cpumemory.readerwriter.ScalarFieldReader</a> with <a href="readerwriter/ScalarFieldWriter.html" class="extype" name="cogx.platform.cpumemory.readerwriter.ScalarFieldWriter">cpumemory.readerwriter.ScalarFieldWriter</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@ScalarFieldMemoryextendsAbstractFieldMemorywithScalarFieldReaderwithScalarFieldWriter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">CPU memory for a scalar field.</p>
+    </li><li name="cogx.platform.cpumemory.VectorFieldMemory" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VectorFieldMemoryextendsAbstractFieldMemorywithVectorFieldReaderwithVectorFieldWriter"></a>
+      <a id="VectorFieldMemory:VectorFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorFieldMemory.html"><span class="name">VectorFieldMemory</span></a><span class="result"> extends <a href="AbstractFieldMemory.html" class="extype" name="cogx.platform.cpumemory.AbstractFieldMemory">AbstractFieldMemory</a> with <a href="readerwriter/VectorFieldReader.html" class="extype" name="cogx.platform.cpumemory.readerwriter.VectorFieldReader">cpumemory.readerwriter.VectorFieldReader</a> with <a href="readerwriter/VectorFieldWriter.html" class="extype" name="cogx.platform.cpumemory.readerwriter.VectorFieldWriter">cpumemory.readerwriter.VectorFieldWriter</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@VectorFieldMemoryextendsAbstractFieldMemorywithVectorFieldReaderwithVectorFieldWriter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">CPU memory for a vector field.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="cogx.platform.cpumemory.ColorFieldMemory" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ColorFieldMemory"></a>
+      <a id="ColorFieldMemory:ColorFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ColorFieldMemory$.html"><span class="name">ColorFieldMemory</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@ColorFieldMemory" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating ColorFieldMemories.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for creating ColorFieldMemories.</p><p>THIS IS ONLY USED FOR TESTING. NOT EXPORTED TO USERS.
+</p></div></div>
+    </li><li name="cogx.platform.cpumemory.ComplexFieldMemory" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ComplexFieldMemory"></a>
+      <a id="ComplexFieldMemory:ComplexFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ComplexFieldMemory$.html"><span class="name">ComplexFieldMemory</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@ComplexFieldMemory" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating ComplexFieldMemories.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for creating ComplexFieldMemories.</p><p>THIS IS ONLY USED FOR TESTING. NOT EXPORTED TO USERS.
+</p></div></div>
+    </li><li name="cogx.platform.cpumemory.FieldMemory" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="FieldMemory"></a>
+      <a id="FieldMemory:FieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FieldMemory$.html"><span class="name">FieldMemory</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@FieldMemory" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A factory for producing field memory allocators.</p><div class="fullcomment"><div class="comment cmt"><p>A factory for producing field memory allocators.</p><p>Currently each ComputeGraph gets its own allocator.  Some uses within the Cogdebugger didn't
+have access to the ComputeGraph's allocator and so use a global one.
+</p></div></div>
+    </li><li name="cogx.platform.cpumemory.MatrixFieldMemory" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MatrixFieldMemory"></a>
+      <a id="MatrixFieldMemory:MatrixFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MatrixFieldMemory$.html"><span class="name">MatrixFieldMemory</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@MatrixFieldMemory" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating MatrixFieldMemories.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for creating MatrixFieldMemories.</p><p>THIS IS ONLY USED FOR TESTING. NOT EXPORTED TO USERS.
+</p></div></div>
+    </li><li name="cogx.platform.cpumemory.ScalarFieldMemory" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ScalarFieldMemory"></a>
+      <a id="ScalarFieldMemory:ScalarFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ScalarFieldMemory$.html"><span class="name">ScalarFieldMemory</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@ScalarFieldMemory" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating ScalarFieldMemories.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for creating ScalarFieldMemories.</p><p>THIS IS ONLY USED FOR TESTING. NOT EXPORTED TO USERS.
+</p></div></div>
+    </li><li name="cogx.platform.cpumemory.VectorFieldMemory" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VectorFieldMemory"></a>
+      <a id="VectorFieldMemory:VectorFieldMemory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="VectorFieldMemory$.html"><span class="name">VectorFieldMemory</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@VectorFieldMemory" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for creating VectorFieldMemories.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for creating VectorFieldMemories.</p><p>THIS IS ONLY USED FOR TESTING. NOT EXPORTED TO USERS.
+</p></div></div>
+    </li><li name="cogx.platform.cpumemory.readerwriter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="readerwriter"></a>
+      <a id="readerwriter:readerwriter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="readerwriter/package.html"><span class="name">readerwriter</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogx.platform.cpumemory.package@readerwriter" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,2248 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>StackedTimeseriesPlot - cogdebugger.ui.components.StackedTimeseriesPlot</title>
+          <meta name="description" content="StackedTimeseriesPlot - cogdebugger.ui.components.StackedTimeseriesPlot" />
+          <meta name="keywords" content="StackedTimeseriesPlot cogdebugger.ui.components.StackedTimeseriesPlot" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'cogdebugger.ui.components.StackedTimeseriesPlot';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../lib/class_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="cogdebugger">cogdebugger</a>.<a href="../package.html" class="extype" name="cogdebugger.ui">ui</a>.<a href="package.html" class="extype" name="cogdebugger.ui.components">components</a></p>
+        <h1>StackedTimeseriesPlot</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="cogdebugger.ui.components">package components</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">StackedTimeseriesPlot</span><span class="result"> extends <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span> with <a href="../fieldvisualizations/Zoomable.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Zoomable">Zoomable</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A data visualization that displays a number of timeseries plots stacked on
+top of each other. Each chart has its own set of y/range values and range
+axis, but all share the same x/domain values and axis. This class is
+intended to provide the same functionality as Cog 3's MultiXYPlot class.</p><p>All data is sorted according by the domain value prior to rendering. Thus,
+the lines drawn on the timeseries plots can never double back.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="../fieldvisualizations/Zoomable.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Zoomable">Zoomable</a>, <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span>, <span class="extype" name="scala.swing.LayoutContainer">LayoutContainer</span>, <span class="extype" name="scala.swing.Panel">Panel</span>, <span class="extype" name="scala.swing.Container.Wrapper">Wrapper</span>, <span class="extype" name="scala.swing.Container">Container</span>, <span class="extype" name="scala.swing.Component">Component</span>, <span class="extype" name="scala.swing.UIElement">UIElement</span>, <span class="extype" name="scala.swing.LazyPublisher">LazyPublisher</span>, <span class="extype" name="scala.swing.Publisher">Publisher</span>, <span class="extype" name="scala.swing.Reactor">Reactor</span>, <span class="extype" name="scala.Proxy">Proxy</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="cogdebugger.ui.components.StackedTimeseriesPlot"><span>StackedTimeseriesPlot</span></li><li class="in" name="cogdebugger.ui.fieldvisualizations.Zoomable"><span>Zoomable</span></li><li class="in" name="scala.swing.BorderPanel"><span>BorderPanel</span></li><li class="in" name="scala.swing.LayoutContainer"><span>LayoutContainer</span></li><li class="in" name="scala.swing.Panel"><span>Panel</span></li><li class="in" name="scala.swing.Container.Wrapper"><span>Wrapper</span></li><li class="in" name="scala.swing.Container"><span>Container</span></li><li class="in" name="scala.swing.Component"><span>Component</span></li><li class="in" name="scala.swing.UIElement"><span>UIElement</span></li><li class="in" name="scala.swing.LazyPublisher"><span>LazyPublisher</span></li><li class="in" name="scala.swing.Publisher"><span>Publisher</span></li><li class="in" name="scala.swing.Reactor"><span>Reactor</span></li><li class="in" name="scala.Proxy"><span>Proxy</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="cogdebugger.ui.components.StackedTimeseriesPlot#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(title:String,xLabel:String,yLabels:Array[String]):cogdebugger.ui.components.StackedTimeseriesPlot"></a>
+      <a id="&lt;init&gt;:StackedTimeseriesPlot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">StackedTimeseriesPlot</span><span class="params">(<span name="title">title: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="xLabel">xLabel: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="yLabels">yLabels: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@&lt;init&gt;(title:String,xLabel:String,yLabels:Array[String]):cogdebugger.ui.components.StackedTimeseriesPlot" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(title:String,xLabel:String,yLabels:Array[String],initialXData:Array[Float],initialYData:Array[Array[Float]]):cogdebugger.ui.components.StackedTimeseriesPlot"></a>
+      <a id="&lt;init&gt;:StackedTimeseriesPlot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">StackedTimeseriesPlot</span><span class="params">(<span name="title">title: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="xLabel">xLabel: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="yLabels">yLabels: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="initialXData">initialXData: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]</span>, <span name="initialYData">initialYData: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]]</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@&lt;init&gt;(title:String,xLabel:String,yLabels:Array[String],initialXData:Array[Float],initialYData:Array[Array[Float]]):cogdebugger.ui.components.StackedTimeseriesPlot" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">title</dt><dd class="cmt"><p>The chart's title, displayed at the top of the panel.</p></dd><dt class="param">xLabel</dt><dd class="cmt"><p>Label for the domain axis</p></dd><dt class="param">yLabels</dt><dd class="cmt"><p>An array of labels for the range axes, one per series.</p></dd><dt class="param">initialXData</dt><dd class="cmt"><p>An array of Floats containing the initial domain
+                    values.</p></dd><dt class="param">initialYData</dt><dd class="cmt"><p>A two dimension array of floats containing the range
+                    data for each series. The first index into the array
+                    selects the data for an individual series, the
+                    second/innermost index selects an element in that
+                    series.</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="scala.swing.BorderPanel.Constraints" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Constraints=scala.swing.BorderPanel.Position.Value"></a>
+      <a id="Constraints:Constraints"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Constraints</span><span class="result"> = <span class="extype" name="scala.Enumeration.Value">scala.swing.BorderPanel.Position.Value</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@Constraints=scala.swing.BorderPanel.Position.Value" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>BorderPanel → LayoutContainer</dd></dl></div>
+    </li><li name="scala.swing.Container.Wrapper.Content" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ContentextendsBufferWrapper[scala.swing.Component]"></a>
+      <a id="Content:Content"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Content</span><span class="result"> extends <span class="extype" name="scala.swing.BufferWrapper">BufferWrapper</span>[<span class="extype" name="scala.swing.Component">Component</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@ContentextendsBufferWrapper[scala.swing.Component]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Wrapper</dd></dl></div>
+    </li><li name="scala.swing.Component.SuperMixin" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SuperMixinextendsJComponent"></a>
+      <a id="SuperMixin:SuperMixin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SuperMixin</span><span class="result"> extends <span class="extype" name="javax.swing.JComponent">JComponent</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@SuperMixinextendsJComponent" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#PanFactor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PanFactor:Double"></a>
+      <a id="PanFactor:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PanFactor</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@PanFactor:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#ZoomFactor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ZoomFactor:Float"></a>
+      <a id="ZoomFactor:Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ZoomFactor</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@ZoomFactor:Float" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.swing.Container.Wrapper#_contents" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_contents:Wrapper.this.Content"></a>
+      <a id="_contents:Content"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">_contents</span><span class="result">: <a href="#ContentextendsBufferWrapper[scala.swing.Component]" class="extmbr" name="cogdebugger.ui.components.StackedTimeseriesPlot.Content">Content</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@_contents:Wrapper.this.Content" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Wrapper</dd></dl></div>
+    </li><li name="scala.swing.BorderPanel#add" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="add(c:scala.swing.Component,l:BorderPanel.this.Constraints):Unit"></a>
+      <a id="add(Component,Constraints):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">add</span><span class="params">(<span name="c">c: <span class="extype" name="scala.swing.Component">Component</span></span>, <span name="l">l: <a href="#Constraints=scala.swing.BorderPanel.Position.Value" class="extmbr" name="cogdebugger.ui.components.StackedTimeseriesPlot.Constraints">Constraints</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@add(c:scala.swing.Component,l:BorderPanel.this.Constraints):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>BorderPanel → LayoutContainer</dd></dl></div>
+    </li><li name="scala.swing.BorderPanel#areValid" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="areValid(c:BorderPanel.this.Constraints):(Boolean,String)"></a>
+      <a id="areValid(Constraints):(Boolean,String)"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">areValid</span><span class="params">(<span name="c">c: <a href="#Constraints=scala.swing.BorderPanel.Position.Value" class="extmbr" name="cogdebugger.ui.components.StackedTimeseriesPlot.Constraints">Constraints</a></span>)</span><span class="result">: (<span class="extype" name="scala.Boolean">Boolean</span>, <span class="extype" name="scala.Predef.String">String</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@areValid(c:BorderPanel.this.Constraints):(Boolean,String)" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>BorderPanel → LayoutContainer</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.swing.UIElement#background" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="background:scala.swing.Color"></a>
+      <a id="background:Color"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">background</span><span class="result">: <span class="extype" name="scala.swing.Color">Color</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@background:scala.swing.Color" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#background_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="background_=(c:scala.swing.Color):Unit"></a>
+      <a id="background_=(Color):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: background_$eq" class="name">background_=</span><span class="params">(<span name="c">c: <span class="extype" name="scala.swing.Color">Color</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@background_=(c:scala.swing.Color):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component#border" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="border:javax.swing.border.Border"></a>
+      <a id="border:Border"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">border</span><span class="result">: <span class="extype" name="javax.swing.border.Border">Border</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@border:javax.swing.border.Border" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#border_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="border_=(b:javax.swing.border.Border):Unit"></a>
+      <a id="border_=(Border):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: border_$eq" class="name">border_=</span><span class="params">(<span name="b">b: <span class="extype" name="javax.swing.border.Border">Border</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@border_=(b:javax.swing.border.Border):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.UIElement#bounds" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bounds:java.awt.Rectangle"></a>
+      <a id="bounds:Rectangle"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bounds</span><span class="result">: <span class="extype" name="java.awt.Rectangle">Rectangle</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@bounds:java.awt.Rectangle" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#changeZoomLevel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="changeZoomLevel(delta:Float):Unit"></a>
+      <a id="changeZoomLevel(Float):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">changeZoomLevel</span><span class="params">(<span name="delta">delta: <span class="extype" name="scala.Float">Float</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@changeZoomLevel(delta:Float):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#changeZoomLevel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="changeZoomLevel(delta:Double):Unit"></a>
+      <a id="changeZoomLevel(Double):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">changeZoomLevel</span><span class="params">(<span name="delta">delta: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@changeZoomLevel(delta:Double):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#chart" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="chart:org.jfree.chart.JFreeChart"></a>
+      <a id="chart:JFreeChart"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">chart</span><span class="result">: <span class="extype" name="org.jfree.chart.JFreeChart">JFreeChart</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@chart:org.jfree.chart.JFreeChart" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.swing.BorderPanel#constraintsFor" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="constraintsFor(comp:scala.swing.Component):scala.swing.BorderPanel.Position.Value"></a>
+      <a id="constraintsFor(Component):scala.swing.BorderPanel.Position.Value"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">constraintsFor</span><span class="params">(<span name="comp">comp: <span class="extype" name="scala.swing.Component">Component</span></span>)</span><span class="result">: <span class="extype" name="scala.Enumeration.Value">scala.swing.BorderPanel.Position.Value</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@constraintsFor(comp:scala.swing.Component):scala.swing.BorderPanel.Position.Value" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>BorderPanel → LayoutContainer</dd></dl></div>
+    </li><li name="scala.swing.Container.Wrapper#contents" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="contents:Seq[scala.swing.Component]"></a>
+      <a id="contents:Seq[Component]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">contents</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.swing.Component">Component</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@contents:Seq[scala.swing.Component]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Wrapper → Container</dd></dl></div>
+    </li><li name="scala.swing.UIElement#cursor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cursor:java.awt.Cursor"></a>
+      <a id="cursor:Cursor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cursor</span><span class="result">: <span class="extype" name="java.awt.Cursor">Cursor</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@cursor:java.awt.Cursor" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#cursor_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cursor_=(c:java.awt.Cursor):Unit"></a>
+      <a id="cursor_=(Cursor):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: cursor_$eq" class="name">cursor_=</span><span class="params">(<span name="c">c: <span class="extype" name="java.awt.Cursor">Cursor</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@cursor_=(c:java.awt.Cursor):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Reactor#deafTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="deafTo(ps:scala.swing.Publisher*):Unit"></a>
+      <a id="deafTo(Publisher*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">deafTo</span><span class="params">(<span name="ps">ps: <span class="extype" name="scala.swing.Publisher">Publisher</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@deafTo(ps:scala.swing.Publisher*):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Reactor</dd></dl></div>
+    </li><li name="scala.swing.UIElement#displayable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="displayable:Boolean"></a>
+      <a id="displayable:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">displayable</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@displayable:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component#enabled" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enabled:Boolean"></a>
+      <a id="enabled:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enabled</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@enabled:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#enabled_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="enabled_=(b:Boolean):Unit"></a>
+      <a id="enabled_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: enabled_$eq" class="name">enabled_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@enabled_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Proxy#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(that:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="that">that: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@equals(that:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Proxy → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.swing.Component#focusable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="focusable:Boolean"></a>
+      <a id="focusable:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">focusable</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@focusable:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#focusable_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="focusable_=(b:Boolean):Unit"></a>
+      <a id="focusable_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: focusable_$eq" class="name">focusable_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@focusable_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.UIElement#font" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="font:scala.swing.Font"></a>
+      <a id="font:Font"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">font</span><span class="result">: <span class="extype" name="scala.swing.Font">Font</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@font:scala.swing.Font" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#font_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="font_=(f:scala.swing.Font):Unit"></a>
+      <a id="font_=(Font):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: font_$eq" class="name">font_=</span><span class="params">(<span name="f">f: <span class="extype" name="scala.swing.Font">Font</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@font_=(f:scala.swing.Font):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#foreground" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="foreground:scala.swing.Color"></a>
+      <a id="foreground:Color"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">foreground</span><span class="result">: <span class="extype" name="scala.swing.Color">Color</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@foreground:scala.swing.Color" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#foreground_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="foreground_=(c:scala.swing.Color):Unit"></a>
+      <a id="foreground_=(Color):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: foreground_$eq" class="name">foreground_=</span><span class="params">(<span name="c">c: <span class="extype" name="scala.swing.Color">Color</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@foreground_=(c:scala.swing.Color):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#fullScaleXAxisLowerBound" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fullScaleXAxisLowerBound:Float"></a>
+      <a id="fullScaleXAxisLowerBound:Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fullScaleXAxisLowerBound</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@fullScaleXAxisLowerBound:Float" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#fullScaleXAxisUpperBound" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="fullScaleXAxisUpperBound:Float"></a>
+      <a id="fullScaleXAxisUpperBound:Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fullScaleXAxisUpperBound</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@fullScaleXAxisUpperBound:Float" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.swing.Component#hasFocus" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hasFocus:Boolean"></a>
+      <a id="hasFocus:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hasFocus</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@hasFocus:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.Proxy#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Proxy → Any</dd></dl></div>
+    </li><li name="scala.swing.UIElement#ignoreRepaint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ignoreRepaint:Boolean"></a>
+      <a id="ignoreRepaint:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ignoreRepaint</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@ignoreRepaint:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#ignoreRepaint_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ignoreRepaint_=(b:Boolean):Unit"></a>
+      <a id="ignoreRepaint_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: ignoreRepaint_$eq" class="name">ignoreRepaint_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@ignoreRepaint_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component#initP" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="initP:javax.swing.JComponent"></a>
+      <a id="initP:JComponent"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">initP</span><span class="result">: <span class="extype" name="javax.swing.JComponent">JComponent</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@initP:javax.swing.JComponent" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#inputVerifier" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inputVerifier:scala.swing.Component=&gt;Boolean"></a>
+      <a id="inputVerifier:(Component)⇒Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inputVerifier</span><span class="result">: (<span class="extype" name="scala.swing.Component">Component</span>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@inputVerifier:scala.swing.Component=&gt;Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#inputVerifier_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="inputVerifier_=(v:scala.swing.Component=&gt;Boolean):Unit"></a>
+      <a id="inputVerifier_=((Component)⇒Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: inputVerifier_$eq" class="name">inputVerifier_=</span><span class="params">(<span name="v">v: (<span class="extype" name="scala.swing.Component">Component</span>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@inputVerifier_=(v:scala.swing.Component=&gt;Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.swing.LayoutContainer#layout" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="layout:scala.collection.mutable.Map[scala.swing.Component,LayoutContainer.this.Constraints]"></a>
+      <a id="layout:Map[Component,Constraints]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">layout</span><span class="result">: <span class="extype" name="scala.collection.mutable.Map">Map</span>[<span class="extype" name="scala.swing.Component">Component</span>, <a href="#Constraints=scala.swing.BorderPanel.Position.Value" class="extmbr" name="cogdebugger.ui.components.StackedTimeseriesPlot.Constraints">Constraints</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@layout:scala.collection.mutable.Map[scala.swing.Component,LayoutContainer.this.Constraints]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>LayoutContainer</dd></dl></div>
+    </li><li name="scala.swing.BorderPanel#layoutManager" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="layoutManager:java.awt.BorderLayout"></a>
+      <a id="layoutManager:BorderLayout"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">layoutManager</span><span class="result">: <span class="extype" name="java.awt.BorderLayout">BorderLayout</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@layoutManager:java.awt.BorderLayout" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>BorderPanel</dd></dl></div>
+    </li><li name="scala.swing.Reactor#listenTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="listenTo(ps:scala.swing.Publisher*):Unit"></a>
+      <a id="listenTo(Publisher*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">listenTo</span><span class="params">(<span name="ps">ps: <span class="extype" name="scala.swing.Publisher">Publisher</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@listenTo(ps:scala.swing.Publisher*):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Reactor</dd></dl></div>
+    </li><li name="scala.swing.Publisher#listeners" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="listeners:scala.swing.RefSet[scala.swing.Reactions.Reaction]{valunderlying:scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]]}"></a>
+      <a id="listeners:RefSet[Reaction]{valunderlying:scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]]}"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">listeners</span><span class="result">: <span class="extype" name="scala.swing.RefSet">RefSet</span>[<span class="extype" name="scala.swing.Reactions.Reaction">Reaction</span>] { val underlying: scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]] }</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@listeners:scala.swing.RefSet[scala.swing.Reactions.Reaction]{valunderlying:scala.collection.mutable.HashSet[scala.ref.Reference[scala.swing.Reactions.Reaction]]}" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Publisher</dd></dl></div>
+    </li><li name="scala.swing.UIElement#locale" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="locale:java.util.Locale"></a>
+      <a id="locale:Locale"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">locale</span><span class="result">: <span class="extype" name="java.util.Locale">Locale</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@locale:java.util.Locale" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#location" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="location:java.awt.Point"></a>
+      <a id="location:Point"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">location</span><span class="result">: <span class="extype" name="java.awt.Point">Point</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@location:java.awt.Point" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#locationOnScreen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="locationOnScreen:java.awt.Point"></a>
+      <a id="locationOnScreen:Point"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">locationOnScreen</span><span class="result">: <span class="extype" name="java.awt.Point">Point</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@locationOnScreen:java.awt.Point" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#maximumSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="maximumSize:java.awt.Dimension"></a>
+      <a id="maximumSize:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">maximumSize</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@maximumSize:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#maximumSize_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="maximumSize_=(x:scala.swing.Dimension):Unit"></a>
+      <a id="maximumSize_=(Dimension):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: maximumSize_$eq" class="name">maximumSize_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.swing.Dimension">Dimension</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@maximumSize_=(x:scala.swing.Dimension):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#minimumSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="minimumSize:java.awt.Dimension"></a>
+      <a id="minimumSize:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">minimumSize</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@minimumSize:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#minimumSize_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="minimumSize_=(x:scala.swing.Dimension):Unit"></a>
+      <a id="minimumSize_=(Dimension):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: minimumSize_$eq" class="name">minimumSize_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.swing.Dimension">Dimension</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@minimumSize_=(x:scala.swing.Dimension):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component.mouse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mouse"></a>
+      <a id="mouse:mouse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mouse</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@mouse" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#name" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="name:String"></a>
+      <a id="name:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@name:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#name_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="name_=(s:String):Unit"></a>
+      <a id="name_=(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: name_$eq" class="name">name_=</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@name_=(s:String):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.swing.Component#onFirstSubscribe" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="onFirstSubscribe():Unit"></a>
+      <a id="onFirstSubscribe():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onFirstSubscribe</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@onFirstSubscribe():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Component → UIElement → LazyPublisher</dd></dl></div>
+    </li><li name="scala.swing.UIElement#onLastUnsubscribe" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="onLastUnsubscribe():Unit"></a>
+      <a id="onLastUnsubscribe():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onLastUnsubscribe</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@onLastUnsubscribe():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>UIElement → LazyPublisher</dd></dl></div>
+    </li><li name="scala.swing.Component#opaque" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="opaque:Boolean"></a>
+      <a id="opaque:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">opaque</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@opaque:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#opaque_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="opaque_=(b:Boolean):Unit"></a>
+      <a id="opaque_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: opaque_$eq" class="name">opaque_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@opaque_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#paint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="paint(g:scala.swing.Graphics2D):Unit"></a>
+      <a id="paint(Graphics2D):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">paint</span><span class="params">(<span name="g">g: <span class="extype" name="scala.swing.Graphics2D">Graphics2D</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@paint(g:scala.swing.Graphics2D):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#paintBorder" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="paintBorder(g:scala.swing.Graphics2D):Unit"></a>
+      <a id="paintBorder(Graphics2D):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">paintBorder</span><span class="params">(<span name="g">g: <span class="extype" name="scala.swing.Graphics2D">Graphics2D</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@paintBorder(g:scala.swing.Graphics2D):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#paintChildren" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="paintChildren(g:scala.swing.Graphics2D):Unit"></a>
+      <a id="paintChildren(Graphics2D):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">paintChildren</span><span class="params">(<span name="g">g: <span class="extype" name="scala.swing.Graphics2D">Graphics2D</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@paintChildren(g:scala.swing.Graphics2D):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#paintComponent" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="paintComponent(g:scala.swing.Graphics2D):Unit"></a>
+      <a id="paintComponent(Graphics2D):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">paintComponent</span><span class="params">(<span name="g">g: <span class="extype" name="scala.swing.Graphics2D">Graphics2D</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@paintComponent(g:scala.swing.Graphics2D):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#panLeft" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="panLeft():Unit"></a>
+      <a id="panLeft():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">panLeft</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@panLeft():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#panRight" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="panRight():Unit"></a>
+      <a id="panRight():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">panRight</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@panRight():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.swing.BorderPanel#peer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="peer:javax.swing.JPanelwithBorderPanel.this.SuperMixin"></a>
+      <a id="peer:JPanelwithSuperMixin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">lazy val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">peer</span><span class="result">: <span class="extype" name="javax.swing.JPanel">JPanel</span> with <a href="#SuperMixinextendsJComponent" class="extmbr" name="cogdebugger.ui.components.StackedTimeseriesPlot.SuperMixin">SuperMixin</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@peer:javax.swing.JPanelwithBorderPanel.this.SuperMixin" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>BorderPanel → Panel → Wrapper → Component → UIElement</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#plot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="plot:org.jfree.chart.plot.CombinedDomainXYPlot"></a>
+      <a id="plot:CombinedDomainXYPlot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">plot</span><span class="result">: <span class="extype" name="org.jfree.chart.plot.CombinedDomainXYPlot">CombinedDomainXYPlot</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@plot:org.jfree.chart.plot.CombinedDomainXYPlot" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.swing.UIElement#preferredSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preferredSize:java.awt.Dimension"></a>
+      <a id="preferredSize:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">preferredSize</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@preferredSize:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#preferredSize_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="preferredSize_=(x:scala.swing.Dimension):Unit"></a>
+      <a id="preferredSize_=(Dimension):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: preferredSize_$eq" class="name">preferredSize_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.swing.Dimension">Dimension</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@preferredSize_=(x:scala.swing.Dimension):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Publisher#publish" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="publish(e:scala.swing.event.Event):Unit"></a>
+      <a id="publish(Event):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">publish</span><span class="params">(<span name="e">e: <span class="extype" name="scala.swing.event.Event">Event</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@publish(e:scala.swing.event.Event):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Publisher</dd></dl></div>
+    </li><li name="scala.swing.Reactor#reactions" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="reactions:scala.swing.Reactions"></a>
+      <a id="reactions:Reactions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reactions</span><span class="result">: <span class="extype" name="scala.swing.Reactions">Reactions</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@reactions:scala.swing.Reactions" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Reactor</dd></dl></div>
+    </li><li name="scala.swing.UIElement#repaint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="repaint(rect:scala.swing.Rectangle):Unit"></a>
+      <a id="repaint(Rectangle):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">repaint</span><span class="params">(<span name="rect">rect: <span class="extype" name="scala.swing.Rectangle">Rectangle</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@repaint(rect:scala.swing.Rectangle):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#repaint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="repaint():Unit"></a>
+      <a id="repaint():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">repaint</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@repaint():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#replaceYData" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="replaceYData(yData:Array[Array[Float]]):Unit"></a>
+      <a id="replaceYData(Array[Array[Float]]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">replaceYData</span><span class="params">(<span name="yData">yData: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@replaceYData(yData:Array[Array[Float]]):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Overwrites existing Y data with the contents of the given array.</p><div class="fullcomment"><div class="comment cmt"><p>Overwrites existing Y data with the contents of the given array. Assumes
+(series, col) indexing. This translates into a chart that looke like
+this:</p><pre>          +-----------+---------------+---------------+------
+series <span class="num">0</span>  | T - times | T - times + <span class="num">1</span> | T - times + <span class="num">2</span> | ...
+          +-----------+---------------+---------------+------
+series <span class="num">1</span>  | T - times | T - times + <span class="num">1</span> | T - times + <span class="num">2</span> | ...
+          +-----------+---------------+---------------+------
+...       | ...</pre></div></div>
+    </li><li name="scala.swing.Component#requestFocus" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="requestFocus():Unit"></a>
+      <a id="requestFocus():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">requestFocus</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@requestFocus():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#requestFocusInWindow" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="requestFocusInWindow():Boolean"></a>
+      <a id="requestFocusInWindow():Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">requestFocusInWindow</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@requestFocusInWindow():Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#revalidate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="revalidate():Unit"></a>
+      <a id="revalidate():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">revalidate</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@revalidate():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.UIElement#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="self:java.awt.Component"></a>
+      <a id="self:Component"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">self</span><span class="result">: <span class="extype" name="java.awt.Component">Component</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@self:java.awt.Component" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement → Proxy</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#shiftXAxisRange" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="shiftXAxisRange(shiftBy:Double):Unit"></a>
+      <a id="shiftXAxisRange(Double):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shiftXAxisRange</span><span class="params">(<span name="shiftBy">shiftBy: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@shiftXAxisRange(shiftBy:Double):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Shifts the visible X-axis range by <code>shiftBy</code> units.</p>
+    </li><li name="scala.swing.UIElement#showing" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="showing:Boolean"></a>
+      <a id="showing:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">showing</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@showing:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#size" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="size:java.awt.Dimension"></a>
+      <a id="size:Dimension"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">size</span><span class="result">: <span class="extype" name="java.awt.Dimension">Dimension</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@size:java.awt.Dimension" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#subPlots" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="subPlots:scala.collection.immutable.IndexedSeq[org.jfree.chart.plot.XYPlot]"></a>
+      <a id="subPlots:IndexedSeq[XYPlot]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">subPlots</span><span class="result">: <span class="extype" name="scala.collection.immutable.IndexedSeq">IndexedSeq</span>[<span class="extype" name="org.jfree.chart.plot.XYPlot">XYPlot</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@subPlots:scala.collection.immutable.IndexedSeq[org.jfree.chart.plot.XYPlot]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.swing.LazyPublisher#subscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="subscribe(listener:scala.swing.Reactions.Reaction):Unit"></a>
+      <a id="subscribe(Reaction):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">subscribe</span><span class="params">(<span name="listener">listener: <span class="extype" name="scala.swing.Reactions.Reaction">Reaction</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@subscribe(listener:scala.swing.Reactions.Reaction):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>LazyPublisher → Publisher</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.swing.Component#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component → Proxy → AnyRef → Any</dd></dl></div>
+    </li><li name="scala.swing.UIElement#toolkit" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toolkit:java.awt.Toolkit"></a>
+      <a id="toolkit:Toolkit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toolkit</span><span class="result">: <span class="extype" name="java.awt.Toolkit">Toolkit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@toolkit:java.awt.Toolkit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.Component#tooltip" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tooltip:String"></a>
+      <a id="tooltip:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tooltip</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@tooltip:String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#tooltip_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tooltip_=(t:String):Unit"></a>
+      <a id="tooltip_=(String):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: tooltip_$eq" class="name">tooltip_=</span><span class="params">(<span name="t">t: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@tooltip_=(t:String):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.LazyPublisher#unsubscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unsubscribe(listener:scala.swing.Reactions.Reaction):Unit"></a>
+      <a id="unsubscribe(Reaction):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unsubscribe</span><span class="params">(<span name="listener">listener: <span class="extype" name="scala.swing.Reactions.Reaction">Reaction</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@unsubscribe(listener:scala.swing.Reactions.Reaction):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>LazyPublisher → Publisher</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#updateData" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="updateData(x:Float,yData:Array[Float]):Unit"></a>
+      <a id="updateData(Float,Array[Float]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">updateData</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Float">Float</span></span>, <span name="yData">yData: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@updateData(x:Float,yData:Array[Float]):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Updates the data set by dropping the first/left-most item from each data
+series and then appending the values given as arguments to this method.</p><div class="fullcomment"><div class="comment cmt"><p>Updates the data set by dropping the first/left-most item from each data
+series and then appending the values given as arguments to this method.
+Keep in mind that the data will be sorted by domain value prior to
+rendering.</p><p>E.g., consider the 2-series data set here:</p><pre>series <span class="num">0</span> y values -- | <span class="num">1</span> | <span class="num">2</span> | <span class="num">3</span> | <span class="num">4</span> | <span class="num">5</span> |
+series <span class="num">1</span> y values -- | <span class="num">4</span> | <span class="num">7</span> | <span class="num">2</span> | <span class="num">9</span> | <span class="num">1</span> |
+domain values     -- | <span class="num">2</span> | <span class="num">4</span> | <span class="num">5</span> | <span class="num">7</span> | <span class="num">9</span> |</pre><p>Calling <code>updateData</code> with (3, Array(3, 4)) yields:</p><pre>series <span class="num">0</span> y values -- | <span class="num">3</span> | <span class="num">4</span> | <span class="num">5</span> | <span class="num">3</span> | <span class="num">3</span> |
+series <span class="num">1</span> y values -- | <span class="num">2</span> | <span class="num">9</span> | <span class="num">1</span> | <span class="num">4</span> | <span class="num">4</span> |
+domain values     -- | <span class="num">4</span> | <span class="num">5</span> | <span class="num">7</span> | <span class="num">9</span> | <span class="num">3</span> |</pre><p>But sorting will cause values to be rendered in this order:
+* </p><pre>series <span class="num">0</span> y values -- | <span class="num">3</span> | <span class="num">3</span> | <span class="num">4</span> | <span class="num">5</span> | <span class="num">3</span> |
+series <span class="num">1</span> y values -- | <span class="num">4</span> | <span class="num">2</span> | <span class="num">9</span> | <span class="num">1</span> | <span class="num">4</span> |
+domain values     -- | <span class="num">3</span> | <span class="num">4</span> | <span class="num">5</span> | <span class="num">7</span> | <span class="num">9</span> |</pre></div></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#updateData" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="updateData(yData:Array[Float]):Unit"></a>
+      <a id="updateData(Array[Float]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">updateData</span><span class="params">(<span name="yData">yData: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Float">Float</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@updateData(yData:Array[Float]):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Updates the data set by shifting the y value of each (x1, y) pair in each
+data series to the previous (x0, y) pair, and then dropping the <code>yData</code>
+argument values into the now vacant y component of the last xy pairs.</p><div class="fullcomment"><div class="comment cmt"><p>Updates the data set by shifting the y value of each (x1, y) pair in each
+data series to the previous (x0, y) pair, and then dropping the <code>yData</code>
+argument values into the now vacant y component of the last xy pairs.</p><p>E.g., consider the 2-series data set here:</p><pre>series <span class="num">0</span> y values -- | <span class="num">1</span> | <span class="num">2</span> | <span class="num">3</span> | <span class="num">4</span> | <span class="num">5</span> |
+series <span class="num">1</span> y values -- | <span class="num">4</span> | <span class="num">7</span> | <span class="num">2</span> | <span class="num">9</span> | <span class="num">1</span> |
+domain values     -- | <span class="num">2</span> | <span class="num">4</span> | <span class="num">5</span> | <span class="num">7</span> | <span class="num">9</span> |</pre><p>Calling <code>updateData</code> with Array(3, 4) yields:</p><pre>series <span class="num">0</span> y values -- | <span class="num">2</span> | <span class="num">3</span> | <span class="num">4</span> | <span class="num">5</span> | <span class="num">3</span> |
+series <span class="num">1</span> y values -- | <span class="num">7</span> | <span class="num">2</span> | <span class="num">9</span> | <span class="num">1</span> | <span class="num">4</span> |
+domain values     -- | <span class="num">2</span> | <span class="num">4</span> | <span class="num">5</span> | <span class="num">7</span> | <span class="num">9</span> |</pre></div></div>
+    </li><li name="scala.swing.UIElement#visible" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="visible:Boolean"></a>
+      <a id="visible:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">visible</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@visible:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.swing.UIElement#visible_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="visible_=(b:Boolean):Unit"></a>
+      <a id="visible_=(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: visible_$eq" class="name">visible_=</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@visible_=(b:Boolean):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>UIElement</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#xAxis" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="xAxis:org.jfree.chart.axis.ValueAxis"></a>
+      <a id="xAxis:ValueAxis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">xAxis</span><span class="result">: <span class="extype" name="org.jfree.chart.axis.ValueAxis">ValueAxis</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@xAxis:org.jfree.chart.axis.ValueAxis" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.swing.Component#xLayoutAlignment" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="xLayoutAlignment:Double"></a>
+      <a id="xLayoutAlignment:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">xLayoutAlignment</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@xLayoutAlignment:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#xLayoutAlignment_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="xLayoutAlignment_=(x:Double):Unit"></a>
+      <a id="xLayoutAlignment_=(Double):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: xLayoutAlignment_$eq" class="name">xLayoutAlignment_=</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@xLayoutAlignment_=(x:Double):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#xRangeSize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="xRangeSize:Double"></a>
+      <a id="xRangeSize:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">xRangeSize</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@xRangeSize:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#xRangeSize_=" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="xRangeSize_=(size:Double):Unit"></a>
+      <a id="xRangeSize_=(Double):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: xRangeSize_$eq" class="name">xRangeSize_=</span><span class="params">(<span name="size">size: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@xRangeSize_=(size:Double):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.swing.Component#yLayoutAlignment" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="yLayoutAlignment:Double"></a>
+      <a id="yLayoutAlignment:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">yLayoutAlignment</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@yLayoutAlignment:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="scala.swing.Component#yLayoutAlignment_=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="yLayoutAlignment_=(y:Double):Unit"></a>
+      <a id="yLayoutAlignment_=(Double):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: yLayoutAlignment_$eq" class="name">yLayoutAlignment_=</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@yLayoutAlignment_=(y:Double):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Component</dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#zDelta" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="zDelta:Float"></a>
+      <a id="zDelta:Float"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">zDelta</span><span class="result">: <span class="extype" name="scala.Float">Float</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@zDelta:Float" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#zoomIn" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="zoomIn():Unit"></a>
+      <a id="zoomIn():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">zoomIn</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@zoomIn():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogdebugger.ui.components.StackedTimeseriesPlot">StackedTimeseriesPlot</a> → <a href="../fieldvisualizations/Zoomable.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Zoomable">Zoomable</a></dd></dl></div>
+    </li><li name="cogdebugger.ui.components.StackedTimeseriesPlot#zoomOut" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="zoomOut():Unit"></a>
+      <a id="zoomOut():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">zoomOut</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#cogdebugger.ui.components.StackedTimeseriesPlot@zoomOut():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="cogdebugger.ui.components.StackedTimeseriesPlot">StackedTimeseriesPlot</a> → <a href="../fieldvisualizations/Zoomable.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Zoomable">Zoomable</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="cogdebugger.ui.fieldvisualizations.Zoomable">
+              <h3>Inherited from <a href="../fieldvisualizations/Zoomable.html" class="extype" name="cogdebugger.ui.fieldvisualizations.Zoomable">Zoomable</a></h3>
+            </div><div class="parent" name="scala.swing.BorderPanel">
+              <h3>Inherited from <span class="extype" name="scala.swing.BorderPanel">BorderPanel</span></h3>
+            </div><div class="parent" name="scala.swing.LayoutContainer">
+              <h3>Inherited from <span class="extype" name="scala.swing.LayoutContainer">LayoutContainer</span></h3>
+            </div><div class="parent" name="scala.swing.Panel">
+              <h3>Inherited from <span class="extype" name="scala.swing.Panel">Panel</span></h3>
+            </div><div class="parent" name="scala.swing.Container.Wrapper">
+              <h3>Inherited from <span class="extype" name="scala.swing.Container.Wrapper">Wrapper</span></h3>
+            </div><div class="parent" name="scala.swing.Container">
+              <h3>Inherited from <span class="extype" name="scala.swing.Container">Container</span></h3>
+            </div><div class="parent" name="scala.swing.Component">
+              <h3>Inherited from <span class="extype" name="scala.swing.Component">Component</span></h3>
+            </div><div class="parent" name="scala.swing.UIElement">
+              <h3>Inherited from <span class="extype" name="scala.swing.UIElement">UIElement</span></h3>
+            </div><div class="parent" name="scala.swing.LazyPublisher">
+              <h3>Inherited from <span class="extype" name="scala.swing.LazyPublisher">LazyPublisher</span></h3>
+            </div><div class="parent" name="scala.swing.Publisher">
+              <h3>Inherited from <span class="extype" name="scala.swing.Publisher">Publisher</span></h3>
+            </div><div class="parent" name="scala.swing.Reactor">
+              <h3>Inherited from <span class="extype" name="scala.swing.Reactor">Reactor</span></h3>
+            </div><div class="parent" name="scala.Proxy">
+              <h3>Inherited from <span class="extype" name="scala.Proxy">Proxy</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
