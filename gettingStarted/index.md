@@ -265,6 +265,10 @@ The following tutorial examples demonstrate the use of the feedback operator: [C
 
 The CCT Toolkit is optimized for writing massiely-parallel programming on GPUs without the need to write low-level GPU kernels in CUDA or OpenCL. While there are many built-in operators already provided, there may still be other computations required that cannot be expressed by combining existing operators. For this the CCT Toolkit provides the capability for user-defined GPU operators through its *GPUOperators* API. *GPUOperators* provides a high-level, domain-specific language (DSL) for writing GPU kernels. This facility is recommended for more advanced users who have some familiarity with GPU hardware architecture and perofrmance issues.  
 
+The following tutorial examples demonstrate the use of the GPU operator: [HorizontalReflectionGPU.scala](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/libcog/operators/HorizontalReflectionGPU.scala) and  [HorizontalReflectionRandomGPU.scala](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/libcog/operators/HorizontalReflectionRandomGPU.scala).
+
+A new feature to profile variants of a GPU operator has been added. This allows for run-time optimization of GPU operators. A simple example showing how to write a GPU with variants is [OperatorWithVariants.scala](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/libcog/operators/OperatorWithVariants.scala).
+
 *GPUOperators* is described in a separate document, *User-defined GPU Operators* document available [here](../userGPUOperators).
 
 ### User-defined CPU Operators
@@ -272,6 +276,8 @@ The CCT Toolkit is optimized for writing massiely-parallel programming on GPUs w
 The operators covered so far are compiled to execute on GPUs or some other multi-core compute resources. Some computations are more suited for execution on the CPU. Custom CPU operators can be written using the `Operator` class. Although this adds flexibility, custom operators can be a performance bottleneck since that may not parallelize well on a CPU. 
 
 A CPU operator is a useful way to develop and test a new operator. These are easier to debug than GPU operators. Another case when a CPU operator is useful is if you have an operation in the middle of a compute graph that needs to get a value from a Java library. If the operation is at the beginning of the compute graph, then a sensor is recommended as the best wayto get the data into the compute graph.
+
+The following tutorial example demonstrates the use of the CPU operator: [HorizontalReflectionRandomGPU.scala](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/libcog/operators/HorizontalReflectionRandomGPU.scala). It is the random aspect of this operator that uses the CPU operator  [RandomFlipOperator.scala](https://github.com/hpe-cct/cct-tutorial/blob/master/src/main/scala/tutorial/libcog/operators/RandomFlipOperator.scala).
 
 CPU operators are described in the [User-defined operators](../programmingGuide/#user-defined-operators) section *CCT Programming Guide*.
 
