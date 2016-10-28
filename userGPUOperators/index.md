@@ -294,7 +294,7 @@ rules, like this:
 
     def square(v: VectorField): VectorField =
       GPUOperator(v.fieldType) {
-        if (isBigTensor(v.fieldType.tensorShape)) {
+        if (isBigTensorElement(v.fieldType.tensorShape)) {
           // Big tensor kernel
           _forEachTensorElement(v.tensorShape) {
             val element = _tensorElementVar(v)
@@ -309,7 +309,7 @@ rules, like this:
         } 
       }
 
-The `if (isBigTensor…)` code runs in Scala, not on the GPU, so it does
+The `if (isBigTensorElement…)` code runs in Scala, not on the GPU, so it does
 not count as an *executable* statement on the GPU. The `square` operator
 above will generate one of two very different GPU kernels, depending on
 the size of the tensors in the input field. This tactic allows you to
@@ -770,7 +770,7 @@ another type:
 | `_local(variable)` |       Annotate variable as local and return annotated variable.
 | `_volatile(variable)` |    Annotate variable as volatile and return annotated variable.
 | `_pointerTo(variable)` |   Get pointer to a variable or array element. Useful only for the atomic functions.
-| `isBigTensor(Shape)` |      Returns true if the specified shape (assumed to be a tensor shape) is a “big tensor.”
+| `Element(Shape)` |      Returns true if the specified shape (assumed to be a tensor shape) is a “big tensor.”
 
 ## Blocks
 
